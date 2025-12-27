@@ -1,0 +1,22 @@
+name = "landing-page-portfolio"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+routes = [
+  { pattern = "yourdomain.com", zone_name = "yourdomain.com" }
+]
+
+[env.production.vars]
+NODE_ENV = "production"
+
+
+
+
+
+
+
+
+
+
+

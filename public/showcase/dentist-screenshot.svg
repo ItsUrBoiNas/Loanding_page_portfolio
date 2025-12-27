@@ -1,0 +1,79 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1fae5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="white"/>
+  
+  <!-- Left Side - Content -->
+  <rect x="0" y="0" width="600" height="900" fill="url(#tealGrad)"/>
+  
+  <!-- Badge -->
+  <rect x="200" y="100" width="200" height="40" rx="20" fill="#ccfbf1"/>
+  <text x="300" y="125" font-family="Arial, sans-serif" font-size="14" fill="#0d9488" text-anchor="middle" font-weight="bold">Award-Winning Practice</text>
+  
+  <!-- Headline -->
+  <text x="300" y="250" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#0f172a" text-anchor="middle">A Brighter Smile in</text>
+  <text x="300" y="310" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#14b8a6" text-anchor="middle">60 Minutes</text>
+  
+  <!-- Description -->
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="18" fill="#475569" text-anchor="middle">Experience gentle, professional dental care</text>
+  
+  <!-- Buttons -->
+  <rect x="150" y="450" width="180" height="50" rx="8" fill="#14b8a6"/>
+  <text x="240" y="480" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">Book Appointment</text>
+  
+  <rect x="370" y="450" width="180" height="50" rx="8" fill="white" stroke="#14b8a6" stroke-width="2"/>
+  <text x="460" y="480" font-family="Arial, sans-serif" font-size="16" fill="#14b8a6" text-anchor="middle" font-weight="bold">Learn More</text>
+  
+  <!-- Stats -->
+  <text x="150" y="580" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#14b8a6">10K+</text>
+  <text x="150" y="610" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Happy Patients</text>
+  
+  <text x="300" y="580" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#14b8a6">15+</text>
+  <text x="300" y="610" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Years Experience</text>
+  
+  <text x="450" y="580" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#14b8a6">4.9</text>
+  <text x="450" y="610" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Average Rating</text>
+  
+  <!-- Right Side - Image Card -->
+  <rect x="650" y="200" width="400" height="400" rx="24" fill="white" stroke="#e0f2fe" stroke-width="2"/>
+  <rect x="700" y="250" width="300" height="300" rx="16" fill="url(#tealGrad)"/>
+  <circle cx="850" cy="400" r="60" fill="none" stroke="#14b8a6" stroke-width="3"/>
+  <path d="M 820 400 L 840 420 L 880 380" fill="none" stroke="#14b8a6" stroke-width="3" stroke-linecap="round"/>
+  <text x="850" y="480" font-family="Arial, sans-serif" font-size="18" fill="#475569" text-anchor="middle" font-weight="bold">Beautiful Smiles</text>
+  
+  <!-- Why Choose Us Section -->
+  <text x="600" y="750" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#0f172a" text-anchor="middle">Why Choose <tspan fill="#14b8a6">Us</tspan></text>
+  
+  <!-- Feature Cards -->
+  <rect x="100" y="800" width="300" height="80" rx="12" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+  <rect x="120" y="815" width="30" height="30" rx="6" fill="#14b8a6"/>
+  <text x="135" y="835" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">⏰</text>
+  <text x="160" y="835" font-family="Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="bold">60-Minute Whitening</text>
+  
+  <rect x="450" y="800" width="300" height="80" rx="12" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+  <rect x="470" y="815" width="30" height="30" rx="6" fill="#14b8a6"/>
+  <text x="485" y="835" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">❤️</text>
+  <text x="510" y="835" font-family="Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="bold">Gentle Care</text>
+  
+  <rect x="800" y="800" width="300" height="80" rx="12" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+  <rect x="820" y="815" width="30" height="30" rx="6" fill="#14b8a6"/>
+  <text x="835" y="835" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">🏆</text>
+  <text x="860" y="835" font-family="Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="bold">Expert Dentists</text>
+</svg>
+
+
+
+
+
+
+
+
+
+
+

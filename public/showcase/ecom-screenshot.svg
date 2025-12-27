@@ -1,0 +1,77 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#000000"/>
+  
+  <!-- Hero Section -->
+  <rect x="400" y="50" width="400" height="40" rx="4" fill="#ff6b35"/>
+  <text x="600" y="75" font-family="Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" font-weight="bold" letter-spacing="2">LIMITED EDITION DROP</text>
+  
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">THE LAST</text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#ff6b35" text-anchor="middle" letter-spacing="2">HOODIE</text>
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">YOU WILL</text>
+  <text x="600" y="440" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#ff6b35" text-anchor="middle" letter-spacing="2">EVER BUY</text>
+  
+  <text x="600" y="500" font-family="Arial, sans-serif" font-size="20" fill="#d1d5db" text-anchor="middle">Premium quality. Lifetime guarantee. Streetwear that lasts.</text>
+  
+  <rect x="450" y="540" width="300" height="60" rx="4" fill="#ff6b35"/>
+  <text x="600" y="575" font-family="Arial, sans-serif" font-size="20" fill="#000000" text-anchor="middle" font-weight="900" letter-spacing="2">SHOP NOW</text>
+  
+  <!-- Timer Section -->
+  <rect x="200" y="650" width="800" height="150" rx="8" fill="#000000" stroke="#ff6b35" stroke-width="2"/>
+  <text x="600" y="690" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle" font-weight="900">DROP ENDS IN</text>
+  
+  <rect x="350" y="720" width="100" height="60" rx="4" fill="#ff6b35"/>
+  <text x="400" y="755" font-family="Arial, sans-serif" font-size="36" fill="#000000" text-anchor="middle" font-weight="900">23</text>
+  <text x="400" y="780" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle" letter-spacing="1">HOURS</text>
+  
+  <rect x="500" y="720" width="100" height="60" rx="4" fill="#ff6b35"/>
+  <text x="550" y="755" font-family="Arial, sans-serif" font-size="36" fill="#000000" text-anchor="middle" font-weight="900">45</text>
+  <text x="550" y="780" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle" letter-spacing="1">MINUTES</text>
+  
+  <rect x="650" y="720" width="100" height="60" rx="4" fill="#ff6b35"/>
+  <text x="700" y="755" font-family="Arial, sans-serif" font-size="36" fill="#000000" text-anchor="middle" font-weight="900">00</text>
+  <text x="700" y="780" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle" letter-spacing="1">SECONDS</text>
+  
+  <text x="600" y="820" font-family="Arial, sans-serif" font-size="16" fill="#ff6b35" text-anchor="middle" font-weight="bold">Only 47 left in stock!</text>
+  
+  <!-- Product Cards -->
+  <rect x="150" y="50" width="250" height="250" rx="8" fill="#1f2937"/>
+  <rect x="160" y="60" width="230" height="230" rx="4" fill="#111827"/>
+  <text x="275" y="180" font-family="Arial, sans-serif" font-size="48" fill="#ff6b35" text-anchor="middle" opacity="0.3">🛍️</text>
+  <rect x="360" y="70" width="60" height="25" rx="4" fill="#ff6b35"/>
+  <text x="390" y="87" font-family="Arial, sans-serif" font-size="10" fill="#000000" text-anchor="middle" font-weight="900">BEST SELLER</text>
+  <text x="275" y="320" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">Classic Black</text>
+  <text x="275" y="350" font-family="Arial, sans-serif" font-size="28" fill="#ff6b35" text-anchor="middle" font-weight="900">$149</text>
+  
+  <rect x="800" y="50" width="250" height="250" rx="8" fill="#7c2d12"/>
+  <rect x="810" y="60" width="230" height="230" rx="4" fill="#9a3412"/>
+  <text x="925" y="180" font-family="Arial, sans-serif" font-size="48" fill="#ff6b35" text-anchor="middle" opacity="0.3">🛍️</text>
+  <rect x="1020" y="70" width="40" height="25" rx="4" fill="#ff6b35"/>
+  <text x="1040" y="87" font-family="Arial, sans-serif" font-size="10" fill="#000000" text-anchor="middle" font-weight="900">NEW</text>
+  <text x="925" y="320" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">Orange Accent</text>
+  <text x="925" y="350" font-family="Arial, sans-serif" font-size="28" fill="#ff6b35" text-anchor="middle" font-weight="900">$149</text>
+  
+  <!-- Features -->
+  <rect x="100" y="400" width="300" height="100" rx="4" fill="#000000" stroke="#ff6b35" stroke-width="2" stroke-opacity="0.3"/>
+  <text x="250" y="440" font-family="Arial, sans-serif" font-size="16" fill="#ff6b35" text-anchor="middle">🛡️</text>
+  <text x="250" y="465" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Lifetime Guarantee</text>
+  
+  <rect x="450" y="400" width="300" height="100" rx="4" fill="#000000" stroke="#ff6b35" stroke-width="2" stroke-opacity="0.3"/>
+  <text x="600" y="440" font-family="Arial, sans-serif" font-size="16" fill="#ff6b35" text-anchor="middle">🚚</text>
+  <text x="600" y="465" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Free Shipping</text>
+  
+  <rect x="800" y="400" width="300" height="100" rx="4" fill="#000000" stroke="#ff6b35" stroke-width="2" stroke-opacity="0.3"/>
+  <text x="950" y="440" font-family="Arial, sans-serif" font-size="16" fill="#ff6b35" text-anchor="middle">⭐</text>
+  <text x="950" y="465" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Premium Quality</text>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
