@@ -1,10 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
-import configPromise from '@/payload.config'
+import { getPayloadClient } from '@/lib/payload'
+
+// Force Node.js runtime for database access
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
+  let payload
   try {
-    const payload = await getPayloadHMR({ config: configPromise })
+    payload = await getPayloadClient()
+  } catch (initError) {
+    console.error('Upload: Failed to initialize Payload:', initError)
+    return NextResponse.json(
+      { error: 'Database connection failed', details: String(initError) },
+      { status: 503 }
+    )
+  }
+
+  try {
     const formData = await request.formData()
     const files = formData.getAll('files') as File[]
 
@@ -44,7 +57,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Upload error:', error)
     return NextResponse.json(
-      { error: 'Failed to upload files' },
+      { error: 'Failed to upload files', details: String(error) },
       { status: 500 }
     )
   }
