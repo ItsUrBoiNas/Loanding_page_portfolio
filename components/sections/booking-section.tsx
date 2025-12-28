@@ -3,14 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Copy, Check } from "lucide-react";
-import { InlineWidget } from "react-calendly";
 
 export default function BookingSection() {
   const [emailCopied, setEmailCopied] = useState(false);
   const email = "nasir.henken@outlook.com";
   const phone = "(239) 295-4252";
   const location = "Fort Myers, FL";
-  const calendlyUrl = "https://calendly.com/nasir-henken/30min";
+  const calendlyUrl = "https://calendly.com/nasir-henken/30min?hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=3b82f6";
 
   const copyEmailToClipboard = async () => {
     try {
@@ -96,7 +95,7 @@ export default function BookingSection() {
             </div>
           </motion.div>
 
-          {/* Right Side - Calendly Widget */}
+          {/* Right Side - Calendly Widget (iframe instead of react-calendly) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -106,16 +105,13 @@ export default function BookingSection() {
           >
             <div className="rounded-lg bg-slate-900/40 backdrop-blur-md border border-slate-800/50 p-4 overflow-hidden">
               <div className="min-h-[600px]">
-                <InlineWidget
-                  url={calendlyUrl}
-                  styles={{
-                    height: "600px",
-                  }}
-                  pageSettings={{
-                    backgroundColor: "000000",
-                    textColor: "ffffff",
-                    primaryColor: "3b82f6",
-                  }}
+                <iframe
+                  src={calendlyUrl}
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  title="Schedule a call with Nasir"
+                  className="rounded-lg"
                 />
               </div>
             </div>
@@ -125,3 +121,4 @@ export default function BookingSection() {
     </section>
   );
 }
+
