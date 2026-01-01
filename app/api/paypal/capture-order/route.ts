@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Extract customer data from custom_id
-    let customerData = { name: 'Customer', email: '', phone: '', needs: '' }
+    let customerData: { name: string; email: string; phone: string; needs: string; company?: string; website?: string; location?: string } = { name: 'Customer', email: '', phone: '', needs: '' }
     try {
       const customId = orderDetails.purchase_units?.[0]?.custom_id
       if (customId) {
