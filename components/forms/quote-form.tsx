@@ -197,35 +197,6 @@ export default function QuoteForm({ onSuccess, onClose }: { onSuccess?: () => vo
           </select>
           {errors.timeline && <p className="text-sm text-red-400">{errors.timeline.message}</p>}
         </div>
-
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-300">Website (Optional)</label>
-          <input
-            {// @ts-ignore - budget/timeline added but company/location/website removed from schema? 
-            // Wait, I need to check validations.ts again. 
-            // Actually I'll implement these fields but if they aren't in schema they won't validate.
-            // Let's assume the schema in validations.ts needs to match this. 
-            // I will update validations.ts in the next step to include company/website/location if missing, 
-            // or remove them here if I want to strictly follow the schema I supposedly created. 
-            // The previous file content shows validations.ts having: name, email, phone, budget, timeline, details.
-            // It does NOT have company/website/location. 
-            // I should probably REMOVE company/location to simplify the quote form as "High Ticket" usually means 
-            // "Get on the phone fast" rather than collecting too much data.
-            // BUT "Website" is useful. Let's keep Website but map it to 'details' or add it to schema.
-            // I'll stick to the schema fields: Name, Email, Phone, Budget, Timeline, Details.
-            // I'll remove Company/Location for cleaner UI.
-            ...register("details")}
-            // WAIT, NO. I need to Match the Schema exactly.
-            // Schema: name, email, phone, budget, timeline, details.
-            // UI previously: name, email, phone, company, website, location, needs.
-            // Integration: I will map "needs" -> "details".
-            // I will ADD budget and timeline.
-            // I will REMOVE company/website/location to match the new "Elite" schema which focuses on qualification (budget/timeline).
-            // This is a strategic pivot to higher quality leads.
-             }
-          className="hidden" 
-          />
-        </div>
       </div>
 
       <div className="space-y-2">
