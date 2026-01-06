@@ -97,29 +97,24 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Extract customer data from custom_id
-    let customerData: { name: string; email: string; phone: string; needs: string; company?: string; website?: string; location?: string } = { name: 'Customer', email: '', phone: '', needs: '' }
-    try {
-      const customId = orderDetails.purchase_units?.[0]?.custom_id
-      if (customId) {
-        customerData = JSON.parse(customId)
-      }
-    } catch (e) {
-      console.error('Failed to parse customer data:', e)
-    }
+    // Extract customer email from custom_id and payer info from PayPal
+    const customerEmail = orderDetails.purchase_units?.[0]?.custom_id || captureData.payer?.email_address || ''
+    const customerName = captureData.payer?.name?.given_name
+      ? `${captureData.payer.name.given_name} ${captureData.payer.name.surname || ''}`
+      : 'Customer'
 
     const amount = orderDetails.purchase_units?.[0]?.amount?.value || '199'
     const orderNumber = `LP-${Date.now()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`
     const paymentId = captureData.purchase_units?.[0]?.payments?.captures?.[0]?.id || captureData.id
 
     // Send confirmation email to customer
-    if (customerData.email) {
+    if (customerEmail) {
       await sendEmail({
-        to: customerData.email,
+        to: customerEmail,
         subject: `Order Confirmed - ${orderNumber}`,
         html: `
           <h2>Payment Confirmed!</h2>
-          <p>Thank you for your purchase, ${customerData.name}!</p>
+          <p>Thank you for your purchase, ${customerName}!</p>
           <p><strong>Order Number:</strong> ${orderNumber}</p>
           <p><strong>Amount:</strong> $${amount}</p>
           <p><strong>Payment ID:</strong> ${paymentId}</p>
@@ -143,14 +138,10 @@ export async function POST(request: NextRequest) {
         <p><strong>Payment ID:</strong> ${paymentId}</p>
         <hr>
         <h3>Customer Details:</h3>
-        <p><strong>Name:</strong> ${customerData.name}</p>
-        <p><strong>Email:</strong> ${customerData.email}</p>
-        <p><strong>Phone:</strong> ${customerData.phone}</p>
-        ${customerData.company ? `<p><strong>Company:</strong> ${customerData.company}</p>` : ''}
-        ${customerData.website ? `<p><strong>Website:</strong> ${customerData.website}</p>` : ''}
-        ${customerData.location ? `<p><strong>Location:</strong> ${customerData.location}</p>` : ''}
-        <p><strong>Needs:</strong></p>
-        <p>${customerData.needs}</p>
+        <p><strong>Name:</strong> ${customerName}</p>
+        <p><strong>Email:</strong> ${customerEmail}</p>
+        <p><strong>PayPal Payer ID:</strong> ${captureData.payer?.payer_id || 'N/A'}</p>
+        <p><em>Full customer details were sent in the initial order notification email.</em></p>
       `,
     })
 

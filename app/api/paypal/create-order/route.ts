@@ -20,6 +20,8 @@ function getPayPalConfig() {
 async function getPayPalAccessToken(clientId: string, clientSecret: string, baseUrl: string): Promise<string> {
   const auth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64')
 
+  console.log('[PayPal] Requesting access token from:', baseUrl)
+
   const response = await fetch(`${baseUrl}/v1/oauth2/token`, {
     method: 'POST',
     headers: {
@@ -30,10 +32,13 @@ async function getPayPalAccessToken(clientId: string, clientSecret: string, base
   })
 
   if (!response.ok) {
-    throw new Error('Failed to get PayPal access token')
+    const errorText = await response.text()
+    console.error('[PayPal] Access token error:', response.status, errorText)
+    throw new Error(`Failed to get PayPal access token: ${response.status} - ${errorText}`)
   }
 
   const data = await response.json()
+  console.log('[PayPal] Access token obtained successfully')
   return data.access_token
 }
 
@@ -62,6 +67,7 @@ export async function POST(request: NextRequest) {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
     // Create PayPal order
+    // Note: custom_id has a 127-character limit, so we only store the email for lookup
     const orderResponse = await fetch(`${baseUrl}/v2/checkout/orders`, {
       method: 'POST',
       headers: {
@@ -77,16 +83,7 @@ export async function POST(request: NextRequest) {
               value: amount.toString(),
             },
             description: 'Single Page Landing Page - 2 Day Turn-around',
-            custom_id: JSON.stringify({
-              name: formData.name,
-              email: formData.email,
-              phone: formData.phone,
-              company: formData.company || '',
-              website: formData.website || '',
-              location: formData.location || '',
-              needs: formData.needs,
-              references: formData.references || [],
-            }),
+            custom_id: formData.email.substring(0, 127), // PayPal limit: 127 chars
           },
         ],
         application_context: {
@@ -98,8 +95,9 @@ export async function POST(request: NextRequest) {
 
     if (!orderResponse.ok) {
       const errorData = await orderResponse.json()
-      console.error('PayPal order creation failed:', errorData)
-      throw new Error('Failed to create PayPal order')
+      console.error('[PayPal] Order creation failed:', JSON.stringify(errorData, null, 2))
+      const errorMessage = errorData.details?.[0]?.description || errorData.message || 'Failed to create PayPal order'
+      throw new Error(errorMessage)
     }
 
     const orderData = await orderResponse.json()

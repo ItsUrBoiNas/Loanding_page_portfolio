@@ -4,12 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Copy, Check } from "lucide-react";
 
+import { siteConfig } from "@/config/site";
+
 export default function BookingSection() {
   const [emailCopied, setEmailCopied] = useState(false);
-  const email = "nasir.henken@outlook.com";
-  const phone = "(239) 295-4252";
-  const location = "Fort Myers, FL";
-  const calendlyUrl = "https://calendly.com/nasir-henken/30min?hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=3b82f6";
+  const { email, phone, location, calendlyUrl } = siteConfig.contact;
 
   const copyEmailToClipboard = async () => {
     try {

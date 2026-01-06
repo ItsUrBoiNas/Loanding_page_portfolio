@@ -7,36 +7,9 @@ import { Button } from "@/components/ui/button";
 import FormModal from "@/components/modals/form-modal";
 import PurchaseForm from "@/components/forms/purchase-form";
 import QuoteForm from "@/components/forms/quote-form";
+import { siteConfig } from "@/config/site";
 
-const pricingTiers = [
-  {
-    name: "Starter",
-    description: "Perfect for small businesses getting started",
-    price: "$199",
-    features: ["Single Page Landing Page", "Mobile Responsive", "2 Day Turn-around", "No Payment Processing"],
-    cta: "Book Strategy Call",
-  },
-  {
-    name: "Growth",
-    description: "For businesses ready to scale",
-    price: "Custom",
-    features: ["Everything in Starter", "Advanced Analytics", "A/B Testing", "Email Integration"],
-    cta: "Book Strategy Call",
-  },
-  {
-    name: "Enterprise",
-    description: "Full-service solution for maximum impact",
-    price: "Custom",
-    features: [
-      "Everything in Growth",
-      "Custom Development",
-      "Dedicated Support",
-      "Performance Optimization",
-      "Conversion Tracking",
-    ],
-    cta: "Book Strategy Call",
-  },
-];
+const pricingTiers = siteConfig.pricing;
 
 export default function Pricing() {
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false)
