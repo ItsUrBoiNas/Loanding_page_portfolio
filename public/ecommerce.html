@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Landing Pages | Product Drops That Sell Out | Naslogic</title>
+    <meta name="description"
+        content="Naslogic builds high-converting landing pages for DTC and E-Commerce. Lower CAC and increase ROAS with a beautifully engineered product page.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://naslogic.com/ecommerce">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="E-Commerce Landing Pages That Convert | Naslogic">
+    <meta property="og:description"
+        content="Custom advertorials and product drop landing pages for DTC brands.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naslogic.com/ecommerce">
+
+    <!-- JSON-LD: Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "E-Commerce Landing Page Design",
+        "description": "Naslogic builds high-converting landing pages specifically for DTC and E-Commerce brands to maximize ROAS.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Naslogic",
+            "url": "https://naslogic.com"
+        },
+        "serviceType": "Landing Page Design for E-Commerce Brands",
+        "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a roofing landing page cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our e-commerce landing pages start at $199 with conversion-focused layouts for higher AOV."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why use a landing page over a standard Shopify product page?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Driving ad traffic to a standard catalog page results in high bounce rates. A dedicated landing page acts as a sales letter, removing distractions and increasing ROAS significantly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How fast can Naslogic deliver an e-commerce page?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We deliver production-ready landing pages on rapid turnarounds, perfect for upcoming product drops."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will the landing page work on mobile devices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Over 80% of DTC traffic is mobile. Our pages are rigorously tested for mobile checkout flow."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can the landing page integrate with my CRM or booking software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We integrate perfectly with Shopify, Klaviyo, and ReCharge."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =============================================
+           CSS Variables & Reset
+           ============================================= */
+        :root {
+            --bg: #0A0A0A;
+            --text-main: #F0EDE8;
+            --text-muted: #888888;
+            --accent: #6EFF6A;
+            --accent-glow: rgba(110, 255, 106, 0.4);
+            --surface: #111111;
+            --surface-border: #222222;
+            --font-display: 'Anton', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --container: 1400px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =============================================
+           Layout & Utilities
+           ============================================= */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-padding {
+            padding: 120px 0;
+        }
+
+        /* =============================================
+           Typography
+           ============================================= */
+        h1, h2, h3, h4, .display-font {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+        }
+
+        p {
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* =============================================
+           Buttons — min 48px tap target
+           ============================================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            min-height: 48px;
+            min-width: 48px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #000;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 40px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--surface-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* =============================================
+           Navigation
+           ============================================= */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 0;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a:not(.btn) {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            padding: 12px 0;
+        }
+
+        .nav-links a:not(.btn):hover {
+            color: var(--accent);
+        }
+
+        /* =============================================
+           Hero Section
+           ============================================= */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
+                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
+            background-size: 200% 200%;
+            animation: gradientMove 15s ease infinite alternate;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 10vw, 9rem);
+            line-height: 0.9;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .hero-frag {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .hero-frag span {
+            display: block;
+            transform: translateY(110%);
+        }
+
+        .frag-1 { margin-left: 0; }
+        .frag-2 { margin-left: 10%; color: var(--text-muted); }
+        .frag-3 { margin-left: 3%; color: var(--accent); }
+
+        /* 50-Word AI Hook */
+        .hero-hook {
+            max-width: 600px;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            opacity: 0;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            opacity: 0;
+        }
+
+        /* =============================================
+           Problem Section
+           ============================================= */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .problem-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            text-transform: none;
+            font-family: var(--font-body);
+            font-weight: 700;
+        }
+
+        /* =============================================
+           Comparison Table
+           ============================================= */
+        .comparison-table-wrap {
+            overflow-x: auto;
+            margin-top: 60px;
+            border-radius: 20px;
+            border: 1px solid var(--surface-border);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        .comparison-table thead {
+            background: var(--surface);
+        }
+
+        .comparison-table th {
+            padding: 24px 30px;
+            text-align: left;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--surface-border);
+        }
+
+        .comparison-table th:last-child {
+            color: var(--accent);
+        }
+
+        .comparison-table td {
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            color: var(--text-muted);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table td:last-child {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .check {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .cross {
+            color: #ff4444;
+            font-weight: 700;
+        }
+
+        /* =============================================
+           Portfolio Section
+           ============================================= */
+        .portfolio-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .showcase-card {
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .showcase-card:hover {
+            border-color: rgba(110, 255, 106, 0.3);
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--surface-border);
+        }
+
+        .showcase-info {
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .showcase-title {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .showcase-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid var(--surface-border);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* =============================================
+           Process Section
+           ============================================= */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .step-card {
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            padding: 50px 35px;
+            text-align: center;
+            position: relative;
+            transition: border-color 0.3s;
+        }
+
+        .step-card:hover {
+            border-color: var(--accent);
+        }
+
+        .step-num {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: rgba(110, 255, 106, 0.08);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        /* =============================================
+           FAQ Section
+           ============================================= */
+        .faq-list {
+            margin-top: 60px;
+            max-width: 800px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--surface-border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-align: left;
+            padding: 28px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 48px;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 28px;
+        }
+
+        .faq-answer p {
+            font-size: 1.05rem;
+        }
+
+        /* =============================================
+           CTA Banner
+           ============================================= */
+        .cta-banner {
+            background: var(--accent);
+            border-radius: 40px;
+            padding: 100px 50px;
+            text-align: center;
+            color: #000;
+            margin: 120px 5%;
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            margin-bottom: 20px;
+        }
+
+        .cta-banner p {
+            color: #222;
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            font-weight: 500;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-banner .btn {
+            background: #000;
+            color: var(--accent);
+            font-size: 1.1rem;
+            padding: 22px 44px;
+        }
+
+        .cta-banner .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* =============================================
+           Footer
+           ============================================= */
+        .footer {
+            border-top: 1px solid var(--surface-border);
+            padding: 40px 0;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            padding: 8px 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* =============================================
+           Section Headers
+           ============================================= */
+        .section-header {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            margin-bottom: 20px;
+        }
+
+        .section-sub {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        /* Sticky FAB */
+        .fab {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--accent);
+            color: #000;
+            padding: 16px 32px;
+            min-height: 48px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            z-index: 99;
+            box-shadow: 0 10px 30px var(--accent-glow);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
+        }
+
+        /* =============================================
+           Responsive — Mobile First
+           ============================================= */
+        @media (max-width: 1024px) {
+            .comparison-table th,
+            .comparison-table td {
+                padding: 16px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a:not(.btn) {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: clamp(2.8rem, 12vw, 5rem);
+            }
+
+            .frag-2 { margin-left: 0; }
+            .frag-3 { margin-left: 0; }
+
+            .showcase-img {
+                height: 250px;
+            }
+
+            .showcase-info {
+                padding: 20px;
+            }
+
+            .cta-banner {
+                padding: 60px 24px;
+                margin: 80px 5%;
+                border-radius: 24px;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 14px 16px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Scroll reveal utility */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         Navigation
+         ========================================== -->
+    <nav class="nav" aria-label="Main navigation">
+        <div class="container">
+            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
+            <div class="nav-links">
+                <a href="naslogic.html">Home</a>
+                <a href="#portfolio">Work</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         Hero Section
+         H1 — one per page, primary keyword target
+         ========================================== -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">
+                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
+                <div class="hero-frag frag-2"><span>For E-Commerce</span></div>
+                <div class="hero-frag frag-3"><span>Brands</span></div>
+            </h1>
+            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
+            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for DTC and E-Commerce brands. We design advertorials and product pages that maximize ROAS, increase AOV, and turn cold traffic into loyal buyers. No generic Shopify templates.</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
+                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See E-Commerce Examples</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Problem Section
+         H2 — second in hierarchy
+         ========================================== -->
+    <section class="section-padding container">
+        <h2 class="section-header fade-up">Why Most DTC Brands Burn Ad Spend</h2>
+        <p class="section-sub fade-up">Brands invest heavily in Meta and TikTok ads, but poor landing page experiences destroy their ROAS.</p>
+
+        <div class="problem-grid">
+            <div class="problem-card fade-up">
+                <div class="problem-icon">📉</div>
+                <h3>Traffic That Never Converts</h3>
+                <p>You send expensive traffic to a basic product page filled with distractions. They leave without adding to cart.</p>
+            </div>
+            <div class="problem-card fade-up">
+                <div class="problem-icon">📱</div>
+                <h3>Broken Mobile Experience</h3>
+                <p>If your site loads slowly on mobile, your bounce rate spikes and your advertising dollars go to waste.</p>
+            </div>
+            <div class="problem-card fade-up">
+                <div class="problem-icon">🏗️</div>
+                <h3>Generic, Cookie-Cutter Design</h3>
+                <p>Standard Shopify themes don't tell a persuasive brand story or handle objections effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Comparison Table
+         AI engines pull from HTML tables
+         ========================================== -->
+    <section class="section-padding container">
+        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
+        <p class="section-sub fade-up">See why 8-figure brands choose a specialist over a standard web agency.</p>
+
+        <div class="comparison-table-wrap fade-up">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Generic Agency</th>
+                        <th>Naslogic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DTC conversion expertise</td>
+                        <td><span class="cross">✗</span> No industry focus</td>
+                        <td><span class="check">✓</span> Built for e-commerce</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile-first design</td>
+                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
+                        <td><span class="check">✓</span> 100% mobile-optimized</td>
+                    </tr>
+                    <tr>
+                        <td>Conversion-focused layout</td>
+                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
+                        <td><span class="check">✓</span> Every element drives action</td>
+                    </tr>
+                    <tr>
+                        <td>SEO-ready structure</td>
+                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
+                        <td><span class="check">✓</span> Schema markup, clean headings</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery speed</td>
+                        <td>4 to 12 weeks typical</td>
+                        <td><span class="check">✓</span> Days, not months</td>
+                    </tr>
+                    <tr>
+                        <td>CRM integration</td>
+                        <td>Extra fees required</td>
+                        <td><span class="check">✓</span> Shopify, Klaviyo, ReCharge</td>
+                    </tr>
+                    <tr>
+                        <td>Price transparency</td>
+                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
+                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Portfolio Section
+         ========================================== -->
+    <section id="portfolio" class="section-padding container">
+        <h2 class="section-header fade-up">E-Commerce Pages We Have Built</h2>
+        <p class="section-sub fade-up">High-ROAS landing pages designed specifically for DTC brands to drive massive sales volume.</p>
+
+        <div class="portfolio-showcase">
+            <div class="showcase-card fade-up">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%23111' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23333' font-family='Arial' font-size='36'%3EE-Commerce LP Preview%3C/text%3E%3C/svg%3E"
+                    class="showcase-img"
+                    alt="Premium landing page design for a residential roofing contractor featuring dark theme and green accents"
+                    loading="lazy"
+                    width="1200" height="450">
+                <div class="showcase-info">
+                    <div>
+                        <h3 class="showcase-title">Supplement Advertorial</h3>
+                        <div class="showcase-tags">
+                            <span class="tag">Health & Wellness</span>
+                            <span class="tag">Advertorial</span>
+                            <span class="tag">High AOV</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+
+            <div class="showcase-card fade-up">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%230a1628' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23334' font-family='Arial' font-size='36'%3EFashion Drop LP%3C/text%3E%3C/svg%3E"
+                    class="showcase-img"
+                    alt="Landing page mockup for a commercial roofing company with blue accents and professional layout"
+                    loading="lazy"
+                    width="1200" height="450">
+                <div class="showcase-info">
+                    <div>
+                        <h3 class="showcase-title">Streetwear Product Drop</h3>
+                        <div class="showcase-tags">
+                            <span class="tag">Apparel</span>
+                            <span class="tag">Hype Drop</span>
+                            <span class="tag">Mobile-First</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Process Section
+         ========================================== -->
+    <section class="section-padding container">
+        <h2 class="section-header fade-up">How It Works</h2>
+        <p class="section-sub fade-up">Three steps from initial call to a live roofing landing page that books estimates and generates qualified leads for your roofing business.</p>
+
+        <div class="process-steps">
+            <div class="step-card fade-up">
+                <div class="step-num">01</div>
+                <h3>Book a Call</h3>
+                <p>We analyze your top-performing creatives, offers, and target demographics.</p>
+            </div>
+            <div class="step-card fade-up">
+                <div class="step-num">02</div>
+                <h3>We Build It</h3>
+                <p>Our team designs and develops a mobile-first, high-converting advertorial or product page.</p>
+            </div>
+            <div class="step-card fade-up">
+                <div class="step-num">03</div>
+                <h3>You Grow</h3>
+                <p>Your page goes live and starts scaling your ROAS and driving profitable acquisitions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FAQ Section — Powers FAQPage Schema
+         ========================================== -->
+    <section id="faq" class="section-padding container">
+        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
+        <p class="section-sub fade-up">Common questions from e-commerce founders about our landing page design.</p>
+
+        <div class="faq-list fade-up">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    How much does a roofing landing page cost?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Our roofing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Why use a landing page over a standard Shopify product page?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Driving ad traffic to a standard catalog page results in high bounce rates. A dedicated landing page acts as a sales letter, removing distractions and increasing ROAS significantly.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    How fast can Naslogic deliver an e-commerce page?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We deliver production-ready landing pages on rapid turnarounds, perfect for upcoming product drops.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Will the landing page work on mobile devices?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. Over 80% of DTC traffic is mobile. Our pages are rigorously tested for mobile checkout flow.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Can the landing page integrate with my CRM or booking software?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. We integrate perfectly with Shopify, Klaviyo, and ReCharge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CTA Banner
+         ========================================== -->
+    <section class="cta-banner fade-up">
+        <h2>Ready to Scale Your ROAS?</h2>
+        <p>Stop wasting ad spend on low-converting product pages. Get a custom landing page that actually sells.</p>
+        <a href="#contact" class="btn">Get Your Free Quote</a>
+    </section>
+
+    <!-- ==========================================
+         Footer
+         ========================================== -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div>
+                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:nasir.henken@outlook.com">nasir.henken@outlook.com</a>
+                <a href="tel:2392954252">(239) 295-4252</a>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
+            </div>
+            <div style="color: var(--text-muted); font-size: 0.9rem;">
+                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed FAB -->
+    <a href="#contact" class="fab">Get a Quote</a>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // =============================================
+        // Initialize GSAP
+        // =============================================
+        gsap.registerPlugin(ScrollTrigger);
+
+        // =============================================
+        // Hero Entrance Timeline
+        // =============================================
+        const heroTl = gsap.timeline();
+        heroTl.to(".hero-frag span", {
+            y: "0%",
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "power4.out",
+            delay: 0.2
+        })
+        .to(".hero-hook", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out"
+        }, "-=0.8")
+        .to(".hero-ctas", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out"
+        }, "-=0.9");
+
+        // =============================================
+        // Scroll Reveal — Fade Up
+        // =============================================
+        gsap.utils.toArray('.fade-up').forEach(element => {
+            gsap.fromTo(element,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 88%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+
+        // =============================================
+        // FAQ Accordion
+        // =============================================
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

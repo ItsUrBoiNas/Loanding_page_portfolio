@@ -22,11 +22,14 @@ export async function OPTIONS() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, phone, company, website, location, needs, references, formType } = body
+    const { name, email, phone, company, website, location, needs, details, budget, timeline, references, formType } = body
 
-    if (!name || !email || !phone || !needs || !formType) {
+    // Support both 'needs' (purchase form) and 'details' (quote form)
+    const projectDescription = needs || details
+
+    if (!name || !email || !phone || !projectDescription || !formType) {
       return NextResponse.json(
-        { error: 'Name, email, phone, needs, and formType are required' },
+        { error: 'Name, email, phone, project description, and formType are required' },
         { status: 400 }
       )
     }
@@ -40,8 +43,10 @@ export async function POST(request: NextRequest) {
       ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
       ${website ? `<p><strong>Website:</strong> ${website}</p>` : ''}
       ${location ? `<p><strong>Location:</strong> ${location}</p>` : ''}
-      <p><strong>Needs:</strong></p>
-      <p>${needs}</p>
+      ${budget ? `<p><strong>Budget Range:</strong> ${budget}</p>` : ''}
+      ${timeline ? `<p><strong>Timeline:</strong> ${timeline}</p>` : ''}
+      <p><strong>${formType === 'quote' ? 'Project Details' : 'Needs'}:</strong></p>
+      <p>${projectDescription}</p>
       ${references && references.length > 0 ? `<p><strong>Uploaded Files:</strong> ${references.length} file(s)</p>` : ''}
       ${formType === 'quote' ? '<p><em>This is a quote request for a multi-page site.</em></p>' : '<p><em>This is a purchase request for a single-page landing page ($199).</em></p>'}
     `
