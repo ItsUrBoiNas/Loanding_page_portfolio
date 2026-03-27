@@ -17,6 +17,7 @@ const nextConfig = {
       { source: '/restaurants', destination: '/restaurants.html' },
       { source: '/roofing', destination: '/roofing.html' },
       { source: '/saas', destination: '/saas.html' },
+      { source: '/experience', destination: '/experience.html' },
     ];
   },
 }
