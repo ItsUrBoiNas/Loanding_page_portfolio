@@ -1,19 +1,12 @@
 
 export const siteConfig = {
-    name: "Nasir - Landing Page Expert",
+    name: "NAS - Landing Page Expert",
     description: "I Build Landing Pages That Print Money",
     url: "https://nasir.dev", // Placeholder, ideally should be the real URL
     ogImage: "https://nasir.dev/og.jpg", // Placeholder
     contact: {
-        email: "nasir.henken@outlook.com",
-        phone: "(239) 295-4252",
+        phone: "(941) 257-3059",
         location: "Fort Myers, FL",
-        calendlyUrl: "https://calendly.com/nasir-henken/30min?hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=3b82f6",
-    },
-    links: {
-        github: "https://github.com/nasir-henken", // Educated guess or placeholder
-        twitter: "https://twitter.com/nasir_henken", // Placeholder
-        linkedin: "https://linkedin.com/in/nasir-henken", // Placeholder
     },
     pricing: [
         {

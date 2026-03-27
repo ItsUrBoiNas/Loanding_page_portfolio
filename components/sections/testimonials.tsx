@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 
 const testimonials = [
-  "Nasir doubled my leads!",
+  "NAS doubled my leads!",
   "Best investment we made.",
   "The design is incredible.",
   "ROI in the first month.",

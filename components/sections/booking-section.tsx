@@ -2,28 +2,17 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Copy, Check } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 
 export default function BookingSection() {
-  const [emailCopied, setEmailCopied] = useState(false);
-  const { email, phone, location, calendlyUrl } = siteConfig.contact;
-
-  const copyEmailToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setEmailCopied(true);
-      setTimeout(() => setEmailCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy email:", err);
-    }
-  };
+  const { phone, location } = siteConfig.contact;
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex flex-col gap-8 lg:gap-12 text-center">
           {/* Left Side - Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -40,32 +29,7 @@ export default function BookingSection() {
             </p>
 
             <div className="space-y-6">
-              {/* Email */}
-              <div className="flex items-center gap-4">
-                <a
-                  href={`mailto:${email}`}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-slate-900/40 backdrop-blur-md border border-slate-800/50 hover:border-blue-500/50 transition-all duration-200 hover:scale-105 flex-1"
-                >
-                  <div className="p-3 rounded-lg bg-blue-500/20">
-                    <Mail className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-slate-400">Email</p>
-                    <p className="text-lg font-semibold text-white">{email}</p>
-                  </div>
-                </a>
-                <button
-                  onClick={copyEmailToClipboard}
-                  className="p-4 rounded-lg bg-slate-900/40 backdrop-blur-md border border-slate-800/50 hover:border-blue-500/50 transition-all duration-200 hover:scale-105"
-                  aria-label="Copy email to clipboard"
-                >
-                  {emailCopied ? (
-                    <Check className="w-5 h-5 text-green-400" />
-                  ) : (
-                    <Copy className="w-5 h-5 text-slate-400 hover:text-blue-400" />
-                  )}
-                </button>
-              </div>
+            <div className="space-y-6 max-w-md mx-auto w-full text-left">
 
               {/* Phone */}
               <a
@@ -90,28 +54,6 @@ export default function BookingSection() {
                   <p className="text-sm text-slate-400">Location</p>
                   <p className="text-lg font-semibold text-white">{location}</p>
                 </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Side - Calendly Widget (iframe instead of react-calendly) */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col justify-center"
-          >
-            <div className="rounded-lg bg-slate-900/40 backdrop-blur-md border border-slate-800/50 p-4 overflow-hidden">
-              <div className="min-h-[600px]">
-                <iframe
-                  src={calendlyUrl}
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  title="Schedule a call with Nasir"
-                  className="rounded-lg"
-                />
               </div>
             </div>
           </motion.div>

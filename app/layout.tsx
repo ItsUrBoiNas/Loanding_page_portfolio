@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   keywords: ["Landing Page", "Web Design", "Next.js", "Freelance Developer", "Fort Myers", "High Ticket Dropshipping"],
   authors: [
     {
-      name: "Nasir",
+      name: "NAS",
       url: siteConfig.url,
     },
   ],
-  creator: "Nasir",
+  creator: "NAS",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@nasir_henken",
+    creator: "@NAS",
   },
   icons: {
     icon: "/favicon.ico",
