@@ -468,6 +468,7 @@
             <button type="submit" class="nl-form-submit nl-btn-quote" id="nl-quote-submit">
               Send My Request
             </button>
+            <p style="color: #666; font-size: 0.8rem; text-align: center; margin-top: 12px;">No spam. Your info is never shared.</p>
           </form>
         </div>
 
@@ -559,6 +560,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
               Secure checkout via PayPal — 256-bit encryption
             </div>
+            <p style="color: #666; font-size: 0.8rem; text-align: center; margin-top: 8px;">No spam. Your info is never shared.</p>
           </form>
         </div>
 

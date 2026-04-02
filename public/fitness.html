@@ -46,7 +46,7 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "How much does a roofing landing page cost?",
+                "name": "How much does a fitness landing page cost?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Our fitness landing pages start at $199 with mobile-first design and premium aesthetics."
@@ -86,6 +86,29 @@
             }
         ]
     }
+    </script>
+
+
+    <!-- JSON-LD: BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://naslogic.com"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Fitness & Gyms Landing Pages",
+                        "item": "https://naslogic.com/fitness"
+                }
+        ]
+}
     </script>
 
     <!-- Google Fonts -->
@@ -747,6 +770,23 @@
             opacity: 0;
             transform: translateY(40px);
         }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
 
@@ -764,6 +804,23 @@
                 <a href="#faq">FAQ</a>
                 <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
             </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="breadcrumb-sep" aria-hidden="true">›</li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="breadcrumb-current" itemprop="name">Fitness & Gyms Landing Pages</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
         </div>
     </nav>
 
@@ -882,11 +939,78 @@
 
         <div class="portfolio-showcase">
             <div class="showcase-card fade-up">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%23111' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23333' font-family='Arial' font-size='36'%3EFitness LP Preview%3C/text%3E%3C/svg%3E"
-                    class="showcase-img"
-                    alt="Premium landing page design for a residential roofing contractor featuring dark theme and green accents"
-                    loading="lazy"
-                    width="1200" height="450">
+                <!-- PREVIEW 1: Boutique Gym (Energy, Community) -->
+                <div class="showcase-img" role="img" aria-label="Local boutique gym landing page by Naslogic with free trial offer and class booking integration" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#ffffff; font-family:'Montserrat', sans-serif; color:#1e272e;">
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap');
+                        .fit1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#fff; overflow:hidden; }
+                        .fit1-bg { position:absolute; top:0; right:0; width:55%; height:100%; background:#f1f2f6; clip-path:polygon(15% 0, 100% 0, 100% 100%, 0% 100%); z-index:0; }
+                        .fit1-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 60px; position:relative; z-index:2; }
+                        .fit1-logo { font-size:26px; font-weight:900; letter-spacing:-1px; text-transform:uppercase; color:#1e272e; }
+                        .fit1-logo span { color:#ff4757; }
+                        .fit1-links { display:flex; gap:40px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#576574; }
+                        .fit1-hero { flex:1; display:flex; align-items:center; position:relative; z-index:2; padding:0 60px; gap:50px; }
+                        .fit1-content { flex:1; max-width:600px; }
+                        .fit1-badge { display:inline-block; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:#ff4757; background:rgba(255,71,87,0.1); padding:8px 16px; border-radius:4px; margin-bottom:25px; }
+                        .fit1-title { font-size:75px; font-weight:900; line-height:1; margin-bottom:25px; letter-spacing:-2px; text-transform:uppercase; color:#1e272e; }
+                        .fit1-desc { font-size:18px; line-height:1.6; color:#576574; margin-bottom:40px; font-weight:500; }
+                        .fit1-cta { display:inline-flex; align-items:center; justify-content:center; padding:20px 45px; background:#ff4757; color:#fff; font-size:16px; font-weight:800; text-transform:uppercase; letter-spacing:1px; border-radius:6px; box-shadow:0 15px 30px rgba(255,71,87,0.3); transition:transform 0.2s; }
+                        .fit1-visual { flex:1; position:relative; height:100%; display:flex; align-items:center; justify-content:center; }
+                        .fit1-img-ph { width:80%; height:75%; background:linear-gradient(45deg, #1e272e, #2f3640); border-radius:24px; box-shadow:0 30px 60px rgba(0,0,0,0.15); display:flex; align-items:center; justify-content:center; position:relative; }
+                        .fit1-img-text { font-size:24px; font-weight:800; color:rgba(255,255,255,0.2); text-transform:uppercase; letter-spacing:5px; transform:rotate(-90deg); position:absolute; left:-40px; white-space:nowrap; }
+                        .fit1-stat { position:absolute; bottom:50px; left:-50px; background:#fff; padding:20px 30px; border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.1); display:flex; align-items:center; gap:20px; border-left:4px solid #ff4757; }
+                        .fit1-stat-num { font-size:32px; font-weight:900; color:#1e272e; line-height:1; }
+                        .fit1-stat-label { font-size:12px; font-weight:700; color:#576574; text-transform:uppercase; letter-spacing:1px; }
+                
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
+    </style>
+                    <div class="fit1-wrap">
+                        <div class="fit1-bg"></div>
+                        <div class="fit1-nav">
+                            <div class="fit1-logo">PULSE<span>STUDIO</span></div>
+                            <div class="fit1-links">
+                                <span>Classes</span>
+                                <span>Trainers</span>
+                                <span style="color:#ff4757;">Locations</span>
+                            </div>
+                        </div>
+                        <div class="fit1-hero">
+                            <div class="fit1-content">
+                                <div class="fit1-badge">Voted #1 HIIT Studio in Austin</div>
+                                <h1 class="fit1-title">Unleash Your Ultimate Potential.</h1>
+                                <p class="fit1-desc">Join our high-energy boutique classes designed to burn calories, build strength, and connect you with a community of driven individuals.</p>
+                                <div class="fit1-cta">Claim 7-Day Free Trial</div>
+                            </div>
+                            <div class="fit1-visual">
+                                <div class="fit1-img-ph">
+                                    <div class="fit1-img-text">STRENGTH x CARDIO</div>
+                                </div>
+                                <div class="fit1-stat">
+                                    <div><svg style="width:30px;height:30px;fill:#ff4757;" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div>
+                                    <div>
+                                        <div class="fit1-stat-num">4.9/5</div>
+                                        <div class="fit1-stat-label">Member Rating</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="showcase-info">
                     <div>
                         <h3 class="showcase-title">Local Boutique Gym</h3>
@@ -901,11 +1025,75 @@
             </div>
 
             <div class="showcase-card fade-up">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%230a1628' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23334' font-family='Arial' font-size='36'%3EOnline Coaching LP%3C/text%3E%3C/svg%3E"
-                    class="showcase-img"
-                    alt="Landing page mockup for a commercial roofing company with blue accents and professional layout"
-                    loading="lazy"
-                    width="1200" height="450">
+                <!-- PREVIEW 2: Online High-Ticket Coach (Elite/Aggressive) -->
+                <div class="showcase-img" role="img" aria-label="High-ticket online fitness coaching landing page built by Naslogic with application funnel" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#000000; font-family:'Inter', sans-serif; color:#ffffff;">
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap');
+                        .fit2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#050505; overflow:hidden; }
+                        .fit2-bg { position:absolute; inset:0; background:radial-gradient(circle at 50% -20%, rgba(255,204,0,0.15), transparent 70%); z-index:0; }
+                        .fit2-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:50px 50px; z-index:0; mask-image:radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image:radial-gradient(ellipse at center, black 40%, transparent 80%); }
+                        .fit2-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 50px; position:relative; z-index:2; border-bottom:1px solid rgba(255,255,255,0.05); }
+                        .fit2-logo { font-family:'Oswald', sans-serif; font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#fff; }
+                        .fit2-logo span { color:#ffcc00; }
+                        .fit2-links { display:flex; gap:35px; font-family:'Oswald', sans-serif; font-size:14px; font-weight:500; text-transform:uppercase; letter-spacing:2px; color:#aaa; }
+                        .fit2-hero { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; z-index:2; padding:0 30px; }
+                        .fit2-badge { background:transparent; border:1px solid #ffcc00; color:#ffcc00; font-family:'Oswald', sans-serif; font-size:12px; font-weight:500; text-transform:uppercase; letter-spacing:3px; padding:8px 20px; margin-bottom:30px; display:inline-block; }
+                        .fit2-title { font-family:'Oswald', sans-serif; font-size:110px; line-height:0.9; margin-bottom:25px; text-transform:uppercase; color:#fff; }
+                        .fit2-title span { color:#ffcc00; }
+                        .fit2-desc { font-size:20px; color:#999; max-width:700px; margin-bottom:45px; line-height:1.6; font-weight:400; }
+                        .fit2-cta { display:inline-flex; align-items:center; justify-content:center; padding:0 60px; height:70px; background:#ffcc00; color:#000; font-family:'Oswald', sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:2px; box-shadow:0 0 40px rgba(255,204,0,0.3); transition:all 0.2s; clip-path:polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%); }
+                        .fit2-video-btn { margin-top:30px; display:inline-flex; align-items:center; justify-content:center; gap:10px; color:#fff; font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:2px; font-size:14px; }
+                        .fit2-play { width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.2); }
+                        .fit2-play::after { content:''; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent #ffcc00; margin-left:3px; }
+                        .fit2-stat-float { position:absolute; right:5%; top:30%; background:#111; padding:20px; border:1px solid #222; border-top:3px solid #ffcc00; text-align:left; }
+                        .fit2-sf-num { font-family:'Oswald', sans-serif; font-size:40px; color:#fff; line-height:1; }
+                        .fit2-sf-num span { color:#ffcc00; font-size:24px; }
+                        .fit2-sf-lbl { font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px; margin-top:5px; }
+                
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
+    </style>
+                    <div class="fit2-wrap">
+                        <div class="fit2-bg"></div>
+                        <div class="fit2-grid"></div>
+                        <div class="fit2-nav">
+                            <div class="fit2-logo">IRON<span>ATLAS</span></div>
+                            <div class="fit2-links">
+                                <span>The System</span>
+                                <span>Transformations</span>
+                                <span>Apply</span>
+                            </div>
+                        </div>
+                        <div class="fit2-hero">
+                            <div class="fit2-badge">Elite Coaching Application</div>
+                            <h1 class="fit2-title">Build the physique of a <span>Greek God.</span></h1>
+                            <p class="fit2-desc">A 12-week intensive protocol combining evidence-based hypertrophy, macronutrient precision, and relentless accountability for high-performers.</p>
+                            <div class="fit2-cta">Apply For Coaching</div>
+                            <div class="fit2-video-btn">
+                                <div class="fit2-play"></div>
+                                Watch the Breakdown
+                            </div>
+                        </div>
+                        <div class="fit2-stat-float">
+                            <div class="fit2-sf-num">4.5<span>kg</span></div>
+                            <div class="fit2-sf-lbl">Avg. Muscle Gained</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="showcase-info">
                     <div>
                         <h3 class="showcase-title">Online High-Ticket Coach</h3>
@@ -926,7 +1114,7 @@
          ========================================== -->
     <section class="section-padding container">
         <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live roofing landing page that books estimates and generates qualified leads for your roofing business.</p>
+        <p class="section-sub fade-up">Three steps from initial call to a live fitness landing page that books clients and generates qualified leads for your fitness business.</p>
 
         <div class="process-steps">
             <div class="step-card fade-up">
@@ -957,11 +1145,11 @@
         <div class="faq-list fade-up">
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    How much does a roofing landing page cost?
+                    How much does a fitness landing page cost?
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Our roofing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
+                    <p>Our fitness landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1012,6 +1200,24 @@
         <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
     </section>
 
+
+    <!-- Related Industries — Cross-links for topic cluster equity -->
+    <section class="related-industries">
+        <div class="container">
+            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
+            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
+            <div class="related-grid">
+                <a href="/dental" class="related-link">Dental Practices Landing Pages</a>
+                <a href="/restaurants" class="related-link">Restaurants Landing Pages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar Page Backlink -->
+    <div class="pillar-backlink">
+        <a href="/">← Explore all Naslogic landing page design services</a>
+    </div>
+
     <!-- ==========================================
          Footer
          ========================================== -->
@@ -1022,6 +1228,7 @@
             </div>
             <div class="footer-links">
                 <a href="tel:9412573059">(941) 257-3059</a>
+                <a href="/privacy">Privacy Policy</a>
                 <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
             </div>
             <div style="color: var(--text-muted); font-size: 0.9rem;">
@@ -1034,13 +1241,14 @@
     <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
 
     <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
         // =============================================
         // Initialize GSAP
         // =============================================
+        window.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
 
         // =============================================
@@ -1106,6 +1314,7 @@
                 }
             });
         });
+        }); // end DOMContentLoaded
     </script>
 
     <!-- Forms Module -->

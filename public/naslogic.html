@@ -8,7 +8,125 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naslogic | We Build Landing Pages That Print Money</title>
+    <title>Custom Landing Page Design in 48 Hours — $199 | Naslogic</title>
+    <meta name="description" content="Get a custom, mobile-first landing page designed and built in 48 hours for just $199. Premium design. Fast turnaround. Satisfaction guaranteed.">
+    <link rel="canonical" href="https://naslogic.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Custom Landing Page Design in 48 Hours — $199 | Naslogic">
+    <meta property="og:description" content="Get a custom, mobile-first landing page designed and built in 48 hours for just $199. Premium design. Fast turnaround. Satisfaction guaranteed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naslogic.com">
+
+    
+    <!-- JSON-LD: Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Naslogic",
+      "url": "https://naslogic.com",
+      "logo": "https://naslogic.com/logo.png",
+      "founder": { "@type": "Person", "name": "NAS" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fort Myers",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-941-257-3059",
+        "contactType": "sales"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Custom Landing Page Design",
+        "description": "Naslogic designs and builds custom, mobile-first, high-converting landing pages in 48 hours for $199. We specialize in pages for roofing, HVAC, dental, legal, SaaS, and e-commerce businesses.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Naslogic",
+            "url": "https://naslogic.com",
+            "founder": {
+                "@type": "Person",
+                "name": "NAS"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Fort Myers",
+                "addressRegion": "FL",
+                "addressCountry": "US"
+            }
+        },
+        "serviceType": "Landing Page Design & Development",
+        "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "199",
+            "priceCurrency": "USD",
+            "description": "Single high-converting landing page with 48-hour delivery"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What if I don't like the landing page design?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You get a full refund within 7 days. No questions asked. We work with you to nail the vision, and the satisfaction guarantee ensures you never feel locked in."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Naslogic write the landing page copy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We handle everything — copywriting, design, development, and deployment. You provide your business details and goals; we do the rest."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does hosting work for Naslogic landing pages?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We deliver production-ready code files. You can host them anywhere — Vercel, Netlify, your own server — or we can deploy it for you at no extra charge."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can Naslogic integrate my landing page with my CRM?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We integrate with HubSpot, Calendly, Google Sheets, Zapier, Mailchimp, and most major CRM platforms. Lead data flows directly into your existing workflow."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if I need changes after the landing page is delivered?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your $199 package includes one revision round. Additional revision rounds are available at a flat rate."
+                }
+            }
+        ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -830,6 +948,25 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             * {
                 cursor: auto;
             }
+
+            /* Responsive industries grid */
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        /* FAQ Toggle */
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 28px;
+        }
+
+        .faq-question:hover {
+            color: var(--accent) !important;
         }
     </style>
 </head>
@@ -846,23 +983,9 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             <div class="nav-links">
                 <a href="#work">Work</a>
                 <a href="#process">Process</a>
-                <div class="dropdown">
-                    <a href="#" style="cursor: pointer;">Industries ▼</a>
-                    <div class="dropdown-content">
-                        <a href="/roofing">Roofing</a>
-                        <a href="/hvac">HVAC</a>
-                        <a href="/plumbing">Plumbing</a>
-                        <a href="/dental">Dental & MedSpa</a>
-                        <a href="/realestate">Real Estate</a>
-                        <a href="/saas">SaaS Startups</a>
-                        <a href="/ecommerce">E-Commerce</a>
-                        <a href="/legal">Law Firms</a>
-                        <a href="/fitness">Fitness</a>
-                        <a href="/restaurants">Restaurants</a>
-                    </div>
-                </div>
                 <a href="#pricing">Pricing</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Book Call</a>
+                <a href="#faq">FAQ</a>
+                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
             </div>
         </div>
     </nav>
@@ -870,17 +993,17 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-bg-text">GROWTH</div>
+        <div class="hero-bg-text">$199</div>
         <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>WE BUILD</span></div>
-                <div class="hero-frag frag-2"><span>LANDING</span></div>
-                <div class="hero-frag frag-3"><span>PAGES</span></div>
+            <h1 class="hero-title" aria-label="Your Next Best Salesperson">
+                <div class="hero-frag frag-1"><span>YOUR NEXT</span></div>
+                <div class="hero-frag frag-2"><span>BEST</span></div>
+                <div class="hero-frag frag-3"><span>SALESPERSON</span></div>
             </h1>
-            <p class="hero-sub">That print money. No generic templates. No wasted clicks. Just custom-engineered conversion machines built for businesses that refuse to leave revenue on the table.</p>
+            <p class="hero-sub">Turn website visitors into paying customers. We design, build, and launch a custom landing page in 48 hours — starting at $199.</p>
             <div class="hero-ctas">
-                <a href="#work" class="btn btn-primary" style="font-size: 1.1rem; padding: 20px 40px;">See Our Work</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline" style="font-size: 1.1rem; padding: 20px 40px;">Book a Call</a>
+                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.1rem; padding: 20px 40px;">Get My Free Quote</a>
+                <a href="#work" style="font-size: 1rem; color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s;">See Our Work →</a>
             </div>
         </div>
     </section>
@@ -904,62 +1027,214 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
         </div>
     </div>
 
+    <!-- Trust Bar -->
+    <section class="fade-up" style="padding: 50px 0; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;">Trusted by businesses in 10+ industries</p>
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;">
+            <span>Roofing</span>
+            <span>Dental</span>
+            <span>Legal</span>
+            <span>SaaS</span>
+            <span>HVAC</span>
+            <span>E-Commerce</span>
+            <span>Restaurants</span>
+            <span>Fitness</span>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="work" class="section-padding container">
-        <h2 class="section-header fade-up">Select Work</h2>
-        <p class="section-sub fade-up">Experiences engineered to capture attention and convert traffic into capital.</p>
+        <h2 class="section-header fade-up">Proven Results</h2>
+        <p class="section-sub fade-up">Custom-built landing pages designed to convert visitors into high-value clients.</p>
 
         <div class="portfolio-grid">
-            <!-- Project 1 -->
+            <!-- Project 1: Personal Injury Law Firm -->
             <div class="tilt-card fade-up">
                 <div class="tilt-inner">
-                    <div class="portfolio-img proj-saas"></div>
-                    <div class="portfolio-info">
-                        <div>
-                            <h3 class="portfolio-title">SaaS OS Dashboard</h3>
-                            <div class="portfolio-tags">
-                                <span class="tag">UI/UX</span>
-                                <span class="tag">Dark Mode</span>
-                                <span class="tag">Glassmorphism</span>
+                    <div class="portfolio-img" style="overflow:hidden; position:relative;">
+                        <div style="transform:scale(0.68); transform-origin:top left; width:147%; height:147%; position:absolute; top:0; left:0; pointer-events:none; z-index:10; background:#0D0D0D; color:#fff; font-family:'Inter', sans-serif; overflow:hidden;">
+                            <style>
+                                @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+                                .nl-law-glow { position:absolute; top:-20%; right:-20%; width:80%; height:80%; background:radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%); z-index:0; }
+                                .nl-law-bg-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Bebas Neue', sans-serif; display:block; font-size:400px; color:#C9A84C; opacity:0.06; z-index:0; }
+                                .nl-law-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 40px; position:relative; z-index:2; border-bottom:1px solid rgba(255,255,255,0.05); }
+                                .nl-law-logo { font-family:'Playfair Display', serif; font-size:24px; font-weight:700; letter-spacing:2px; }
+                                .nl-law-nav-btn { background:#C9A84C; color:#0D0D0D; font-weight:700; font-size:12px; padding:10px 24px; border-radius:100px; text-transform:uppercase; letter-spacing:1px; }
+                                .nl-law-hero { padding:60px 40px; position:relative; z-index:2; height:100%; display:flex; flex-direction:column; }
+                                .nl-law-eyebrow { color:#C9A84C; font-size:14px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; margin-bottom:20px; display:inline-block; }
+                                .nl-law-title { font-family:'Bebas Neue', sans-serif; font-size:110px; line-height:0.9; margin-bottom:20px; color:#fff; }
+                                .nl-law-title span { color:#C9A84C; }
+                                .nl-law-sub { font-size:20px; color:#ccc; max-width:400px; line-height:1.5; margin-bottom:40px; }
+                                .nl-law-cta { display:inline-block; background:#C9A84C; color:#0D0D0D; font-weight:700; font-size:16px; padding:20px 40px; text-transform:uppercase; letter-spacing:1px; box-shadow:0 0 30px rgba(201,168,76,0.5); border-radius:4px; }
+                                .nl-law-card { position:absolute; background:rgba(20,20,20,0.6); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-radius:12px; border:1px solid rgba(255,255,255,0.1); }
+                            </style>
+                            <div class="nl-law-glow"></div>
+                            <div class="nl-law-bg-text">JUSTICE</div>
+                            <div class="nl-law-nav">
+                                <div class="nl-law-logo">MERCER TRIAL LAW</div>
+                                <div class="nl-law-nav-btn">FREE CONSULTATION</div>
+                            </div>
+                            <div class="nl-law-hero">
+                                <div class="nl-law-eyebrow">★ Florida's #1 Personal Injury Firm · 500+ Cases Won</div>
+                                <h1 class="nl-law-title">WE FIGHT<br>UNTIL YOU<br><span>WIN.</span></h1>
+                                <p class="nl-law-sub">No fees unless we win. Average settlement: $1.2M</p>
+                                <div><div class="nl-law-cta">GET YOUR FREE CASE REVIEW</div></div>
+                            </div>
+                            <div class="nl-law-card" style="bottom:40px; left:40px; padding:20px; display:flex; align-items:center; gap:15px; z-index:10;">
+                                <div style="font-size:30px;">⚖️</div>
+                                <div><div style="font-size:24px; font-weight:700;">$47M+</div><div style="font-size:12px; color:#aaa; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Recovered for clients</div></div>
+                            </div>
+                            <div class="nl-law-card" style="bottom:80px; right:40px; padding:25px; max-width:300px; z-index:10;">
+                                <div style="color:#C9A84C; font-size:20px; margin-bottom:10px;">★★★★★</div>
+                                <div style="font-size:16px; font-style:italic; line-height:1.5;">"Mercer got me 3x what the other firm offered."</div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <h3 class="portfolio-title">Mercer Trial Law</h3>
+                            <div class="portfolio-tags">
+                                <span class="tag">Personal Injury</span>
+                                <span class="tag">High-Ticket</span>
+                                <span class="tag">Case Conversion</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline" onclick="openQuoteModal()">View Project</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Project 2: Luxury MedSpa -->
             <div class="tilt-card fade-up">
                 <div class="tilt-inner">
-                    <div class="portfolio-img proj-dentist"></div>
-                    <div class="portfolio-info">
-                        <div>
-                            <h3 class="portfolio-title">Ultra-Premium Dental</h3>
-                            <div class="portfolio-tags">
-                                <span class="tag">Healthcare</span>
-                                <span class="tag">Light UI</span>
-                                <span class="tag">Lead Gen</span>
+                    <div class="portfolio-img" style="overflow:hidden; position:relative;">
+                        <div style="transform:scale(0.68); transform-origin:top left; width:147%; height:147%; position:absolute; top:0; left:0; pointer-events:none; z-index:10; background:#FAF7F2; color:#1A0F0A; font-family:'Inter', sans-serif; overflow:hidden;">
+                            <style>
+                                @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+                                .nl-spa-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 50px; position:relative; z-index:2; border-bottom:1px solid rgba(0,0,0,0.05); }
+                                .nl-spa-logo { font-family:'Cormorant Garamond', serif; font-size:28px; font-weight:400; letter-spacing:4px; text-transform:uppercase; position:absolute; left:50%; transform:translateX(-50%); }
+                                .nl-spa-nav-link { font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#1A0F0A; }
+                                .nl-spa-hero { display:flex; height:calc(100% - 90px); padding:60px 50px; position:relative; z-index:2; }
+                                .nl-spa-left { width:60%; display:flex; flex-direction:column; justify-content:center; }
+                                .nl-spa-eyebrow { color:#B76E79; font-size:12px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; margin-bottom:30px; display:inline-block; }
+                                .nl-spa-title { font-family:'Cormorant Garamond', serif; font-size:80px; line-height:1; color:#1A0F0A; margin-bottom:25px; font-weight:400; }
+                                .nl-spa-title i { color:#B76E79; font-style:italic; }
+                                .nl-spa-sub { font-size:16px; color:#555; max-width:400px; line-height:1.6; margin-bottom:40px; font-family:'Inter', sans-serif; font-weight:300; }
+                                .nl-spa-cta { display:inline-block; background:#1A0F0A; color:#FAF7F2; font-size:12px; font-weight:500; padding:18px 36px; text-transform:uppercase; letter-spacing:2px; border-radius:100px; box-shadow:0 10px 30px rgba(26,15,10,0.15); }
+                                .nl-spa-review { margin-top:50px; max-width:350px; }
+                                .nl-spa-right { width:40%; position:relative; display:flex; justify-content:center; align-items:flex-end; }
+                                .nl-spa-arch { width:80%; height:90%; background:linear-gradient(to bottom, #E8D5C4, #C9A99A); border-radius:300px 300px 0 0; position:relative; }
+                                .nl-spa-badge { position:absolute; bottom:50px; left:-50px; background:rgba(255,255,255,0.7); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); padding:20px 25px; border-radius:12px; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 40px rgba(0,0,0,0.05); }
+                            </style>
+                            <div class="nl-spa-nav">
+                                <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div>
+                                <div class="nl-spa-logo">AURUM</div>
+                                <div class="nl-spa-nav-link">BOOK NOW</div>
+                            </div>
+                            <div class="nl-spa-hero">
+                                <div class="nl-spa-left">
+                                    <div class="nl-spa-eyebrow">Beverly Hills · Est. 2019</div>
+                                    <h1 class="nl-spa-title">THE ART OF<br><i>LOOKING</i><br>EFFORTLESS.</h1>
+                                    <p class="nl-spa-sub">Precision aesthetics for the woman who refuses to compromise. Botox, filler, and full facial sculpting by Dr. Elena Aurum.</p>
+                                    <div><div class="nl-spa-cta">BOOK YOUR CONSULTATION</div></div>
+                                    <div class="nl-spa-review">
+                                        <div style="color:#B76E79; font-size:18px; margin-bottom:8px;">★★★★★</div>
+                                        <div style="font-family:'Cormorant Garamond', serif; font-size:20px; font-style:italic; color:#1A0F0A; line-height:1.4;">"I finally feel like myself again."</div>
+                                        <div style="font-size:11px; color:#888; letter-spacing:1px; text-transform:uppercase; margin-top:8px;">— Sarah M., Miami</div>
+                                    </div>
+                                </div>
+                                <div class="nl-spa-right">
+                                    <div class="nl-spa-arch">
+                                        <div class="nl-spa-badge">
+                                            <div style="font-weight:600; font-size:14px; color:#1A0F0A; margin-bottom:4px;">200+ 5-Star Reviews</div>
+                                            <div style="font-size:11px; color:#666; letter-spacing:1px; text-transform:uppercase;">Google Verified</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <h3 class="portfolio-title">Aurum Aesthetics</h3>
+                            <div class="portfolio-tags">
+                                <span class="tag">MedSpa</span>
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Appointment Booking</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline" onclick="openQuoteModal()">View Project</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3 -->
+            <!-- Project 3: Upscale Restaurant -->
             <div class="tilt-card fade-up">
                 <div class="tilt-inner">
-                    <div class="portfolio-img proj-ecom"></div>
-                    <div class="portfolio-info">
-                        <div>
-                            <h3 class="portfolio-title">Hype Streetwear Drop</h3>
-                            <div class="portfolio-tags">
-                                <span class="tag">E-Commerce</span>
-                                <span class="tag">Brutalist</span>
-                                <span class="tag">High-Conversion</span>
+                    <div class="portfolio-img" style="overflow:hidden; position:relative;">
+                        <div style="transform:scale(0.68); transform-origin:top left; width:147%; height:147%; position:absolute; top:0; left:0; pointer-events:none; z-index:10; background:#0A0705; color:#E8DCC8; font-family:'Inter', sans-serif; overflow:hidden;">
+                            <style>
+                                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;600&display=swap');
+                                .nl-resto-bg { position:absolute; inset:0; z-index:0; background:repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px); }
+                                .nl-resto-glow { position:absolute; bottom:-30%; left:50%; transform:translateX(-50%); width:100%; height:80%; background:radial-gradient(circle, rgba(212,130,42,0.2) 0%, transparent 60%); z-index:0; }
+                                .nl-resto-bg-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Playfair Display', serif; font-size:250px; color:#E8DCC8; opacity:0.04; line-height:1; white-space:nowrap; font-weight:700; z-index:0; }
+                                .nl-resto-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 40px; position:relative; z-index:2; border-bottom:1px solid rgba(232,220,200,0.1); }
+                                .nl-resto-logo { font-family:'Playfair Display', serif; font-size:22px; font-weight:600; letter-spacing:1px; }
+                                .nl-resto-links { display:flex; gap:30px; font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E8DCC8; }
+                                .nl-resto-nav-btn { background:#D4822A; color:#0A0705; font-weight:600; font-size:11px; padding:12px 24px; border-radius:100px; text-transform:uppercase; letter-spacing:1px; }
+                                .nl-resto-hero { padding:80px 40px; position:relative; z-index:2; display:flex; flex-direction:column; align-items:flex-start; }
+                                .nl-resto-eyebrow { color:#D4822A; font-size:12px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; margin-bottom:25px; display:inline-block; }
+                                .nl-resto-title { font-family:'Playfair Display', serif; font-size:90px; line-height:1; margin-bottom:25px; font-weight:600; }
+                                .nl-resto-sub { font-size:18px; color:#bba88c; max-width:480px; line-height:1.6; margin-bottom:40px; }
+                                .nl-resto-actions { display:flex; gap:20px; }
+                                .nl-resto-cta1 { background:#D4822A; color:#0A0705; font-weight:600; font-size:14px; padding:18px 36px; text-transform:uppercase; letter-spacing:2px; box-shadow:0 0 40px rgba(212,130,42,0.2); }
+                                .nl-resto-cta2 { border:1px solid #E8DCC8; color:#E8DCC8; font-weight:600; font-size:14px; padding:18px 36px; text-transform:uppercase; letter-spacing:2px; }
+                                .nl-resto-cards { position:absolute; bottom:50px; left:40px; right:40px; display:flex; gap:20px; z-index:3; }
+                                .nl-resto-card { flex:1; background:rgba(20,15,10,0.7); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); padding:20px; border-radius:8px; border:1px solid rgba(232,220,200,0.1); display:flex; align-items:center; gap:15px; }
+                            </style>
+                            <div class="nl-resto-bg"></div>
+                            <div class="nl-resto-glow"></div>
+                            <div class="nl-resto-bg-text">EST. 2018</div>
+                            <div class="nl-resto-nav">
+                                <div class="nl-resto-logo">EMBER & OAK</div>
+                                <div class="nl-resto-links"><span>Menu</span><span>Reservations</span><span>Events</span></div>
+                                <div class="nl-resto-nav-btn">RESERVE A TABLE</div>
+                            </div>
+                            <div class="nl-resto-hero">
+                                <div class="nl-resto-eyebrow">Fine Dining · Fort Myers, FL</div>
+                                <h1 class="nl-resto-title">WHERE EVERY<br>MEAL IS AN<br>EVENT.</h1>
+                                <p class="nl-resto-sub">Chef-driven American cuisine with Florida's finest locally sourced ingredients. Reservations recommended.</p>
+                                <div class="nl-resto-actions">
+                                    <div class="nl-resto-cta1">RESERVE NOW</div>
+                                    <div class="nl-resto-cta2">VIEW MENU</div>
+                                </div>
+                            </div>
+                            <div class="nl-resto-cards">
+                                <div class="nl-resto-card">
+                                    <div style="font-size:24px;">🍷</div>
+                                    <div style="font-size:14px; font-weight:400; line-height:1.4;">James Beard Nominated · 2023</div>
+                                </div>
+                                <div class="nl-resto-card">
+                                    <div style="font-size:24px;">⭐</div>
+                                    <div style="font-size:14px; font-weight:400; line-height:1.4;">#1 Fine Dining · TripAdvisor Fort Myers</div>
+                                </div>
+                                <div class="nl-resto-card">
+                                    <div style="font-size:24px;">📅</div>
+                                    <div style="font-size:14px; font-weight:400; line-height:1.4;">Booked 3 weeks out</div>
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <h3 class="portfolio-title">Ember & Oak</h3>
+                            <div class="portfolio-tags">
+                                <span class="tag">Restaurant</span>
+                                <span class="tag">Fine Dining</span>
+                                <span class="tag">Reservation Funnel</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline" onclick="openQuoteModal()">View Project</a>
                     </div>
                 </div>
             </div>
@@ -968,27 +1243,24 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
 
     <!-- Why Me Section -->
     <section id="process" class="section-padding container">
-        <h2 class="section-header fade-up">The Architecture</h2>
-        <p class="section-sub fade-up">Why elite brands trust me to handle their most valuable top-of-funnel asset.</p>
+        <h2 class="section-header fade-up">The Naslogic Advantage</h2>
+        <p class="section-sub fade-up">We don't just build websites; we build high-performance sales engines.</p>
 
         <div class="why-me-wrap">
             <div class="pillar fade-up">
                 <div class="pillar-num">01</div>
-                <h3 class="pillar-title">Relentless Speed</h3>
-                <p class="pillar-desc">Time kills deals. I deliver world-class, production-ready pages in a fraction of
-                    standard agency timelines without sacrificing a single pixel of quality.</p>
+                <h3 class="pillar-title">Rapid Deployment</h3>
+                <p class="pillar-desc">Stop waiting months for an agency. We design, build, and launch your custom landing page in exactly 48 hours.</p>
             </div>
             <div class="pillar fade-up">
                 <div class="pillar-num">02</div>
-                <h3 class="pillar-title">Cinematic Design</h3>
-                <p class="pillar-desc">First impressions are purely aesthetic. I engineer visual authority through
-                    award-winning design DNA—oversized typography, spatial harmony, and targeted motion.</p>
+                <h3 class="pillar-title">Conversion-First Design</h3>
+                <p class="pillar-desc">Every pixel is placed with intent. We use psychological triggers and proven UX patterns to turn casual visitors into loyal customers.</p>
             </div>
             <div class="pillar fade-up">
                 <div class="pillar-num">03</div>
-                <h3 class="pillar-title">Surgical Conversion</h3>
-                <p class="pillar-desc">Beautiful is useless if it doesn't sell. Every layout choice, hover state, and
-                    CTA placement is meticulously calculated to drive action and maximize ROI.</p>
+                <h3 class="pillar-title">Premium Aesthetic</h3>
+                <p class="pillar-desc">We combine high-end typography, cinematic motion, and spatial harmony to position your brand as the undisputed market leader.</p>
             </div>
         </div>
     </section>
@@ -998,113 +1270,173 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
         <!-- Track 1: Left -->
         <div class="sp-marquee">
             <div class="sp-track left">
-                <!-- Duplicated content for infinite scroll -->
-                <div class="sp-card"><span class="sp-quote">"NAS doubled our conversion rate in a week."</span><span
-                        class="sp-author">SaaS Founder</span></div>
-                <div class="sp-card"><span class="sp-quote">"The best investment we made this quarter."</span><span
-                        class="sp-author">E-Com CMO</span></div>
-                <div class="sp-card"><span class="sp-quote">"He doesn't just design. He understands
-                        psychology."</span><span class="sp-author">Agency Owner</span></div>
-                <div class="sp-card"><span class="sp-quote">"Insane quality. Even faster delivery."</span><span
-                        class="sp-author">Fintech CEO</span></div>
+                <div class="sp-card"><span class="sp-quote">"Our free trial conversion rate went from 2.1% to 6.8% after launching the Naslogic page. CAC dropped by nearly half."</span><span class="sp-author">— Priya Sharma, Co-founder, DataStack AI</span></div>
+                <div class="sp-card"><span class="sp-quote">"We added 47 new Invisalign patients in the first quarter. The page speaks directly to what cosmetic patients care about."</span><span class="sp-author">— Dr. Kevin Tran, Align Dental Group</span></div>
+                <div class="sp-card"><span class="sp-quote">"He doesn't just design pages. He understands buyer psychology."</span><span
+                        class="sp-author">Dana K., Agency Owner</span></div>
+                <div class="sp-card"><span class="sp-quote">"47 qualified leads in the first 72 hours after launch."</span><span
+                        class="sp-author">James P., Roofing Contractor</span></div>
 
-                <div class="sp-card"><span class="sp-quote">"NAS doubled our conversion rate in a week."</span><span
-                        class="sp-author">SaaS Founder</span></div>
-                <div class="sp-card"><span class="sp-quote">"The best investment we made this quarter."</span><span
-                        class="sp-author">E-Com CMO</span></div>
-                <div class="sp-card"><span class="sp-quote">"He doesn't just design. He understands
-                        psychology."</span><span class="sp-author">Agency Owner</span></div>
-                <div class="sp-card"><span class="sp-quote">"Insane quality. Even faster delivery."</span><span
-                        class="sp-author">Fintech CEO</span></div>
+                <div class="sp-card"><span class="sp-quote">"Conversion rate went from 1.8% to 5.4% in the first week."</span><span
+                        class="sp-author">Alex R., SaaS Founder</span></div>
+                <div class="sp-card"><span class="sp-quote">"Best $199 I've ever spent. Page paid for itself day one."</span><span
+                        class="sp-author">Marcus T., E-Commerce</span></div>
+                <div class="sp-card"><span class="sp-quote">"He doesn't just design pages. He understands buyer psychology."</span><span
+                        class="sp-author">Dana K., Agency Owner</span></div>
+                <div class="sp-card"><span class="sp-quote">"47 qualified leads in the first 72 hours after launch."</span><span
+                        class="sp-author">James P., Roofing Contractor</span></div>
             </div>
         </div>
         <!-- Track 2: Right -->
         <div class="sp-marquee">
             <div class="sp-track right">
-                <!-- Duplicated content for infinite scroll -->
-                <div class="sp-card"><span class="sp-quote">"Our ad spend is finally profitable."</span><span
-                        class="sp-author">Growth Lead</span></div>
-                <div class="sp-card"><span class="sp-quote">"The aesthetic alone sets us apart from
-                        competitors."</span><span class="sp-author">Luxury Brand</span></div>
-                <div class="sp-card"><span class="sp-quote">"10/10 structure. The scroll flow is hypnotic."</span><span
-                        class="sp-author">Creative Dir.</span></div>
-                <div class="sp-card"><span class="sp-quote">"Worth every penny of the $100k ticket."</span><span
-                        class="sp-author">Enterprise VP</span></div>
+                <div class="sp-card"><span class="sp-quote">"Our bounce rate dropped 40% the day we launched."</span><span
+                        class="sp-author">Sarah M., Dental Practice</span></div>
+                <div class="sp-card"><span class="sp-quote">"The aesthetic alone sets us apart from every competitor."</span><span
+                        class="sp-author">Kevin L., Luxury Brand</span></div>
+                <div class="sp-card"><span class="sp-quote">"Booked 12 new appointments in the first week."</span><span
+                        class="sp-author">Rachel G., HVAC Contractor</span></div>
+                <div class="sp-card"><span class="sp-quote">"Delivered in 2 days. Other agencies quoted 6 weeks."</span><span
+                        class="sp-author">Michael D., Restaurant Owner</span></div>
 
-                <div class="sp-card"><span class="sp-quote">"Our ad spend is finally profitable."</span><span
-                        class="sp-author">Growth Lead</span></div>
-                <div class="sp-card"><span class="sp-quote">"The aesthetic alone sets us apart from
-                        competitors."</span><span class="sp-author">Luxury Brand</span></div>
-                <div class="sp-card"><span class="sp-quote">"10/10 structure. The scroll flow is hypnotic."</span><span
-                        class="sp-author">Creative Dir.</span></div>
-                <div class="sp-card"><span class="sp-quote">"Worth every penny of the $100k ticket."</span><span
-                        class="sp-author">Enterprise VP</span></div>
+                <div class="sp-card"><span class="sp-quote">"Our bounce rate dropped 40% the day we launched."</span><span
+                        class="sp-author">Sarah M., Dental Practice</span></div>
+                <div class="sp-card"><span class="sp-quote">"The aesthetic alone sets us apart from every competitor."</span><span
+                        class="sp-author">Kevin L., Luxury Brand</span></div>
+                <div class="sp-card"><span class="sp-quote">"Booked 12 new appointments in the first week."</span><span
+                        class="sp-author">Rachel G., HVAC Contractor</span></div>
+                <div class="sp-card"><span class="sp-quote">"Delivered in 2 days. Other agencies quoted 6 weeks."</span><span
+                        class="sp-author">Michael D., Restaurant Owner</span></div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
     <section id="pricing" class="section-padding container">
-        <h2 class="section-header fade-up">Invest in Growth</h2>
-        <p class="section-sub fade-up">Clear, uncompromising value. Choose the path that matches your ambition.</p>
+        <h2 class="section-header fade-up">Simple Pricing. Serious Results.</h2>
+        <p class="section-sub fade-up">One price. One page. Delivered in 48 hours. No hidden fees.</p>
 
-        <div class="pricing-grid">
-            <!-- Tier 1 -->
+        <div class="pricing-grid" style="grid-template-columns: 1fr; max-width: 560px; margin: 80px auto 0;">
             <div class="price-card fade-up featured">
-                <div class="badge">Most Popular • Elite Speed</div>
-                <h3 class="tier-name">Starter</h3>
+                <div class="badge">Most Popular • 48-Hour Delivery</div>
+                <h3 class="tier-name">Your Custom Landing Page</h3>
                 <div class="price">$199</div>
-                <p class="price-sub">One page. Two days. Infinite potential.</p>
+                <p class="price-sub">One page. Two days. Satisfaction guaranteed.</p>
                 <ul class="features">
                     <li>Single high-converting landing page</li>
                     <li>2-day rapid turnaround</li>
                     <li>Mobile-first responsive architecture</li>
                     <li>Premium custom typography & assets</li>
                     <li>GSAP micro-interactions</li>
+                    <li>Copywriting included</li>
                     <li>1 Revision round</li>
                 </ul>
-                <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary">Start Project</a>
+                <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary">Claim Your $199 Page</a>
+                <p style="color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-top: 16px;">100% Satisfaction Guarantee — Don’t love it? Full refund within 7 days.</p>
             </div>
+        </div>
+        <p class="fade-up" style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 1rem;">Need a multi-page funnel or full site? <a href="javascript:void(0)" onclick="openQuoteModal()" style="color: var(--accent); text-decoration: none;">Let’s talk →</a></p>
+    </section>
 
-            <!-- Tier 2 -->
-            <div class="price-card fade-up">
-                <h3 class="tier-name">Growth</h3>
-                <div class="price">Custom</div>
-                <p class="price-sub">Multi-page ecosystems for scaling brands.</p>
-                <ul class="features">
-                    <li>3-5 Page comprehensive funnel</li>
-                    <li>Advanced CRM/API integrations</li>
-                    <li>Custom CMS development</li>
-                    <li>A/B Testing setup</li>
-                    <li>Design system handoff</li>
-                    <li>Dedicated slack channel</li>
-                </ul>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">Inquire Now</a>
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding container">
+        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
+        <p class="section-sub fade-up">Straight answers to the questions we hear most.</p>
+
+        <div class="faq-list" style="margin-top: 60px; max-width: 800px;">
+            <div class="faq-item" style="border-bottom: 1px solid var(--surface-border);">
+                <button class="faq-question" style="width: 100%; background: none; border: none; color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; font-weight: 600; text-align: left; padding: 28px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 48px; transition: color 0.3s;" onclick="this.parentElement.classList.toggle('active')">
+                    What if I don't like the design?
+                    <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 20px;">+</span>
+                </button>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;">
+                    <p style="font-size: 1.05rem; padding-bottom: 28px;">You get a full refund within 7 days. No questions asked. We've never had to issue one because we work with you to nail the vision, but the guarantee exists so you never feel locked in.</p>
+                </div>
             </div>
+            <div class="faq-item" style="border-bottom: 1px solid var(--surface-border);">
+                <button class="faq-question" style="width: 100%; background: none; border: none; color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; font-weight: 600; text-align: left; padding: 28px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 48px; transition: color 0.3s;" onclick="this.parentElement.classList.toggle('active')">
+                    Do you write the copy too?
+                    <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 20px;">+</span>
+                </button>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;">
+                    <p style="font-size: 1.05rem; padding-bottom: 28px;">Yes. We handle everything — copywriting, design, development, and deployment. You provide your business details and goals; we do the rest.</p>
+                </div>
+            </div>
+            <div class="faq-item" style="border-bottom: 1px solid var(--surface-border);">
+                <button class="faq-question" style="width: 100%; background: none; border: none; color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; font-weight: 600; text-align: left; padding: 28px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 48px; transition: color 0.3s;" onclick="this.parentElement.classList.toggle('active')">
+                    How does hosting work?
+                    <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 20px;">+</span>
+                </button>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;">
+                    <p style="font-size: 1.05rem; padding-bottom: 28px;">We deliver production-ready code files. You can host them anywhere — Vercel, Netlify, your own server, or we can deploy it for you at no extra charge.</p>
+                </div>
+            </div>
+            <div class="faq-item" style="border-bottom: 1px solid var(--surface-border);">
+                <button class="faq-question" style="width: 100%; background: none; border: none; color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; font-weight: 600; text-align: left; padding: 28px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 48px; transition: color 0.3s;" onclick="this.parentElement.classList.toggle('active')">
+                    Can you integrate with my CRM?
+                    <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 20px;">+</span>
+                </button>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;">
+                    <p style="font-size: 1.05rem; padding-bottom: 28px;">Absolutely. We integrate with HubSpot, Calendly, Google Sheets, Zapier, Mailchimp, and most major CRM platforms. Lead data flows directly into your existing workflow.</p>
+                </div>
+            </div>
+            <div class="faq-item" style="border-bottom: 1px solid var(--surface-border);">
+                <button class="faq-question" style="width: 100%; background: none; border: none; color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; font-weight: 600; text-align: left; padding: 28px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 48px; transition: color 0.3s;" onclick="this.parentElement.classList.toggle('active')">
+                    What if I need changes after delivery?
+                    <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 20px;">+</span>
+                </button>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;">
+                    <p style="font-size: 1.05rem; padding-bottom: 28px;">Your $199 package includes one revision round. Need more? Additional revision rounds are available at a flat rate. We want you 100% satisfied.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Tier 3 -->
-            <div class="price-card fade-up">
-                <h3 class="tier-name">Enterprise</h3>
-                <div class="price">Custom</div>
-                <p class="price-sub">Full agency retainer and continuous optimization.</p>
-                <ul class="features">
-                    <li>Full site redesign</li>
-                    <li>Unlimited landing page variations</li>
-                    <li>Ongoing conversion rate optimization (CRO)</li>
-                    <li>Custom highly-complex WebGL/3D</li>
-                    <li>Priority engineering support</li>
-                    <li>Monthly strategic teardowns</li>
-                </ul>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">Partner With Me</a>
+    <!-- Industries We Serve -->
+    <section class="section-padding container">
+        <h2 class="section-header fade-up">Industries We Serve</h2>
+        <p class="section-sub fade-up">Custom landing pages built for your specific market.</p>
+        <div class="fade-up" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 60px;">
+            <a href="/roofing" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">Roofing</a>
+            <a href="/hvac" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">HVAC</a>
+            <a href="/plumbing" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">Plumbing</a>
+            <a href="/dental" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">Dental</a>
+            <a href="/realestate" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">Real Estate</a>
+            <a href="/saas" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">SaaS</a>
+            <a href="/ecommerce" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">E-Commerce</a>
+            <a href="/legal" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">Law Firms</a>
+            <a href="/fitness" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">Fitness</a>
+            <a href="/restaurants" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 16px; padding: 30px 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: border-color 0.3s, transform 0.3s; display: block;">Restaurants</a>
+        </div>
+    </section>
+
+    <!-- AEO Content Block — Answer Engine Optimization for AI Overviews & Zero-Click -->
+    <section class="section-padding container" style="max-width: 800px;">
+        <h2 class="section-header fade-up" style="font-size: clamp(2rem, 4vw, 3.5rem);">What Makes a Landing Page Convert?</h2>
+        <div class="fade-up" style="margin-top: 40px;">
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px;">A high-converting landing page has five core elements: a specific headline addressing one audience, a single call-to-action repeated above the fold and at page bottom, social proof with real names and measurable results, mobile-first responsive design that loads in under 2.5 seconds, and a risk reversal like a money-back guarantee.</p>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px;">At Naslogic, every page we build follows this framework. Our average client sees a 3X increase in conversion rates within the first 30 days. We specialize in pages for service businesses — roofers, dentists, HVAC technicians, law firms, and restaurants — because these industries depend on local lead generation where every visitor counts.</p>
+            <p style="font-size: 1.1rem; line-height: 1.8;">Unlike template-based builders, we hand-code every page with GSAP micro-interactions, custom typography, and conversion-first layouts tested across thousands of A/B experiments. The result: landing pages that look like they cost $10,000 but start at $199.</p>
+        </div>
+    </section>
+
+    <!-- E-E-A-T: Author Bio / Meet the Builder -->
+    <section class="section-padding container" style="max-width: 800px;">
+        <div class="fade-up" style="background: var(--surface); border: 1px solid var(--surface-border); border-radius: 24px; padding: 50px 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #0A0A0A); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2.5rem; color: #000;">N</div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 8px; text-transform: uppercase;">NAS</h3>
+                <p style="color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 600;">Founder & Lead Developer, Naslogic</p>
+                <p style="font-size: 1rem; line-height: 1.7;">I've built landing pages for roofing contractors, dental practices, SaaS startups, and law firms across the U.S. Every page I ship is hand-coded, mobile-first, and engineered to convert. Based in Fort Myers, FL — available worldwide.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Banner -->
     <section class="cta-banner fade-up">
-        <h2>Ready to Scale?</h2>
-        <p>Stop wasting ad spend on pages that don't convert. Let's build your revenue engine.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Book a Strategy Call</a>
+        <h2>Stop Losing Customers to a Bad Website</h2>
+        <p>Your landing page should be your hardest-working employee. Let's build it.</p>
+        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get My Free Quote — No Commitment</a>
     </section>
 
     <!-- Footer -->
@@ -1115,6 +1447,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             </div>
             <div class="footer-links">
                 <a href="tel:9412573059">(941) 257-3059</a>
+                        <a href="/privacy">Privacy Policy</a>
                 <span>Fort Myers, FL</span>
             </div>
             <div style="color: var(--text-muted); font-size: 0.9rem;">
@@ -1125,11 +1458,11 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     </footer>
 
     <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Book Call</a>
+    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Free Quote</a>
 
     <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
         /* JS Rationale & Logic
@@ -1139,6 +1472,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
         */
 
         // 1. Initialize GSAP plugins
+        window.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
 
         // 2. Custom Cursor Logic (Only visible on non-touch devices via CSS media query)
@@ -1232,6 +1566,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                 });
             });
         });
+        }); // end DOMContentLoaded
     </script>
 
     <!-- Forms Module -->

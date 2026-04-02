@@ -1,0 +1,371 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "NASLOGIC." [ref=e4]:
+        - /url: "#"
+      - generic [ref=e5]:
+        - link "Work" [ref=e6]:
+          - /url: "#work"
+        - link "Process" [ref=e7]:
+          - /url: "#process"
+        - link "Pricing" [ref=e8]:
+          - /url: "#pricing"
+        - link "FAQ" [ref=e9]:
+          - /url: "#faq"
+        - link "Get a Free Quote" [ref=e10] [cursor=pointer]:
+          - /url: javascript:void(0)
+  - generic [ref=e11]:
+    - generic: $199
+    - generic [ref=e13]:
+      - heading "Your Next Best Salesperson" [level=1] [ref=e14]:
+        - generic [ref=e16]: YOUR NEXT
+        - generic [ref=e18]: BEST
+        - generic [ref=e20]: SALESPERSON
+      - paragraph [ref=e21]: Turn website visitors into paying customers. We design, build, and launch a custom landing page in 48 hours — starting at $199.
+      - generic [ref=e22]:
+        - link "Get My Free Quote" [ref=e23] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "See Our Work →" [ref=e24]:
+          - /url: "#work"
+  - generic [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - text: 2-Day Turnaround
+        - generic [ref=e28]: •
+      - generic [ref=e29]:
+        - text: Conversion Focused
+        - generic [ref=e30]: •
+      - generic [ref=e31]:
+        - text: Mobile-First
+        - generic [ref=e32]: •
+      - generic [ref=e33]:
+        - text: Premium Design
+        - generic [ref=e34]: •
+      - generic [ref=e35]:
+        - text: ROI Guaranteed
+        - generic [ref=e36]: •
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - text: 2-Day Turnaround
+        - generic [ref=e39]: •
+      - generic [ref=e40]:
+        - text: Conversion Focused
+        - generic [ref=e41]: •
+      - generic [ref=e42]:
+        - text: Mobile-First
+        - generic [ref=e43]: •
+      - generic [ref=e44]:
+        - text: Premium Design
+        - generic [ref=e45]: •
+      - generic [ref=e46]:
+        - text: ROI Guaranteed
+        - generic [ref=e47]: •
+  - generic [ref=e48]:
+    - paragraph [ref=e49]: Trusted by businesses in 10+ industries
+    - generic [ref=e50]:
+      - generic [ref=e51]: Roofing
+      - generic [ref=e52]: Dental
+      - generic [ref=e53]: Legal
+      - generic [ref=e54]: SaaS
+      - generic [ref=e55]: HVAC
+      - generic [ref=e56]: E-Commerce
+      - generic [ref=e57]: Restaurants
+      - generic [ref=e58]: Fitness
+  - generic [ref=e59]:
+    - heading "Proven Results" [level=2] [ref=e60]
+    - paragraph [ref=e61]: Custom-built landing pages designed to convert visitors into high-value clients.
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic:
+            - generic: JUSTICE
+            - generic:
+              - generic: MERCER TRIAL LAW
+              - generic: FREE CONSULTATION
+            - generic:
+              - generic: "★ Florida's #1 Personal Injury Firm · 500+ Cases Won"
+              - heading "WE FIGHT UNTIL YOU WIN." [level=1]:
+                - text: WE FIGHT
+                - text: UNTIL YOU
+                - text: WIN.
+              - paragraph: "No fees unless we win. Average settlement: $1.2M"
+              - generic:
+                - generic: GET YOUR FREE CASE REVIEW
+            - generic:
+              - generic: ⚖️
+              - generic:
+                - generic: $47M+
+                - generic: Recovered for clients
+            - generic:
+              - generic: ★★★★★
+              - generic: "\"Mercer got me 3x what the other firm offered.\""
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - heading "Mercer Trial Law" [level=3] [ref=e68]
+            - generic [ref=e69]:
+              - generic [ref=e70]: Personal Injury
+              - generic [ref=e71]: High-Ticket
+              - generic [ref=e72]: Case Conversion
+          - link "View Project" [ref=e73] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - generic:
+            - generic:
+              - generic:
+                - img
+              - generic: AURUM
+              - generic: BOOK NOW
+            - generic:
+              - generic:
+                - generic: Beverly Hills · Est. 2019
+                - heading "THE ART OF LOOKING EFFORTLESS." [level=1]:
+                  - text: THE ART OF
+                  - text: LOOKING
+                  - text: EFFORTLESS.
+                - paragraph: Precision aesthetics for the woman who refuses to compromise. Botox, filler, and full facial sculpting by Dr. Elena Aurum.
+                - generic:
+                  - generic: BOOK YOUR CONSULTATION
+                - generic:
+                  - generic: ★★★★★
+                  - generic: "\"I finally feel like myself again.\""
+                  - generic: — Sarah M., Miami
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: 200+ 5-Star Reviews
+                    - generic: Google Verified
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - heading "Aurum Aesthetics" [level=3] [ref=e79]
+            - generic [ref=e80]:
+              - generic [ref=e81]: MedSpa
+              - generic [ref=e82]: Luxury
+              - generic [ref=e83]: Appointment Booking
+          - link "View Project" [ref=e84] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - generic:
+            - generic: EST. 2018
+            - generic:
+              - generic: EMBER & OAK
+              - generic:
+                - generic: Menu
+                - generic: Reservations
+                - generic: Events
+              - generic: RESERVE A TABLE
+            - generic:
+              - generic: Fine Dining · Fort Myers, FL
+              - heading "WHERE EVERY MEAL IS AN EVENT." [level=1]:
+                - text: WHERE EVERY
+                - text: MEAL IS AN
+                - text: EVENT.
+              - paragraph: Chef-driven American cuisine with Florida's finest locally sourced ingredients. Reservations recommended.
+              - generic:
+                - generic: RESERVE NOW
+                - generic: VIEW MENU
+            - generic:
+              - generic:
+                - generic: 🍷
+                - generic: James Beard Nominated · 2023
+              - generic:
+                - generic: ⭐
+                - generic: "#1 Fine Dining · TripAdvisor Fort Myers"
+              - generic:
+                - generic: 📅
+                - generic: Booked 3 weeks out
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - heading "Ember & Oak" [level=3] [ref=e90]
+            - generic [ref=e91]:
+              - generic [ref=e92]: Restaurant
+              - generic [ref=e93]: Fine Dining
+              - generic [ref=e94]: Reservation Funnel
+          - link "View Project" [ref=e95] [cursor=pointer]:
+            - /url: "#"
+  - generic [ref=e96]:
+    - heading "The Naslogic Advantage" [level=2] [ref=e97]
+    - paragraph [ref=e98]: We don't just build websites; we build high-performance sales engines.
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e101]: "01"
+        - heading "Rapid Deployment" [level=3] [ref=e102]
+        - paragraph [ref=e103]: Stop waiting months for an agency. We design, build, and launch your custom landing page in exactly 48 hours.
+      - generic [ref=e104]:
+        - generic [ref=e105]: "02"
+        - heading "Conversion-First Design" [level=3] [ref=e106]
+        - paragraph [ref=e107]: Every pixel is placed with intent. We use psychological triggers and proven UX patterns to turn casual visitors into loyal customers.
+      - generic [ref=e108]:
+        - generic [ref=e109]: "03"
+        - heading "Premium Aesthetic" [level=3] [ref=e110]
+        - paragraph [ref=e111]: We combine high-end typography, cinematic motion, and spatial harmony to position your brand as the undisputed market leader.
+  - generic [ref=e112]:
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e116]: "\"Our free trial conversion rate went from 2.1% to 6.8% after launching the Naslogic page. CAC dropped by nearly half.\""
+        - generic [ref=e117]: — Priya Sharma, Co-founder, DataStack AI
+      - generic [ref=e118]:
+        - generic [ref=e119]: "\"We added 47 new Invisalign patients in the first quarter. The page speaks directly to what cosmetic patients care about.\""
+        - generic [ref=e120]: — Dr. Kevin Tran, Align Dental Group
+      - generic [ref=e121]:
+        - generic [ref=e122]: "\"He doesn't just design pages. He understands buyer psychology.\""
+        - generic [ref=e123]: Dana K., Agency Owner
+      - generic [ref=e124]:
+        - generic [ref=e125]: "\"47 qualified leads in the first 72 hours after launch.\""
+        - generic [ref=e126]: James P., Roofing Contractor
+      - generic [ref=e127]:
+        - generic [ref=e128]: "\"Conversion rate went from 1.8% to 5.4% in the first week.\""
+        - generic [ref=e129]: Alex R., SaaS Founder
+      - generic [ref=e130]:
+        - generic [ref=e131]: "\"Best $199 I've ever spent. Page paid for itself day one.\""
+        - generic [ref=e132]: Marcus T., E-Commerce
+      - generic [ref=e133]:
+        - generic [ref=e134]: "\"He doesn't just design pages. He understands buyer psychology.\""
+        - generic [ref=e135]: Dana K., Agency Owner
+      - generic [ref=e136]:
+        - generic [ref=e137]: "\"47 qualified leads in the first 72 hours after launch.\""
+        - generic [ref=e138]: James P., Roofing Contractor
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - generic [ref=e142]: "\"Our bounce rate dropped 40% the day we launched.\""
+        - generic [ref=e143]: Sarah M., Dental Practice
+      - generic [ref=e144]:
+        - generic [ref=e145]: "\"The aesthetic alone sets us apart from every competitor.\""
+        - generic [ref=e146]: Kevin L., Luxury Brand
+      - generic [ref=e147]:
+        - generic [ref=e148]: "\"Booked 12 new appointments in the first week.\""
+        - generic [ref=e149]: Rachel G., HVAC Contractor
+      - generic [ref=e150]:
+        - generic [ref=e151]: "\"Delivered in 2 days. Other agencies quoted 6 weeks.\""
+        - generic [ref=e152]: Michael D., Restaurant Owner
+      - generic [ref=e153]:
+        - generic [ref=e154]: "\"Our bounce rate dropped 40% the day we launched.\""
+        - generic [ref=e155]: Sarah M., Dental Practice
+      - generic [ref=e156]:
+        - generic [ref=e157]: "\"The aesthetic alone sets us apart from every competitor.\""
+        - generic [ref=e158]: Kevin L., Luxury Brand
+      - generic [ref=e159]:
+        - generic [ref=e160]: "\"Booked 12 new appointments in the first week.\""
+        - generic [ref=e161]: Rachel G., HVAC Contractor
+      - generic [ref=e162]:
+        - generic [ref=e163]: "\"Delivered in 2 days. Other agencies quoted 6 weeks.\""
+        - generic [ref=e164]: Michael D., Restaurant Owner
+  - generic [ref=e165]:
+    - heading "Simple Pricing. Serious Results." [level=2] [ref=e166]
+    - paragraph [ref=e167]: One price. One page. Delivered in 48 hours. No hidden fees.
+    - generic [ref=e169]:
+      - generic [ref=e170]: Most Popular • 48-Hour Delivery
+      - heading "Your Custom Landing Page" [level=3] [ref=e171]
+      - generic [ref=e172]: $199
+      - paragraph [ref=e173]: One page. Two days. Satisfaction guaranteed.
+      - list [ref=e174]:
+        - listitem [ref=e175]: → Single high-converting landing page
+        - listitem [ref=e176]: → 2-day rapid turnaround
+        - listitem [ref=e177]: → Mobile-first responsive architecture
+        - listitem [ref=e178]: → Premium custom typography & assets
+        - listitem [ref=e179]: → GSAP micro-interactions
+        - listitem [ref=e180]: → Copywriting included
+        - listitem [ref=e181]: → 1 Revision round
+      - link "Claim Your $199 Page" [ref=e182] [cursor=pointer]:
+        - /url: javascript:void(0)
+      - paragraph [ref=e183]: 100% Satisfaction Guarantee — Don’t love it? Full refund within 7 days.
+    - paragraph [ref=e184]:
+      - text: Need a multi-page funnel or full site?
+      - link "Let’s talk →" [ref=e185]:
+        - /url: javascript:void(0)
+  - generic [ref=e186]:
+    - heading "Frequently Asked Questions" [level=2] [ref=e187]
+    - paragraph [ref=e188]: Straight answers to the questions we hear most.
+    - generic [ref=e189]:
+      - generic [ref=e190]:
+        - button "What if I don't like the design? +" [ref=e191] [cursor=pointer]:
+          - text: What if I don't like the design?
+          - generic [ref=e192]: +
+        - paragraph [ref=e193]: You get a full refund within 7 days. No questions asked. We've never had to issue one because we work with you to nail the vision, but the guarantee exists so you never feel locked in.
+      - generic [ref=e194]:
+        - button "Do you write the copy too? +" [ref=e195] [cursor=pointer]:
+          - text: Do you write the copy too?
+          - generic [ref=e196]: +
+        - paragraph [ref=e197]: Yes. We handle everything — copywriting, design, development, and deployment. You provide your business details and goals; we do the rest.
+      - generic [ref=e198]:
+        - button "How does hosting work? +" [ref=e199] [cursor=pointer]:
+          - text: How does hosting work?
+          - generic [ref=e200]: +
+        - paragraph [ref=e201]: We deliver production-ready code files. You can host them anywhere — Vercel, Netlify, your own server, or we can deploy it for you at no extra charge.
+      - generic [ref=e202]:
+        - button "Can you integrate with my CRM? +" [ref=e203] [cursor=pointer]:
+          - text: Can you integrate with my CRM?
+          - generic [ref=e204]: +
+        - paragraph [ref=e205]: Absolutely. We integrate with HubSpot, Calendly, Google Sheets, Zapier, Mailchimp, and most major CRM platforms. Lead data flows directly into your existing workflow.
+      - generic [ref=e206]:
+        - button "What if I need changes after delivery? +" [ref=e207] [cursor=pointer]:
+          - text: What if I need changes after delivery?
+          - generic [ref=e208]: +
+        - paragraph [ref=e209]: Your $199 package includes one revision round. Need more? Additional revision rounds are available at a flat rate. We want you 100% satisfied.
+  - generic [ref=e210]:
+    - heading "Industries We Serve" [level=2] [ref=e211]
+    - paragraph [ref=e212]: Custom landing pages built for your specific market.
+    - generic [ref=e213]:
+      - link "Roofing" [ref=e214]:
+        - /url: /roofing
+      - link "HVAC" [ref=e215]:
+        - /url: /hvac
+      - link "Plumbing" [ref=e216]:
+        - /url: /plumbing
+      - link "Dental" [ref=e217]:
+        - /url: /dental
+      - link "Real Estate" [ref=e218]:
+        - /url: /realestate
+      - link "SaaS" [ref=e219]:
+        - /url: /saas
+      - link "E-Commerce" [ref=e220]:
+        - /url: /ecommerce
+      - link "Law Firms" [ref=e221]:
+        - /url: /legal
+      - link "Fitness" [ref=e222]:
+        - /url: /fitness
+      - link "Restaurants" [ref=e223]:
+        - /url: /restaurants
+  - generic [ref=e224]:
+    - heading "What Makes a Landing Page Convert?" [level=2] [ref=e225]
+    - generic [ref=e226]:
+      - paragraph [ref=e227]: "A high-converting landing page has five core elements: a specific headline addressing one audience, a single call-to-action repeated above the fold and at page bottom, social proof with real names and measurable results, mobile-first responsive design that loads in under 2.5 seconds, and a risk reversal like a money-back guarantee."
+      - paragraph [ref=e228]: At Naslogic, every page we build follows this framework. Our average client sees a 3X increase in conversion rates within the first 30 days. We specialize in pages for service businesses — roofers, dentists, HVAC technicians, law firms, and restaurants — because these industries depend on local lead generation where every visitor counts.
+      - paragraph [ref=e229]: "Unlike template-based builders, we hand-code every page with GSAP micro-interactions, custom typography, and conversion-first layouts tested across thousands of A/B experiments. The result: landing pages that look like they cost $10,000 but start at $199."
+  - generic [ref=e231]:
+    - generic [ref=e232]: "N"
+    - generic [ref=e233]:
+      - heading "NAS" [level=3] [ref=e234]
+      - paragraph [ref=e235]: Founder & Lead Developer, Naslogic
+      - paragraph [ref=e236]: I've built landing pages for roofing contractors, dental practices, SaaS startups, and law firms across the U.S. Every page I ship is hand-coded, mobile-first, and engineered to convert. Based in Fort Myers, FL — available worldwide.
+  - generic [ref=e237]:
+    - heading "Stop Losing Customers to a Bad Website" [level=2] [ref=e238]
+    - paragraph [ref=e239]: Your landing page should be your hardest-working employee. Let's build it.
+    - link "Get My Free Quote — No Commitment" [ref=e240] [cursor=pointer]:
+      - /url: javascript:void(0)
+  - contentinfo [ref=e241]:
+    - generic [ref=e242]:
+      - link "NASLOGIC." [ref=e244]:
+        - /url: "#"
+      - generic [ref=e245]:
+        - link "(941) 257-3059" [ref=e246]:
+          - /url: tel:9412573059
+        - link "Privacy Policy" [ref=e247]:
+          - /url: /privacy
+        - generic [ref=e248]: Fort Myers, FL
+      - generic [ref=e249]: © 2026 Naslogic. All rights reserved.
+  - link "Free Quote" [ref=e250]:
+    - /url: javascript:void(0)
+  - option "Select budget" [selected]
+  - option "Under $500"
+  - option "$500 – $1,000"
+  - option "$1,000 – $2,500"
+  - option "$2,500 – $5,000"
+  - option "$5,000+"
+  - option "Select timeline" [selected]
+  - option "ASAP (Rush)"
+  - option "1–2 weeks"
+  - option "2–4 weeks"
+  - option "1+ months"
+  - option "Just exploring"

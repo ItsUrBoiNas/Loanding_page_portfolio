@@ -46,7 +46,7 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "How much does a roofing landing page cost?",
+                "name": "How much does a dental landing page cost?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Our dental landing pages start at $199 for a single high-converting page with mobile-first design and SEO optimization."
@@ -86,6 +86,29 @@
             }
         ]
     }
+    </script>
+
+
+    <!-- JSON-LD: BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://naslogic.com"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Dental Practices Landing Pages",
+                        "item": "https://naslogic.com/dental"
+                }
+        ]
+}
     </script>
 
     <!-- Google Fonts -->
@@ -747,6 +770,23 @@
             opacity: 0;
             transform: translateY(40px);
         }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
 
@@ -764,6 +804,23 @@
                 <a href="#faq">FAQ</a>
                 <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
             </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="breadcrumb-sep" aria-hidden="true">›</li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="breadcrumb-current" itemprop="name">Dental Practices Landing Pages</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
         </div>
     </nav>
 
@@ -882,11 +939,74 @@
 
         <div class="portfolio-showcase">
             <div class="showcase-card fade-up">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%23111' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23333' font-family='Arial' font-size='36'%3EDental LP Preview%3C/text%3E%3C/svg%3E"
-                    class="showcase-img"
-                    alt="Premium landing page design for a residential roofing contractor featuring dark theme and green accents"
-                    loading="lazy"
-                    width="1200" height="450">
+                <!-- PREVIEW 1: Cosmetic Dentistry (Luxury) -->
+                <div class="showcase-img" role="img" aria-label="Naslogic dental landing page design showing luxury cosmetic dentistry appointment booking interface" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#030f1c; font-family:'Cormorant Garamond', serif; color:#ffffff;">
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400&display=swap');
+                        .prev1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background: radial-gradient(circle at 80% 20%, #0a1f33 0%, #030f1c 100%); }
+                        .prev1-noise { position:absolute; inset:0; background:url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E'); pointer-events:none; }
+                        .prev1-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 50px; border-bottom:1px solid rgba(255,255,255,0.05); z-index:2; position:relative;}
+                        .prev1-logo { font-size:28px; font-weight:700; letter-spacing:2px; color:#c9a227; text-transform:uppercase; }
+                        .prev1-links { display:flex; gap:40px; font-family:'Inter', sans-serif; font-size:14px; letter-spacing:1px; text-transform:uppercase; color:rgba(255,255,255,0.7); }
+                        .prev1-hero { flex:1; display:flex; align-items:center; padding:0 50px; z-index:2; position:relative; }
+                        .prev1-content { max-width:600px; }
+                        .prev1-badge { display:inline-block; font-family:'Inter', sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:#c9a227; border:1px solid rgba(201,162,39,0.3); padding:8px 16px; border-radius:100px; margin-bottom:30px; }
+                        .prev1-title { font-size:85px; line-height:0.95; font-weight:400; margin-bottom:30px; letter-spacing:-1px; }
+                        .prev1-title span { font-style:italic; color:#c9a227; }
+                        .prev1-desc { font-family:'Inter', sans-serif; font-size:18px; line-height:1.6; color:rgba(255,255,255,0.6); margin-bottom:40px; font-weight:300; }
+                        .prev1-cta { display:inline-flex; align-items:center; justify-content:center; padding:20px 40px; background:#c9a227; color:#000; font-family:'Inter', sans-serif; font-size:15px; font-weight:600; text-transform:uppercase; letter-spacing:2px; border-radius:100px; box-shadow:0 10px 30px rgba(201,162,39,0.25); }
+                        .prev1-cta-pill { padding:12px 24px; background:transparent; border:1px solid #c9a227; color:#c9a227; border-radius:100px; font-weight:600; font-family:'Inter', sans-serif; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+                        .prev1-art { position:absolute; right:10%; top:50%; transform:translateY(-50%); width:450px; height:450px; border-radius:50%; background:radial-gradient(circle at top right, rgba(201,162,39,0.15), transparent 70%); border:1px solid rgba(201,162,39,0.2); backdrop-filter:blur(10px); }
+                        .prev1-trust { position:absolute; bottom:-20px; left:-40px; background:rgba(3,15,28,0.8); backdrop-filter:blur(15px); padding:20px 30px; border-radius:16px; border:1px solid rgba(255,255,255,0.05); display:flex; align-items:center; gap:15px; }
+                        .prev1-stars { color:#c9a227; font-size:20px; letter-spacing:2px; }
+                        .prev1-trust-text { font-family:'Inter', sans-serif; font-size:14px; color:rgba(255,255,255,0.8); }
+                
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
+    </style>
+                    <div class="prev1-wrap">
+                        <div class="prev1-noise"></div>
+                        <div class="prev1-nav">
+                            <div class="prev1-logo">Lumina Spa</div>
+                            <div class="prev1-links">
+                                <span>Services</span>
+                                <span>Veneers</span>
+                                <span>Our Team</span>
+                            </div>
+                            <div class="prev1-cta-pill">Book Consult</div>
+                        </div>
+                        <div class="prev1-hero">
+                            <div class="prev1-content">
+                                <div class="prev1-badge">Elite Cosmetic Dentistry</div>
+                                <h1 class="prev1-title">World-class smiles, <span>without compromise.</span></h1>
+                                <p class="prev1-desc">Award-winning porcelain veneers, full mouth restorations, and premium implants designed for the discerning individual.</p>
+                                <div class="prev1-cta">Schedule Private Consultation</div>
+                            </div>
+                            <div class="prev1-art">
+                                <div class="prev1-trust">
+                                    <div>
+                                        <div class="prev1-stars">★★★★★</div>
+                                        <div class="prev1-trust-text">500+ Perfect Smiles Crafted</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="showcase-info">
                     <div>
                         <h3 class="showcase-title">Cosmetic Dentistry & Implants</h3>
@@ -901,11 +1021,82 @@
             </div>
 
             <div class="showcase-card fade-up">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%230a1628' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23334' font-family='Arial' font-size='36'%3EOrthodontics LP%3C/text%3E%3C/svg%3E"
-                    class="showcase-img"
-                    alt="Landing page mockup for a commercial roofing company with blue accents and professional layout"
-                    loading="lazy"
-                    width="1200" height="450">
+                <!-- PREVIEW 2: Orthodontics (Modern tech) -->
+                <div class="showcase-img" role="img" aria-label="Orthodontics clear aligner landing page built by Naslogic with patient scheduling integration" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#0a0a0f; font-family:'Space Grotesk', sans-serif; color:#ffffff;">
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+                        .prev2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; overflow:hidden; }
+                        .prev2-blobs { position:absolute; inset:0; z-index:0; }
+                        .prev2-blob1 { position:absolute; top:-100px; right:-100px; width:600px; height:600px; border-radius:50%; background:#00f0ff; opacity:0.15; filter:blur(100px); }
+                        .prev2-blob2 { position:absolute; bottom:-200px; left:10%; width:700px; height:700px; border-radius:50%; background:#4338ca; opacity:0.15; filter:blur(120px); }
+                        .prev2-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 50px; z-index:2; position:relative; }
+                        .prev2-logo { font-size:26px; font-weight:700; letter-spacing:-1px; }
+                        .prev2-logo span { color:#00f0ff; }
+                        .prev2-links { display:flex; gap:30px; font-size:15px; font-weight:600; color:rgba(255,255,255,0.7); }
+                        .prev2-cta-pill { padding:14px 28px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; border-radius:8px; font-weight:600; font-size:14px; }
+                        .prev2-hero { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:2; position:relative; padding:0 20px; }
+                        .prev2-badge { background:rgba(0,240,255,0.1); color:#00f0ff; border:1px solid rgba(0,240,255,0.2); padding:8px 20px; border-radius:100px; font-size:13px; font-weight:600; letter-spacing:1px; margin-bottom:30px; }
+                        .prev2-title { font-size:100px; font-weight:700; line-height:0.9; letter-spacing:-3px; margin-bottom:25px; max-width:900px; }
+                        .prev2-title-glow { background:linear-gradient(90deg, #fff, #00f0ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+                        .prev2-desc { font-size:20px; color:rgba(255,255,255,0.6); max-width:600px; margin-bottom:45px; line-height:1.5; }
+                        .prev2-cta { padding:22px 48px; background:#00f0ff; color:#000; font-size:16px; font-weight:700; border-radius:8px; box-shadow:0 0 40px rgba(0,240,255,0.3); text-transform:uppercase; letter-spacing:1px; }
+                        .prev2-floating1 { position:absolute; top:30%; left:8%; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); backdrop-filter:blur(20px); padding:20px; border-radius:16px; display:flex; align-items:center; gap:15px; }
+                        .prev2-icon { width:40px; height:40px; border-radius:50%; background:rgba(0,240,255,0.1); display:flex; align-items:center; justify-content:center; color:#00f0ff; font-weight:700; font-size:20px; }
+                        .prev2-stat { font-family:'Space Grotesk', sans-serif; font-size:24px; font-weight:700; line-height:1; }
+                        .prev2-stat-sub { font-size:12px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px; margin-top:5px; }
+                        .prev2-floating2 { position:absolute; bottom:20%; right:10%; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); backdrop-filter:blur(20px); padding:20px; border-radius:16px; }
+                
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
+    </style>
+                    <div class="prev2-wrap">
+                        <div class="prev2-blobs">
+                            <div class="prev2-blob1"></div>
+                            <div class="prev2-blob2"></div>
+                        </div>
+                        <div class="prev2-nav">
+                            <div class="prev2-logo">Align<span>Tech</span></div>
+                            <div class="prev2-links">
+                                <span>How It Works</span>
+                                <span>Pricing</span>
+                                <span>Results</span>
+                            </div>
+                            <div class="prev2-cta-pill">Free Scan</div>
+                        </div>
+                        <div class="prev2-hero">
+                            <div class="prev2-badge">Diamond+ Invisalign Provider</div>
+                            <h1 class="prev2-title">Straight teeth in <span class="prev2-title-glow">half the time.</span></h1>
+                            <p class="prev2-desc">Experience cutting-edge 3D scanning and digitally customized clear aligners from the state's top-rated orthodontic team.</p>
+                            <div class="prev2-cta">Schedule Virtual Consult</div>
+                        </div>
+                        
+                        <div class="prev2-floating1">
+                            <div class="prev2-icon">✓</div>
+                            <div>
+                                <div class="prev2-stat">98%</div>
+                                <div class="prev2-stat-sub">Success Rate</div>
+                            </div>
+                        </div>
+                        <div class="prev2-floating2">
+                            <div class="prev2-stars" style="color:#00f0ff; font-size:22px; letter-spacing:2px; margin-bottom:5px;">★★★★★</div>
+                            <div class="prev2-stat-sub" style="color:#fff;">1,200+ 5-Star Reviews</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="showcase-info">
                     <div>
                         <h3 class="showcase-title">Clear Aligner Specialists</h3>
@@ -926,7 +1117,7 @@
          ========================================== -->
     <section class="section-padding container">
         <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live roofing landing page that books estimates and generates qualified leads for your roofing business.</p>
+        <p class="section-sub fade-up">Three steps from initial call to a live dental landing page that books appointments and generates qualified leads for your dental practice.</p>
 
         <div class="process-steps">
             <div class="step-card fade-up">
@@ -957,11 +1148,11 @@
         <div class="faq-list fade-up">
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    How much does a roofing landing page cost?
+                    How much does a dental landing page cost?
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Our roofing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
+                    <p>Our dental landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1012,6 +1203,24 @@
         <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
     </section>
 
+
+    <!-- Related Industries — Cross-links for topic cluster equity -->
+    <section class="related-industries">
+        <div class="container">
+            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
+            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
+            <div class="related-grid">
+                <a href="/fitness" class="related-link">Fitness & Gyms Landing Pages</a>
+                <a href="/legal" class="related-link">Law Firms & Attorneys Landing Pages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar Page Backlink -->
+    <div class="pillar-backlink">
+        <a href="/">← Explore all Naslogic landing page design services</a>
+    </div>
+
     <!-- ==========================================
          Footer
          ========================================== -->
@@ -1022,6 +1231,7 @@
             </div>
             <div class="footer-links">
                 <a href="tel:9412573059">(941) 257-3059</a>
+                <a href="/privacy">Privacy Policy</a>
                 <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
             </div>
             <div style="color: var(--text-muted); font-size: 0.9rem;">
@@ -1034,13 +1244,14 @@
     <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
 
     <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
         // =============================================
         // Initialize GSAP
         // =============================================
+        window.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
 
         // =============================================
@@ -1106,6 +1317,7 @@
                 }
             });
         });
+        }); // end DOMContentLoaded
     </script>
 
     <!-- Forms Module -->

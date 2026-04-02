@@ -46,7 +46,7 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "How much does a roofing landing page cost?",
+                "name": "How much does a SaaS landing page cost?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Our SaaS landing pages start at $199 for a highly optimized, conversion-ready page."
@@ -86,6 +86,29 @@
             }
         ]
     }
+    </script>
+
+
+    <!-- JSON-LD: BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://naslogic.com"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "SaaS Startups Landing Pages",
+                        "item": "https://naslogic.com/saas"
+                }
+        ]
+}
     </script>
 
     <!-- Google Fonts -->
@@ -747,6 +770,23 @@
             opacity: 0;
             transform: translateY(40px);
         }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
 
@@ -764,6 +804,23 @@
                 <a href="#faq">FAQ</a>
                 <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
             </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="breadcrumb-sep" aria-hidden="true">›</li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="breadcrumb-current" itemprop="name">SaaS Startups Landing Pages</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
         </div>
     </nav>
 
@@ -882,11 +939,106 @@
 
         <div class="portfolio-showcase">
             <div class="showcase-card fade-up">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%23111' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23333' font-family='Arial' font-size='36'%3ESaaS LP Preview%3C/text%3E%3C/svg%3E"
-                    class="showcase-img"
-                    alt="Premium landing page design for a residential roofing contractor featuring dark theme and green accents"
-                    loading="lazy"
-                    width="1200" height="450">
+                <!-- PREVIEW 1: B2B Enterprise AI SaaS -->
+                <div class="showcase-img" role="img" aria-label="B2B SaaS landing page by Naslogic designed for enterprise demo booking and free trial conversion" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#0b162c; font-family:'Inter', sans-serif; color:#ffffff;">
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+                        .saas1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#0b162c; overflow:hidden; }
+                        .saas1-bg { position:absolute; inset:0; background:radial-gradient(circle at 70% -20%, rgba(99,102,241,0.25) 0%, transparent 60%); z-index:0; }
+                        .saas1-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 60px; position:relative; z-index:2; border-bottom:1px solid rgba(255,255,255,0.05); }
+                        .saas1-logo { font-family:'Space Grotesk', sans-serif; font-size:26px; font-weight:700; color:#fff; display:flex; align-items:center; gap:12px; }
+                        .saas1-logo-icon { width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg, #6366f1, #3b82f6); box-shadow:0 0 15px rgba(99,102,241,0.5); }
+                        .saas1-links { display:flex; gap:40px; font-size:14px; font-weight:500; color:#cbd5e1; }
+                        .saas1-nav-btns { display:flex; gap:15px; align-items:center; }
+                        .saas1-btn-ghost { color:#fff; font-size:14px; font-weight:500; }
+                        .saas1-btn-primary { background:#fff; color:#0f172a; padding:10px 20px; border-radius:6px; font-size:14px; font-weight:600; }
+                        .saas1-hero { flex:1; display:flex; flex-direction:column; align-items:center; padding:60px 20px 0; position:relative; z-index:2; text-align:center; }
+                        .saas1-badge { background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); color:#818cf8; padding:6px 16px; border-radius:100px; font-size:13px; font-weight:600; margin-bottom:25px; display:inline-flex; align-items:center; gap:8px; }
+                        .saas1-title { font-family:'Space Grotesk', sans-serif; font-size:65px; font-weight:700; line-height:1.1; color:#fff; margin-bottom:25px; max-width:900px; letter-spacing:-1px; }
+                        .saas1-title span { background:linear-gradient(to right, #818cf8, #60a5fa); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+                        .saas1-desc { font-size:18px; color:#94a3b8; margin-bottom:40px; line-height:1.6; max-width:600px; }
+                        .saas1-ctas { display:flex; gap:20px; justify-content:center; margin-bottom:60px; }
+                        .saas1-btn-main { background:#6366f1; color:#fff; border-radius:8px; padding:18px 36px; font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; box-shadow:0 15px 30px rgba(99,102,241,0.3); display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.1); }
+                        .saas1-btn-sec { background:rgba(255,255,255,0.05); color:#fff; border-radius:8px; padding:18px 36px; font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; gap:10px; }
+                        .saas1-dash { width:80%; height:300px; background:rgba(15,23,42,0.6); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.1); border-radius:20px 20px 0 0; box-shadow:0 -20px 50px rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; }
+                        .saas1-dash-header { height:40px; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; padding:0 20px; gap:8px; }
+                        .saas1-dot { width:10px; height:10px; border-radius:50%; background:#334155; }
+                        .saas1-dash-body { flex:1; display:flex; padding:20px; gap:20px; }
+                        .saas1-dash-nav { width:150px; background:rgba(255,255,255,0.02); border-radius:12px; display:flex; flex-direction:column; gap:10px; padding:15px; }
+                        .saas1-nav-item { height:20px; background:rgba(255,255,255,0.05); border-radius:4px; }
+                        .saas1-dash-content { flex:1; display:flex; flex-direction:column; gap:20px; }
+                        .saas1-chart { flex:1; background:rgba(255,255,255,0.02); border-radius:12px; position:relative; overflow:hidden; }
+                        .saas1-line { position:absolute; bottom:0; left:0; width:100%; height:60%; background:linear-gradient(to top, rgba(99,102,241,0.2) 0%, transparent 100%); clip-path:polygon(0 100%, 0 80%, 20% 60%, 40% 70%, 60% 30%, 80% 40%, 100% 10%, 100% 100%); }
+                        .saas1-line-path { position:absolute; bottom:0; left:0; width:100%; height:60%; border-top:2px solid #6366f1; clip-path:polygon(0 80%, 20% 60%, 40% 70%, 60% 30%, 80% 40%, 100% 10%); }
+                
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
+    </style>
+                    <div class="saas1-wrap">
+                        <div class="saas1-bg"></div>
+                        <div class="saas1-nav">
+                            <div class="saas1-logo"><div class="saas1-logo-icon"></div> NeuralFlow</div>
+                            <div class="saas1-links">
+                                <span>Platform</span>
+                                <span>Solutions</span>
+                                <span>Enterprise</span>
+                                <span>Pricing</span>
+                            </div>
+                            <div class="saas1-nav-btns">
+                                <span class="saas1-btn-ghost">Log in</span>
+                                <span class="saas1-btn-primary">Book Demo</span>
+                            </div>
+                        </div>
+                        <div class="saas1-hero">
+                            <div class="saas1-badge"><span style="display:inline-block; width:6px; height:6px; background:#818cf8; border-radius:50%;"></span> Enterprise AI OS 2.0 is Live</div>
+                            <h1 class="saas1-title">Intelligence that scales with your <span>workforce.</span></h1>
+                            <p class="saas1-desc">Connect all your organizational data to train secure, proprietary AI models. Automate workflows without writing a single line of code.</p>
+                            <div class="saas1-ctas">
+                                <div class="saas1-btn-main">Request Enterprise Demo</div>
+                                <div class="saas1-btn-sec">Documentation <span style="font-size:14px;">↗</span></div>
+                            </div>
+                            <div class="saas1-dash">
+                                <div class="saas1-dash-header">
+                                    <div class="saas1-dot"></div><div class="saas1-dot"></div><div class="saas1-dot"></div>
+                                </div>
+                                <div class="saas1-dash-body">
+                                    <div class="saas1-dash-nav">
+                                        <div class="saas1-nav-item" style="width:70%; background:rgba(99,102,241,0.5);"></div>
+                                        <div class="saas1-nav-item" style="width:100%;"></div>
+                                        <div class="saas1-nav-item" style="width:80%;"></div>
+                                        <div class="saas1-nav-item" style="width:90%;"></div>
+                                    </div>
+                                    <div class="saas1-dash-content">
+                                        <div style="display:flex; justify-content:space-between;">
+                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
+                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
+                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
+                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
+                                        </div>
+                                        <div class="saas1-chart">
+                                            <div class="saas1-line"></div>
+                                            <div class="saas1-line-path"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="showcase-info">
                     <div>
                         <h3 class="showcase-title">B2B AI Software</h3>
@@ -901,11 +1053,139 @@
             </div>
 
             <div class="showcase-card fade-up">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 450'%3E%3Crect fill='%230a1628' width='1200' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23334' font-family='Arial' font-size='36'%3EConsumer SaaS LP%3C/text%3E%3C/svg%3E"
-                    class="showcase-img"
-                    alt="Landing page mockup for a commercial roofing company with blue accents and professional layout"
-                    loading="lazy"
-                    width="1200" height="450">
+                <!-- PREVIEW 2: PLG Consumer SaaS -->
+                <div class="showcase-img" role="img" aria-label="Product-led growth SaaS landing page built by Naslogic with free trial signup optimization" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#f9fafb; font-family:'Manrope', sans-serif; color:#111827;">
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Manrope:wght@400;500;600&display=swap');
+                        .saas2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#fbfcfe; overflow:hidden; }
+                        .saas2-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 50px; position:relative; z-index:2; }
+                        .saas2-logo { font-family:'Plus Jakarta Sans', sans-serif; font-size:24px; font-weight:800; color:#111827; display:flex; align-items:center; gap:10px; letter-spacing:-0.5px; }
+                        .saas2-logo-icon { width:32px; height:32px; background:#10b981; border-radius:10px; position:relative; overflow:hidden; }
+                        .saas2-logo-icon::after { content:''; position:absolute; bottom:0; right:0; width:16px; height:16px; background:#fb7185; border-radius:50% 0 0 0; }
+                        .saas2-links { display:flex; gap:35px; background:#fff; padding:12px 30px; border-radius:100px; box-shadow:0 10px 25px rgba(0,0,0,0.03); border:1px solid #f3f4f6; font-size:14px; font-weight:600; color:#4b5563; }
+                        .saas2-nav-btns { display:flex; gap:15px; align-items:center; }
+                        .saas2-btn-login { color:#4b5563; font-weight:600; font-size:14px; }
+                        .saas2-btn-signup { background:#111827; color:#fff; padding:12px 24px; border-radius:100px; font-weight:600; font-size:14px; }
+                        .saas2-hero { flex:1; display:flex; padding:0 50px; align-items:center; position:relative; z-index:2; gap:40px; }
+                        .saas2-content { flex:1; max-width:600px; }
+                        .saas2-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:68px; font-weight:800; line-height:1.05; color:#111827; margin-bottom:20px; letter-spacing:-2px; }
+                        .saas2-title span { position:relative; display:inline-block; }
+                        .saas2-title span::after { content:''; position:absolute; bottom:5px; left:0; width:100%; height:15px; background:rgba(16,185,129,0.2); z-index:-1; transform:rotate(-1deg); }
+                        .saas2-desc { font-size:18px; color:#4b5563; margin-bottom:40px; line-height:1.6; max-width:500px; font-weight:500; }
+                        .saas2-input-group { display:flex; gap:10px; max-width:480px; margin-bottom:20px; }
+                        .saas2-input { flex:1; background:#fff; border:2px solid #e5e7eb; border-radius:100px; padding:0 24px; font-family:'Manrope', sans-serif; font-size:16px; color:#111827; outline:none; transition:border 0.3s; box-shadow:0 10px 25px rgba(0,0,0,0.02); height:60px; }
+                        .saas2-input:focus { border-color:#10b981; }
+                        .saas2-btn-submit { background:#10b981; color:#fff; border:none; border-radius:100px; padding:0 30px; font-family:'Plus Jakarta Sans', sans-serif; font-size:16px; font-weight:700; cursor:pointer; box-shadow:0 10px 25px rgba(16,185,129,0.3); height:60px; white-space:nowrap; }
+                        .saas2-trust { font-size:13px; color:#6b7280; font-weight:500; display:flex; align-items:center; gap:8px; }
+                        .saas2-visual { flex:1; position:relative; height:100%; display:flex; justify-content:center; align-items:center; }
+                        .saas2-app-window { width:90%; height:450px; background:#fff; border-radius:24px; box-shadow:0 30px 60px rgba(0,0,0,0.08); border:1px solid #f3f4f6; display:flex; flex-direction:column; overflow:hidden; position:relative; right:-30px;}
+                        .saas2-app-header { height:40px; border-bottom:1px solid #f3f4f6; display:flex; align-items:center; padding:0 20px; gap:8px; background:#f9fafb; }
+                        .saas2-dot { width:12px; height:12px; border-radius:50%; }
+                        .saas2-app-body { flex:1; display:flex; padding:20px; gap:20px; background:#fff; }
+                        .saas2-card { flex:1; background:#f9fafb; border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:15px; border:1px solid #f3f4f6; }
+                        .saas2-c-head { display:flex; justify-content:space-between; align-items:center; }
+                        .saas2-c-avatar { width:40px; height:40px; border-radius:50%; background:#e5e7eb; }
+                        .saas2-c-line { height:12px; background:#e5e7eb; border-radius:6px; margin-bottom:8px; }
+                        .saas2-badge-float { position:absolute; top:20%; left:-40px; background:#fff; padding:15px 20px; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.1); border:1px solid #f3f4f6; display:flex; align-items:center; gap:12px; font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; font-size:16px; }
+                        .saas2-badge-icon { width:30px; height:30px; background:rgba(251,113,133,0.1); color:#fb7185; border-radius:8px; display:flex; align-items:center; justify-content:center; }
+                
+        /* Breadcrumb Navigation */
+        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .breadcrumb-list a:hover { color: var(--accent); }
+        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
+        .breadcrumb-current { color: var(--text-main); }
+
+        /* Related Industries / Cross-links */
+        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
+        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--accent); color: var(--accent); }
+        .pillar-backlink { text-align: center; padding: 40px 0; }
+        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
+        .pillar-backlink a:hover { opacity: 0.8; }
+    </style>
+                    <div class="saas2-wrap">
+                        <div class="saas2-nav">
+                            <div class="saas2-logo"><div class="saas2-logo-icon"></div> Tasky</div>
+                            <div class="saas2-links">
+                                <span>Features</span>
+                                <span>Templates</span>
+                                <span>Integration</span>
+                                <span>Pricing</span>
+                            </div>
+                            <div class="saas2-nav-btns">
+                                <span class="saas2-btn-login">Log In</span>
+                                <span class="saas2-btn-signup">Get Started Free</span>
+                            </div>
+                        </div>
+                        <div class="saas2-hero">
+                            <div class="saas2-content">
+                                <h1 class="saas2-title">Manage projects without the <span>chaos.</span></h1>
+                                <p class="saas2-desc">The ridiculously simple way for modern teams to plan, organize, and execute work together in real-time.</p>
+                                <div class="saas2-input-group">
+                                    <div class="saas2-input" style="display:flex; align-items:center; color:#9ca3af;">Enter your work email...</div>
+                                    <button class="saas2-btn-submit">Start For Free</button>
+                                </div>
+                                <div class="saas2-trust">
+                                    <span style="display:inline-block; margin-right:5px;">🚀</span> 
+                                    Free forever plan. No credit card required.
+                                </div>
+                            </div>
+                            <div class="saas2-visual">
+                                <div class="saas2-app-window">
+                                    <div class="saas2-app-header">
+                                        <div class="saas2-dot" style="background:#fca5a5;"></div>
+                                        <div class="saas2-dot" style="background:#fcd34d;"></div>
+                                        <div class="saas2-dot" style="background:#86efac;"></div>
+                                    </div>
+                                    <div class="saas2-app-body">
+                                        <div class="saas2-card">
+                                            <div class="saas2-c-head">
+                                                <div style="font-weight:700; font-size:14px; color:#111827;">To Do</div>
+                                                <div style="font-size:14px; color:#9ca3af;">3</div>
+                                            </div>
+                                            <div style="background:#fff; padding:15px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.02); border:1px solid #f3f4f6;">
+                                                <div class="saas2-c-line" style="width:80%;"></div>
+                                                <div class="saas2-c-line" style="width:50%;"></div>
+                                                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:15px;">
+                                                    <div style="display:flex; gap:5px;"><div class="saas2-c-avatar" style="width:24px; height:24px;"></div></div>
+                                                    <div style="font-size:11px; color:#10b981; background:rgba(16,185,129,0.1); padding:4px 8px; border-radius:100px;">Design</div>
+                                                </div>
+                                            </div>
+                                            <div style="background:#fff; padding:15px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.02); border:1px solid #f3f4f6;">
+                                                <div class="saas2-c-line" style="width:90%;"></div>
+                                                <div class="saas2-c-line" style="width:60%;"></div>
+                                                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:15px;">
+                                                    <div style="display:flex; gap:5px;"><div class="saas2-c-avatar" style="width:24px; height:24px;"></div></div>
+                                                    <div style="font-size:11px; color:#fb7185; background:rgba(251,113,133,0.1); padding:4px 8px; border-radius:100px;">Urgent</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="saas2-card" style="opacity:0.6;">
+                                            <div class="saas2-c-head">
+                                                <div style="font-weight:700; font-size:14px; color:#111827;">In Progress</div>
+                                                <div style="font-size:14px; color:#9ca3af;">1</div>
+                                            </div>
+                                            <div style="background:#fff; padding:15px; border-radius:12px; border:1px solid #f3f4f6;">
+                                                <div class="saas2-c-line" style="width:70%;"></div>
+                                                <div class="saas2-c-line" style="width:40%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="saas2-badge-float">
+                                    <div class="saas2-badge-icon">🔥</div>
+                                    <div>
+                                        Task Completed!
+                                        <div style="font-size:12px; color:#6b7280; font-weight:500; font-family:'Manrope';">Just now by Sarah</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="showcase-info">
                     <div>
                         <h3 class="showcase-title">PLG Consumer App</h3>
@@ -926,7 +1206,7 @@
          ========================================== -->
     <section class="section-padding container">
         <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live roofing landing page that books estimates and generates qualified leads for your roofing business.</p>
+        <p class="section-sub fade-up">Three steps from initial call to a live SaaS landing page that drives signups and generates qualified leads for your SaaS startup.</p>
 
         <div class="process-steps">
             <div class="step-card fade-up">
@@ -957,11 +1237,11 @@
         <div class="faq-list fade-up">
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    How much does a roofing landing page cost?
+                    How much does a SaaS landing page cost?
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Our roofing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
+                    <p>Our SaaS landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1012,6 +1292,24 @@
         <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
     </section>
 
+
+    <!-- Related Industries — Cross-links for topic cluster equity -->
+    <section class="related-industries">
+        <div class="container">
+            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
+            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
+            <div class="related-grid">
+                <a href="/ecommerce" class="related-link">E-Commerce Brands Landing Pages</a>
+                <a href="/realestate" class="related-link">Real Estate Landing Pages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar Page Backlink -->
+    <div class="pillar-backlink">
+        <a href="/">← Explore all Naslogic landing page design services</a>
+    </div>
+
     <!-- ==========================================
          Footer
          ========================================== -->
@@ -1022,6 +1320,7 @@
             </div>
             <div class="footer-links">
                 <a href="tel:9412573059">(941) 257-3059</a>
+                <a href="/privacy">Privacy Policy</a>
                 <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
             </div>
             <div style="color: var(--text-muted); font-size: 0.9rem;">
@@ -1034,13 +1333,14 @@
     <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
 
     <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
         // =============================================
         // Initialize GSAP
         // =============================================
+        window.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
 
         // =============================================
@@ -1106,6 +1406,7 @@
                 }
             });
         });
+        }); // end DOMContentLoaded
     </script>
 
     <!-- Forms Module -->
