@@ -28,7 +28,6 @@ export default function BookingSection() {
               Stop guessing. Let&apos;s build a path to profit.
             </p>
 
-            <div className="space-y-6">
             <div className="space-y-6 max-w-md mx-auto w-full text-left">
 
               {/* Phone */}
