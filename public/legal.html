@@ -1,137 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Law Firm Landing Pages | Custom Pages That Book Clients | Naslogic</title>
-    <meta name="description"
-        content="Naslogic builds high-converting landing pages for law firms and attorneys. Get more personal injury leads, family law consults, and high-ticket cases.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://naslogic.com/legal">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Law Firm Landing Pages That Book Cases | Naslogic">
-    <meta property="og:description"
-        content="Custom-built landing pages for attorneys. More high-ticket cases, zero wasted ad spend.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com/legal">
-
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Law Firm Landing Page Design",
-        "description": "Naslogic builds high-converting, mobile-first landing pages specifically for law firms and attorneys.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com"
-        },
-        "serviceType": "Landing Page Design for Attorneys",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a legal landing page cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our legal landing pages start at $199 with mobile-first design and premium aesthetics."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do attorneys need a dedicated landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Law firms pay incredibly high CPCs on Google. A dedicated landing page ensures that expensive traffic converts by focusing on a specific practice area with a clear CTA."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How fast can Naslogic deliver a legal landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We deliver production-ready law firm landing pages on rapid turnarounds."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will the landing page work on mobile devices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. Over 60% of clients searching for an attorney do so on their phone."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can the landing page integrate with my CRM or booking software?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We integrate with popular legal CRMs like Clio and MyCase."
-                }
-            }
-        ]
-    }
-    </script>
-
-
-    <!-- JSON-LD: BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-                {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://naslogic.com"
-                },
-                {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Law Firms & Attorneys Landing Pages",
-                        "item": "https://naslogic.com/legal"
-                }
-        ]
-}
-    </script>
-
-    <!-- Google Fonts -->
+    <title>Naslogic | Legal & Law Firm Landing Pages</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;1,6..96,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
+    
     <style>
-        /* =============================================
-           CSS Variables & Reset
-           ============================================= */
         :root {
-            --bg: #0A0A0A;
-            --text-main: #F0EDE8;
-            --text-muted: #888888;
-            --accent: #6EFF6A;
-            --accent-glow: rgba(110, 255, 106, 0.4);
-            --surface: #111111;
-            --surface-border: #222222;
-            --font-display: 'Anton', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --container: 1400px;
+            --pitch-black: #050505;
+            --pitch-black-light: #111111;
+            --manila-paper: #F4F1EA;
+            --manila-dim: #D1CFC8;
+            --crimson-seal: #8B1C1C;
+            --crimson-dark: #5A1010;
+            
+            --font-display: 'Bodoni Moda', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            --transition-slow: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -142,1180 +33,438 @@
 
         html {
             scroll-behavior: smooth;
+            background-color: var(--pitch-black);
         }
 
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
+            background-color: var(--pitch-black);
+            color: var(--manila-paper);
             font-family: var(--font-body);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            font-size: 16px;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        ::selection { background: var(--crimson-seal); color: var(--manila-paper); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
         }
 
-        /* =============================================
-           Layout & Utilities
-           ============================================= */
         .container {
-            max-width: var(--container);
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 5%;
         }
 
-        .section-padding {
-            padding: 120px 0;
-        }
-
-        /* =============================================
-           Typography
-           ============================================= */
-        h1, h2, h3, h4, .display-font {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: 0.02em;
-        }
-
-        p {
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
-
-        /* =============================================
-           Buttons — min 48px tap target
-           ============================================= */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            min-height: 48px;
-            min-width: 48px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--surface-border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* =============================================
-           Navigation
-           ============================================= */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 24px 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            padding: 12px 0;
-        }
-
-        .nav-links a:not(.btn):hover {
-            color: var(--accent);
-        }
-
-        /* =============================================
-           Hero Section
-           ============================================= */
-        .hero {
+        section {
+            padding: 8rem 0;
             position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
         }
 
-        .hero-bg {
+        /* Nav */
+        nav {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
-                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
-            background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite alternate;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            line-height: 0.9;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
-        }
-
-        .hero-frag {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .hero-frag span {
-            display: block;
-            transform: translateY(110%);
-        }
-
-        .frag-1 { margin-left: 0; }
-        .frag-2 { margin-left: 10%; color: var(--text-muted); }
-        .frag-3 { margin-left: 3%; color: var(--accent); }
-
-        /* 50-Word AI Hook */
-        .hero-hook {
-            max-width: 600px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            opacity: 0;
-        }
-
-        /* =============================================
-           Problem Section
-           ============================================= */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .problem-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-transform: none;
-            font-family: var(--font-body);
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Comparison Table
-           ============================================= */
-        .comparison-table-wrap {
-            overflow-x: auto;
-            margin-top: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
-        }
-
-        .comparison-table thead {
-            background: var(--surface);
-        }
-
-        .comparison-table th {
-            padding: 24px 30px;
-            text-align: left;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .comparison-table th:last-child {
-            color: var(--accent);
-        }
-
-        .comparison-table td {
-            padding: 20px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-muted);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table td:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ff4444;
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Portfolio Section
-           ============================================= */
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .showcase-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .showcase-card:hover {
-            border-color: rgba(110, 255, 106, 0.3);
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .showcase-info {
-            padding: 30px 40px;
+            padding: 2.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            z-index: 100;
         }
 
-        .showcase-title {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .showcase-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 6px 16px;
-            border-radius: 100px;
-            border: 1px solid var(--surface-border);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* =============================================
-           Process Section
-           ============================================= */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 50px 35px;
-            text-align: center;
-            position: relative;
-            transition: border-color 0.3s;
-        }
-
-        .step-card:hover {
-            border-color: var(--accent);
-        }
-
-        .step-num {
+        .nav-logo {
             font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(110, 255, 106, 0.08);
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .step-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-
-        /* =============================================
-           FAQ Section
-           ============================================= */
-        .faq-list {
-            margin-top: 60px;
-            max-width: 800px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            font-weight: 600;
-            text-align: left;
-            padding: 28px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 48px;
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-icon {
             font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 28px;
-        }
-
-        .faq-answer p {
-            font-size: 1.05rem;
-        }
-
-        /* =============================================
-           CTA Banner
-           ============================================= */
-        .cta-banner {
-            background: var(--accent);
-            border-radius: 40px;
-            padding: 100px 50px;
-            text-align: center;
-            color: #000;
-            margin: 120px 5%;
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            margin-bottom: 20px;
-        }
-
-        .cta-banner p {
-            color: #222;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-banner .btn {
-            background: #000;
-            color: var(--accent);
-            font-size: 1.1rem;
-            padding: 22px 44px;
-        }
-
-        .cta-banner .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        /* =============================================
-           Footer
-           ============================================= */
-        .footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 40px 0;
-        }
-
-        .footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
+            font-weight: 800;
+            letter-spacing: -0.02em;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            padding: 8px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =============================================
-           Section Headers
-           ============================================= */
-        .section-header {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .section-sub {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        /* Sticky FAB */
-        .fab {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            min-height: 48px;
-            border-radius: 100px;
-            font-weight: 700;
+            color: var(--manila-paper);
             text-transform: uppercase;
+        }
+
+        .nav-cta {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--crimson-seal);
             text-decoration: none;
-            letter-spacing: 0.05em;
-            z-index: 99;
-            box-shadow: 0 10px 30px var(--accent-glow);
-            animation: pulse 2s infinite;
+            position: relative;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(244, 241, 234, 0.1);
         }
 
-        /* =============================================
-           Responsive — Mobile First
-           ============================================= */
-        @media (max-width: 1024px) {
-            .comparison-table th,
-            .comparison-table td {
-                padding: 16px 20px;
-                font-size: 0.9rem;
-            }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(139, 28, 28, 0.15) 0%, transparent 60%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: clamp(4.5rem, 10vw, 8rem);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.04em;
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-left: 15%;
+            font-style: italic;
+            color: var(--crimson-seal);
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            color: var(--manila-dim);
+            max-width: 400px;
+            margin-left: 15%;
+            margin-bottom: 4rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background-color: var(--crimson-seal);
+            color: var(--manila-paper);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-left: 15%;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--transition-fast);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            background-color: var(--crimson-dark);
+        }
+
+        /* Brutal Lines */
+        .vert-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(244, 241, 234, 0.05);
+            z-index: -1;
+        }
+        .vl-1 { left: 15%; }
+        .vl-2 { right: 15%; }
+
+        /* Problem Section */
+        .docket-section {
+            background-color: var(--pitch-black-light);
+        }
+        
+        .docket-header {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-size: 0.75rem;
+            color: var(--crimson-seal);
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .docket-header::after {
+            content: '';
+            height: 1px;
+            background: var(--crimson-seal);
+            flex-grow: 1;
+            max-width: 100px;
+        }
+
+        .statement-text {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-family: var(--font-display);
+            margin-bottom: 3rem;
+            max-width: 900px;
+        }
+
+        .statement-sub {
+            font-size: 1.25rem;
+            color: var(--manila-dim);
+            max-width: 500px;
+            margin-left: auto;
+            border-left: 1px solid var(--crimson-seal);
+            padding-left: 2rem;
+        }
+
+        /* Case Study Timeline (The Unforgettable Element) */
+        .case-study {
+            border-top: 1px solid rgba(244, 241, 234, 0.1);
+            border-bottom: 1px solid rgba(244, 241, 234, 0.1);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            background: rgba(244, 241, 234, 0.1);
+        }
+
+        .timeline-progress {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -1px;
+            width: 3px;
+            background: var(--crimson-seal);
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 0.1s ease;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 6rem;
+            opacity: 0.3;
+            transition: opacity var(--transition-slow);
+        }
+
+        .timeline-item.active {
+            opacity: 1;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 10px;
+            width: 11px;
+            height: 11px;
+            background: var(--pitch-black);
+            border: 1px solid var(--manila-dim);
+            border-radius: 50%;
+            transition: border-color var(--transition-fast), background var(--transition-fast);
+        }
+
+        .timeline-item.active::before {
+            border-color: var(--crimson-seal);
+            background: var(--crimson-seal);
+        }
+
+        .t-date {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            color: var(--manila-dim);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .t-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .t-desc {
+            color: var(--manila-dim);
+            line-height: 1.6;
+        }
+
+        /* Testimonial */
+        .verdict {
+            text-align: center;
+            background-color: var(--pitch-black-light);
+        }
+
+        .verdict blockquote {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            line-height: 1.2;
+            color: var(--manila-paper);
+        }
+
+        .v-author {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            color: var(--crimson-seal);
+            display: block;
+        }
+
+        .v-role {
+            color: var(--manila-dim);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Final CTA */
+        .closing-argument {
+            text-align: center;
+            padding: 12rem 0;
+        }
+
+        .closing-argument h2 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            margin-bottom: 2rem;
+        }
+
+        /* Reveal Animation utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-slow);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: clamp(2.8rem, 12vw, 5rem);
-            }
-
-            .frag-2 { margin-left: 0; }
-            .frag-3 { margin-left: 0; }
-
-            .showcase-img {
-                height: 250px;
-            }
-
-            .showcase-info {
-                padding: 20px;
-            }
-
-            .cta-banner {
-                padding: 60px 24px;
-                margin: 80px 5%;
-                border-radius: 24px;
-            }
-
-            .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 14px 16px;
-                font-size: 0.85rem;
-            }
+            .hero h1 span, .hero-desc, .btn-primary { margin-left: 0; }
+            .statement-sub { margin-left: 0; margin-top: 3rem; }
+            .vert-line { display: none; }
         }
-
-        /* Scroll reveal utility */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
-
 <body>
 
-    <!-- ==========================================
-         Navigation
-         ========================================== -->
-    <nav class="nav" aria-label="Main navigation">
-        <div class="container">
-            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
-            <div class="nav-links">
-                <a href="naslogic.html">Home</a>
-                <a href="#portfolio">Work</a>
-                <a href="#faq">FAQ</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
-            </div>
-        </div>
+    <div class="vert-line vl-1"></div>
+    <div class="vert-line vl-2"></div>
+
+    <nav>
+        <a href="/" class="nav-logo">Naslogic</a>
+        <a href="#consult" class="nav-cta">Retain Us</a>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-sep" aria-hidden="true">›</li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span class="breadcrumb-current" itemprop="name">Law Firms & Attorneys Landing Pages</span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- ==========================================
-         Hero Section
-         H1 — one per page, primary keyword target
-         ========================================== -->
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
-                <div class="hero-frag frag-2"><span>For Law Firms</span></div>
-                <div class="hero-frag frag-3"><span>& Attorneys</span></div>
-            </h1>
-            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
-            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for law firms. We design pages that turn website visitors into booked consultations for personal injury, criminal defense, and family law. No generic templates.</p>
-            <div class="hero-ctas">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
-                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See Legal Examples</a>
-            </div>
+        <div class="container reveal visible">
+            <h1>Command Your <br><span>Market.</span></h1>
+            <p class="hero-desc">Your firm handles high-stakes, 7-figure cases. Yet your landing page looks identical to the bargain lawyer down the street. It's time to build a digital presence that commands undisputed authority.</p>
+            <a href="#consult" class="btn-primary">Review the Evidence</a>
         </div>
     </section>
 
-    <!-- ==========================================
-         Problem Section
-         H2 — second in hierarchy
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Why Most Law Firm Websites Fail</h2>
-        <p class="section-sub fade-up">Attorneys invest in marketing, but their websites let them down. Clients in stressful situations need to trust you instantly.</p>
-
-        <div class="problem-grid">
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📉</div>
-                <h3>Traffic That Never Converts</h3>
-                <p>You get clicks from clients searching for help, but your site is overwhelming. They leave and call a competitor.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📱</div>
-                <h3>Broken Mobile Experience</h3>
-                <p>If your site loads slowly on mobile, you are losing high-ticket cases every single day.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">🏗️</div>
-                <h3>Generic, Cookie-Cutter Design</h3>
-                <p>Template websites make attorneys look unapproachable or untrustworthy.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Comparison Table
-         AI engines pull from HTML tables
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
-        <p class="section-sub fade-up">See why top law firms choose a specialist over a generic agency.</p>
-
-        <div class="comparison-table-wrap fade-up">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Generic Agency</th>
-                        <th>Naslogic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Legal industry expertise</td>
-                        <td><span class="cross">✗</span> No industry focus</td>
-                        <td><span class="check">✓</span> Built for law firms</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile-first design</td>
-                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
-                        <td><span class="check">✓</span> 100% mobile-optimized</td>
-                    </tr>
-                    <tr>
-                        <td>Conversion-focused layout</td>
-                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
-                        <td><span class="check">✓</span> Every element drives action</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-ready structure</td>
-                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
-                        <td><span class="check">✓</span> Schema markup, clean headings</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery speed</td>
-                        <td>4 to 12 weeks typical</td>
-                        <td><span class="check">✓</span> Days, not months</td>
-                    </tr>
-                    <tr>
-                        <td>CRM integration</td>
-                        <td>Extra fees required</td>
-                        <td><span class="check">✓</span> Clio, MyCase</td>
-                    </tr>
-                    <tr>
-                        <td>Price transparency</td>
-                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
-                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Portfolio Section
-         ========================================== -->
-    <section id="portfolio" class="section-padding container">
-        <h2 class="section-header fade-up">Legal Pages We Have Built</h2>
-        <p class="section-sub fade-up">Conversion-first landing pages designed specifically for attorneys to schedule consultations.</p>
-
-        <div class="portfolio-showcase">
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 1: Personal Injury (Power/High Stakes) -->
-                <div class="showcase-img" role="img" aria-label="Personal injury law firm landing page by Naslogic designed for attorney consultation booking" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#112240; font-family:'Inter', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-                        .leg1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:linear-gradient(135deg, #0a1128 0%, #112240 100%); overflow:hidden; }
-                        .leg1-nav { display:flex; justify-content:space-between; align-items:center; padding:35px 60px; position:relative; z-index:2; border-bottom:1px solid rgba(255,255,255,0.05); }
-                        .leg1-logo { font-family:'Cinzel', serif; font-size:32px; font-weight:700; color:#fff; letter-spacing:2px; }
-                        .leg1-logo span { color:#c5a059; }
-                        .leg1-links { display:flex; gap:35px; font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:#a0aec0; }
-                        .leg1-links span:last-child { color:#e63946; }
-                        .leg1-btn-call { border:1px solid #c5a059; color:#c5a059; padding:12px 28px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:2px; }
-                        .leg1-hero { flex:1; display:flex; align-items:center; padding:0 60px; position:relative; z-index:2; gap:60px; }
-                        .leg1-content { flex:1; }
-                        .leg1-badge { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#e63946; background:rgba(230,57,70,0.1); padding:8px 16px; margin-bottom:25px; border-left:2px solid #e63946; }
-                        .leg1-title { font-family:'Cinzel', serif; font-size:80px; font-weight:800; line-height:1.05; margin-bottom:25px; color:#fff; letter-spacing:1px; }
-                        .leg1-desc { font-size:20px; color:#cbd5e1; margin-bottom:45px; line-height:1.6; max-width:550px; }
-                        .leg1-cta { background:#c5a059; color:#000; padding:22px 50px; font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:1px; display:inline-flex; box-shadow:0 15px 30px rgba(197,160,89,0.2); }
-                        .leg1-stat-col { flex:0.8; height:100%; display:flex; flex-direction:column; justify-content:center; position:relative; }
-                        .leg1-bg-stamp { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); opacity:0.03; width:450px; height:450px; border-radius:50%; border:2px solid #fff; display:flex; align-items:center; justify-content:center; }
-                        .leg1-bg-stamp::after { content:''; width:420px; height:420px; border-radius:50%; border:1px solid #fff; }
-                        .leg1-stat-block { background:rgba(255,255,255,0.03); border:1px solid rgba(197,160,89,0.3); padding:40px; text-align:center; backdrop-filter:blur(10px); position:relative; z-index:2; }
-                        .leg1-stat-num { font-family:'Cinzel', serif; font-size:90px; font-weight:700; color:#c5a059; line-height:1; margin-bottom:10px; }
-                        .leg1-stat-lbl { font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:3px; color:#fff; }
-                        .leg1-stat-sub { font-size:13px; color:#a0aec0; margin-top:10px; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="leg1-wrap">
-                        <div class="leg1-nav">
-                            <div class="leg1-logo">VANGUARD <span>LAW</span></div>
-                            <div class="leg1-links">
-                                <span>Practice Areas</span>
-                                <span>Case Results</span>
-                                <span>Attorneys</span>
-                                <span>Available 24/7</span>
-                            </div>
-                            <div class="leg1-btn-call">(800) 555-0199</div>
-                        </div>
-                        <div class="leg1-hero">
-                            <div class="leg1-content">
-                                <div class="leg1-badge"><span class="leg1-dot" style="width:6px; height:6px; background:#e63946; border-radius:50%;"></span> NO FEE UNLESS WE WIN</div>
-                                <h1 class="leg1-title">Justice For The Injured.</h1>
-                                <p class="leg1-desc">When insurance companies refuse to play fair, we step into the courtroom. Aggressive, relentless legal representation for victims of catastrophic accidents.</p>
-                                <div class="leg1-cta">Get Your Free Case Review</div>
-                            </div>
-                            <div class="leg1-stat-col">
-                                <div class="leg1-bg-stamp">
-                                    <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-width="0.5"/></svg>
-                                </div>
-                                <div class="leg1-stat-block">
-                                    <div class="leg1-stat-num">$250M+</div>
-                                    <div class="leg1-stat-lbl">Recovered For Clients</div>
-                                    <div class="leg1-stat-sub">Across 1,200+ successful verdicts & settlements.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Personal Injury Firm</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Personal Injury</span>
-                            <span class="tag">High-Ticket</span>
-                            <span class="tag">Consult Booking</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 2: Family Law (Empathy/Security) -->
-                <div class="showcase-img" role="img" aria-label="Family law landing page built by Naslogic with confidential case evaluation form" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#faf9f6; font-family:'Lato', sans-serif; color:#2a5058;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;700&display=swap');
-                        .leg2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#faf9f6; overflow:hidden; }
-                        .leg2-arch { position:absolute; right:10%; top:-10%; width:500px; height:800px; background:#e6d5c3; border-radius:250px 250px 0 0; z-index:0; opacity:0.4; }
-                        .leg2-nav { display:flex; justify-content:space-between; align-items:center; padding:40px 80px; position:relative; z-index:2; }
-                        .leg2-logo { font-family:'Libre Baskerville', serif; font-size:26px; font-weight:700; color:#2a5058; letter-spacing:1px; }
-                        .leg2-logo span { font-weight:400; font-size:14px; display:block; letter-spacing:4px; text-transform:uppercase; margin-top:4px; opacity:0.7; }
-                        .leg2-links { display:flex; gap:40px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#4a6d75; }
-                        .leg2-hero { flex:1; display:flex; align-items:center; position:relative; z-index:2; padding:0 80px; }
-                        .leg2-content { max-width:650px; background:rgba(250,249,246,0.9); padding:40px 40px 40px 0; backdrop-filter:blur(10px); }
-                        .leg2-title { font-family:'Libre Baskerville', serif; font-size:72px; font-weight:700; line-height:1.1; margin-bottom:30px; color:#2a5058; }
-                        .leg2-title i { font-style:italic; font-weight:400; color:#9c7853; }
-                        .leg2-desc { font-size:20px; line-height:1.7; color:#5c7d85; margin-bottom:45px; font-weight:400; }
-                        .leg2-cta { background:#2a5058; color:#fff; padding:22px 45px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:2px; display:inline-flex; border:1px solid #2a5058; transition:all 0.3s; }
-                        .leg2-badge-float { position:absolute; bottom:80px; right:80px; background:#fff; padding:25px 35px; box-shadow:0 30px 60px rgba(42,80,88,0.1); border-left:4px solid #9c7853; display:flex; align-items:center; gap:20px; z-index:3; }
-                        .leg2-bf-icon { font-size:40px; color:#9c7853; }
-                        .leg2-bf-text { font-family:'Libre Baskerville', serif; font-size:18px; font-weight:700; color:#2a5058; }
-                        .leg2-bf-sub { font-family:'Lato', sans-serif; font-size:13px; color:#777; text-transform:uppercase; letter-spacing:1px; margin-top:5px; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="leg2-wrap">
-                        <div class="leg2-arch"></div>
-                        <div class="leg2-nav">
-                            <div class="leg2-logo">HARRISON & WELLS <span>Family Law Firm</span></div>
-                            <div class="leg2-links">
-                                <span>Divorce</span>
-                                <span>Custody</span>
-                                <span>Mediation</span>
-                            </div>
-                        </div>
-                        <div class="leg2-hero">
-                            <div class="leg2-content">
-                                <h1 class="leg2-title">Protecting your peace. <i>Securing your future.</i></h1>
-                                <p class="leg2-desc">Navigating family law matters is overwhelming. We provide compassionate counsel and highly strategic representation to guide you to a brighter tomorrow.</p>
-                                <div class="leg2-cta">Request Confidential Consult</div>
-                            </div>
-                        </div>
-                        <div class="leg2-badge-float">
-                            <div class="leg2-bf-icon">⚖️</div>
-                            <div>
-                                <div class="leg2-bf-text">Top Rated Family Lawyer</div>
-                                <div class="leg2-bf-sub">As recognized by SuperLawyers</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Family Law & Divorce</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Family Law</span>
-                            <span class="tag">Lead Gen</span>
-                            <span class="tag">Trust Building</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Process Section
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live legal landing page that books consultations and generates qualified leads for your law firm.</p>
-
-        <div class="process-steps">
-            <div class="step-card fade-up">
-                <div class="step-num">01</div>
-                <h3>Book a Call</h3>
-                <p>We learn your practice areas and map out the client intake journey.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">02</div>
-                <h3>We Build It</h3>
-                <p>Our team designs and develops a mobile-first, conversion-optimized landing page tailored to legal marketing.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">03</div>
-                <h3>You Grow</h3>
-                <p>Your page goes live and starts converting visitors into booked consults and retained clients.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ Section — Powers FAQPage Schema
-         ========================================== -->
-    <section id="faq" class="section-padding container">
-        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
-        <p class="section-sub fade-up">Common questions from attorneys about our landing page design.</p>
-
-        <div class="faq-list fade-up">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much does a legal landing page cost?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Our legal landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Why do attorneys need a dedicated landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Law firms pay incredibly high CPCs on Google. A dedicated landing page ensures that expensive traffic converts by focusing on a specific practice area with a clear CTA.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How fast can Naslogic deliver a legal landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>We deliver production-ready law firm landing pages on rapid turnarounds.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will the landing page work on mobile devices?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. Over 60% of clients searching for an attorney do so on their phone.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can the landing page integrate with my CRM or booking software?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We integrate with popular legal CRMs like Clio and MyCase.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA Banner
-         ========================================== -->
-    <section class="cta-banner fade-up">
-        <h2>Ready to Book More Cases?</h2>
-        <p>Stop losing high-ticket clients to competitors with better websites. Get a landing page that converts.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
-    </section>
-
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
+    <section class="docket-section">
         <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/dental" class="related-link">Dental Practices Landing Pages</a>
-                <a href="/realestate" class="related-link">Real Estate Landing Pages</a>
+            <div class="docket-header reveal">Exhibit A: The Commodity Trap</div>
+            <h2 class="statement-text reveal">When affluent clients search for representation, they don't read. They judge.</h2>
+            <p class="statement-sub reveal">A generic, template-driven landing page instantly devalues your expertise. If your digital exterior lacks tension, authority, and narrative weight, high-net-worth clients will assume your interior counsel lacks the same.</p>
+        </div>
+    </section>
+
+    <section class="case-study">
+        <div class="container">
+            <div class="docket-header reveal" style="justify-content: center; margin-bottom: 6rem; flex-direction: column;">
+                <div>Exhibit B: The Transformation</div>
+                <div style="height: 40px; width: 1px; background: var(--crimson-seal); margin-top: 1rem;"></div>
+            </div>
+            
+            <div class="timeline" id="timeline">
+                <div class="timeline-progress" id="timeline-progress"></div>
+                
+                <div class="timeline-item">
+                    <span class="t-date">PHASE 01: THE INVESTIGATION</span>
+                    <h3 class="t-title">Stripping the Boilerplate.</h3>
+                    <p class="t-desc">We eliminate stock photos of gavels, fake leather textures, and column illustrations. We replace them with stark, editorial typography and stark contrast that forces the reader to pay attention.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="t-date">PHASE 02: THE ARGUMENT</span>
+                    <h3 class="t-title">Copywriting with Teeth.</h3>
+                    <p class="t-desc">"We fight for you" means nothing. We write copy that speaks to the specific anxieties and high-stakes nature of your ideal client's situation. We position you not as a choice, but as the only logical verdict.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="t-date">PHASE 03: THE VERDICT</span>
+                    <h3 class="t-title">Frictionless Retainment.</h3>
+                    <p class="t-desc">We construct micro-interactions designed to convert. A seamless, high-end lead capture flow that feels more like an exclusive intake assessment than a desperate contact form.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
-    </div>
-
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div>
-                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
-            </div>
-            <div class="footer-links">
-                <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
-            </div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
-            </div>
+    <section class="verdict">
+        <div class="container reveal">
+            <div class="docket-header" style="justify-content: center;">The Verdict</div>
+            <blockquote>"We went from competing on retainer fees to dictating them. The site filters out bargain-hunters and attracts clients who understand the cost of losing. Our qualified intake calls increased by 240% in 60 days."</blockquote>
+            <span class="v-author">Marcus L.</span>
+            <span class="v-role">Partner, Private Defense Group, Chicago IL</span>
         </div>
-    </footer>
+    </section>
 
-    <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
-
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <section class="closing-argument" id="consult">
+        <div class="container reveal">
+            <h2>The Defense Rests.</h2>
+            <p class="hero-desc" style="margin: 0 auto 3rem; text-align: center;">We only construct 4 law firm landing pages per month to maintain exact precision. Submit your current site for our ruthless audit.</p>
+            <a href="mailto:hello@naslogic.com" class="btn-primary" style="margin: 0;">Request A Case Review</a>
+        </div>
+    </section>
 
     <script>
-        // =============================================
-        // Initialize GSAP
-        // =============================================
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        // =============================================
-        // Hero Entrance Timeline
-        // =============================================
-        const heroTl = gsap.timeline();
-        heroTl.to(".hero-frag span", {
-            y: "0%",
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            delay: 0.2
-        })
-        .to(".hero-hook", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.8")
-        .to(".hero-ctas", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.9");
-
-        // =============================================
-        // Scroll Reveal — Fade Up
-        // =============================================
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 88%",
-                        toggleActions: "play none none none"
-                    }
+        // Simple reveal observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
-            );
-        });
+            });
+        }, { threshold: 0.1 });
 
-        // =============================================
-        // FAQ Accordion
-        // =============================================
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Toggle current
-                if (!isActive) {
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Timeline Scroll Effect
+        const timeline = document.getElementById('timeline');
+        const progress = document.getElementById('timeline-progress');
+        const items = document.querySelectorAll('.timeline-item');
+
+        window.addEventListener('scroll', () => {
+            if(!timeline) return;
+            const rect = timeline.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // Calculate progress based on timeline position in viewport
+            let scrollPerc = (viewportHeight / 2 - rect.top) / rect.height;
+            scrollPerc = Math.max(0, Math.min(1, scrollPerc));
+            
+            progress.style.transform = `scaleY(${scrollPerc})`;
+
+            items.forEach((item, index) => {
+                const itemRect = item.getBoundingClientRect();
+                if (itemRect.top < viewportHeight * 0.7) {
                     item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
+                } else {
+                    item.classList.remove('active');
                 }
             });
         });
-        }); // end DOMContentLoaded
     </script>
-
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
-
 </body>
-
 </html>

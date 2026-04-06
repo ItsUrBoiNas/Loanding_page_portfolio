@@ -1,1325 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Landing Pages | Custom Pages That Book Clients | Naslogic</title>
-    <meta name="description"
-        content="Naslogic builds high-converting landing pages for fitness coaches and gyms. Get more trial members, high-ticket coaching clients, and leads.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://naslogic.com/fitness">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Fitness Landing Pages That Book Clients | Naslogic">
-    <meta property="og:description"
-        content="Custom-built landing pages for gyms and fitness coaches. More leads, zero wasted ad spend.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com/fitness">
-
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Fitness Landing Page Design",
-        "description": "Naslogic builds high-converting, mobile-first landing pages specifically for gyms, fitness studios, and online coaches.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com"
-        },
-        "serviceType": "Landing Page Design for Fitness Businesses",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a fitness landing page cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our fitness landing pages start at $199 with mobile-first design and premium aesthetics."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do gyms and coaches need a dedicated landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Driving traffic to a messy homepage leaks leads. A dedicated landing page with a single offer (like a 7-day trial) increases conversion rates by 2x to 5x."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How fast can Naslogic deliver a fitness landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We deliver production-ready fitness landing pages on rapid turnarounds."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will the landing page work on mobile devices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. Over 80% of fitness-related searches and social clicks happen on mobile."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can the landing page integrate with my CRM or booking software?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We integrate with popular gym CRMs like Mindbody and PushPress."
-                }
-            }
-        ]
-    }
-    </script>
-
-
-    <!-- JSON-LD: BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-                {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://naslogic.com"
-                },
-                {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Fitness & Gyms Landing Pages",
-                        "item": "https://naslogic.com/fitness"
-                }
-        ]
-}
-    </script>
-
-    <!-- Google Fonts -->
+    <title>Naslogic | Elite Fitness & Performance Facilities</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* =============================================
-           CSS Variables & Reset
-           ============================================= */
         :root {
-            --bg: #0A0A0A;
-            --text-main: #F0EDE8;
-            --text-muted: #888888;
-            --accent: #6EFF6A;
-            --accent-glow: rgba(110, 255, 106, 0.4);
-            --surface: #111111;
-            --surface-border: #222222;
-            --font-display: 'Anton', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --container: 1400px;
+            --void: #050505;
+            --iron: #111111;
+            --iron-light: #222222;
+            --kinetic: #CCFF00;
+            --white: #FFFFFF;
+            --text-dim: #888888;
+            
+            --font-display: 'Teko', sans-serif;
+            --font-body: 'Manrope', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
+            background-color: var(--void);
+            color: var(--white);
             font-family: var(--font-body);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            border-left: 5px solid var(--kinetic);
+            border-right: 5px solid var(--kinetic);
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        ::selection { background: var(--kinetic); color: var(--void); }
 
-        /* =============================================
-           Layout & Utilities
-           ============================================= */
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .section-padding {
-            padding: 120px 0;
-        }
-
-        /* =============================================
-           Typography
-           ============================================= */
-        h1, h2, h3, h4, .display-font {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            line-height: 0.95;
+        h1, h2, h3 { 
+            font-family: var(--font-display); 
+            text-transform: uppercase; 
+            line-height: 0.9; 
             letter-spacing: 0.02em;
         }
 
-        p {
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+        
+        section { position: relative; }
 
-        /* =============================================
-           Buttons — min 48px tap target
-           ============================================= */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            min-height: 48px;
-            min-width: 48px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--surface-border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* =============================================
-           Navigation
-           ============================================= */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 24px 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav .container {
+        /* Nav */
+        nav {
+            position: absolute;
+            top: 0; width: 100%;
+            padding: 2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 100;
         }
 
-        .nav-logo {
+        .logo {
             font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-main);
+            font-size: 2.5rem;
+            color: var(--white);
             text-decoration: none;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
+        .logo span { color: var(--kinetic); }
+
+        .btn-kinetic {
+            background: var(--kinetic);
+            color: var(--void);
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            padding: 0.5rem 2rem;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            transform: skewX(-10deg);
         }
 
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            padding: 12px 0;
+        .btn-kinetic span { transform: skewX(10deg); } /* un-skew text */
+
+        .btn-kinetic:hover {
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
         }
 
-        .nav-links a:not(.btn):hover {
-            color: var(--accent);
-        }
-
-        /* =============================================
-           Hero Section
-           ============================================= */
+        /* Hero */
         .hero {
-            position: relative;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 100px;
+            position: relative;
             overflow: hidden;
         }
 
-        .hero-bg {
+        /* Diagonal background slash */
+        .hero::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; right: 0;
+            width: 50%; height: 100%;
+            background: var(--iron);
+            transform-origin: bottom left;
+            transform: skewX(-15deg);
             z-index: -1;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
-                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
-            background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite alternate;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
         }
 
         .hero-content {
             position: relative;
-            z-index: 10;
+            z-index: 2;
         }
 
-        .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            line-height: 0.9;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
-        }
-
-        .hero-frag {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .hero-frag span {
-            display: block;
-            transform: translateY(110%);
-        }
-
-        .frag-1 { margin-left: 0; }
-        .frag-2 { margin-left: 10%; color: var(--text-muted); }
-        .frag-3 { margin-left: 3%; color: var(--accent); }
-
-        /* 50-Word AI Hook */
-        .hero-hook {
-            max-width: 600px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            opacity: 0;
-        }
-
-        /* =============================================
-           Problem Section
-           ============================================= */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .problem-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-transform: none;
-            font-family: var(--font-body);
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Comparison Table
-           ============================================= */
-        .comparison-table-wrap {
-            overflow-x: auto;
-            margin-top: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
-        }
-
-        .comparison-table thead {
-            background: var(--surface);
-        }
-
-        .comparison-table th {
-            padding: 24px 30px;
-            text-align: left;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .comparison-table th:last-child {
-            color: var(--accent);
-        }
-
-        .comparison-table td {
-            padding: 20px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-muted);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table td:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ff4444;
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Portfolio Section
-           ============================================= */
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .showcase-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .showcase-card:hover {
-            border-color: rgba(110, 255, 106, 0.3);
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .showcase-info {
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .showcase-title {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .showcase-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 6px 16px;
-            border-radius: 100px;
-            border: 1px solid var(--surface-border);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* =============================================
-           Process Section
-           ============================================= */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 50px 35px;
-            text-align: center;
+        .hero h1 {
+            font-size: clamp(6rem, 15vw, 12rem);
+            color: transparent;
+            -webkit-text-stroke: 2px var(--white);
+            margin-bottom: 1rem;
             position: relative;
-            transition: border-color 0.3s;
+            display: inline-block;
         }
 
-        .step-card:hover {
-            border-color: var(--accent);
+        .hero h1::after {
+            content: 'NO EXCUSES';
+            position: absolute;
+            left: 5px; top: 5px;
+            color: var(--kinetic);
+            -webkit-text-stroke: 0px;
+            z-index: -1;
         }
 
-        .step-num {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(110, 255, 106, 0.08);
-            line-height: 1;
-            margin-bottom: 20px;
+        .hero h1.filled {
+            color: var(--white);
+            -webkit-text-stroke: 0px;
         }
+        
+        .hero h1.filled::after { display: none; }
 
-        .step-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-
-        /* =============================================
-           FAQ Section
-           ============================================= */
-        .faq-list {
-            margin-top: 60px;
-            max-width: 800px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1.15rem;
+        .hero p {
+            font-size: 1.2rem;
             font-weight: 600;
-            text-align: left;
-            padding: 28px 0;
-            cursor: pointer;
+            max-width: 500px;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            border-left: 3px solid var(--kinetic);
+            padding-left: 1.5rem;
+        }
+
+        /* Massive Kinetic Text (Unforgettable Element) */
+        .kinetic-scroll-zone {
+            height: 200vh; /* gives us room to scroll */
+            position: relative;
+            background: var(--void);
+        }
+
+        .sticky-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            min-height: 48px;
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
+            justify-content: center;
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 28px;
-        }
-
-        .faq-answer p {
-            font-size: 1.05rem;
-        }
-
-        /* =============================================
-           CTA Banner
-           ============================================= */
-        .cta-banner {
-            background: var(--accent);
-            border-radius: 40px;
-            padding: 100px 50px;
+        #scale-text {
+            font-family: var(--font-display);
+            font-size: 10vw;
+            color: var(--kinetic);
+            white-space: nowrap;
             text-align: center;
-            color: #000;
-            margin: 120px 5%;
+            line-height: 0.8;
+            will-change: transform;
         }
 
-        .cta-banner h2 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            margin-bottom: 20px;
+        /* Marquee */
+        .marquee {
+            background: var(--white);
+            padding: 1rem 0;
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+            transform: rotate(-2deg) scale(1.05); /* aggressive slant */
+            margin: 5rem 0;
         }
 
-        .cta-banner p {
-            color: #222;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .marquee-content {
+            display: inline-flex;
+            animation: scroll-left 15s linear infinite;
         }
 
-        .cta-banner .btn {
-            background: #000;
-            color: var(--accent);
+        .marquee-content span {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--void);
+            padding: 0 2rem;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Grid */
+        .combat-grid {
+            padding: 10rem 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .glitch-card {
+            background: var(--iron);
+            padding: 4rem;
+            position: relative;
+            border: 1px solid var(--iron-light);
+            transition: all 0.3s ease;
+        }
+
+        .glitch-card:hover { border-color: var(--kinetic); }
+
+        .glitch-card h3 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .glitch-card p {
             font-size: 1.1rem;
-            padding: 22px 44px;
+            color: var(--text-dim);
+            line-height: 1.8;
         }
 
-        .cta-banner .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        .glitch-card-num {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            font-family: var(--font-display);
+            font-size: 8rem;
+            color: var(--void);
+            -webkit-text-stroke: 1px var(--iron-light);
+            line-height: 0.8;
+            pointer-events: none;
         }
 
-        /* =============================================
-           Footer
-           ============================================= */
-        .footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 40px 0;
+        /* Quote */
+        .strike-quote {
+            padding: 10rem 5%;
+            text-align: center;
+            background: var(--iron);
         }
 
-        .footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+        .strike-quote p {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--white);
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            line-height: 1;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            padding: 8px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =============================================
-           Section Headers
-           ============================================= */
-        .section-header {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .section-sub {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        /* Sticky FAB */
-        .fab {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            min-height: 48px;
-            border-radius: 100px;
-            font-weight: 700;
+        .strike-quote .author {
+            color: var(--kinetic);
+            font-size: 1rem;
+            font-weight: 800;
             text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            z-index: 99;
-            box-shadow: 0 10px 30px var(--accent-glow);
-            animation: pulse 2s infinite;
+            letter-spacing: 0.2rem;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
+        /* CTA Bottom */
+        .cta-bottom {
+            padding: 15rem 0;
+            text-align: center;
         }
 
-        /* =============================================
-           Responsive — Mobile First
-           ============================================= */
-        @media (max-width: 1024px) {
-            .comparison-table th,
-            .comparison-table td {
-                padding: 16px 20px;
-                font-size: 0.9rem;
-            }
+        .cta-bottom h2 {
+            font-size: clamp(5rem, 10vw, 8rem);
+            margin-bottom: 3rem;
         }
 
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: clamp(2.8rem, 12vw, 5rem);
-            }
-
-            .frag-2 { margin-left: 0; }
-            .frag-3 { margin-left: 0; }
-
-            .showcase-img {
-                height: 250px;
-            }
-
-            .showcase-info {
-                padding: 20px;
-            }
-
-            .cta-banner {
-                padding: 60px 24px;
-                margin: 80px 5%;
-                border-radius: 24px;
-            }
-
-            .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 14px 16px;
-                font-size: 0.85rem;
-            }
+            .combat-grid { grid-template-columns: 1fr; }
+            .hero::before { width: 100%; transform: skewX(0); top: 50%; }
         }
-
-        /* Scroll reveal utility */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
-
 <body>
 
-    <!-- ==========================================
-         Navigation
-         ========================================== -->
-    <nav class="nav" aria-label="Main navigation">
-        <div class="container">
-            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
-            <div class="nav-links">
-                <a href="naslogic.html">Home</a>
-                <a href="#portfolio">Work</a>
-                <a href="#faq">FAQ</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
-            </div>
-        </div>
+    <nav>
+        <a href="/" class="logo">NASLOGIC<span>.</span></a>
+        <a href="#build" class="btn-kinetic"><span>DEPLOY FUNNEL</span></a>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-sep" aria-hidden="true">›</li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span class="breadcrumb-current" itemprop="name">Fitness & Gyms Landing Pages</span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- ==========================================
-         Hero Section
-         H1 — one per page, primary keyword target
-         ========================================== -->
-    <section class="hero">
-        <div class="hero-bg"></div>
+    <header class="hero">
         <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
-                <div class="hero-frag frag-2"><span>For Fitness</span></div>
-                <div class="hero-frag frag-3"><span>Brands & Gyms</span></div>
-            </h1>
-            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
-            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for fitness businesses. We design pages that turn website visitors into booked introductory sessions, free trials, and high-ticket coaching clients. No generic templates.</p>
-            <div class="hero-ctas">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
-                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See Fitness Examples</a>
-            </div>
+            <h1>NO EXCUSES</h1>
+            <h1 class="filled">ONLY RESULTS</h1>
+            <p>Your performance lab produces elite athletes, but your landing page looks like a $10/month commercial gym. We engineer high-BPM, conversion-aggressive funnels for premium fitness facilities.</p>
+            <a href="#build" class="btn-kinetic" style="padding: 1rem 3rem;"><span>ENTER THE LAB</span></a>
         </div>
-    </section>
+    </header>
 
-    <!-- ==========================================
-         Problem Section
-         H2 — second in hierarchy
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Why Most Fitness Websites Fail</h2>
-        <p class="section-sub fade-up">Gyms and coaches invest in marketing, but their websites let them down. Prospects need motivation and a clear path to get started.</p>
-
-        <div class="problem-grid">
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📉</div>
-                <h3>Traffic That Never Converts</h3>
-                <p>You get clicks from ads, but your site does not give them a clear next step. They leave without signing up.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📱</div>
-                <h3>Broken Mobile Experience</h3>
-                <p>If your site loads slowly on mobile, you lose impulse buyers from Instagram and Facebook.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">🏗️</div>
-                <h3>Generic, Cookie-Cutter Design</h3>
-                <p>Template websites make your fitness brand look like every other generic gym in town.</p>
-            </div>
+    <div class="marquee">
+        <div class="marquee-content" id="mq">
+            <span>DROP THE DEAD WEIGHT</span><span>///</span>
+            <span>OPTIMIZE CONVERSION</span><span>///</span>
+            <span>ELIMINATE FRICTION</span><span>///</span>
+            <span>SCALE YOUR ROSTER</span><span>///</span>
         </div>
-    </section>
-
-    <!-- ==========================================
-         Comparison Table
-         AI engines pull from HTML tables
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
-        <p class="section-sub fade-up">See why fitness entrepreneurs choose a specialist over a one-size-fits-all agency.</p>
-
-        <div class="comparison-table-wrap fade-up">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Generic Agency</th>
-                        <th>Naslogic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fitness industry expertise</td>
-                        <td><span class="cross">✗</span> No industry focus</td>
-                        <td><span class="check">✓</span> Built for gyms & coaches</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile-first design</td>
-                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
-                        <td><span class="check">✓</span> 100% mobile-optimized</td>
-                    </tr>
-                    <tr>
-                        <td>Conversion-focused layout</td>
-                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
-                        <td><span class="check">✓</span> Every element drives action</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-ready structure</td>
-                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
-                        <td><span class="check">✓</span> Schema markup, clean headings</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery speed</td>
-                        <td>4 to 12 weeks typical</td>
-                        <td><span class="check">✓</span> Days, not months</td>
-                    </tr>
-                    <tr>
-                        <td>CRM integration</td>
-                        <td>Extra fees required</td>
-                        <td><span class="check">✓</span> Mindbody, PushPress</td>
-                    </tr>
-                    <tr>
-                        <td>Price transparency</td>
-                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
-                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Portfolio Section
-         ========================================== -->
-    <section id="portfolio" class="section-padding container">
-        <h2 class="section-header fade-up">Fitness Pages We Have Built</h2>
-        <p class="section-sub fade-up">Conversion-first landing pages designed specifically for fitness businesses to turn visitors into members.</p>
-
-        <div class="portfolio-showcase">
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 1: Boutique Gym (Energy, Community) -->
-                <div class="showcase-img" role="img" aria-label="Local boutique gym landing page by Naslogic with free trial offer and class booking integration" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#ffffff; font-family:'Montserrat', sans-serif; color:#1e272e;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap');
-                        .fit1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#fff; overflow:hidden; }
-                        .fit1-bg { position:absolute; top:0; right:0; width:55%; height:100%; background:#f1f2f6; clip-path:polygon(15% 0, 100% 0, 100% 100%, 0% 100%); z-index:0; }
-                        .fit1-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 60px; position:relative; z-index:2; }
-                        .fit1-logo { font-size:26px; font-weight:900; letter-spacing:-1px; text-transform:uppercase; color:#1e272e; }
-                        .fit1-logo span { color:#ff4757; }
-                        .fit1-links { display:flex; gap:40px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#576574; }
-                        .fit1-hero { flex:1; display:flex; align-items:center; position:relative; z-index:2; padding:0 60px; gap:50px; }
-                        .fit1-content { flex:1; max-width:600px; }
-                        .fit1-badge { display:inline-block; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:#ff4757; background:rgba(255,71,87,0.1); padding:8px 16px; border-radius:4px; margin-bottom:25px; }
-                        .fit1-title { font-size:75px; font-weight:900; line-height:1; margin-bottom:25px; letter-spacing:-2px; text-transform:uppercase; color:#1e272e; }
-                        .fit1-desc { font-size:18px; line-height:1.6; color:#576574; margin-bottom:40px; font-weight:500; }
-                        .fit1-cta { display:inline-flex; align-items:center; justify-content:center; padding:20px 45px; background:#ff4757; color:#fff; font-size:16px; font-weight:800; text-transform:uppercase; letter-spacing:1px; border-radius:6px; box-shadow:0 15px 30px rgba(255,71,87,0.3); transition:transform 0.2s; }
-                        .fit1-visual { flex:1; position:relative; height:100%; display:flex; align-items:center; justify-content:center; }
-                        .fit1-img-ph { width:80%; height:75%; background:linear-gradient(45deg, #1e272e, #2f3640); border-radius:24px; box-shadow:0 30px 60px rgba(0,0,0,0.15); display:flex; align-items:center; justify-content:center; position:relative; }
-                        .fit1-img-text { font-size:24px; font-weight:800; color:rgba(255,255,255,0.2); text-transform:uppercase; letter-spacing:5px; transform:rotate(-90deg); position:absolute; left:-40px; white-space:nowrap; }
-                        .fit1-stat { position:absolute; bottom:50px; left:-50px; background:#fff; padding:20px 30px; border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.1); display:flex; align-items:center; gap:20px; border-left:4px solid #ff4757; }
-                        .fit1-stat-num { font-size:32px; font-weight:900; color:#1e272e; line-height:1; }
-                        .fit1-stat-label { font-size:12px; font-weight:700; color:#576574; text-transform:uppercase; letter-spacing:1px; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="fit1-wrap">
-                        <div class="fit1-bg"></div>
-                        <div class="fit1-nav">
-                            <div class="fit1-logo">PULSE<span>STUDIO</span></div>
-                            <div class="fit1-links">
-                                <span>Classes</span>
-                                <span>Trainers</span>
-                                <span style="color:#ff4757;">Locations</span>
-                            </div>
-                        </div>
-                        <div class="fit1-hero">
-                            <div class="fit1-content">
-                                <div class="fit1-badge">Voted #1 HIIT Studio in Austin</div>
-                                <h1 class="fit1-title">Unleash Your Ultimate Potential.</h1>
-                                <p class="fit1-desc">Join our high-energy boutique classes designed to burn calories, build strength, and connect you with a community of driven individuals.</p>
-                                <div class="fit1-cta">Claim 7-Day Free Trial</div>
-                            </div>
-                            <div class="fit1-visual">
-                                <div class="fit1-img-ph">
-                                    <div class="fit1-img-text">STRENGTH x CARDIO</div>
-                                </div>
-                                <div class="fit1-stat">
-                                    <div><svg style="width:30px;height:30px;fill:#ff4757;" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div>
-                                    <div>
-                                        <div class="fit1-stat-num">4.9/5</div>
-                                        <div class="fit1-stat-label">Member Rating</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Local Boutique Gym</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Local Free Trial Offer</span>
-                            <span class="tag">Free Trial Offer</span>
-                            <span class="tag">Studio</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 2: Online High-Ticket Coach (Elite/Aggressive) -->
-                <div class="showcase-img" role="img" aria-label="High-ticket online fitness coaching landing page built by Naslogic with application funnel" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#000000; font-family:'Inter', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap');
-                        .fit2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#050505; overflow:hidden; }
-                        .fit2-bg { position:absolute; inset:0; background:radial-gradient(circle at 50% -20%, rgba(255,204,0,0.15), transparent 70%); z-index:0; }
-                        .fit2-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:50px 50px; z-index:0; mask-image:radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image:radial-gradient(ellipse at center, black 40%, transparent 80%); }
-                        .fit2-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 50px; position:relative; z-index:2; border-bottom:1px solid rgba(255,255,255,0.05); }
-                        .fit2-logo { font-family:'Oswald', sans-serif; font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#fff; }
-                        .fit2-logo span { color:#ffcc00; }
-                        .fit2-links { display:flex; gap:35px; font-family:'Oswald', sans-serif; font-size:14px; font-weight:500; text-transform:uppercase; letter-spacing:2px; color:#aaa; }
-                        .fit2-hero { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; z-index:2; padding:0 30px; }
-                        .fit2-badge { background:transparent; border:1px solid #ffcc00; color:#ffcc00; font-family:'Oswald', sans-serif; font-size:12px; font-weight:500; text-transform:uppercase; letter-spacing:3px; padding:8px 20px; margin-bottom:30px; display:inline-block; }
-                        .fit2-title { font-family:'Oswald', sans-serif; font-size:110px; line-height:0.9; margin-bottom:25px; text-transform:uppercase; color:#fff; }
-                        .fit2-title span { color:#ffcc00; }
-                        .fit2-desc { font-size:20px; color:#999; max-width:700px; margin-bottom:45px; line-height:1.6; font-weight:400; }
-                        .fit2-cta { display:inline-flex; align-items:center; justify-content:center; padding:0 60px; height:70px; background:#ffcc00; color:#000; font-family:'Oswald', sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:2px; box-shadow:0 0 40px rgba(255,204,0,0.3); transition:all 0.2s; clip-path:polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%); }
-                        .fit2-video-btn { margin-top:30px; display:inline-flex; align-items:center; justify-content:center; gap:10px; color:#fff; font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:2px; font-size:14px; }
-                        .fit2-play { width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.2); }
-                        .fit2-play::after { content:''; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent #ffcc00; margin-left:3px; }
-                        .fit2-stat-float { position:absolute; right:5%; top:30%; background:#111; padding:20px; border:1px solid #222; border-top:3px solid #ffcc00; text-align:left; }
-                        .fit2-sf-num { font-family:'Oswald', sans-serif; font-size:40px; color:#fff; line-height:1; }
-                        .fit2-sf-num span { color:#ffcc00; font-size:24px; }
-                        .fit2-sf-lbl { font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px; margin-top:5px; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="fit2-wrap">
-                        <div class="fit2-bg"></div>
-                        <div class="fit2-grid"></div>
-                        <div class="fit2-nav">
-                            <div class="fit2-logo">IRON<span>ATLAS</span></div>
-                            <div class="fit2-links">
-                                <span>The System</span>
-                                <span>Transformations</span>
-                                <span>Apply</span>
-                            </div>
-                        </div>
-                        <div class="fit2-hero">
-                            <div class="fit2-badge">Elite Coaching Application</div>
-                            <h1 class="fit2-title">Build the physique of a <span>Greek God.</span></h1>
-                            <p class="fit2-desc">A 12-week intensive protocol combining evidence-based hypertrophy, macronutrient precision, and relentless accountability for high-performers.</p>
-                            <div class="fit2-cta">Apply For Coaching</div>
-                            <div class="fit2-video-btn">
-                                <div class="fit2-play"></div>
-                                Watch the Breakdown
-                            </div>
-                        </div>
-                        <div class="fit2-stat-float">
-                            <div class="fit2-sf-num">4.5<span>kg</span></div>
-                            <div class="fit2-sf-lbl">Avg. Muscle Gained</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Online High-Ticket Coach</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Online Coaching</span>
-                            <span class="tag">High-Ticket</span>
-                            <span class="tag">Application Funnel</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Process Section
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live fitness landing page that books clients and generates qualified leads for your fitness business.</p>
-
-        <div class="process-steps">
-            <div class="step-card fade-up">
-                <div class="step-num">01</div>
-                <h3>Book a Call</h3>
-                <p>We learn your fitness niche and map out your ideal client journey.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">02</div>
-                <h3>We Build It</h3>
-                <p>Our team designs and develops a mobile-first, conversion-optimized landing page tailored to fitness marketing.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">03</div>
-                <h3>You Grow</h3>
-                <p>Your page goes live and starts converting visitors into trials, consults, and paying members.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ Section — Powers FAQPage Schema
-         ========================================== -->
-    <section id="faq" class="section-padding container">
-        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
-        <p class="section-sub fade-up">Common questions from fitness owners about our landing page design.</p>
-
-        <div class="faq-list fade-up">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much does a fitness landing page cost?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Our fitness landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Why do gyms and coaches need a dedicated landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Driving traffic to a messy homepage leaks leads. A dedicated landing page with a single offer (like a 7-day trial) increases conversion rates by 2x to 5x.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How fast can Naslogic deliver a fitness landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>We deliver production-ready fitness landing pages on rapid turnarounds.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will the landing page work on mobile devices?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. Over 80% of fitness-related searches and social clicks happen on mobile.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can the landing page integrate with my CRM or booking software?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We integrate with popular gym CRMs like Mindbody and PushPress.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA Banner
-         ========================================== -->
-    <section class="cta-banner fade-up">
-        <h2>Ready to Grow Your Client Base?</h2>
-        <p>Stop losing leads to competitors. Get a landing page that converts fitness searches into passionate members.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
-    </section>
-
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
-        <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/dental" class="related-link">Dental Practices Landing Pages</a>
-                <a href="/restaurants" class="related-link">Restaurants Landing Pages</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
     </div>
 
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div>
-                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
+    <!-- Massive Scaling Text Interaction -->
+    <section class="kinetic-scroll-zone">
+        <div class="sticky-container">
+            <div id="scale-text">WEAK DESIGN<br>KILLS LEADS.</div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="combat-grid">
+            <div class="glitch-card">
+                <div class="glitch-card-num">01</div>
+                <h3>THE BRO-GYM ERA IS DEAD</h3>
+                <p>High-ticket personal training and elite performance facilities cannot survive on generalized messaging. If your copy sounds like a supplement ad from 2010, affluent clients seeking specialized coaching will immediately bounce.</p>
             </div>
-            <div class="footer-links">
-                <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
-            </div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
+            <div class="glitch-card">
+                <div class="glitch-card-num">02</div>
+                <h3>AGGRESSIVE RESTRAINT</h3>
+                <p>We deploy 'Kinetic Velocity'—a design system relying on stark black voids, blinding neon accents, and brutal, legible typography. It filters out the tire-kickers and demands respect from the moment the page loads.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
+    <section class="strike-quote">
+        <p>"Our ROAS doubled in absolutely no time. The new landing page weeds out people looking for a treadmill, and only brings in people ready to train like professionals."</p>
+        <span class="author">Mike T. — Head Coach, Iron Apex Performance</span>
+    </section>
 
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <section class="cta-bottom" id="build">
+        <div class="container">
+            <h2>READY TO DOMINATE?</h2>
+            <a href="mailto:hello@naslogic.com" class="btn-kinetic" style="font-size: 2rem; padding: 1rem 4rem;"><span>START THE OVERHAUL</span></a>
+        </div>
+    </section>
 
     <script>
-        // =============================================
-        // Initialize GSAP
-        // =============================================
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Duplicate marquee
+        const mq = document.getElementById('mq');
+        mq.innerHTML += mq.innerHTML + mq.innerHTML;
 
-        // =============================================
-        // Hero Entrance Timeline
-        // =============================================
-        const heroTl = gsap.timeline();
-        heroTl.to(".hero-frag span", {
-            y: "0%",
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            delay: 0.2
-        })
-        .to(".hero-hook", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.8")
-        .to(".hero-ctas", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.9");
+        // Scaling text scroll physics
+        const scaleText = document.getElementById('scale-text');
+        const scrollZone = document.querySelector('.kinetic-scroll-zone');
 
-        // =============================================
-        // Scroll Reveal — Fade Up
-        // =============================================
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 88%",
-                        toggleActions: "play none none none"
-                    }
+        window.addEventListener('scroll', () => {
+            const rect = scrollZone.getBoundingClientRect();
+            const viewportH = window.innerHeight;
+            
+            // Check if scrollZone is in view
+            if (rect.top <= viewportH && rect.bottom >= 0) {
+                // Calculate how far we've scrolled into the zone
+                // 0 = just entered, 1 = leaving entirely
+                let progress = -rect.top / (rect.height - viewportH);
+                progress = Math.max(0, Math.min(1, progress));
+
+                // Scale from 1 to 5, fading to white
+                const scale = 1 + (progress * 5);
+                // Transition color: kinetic (#CCFF00) to white (#FFFFFF)
+                // Roughly: CC->FF, FF->FF, 00->FF
+                const r = Math.floor(204 + (progress * 51));
+                const b = Math.floor(progress * 255);
+                
+                scaleText.style.transform = `scale(${scale})`;
+                scaleText.style.color = `rgb(${r}, 255, ${b})`;
+                
+                // If it scales too much, fade it out
+                if (progress > 0.8) {
+                    scaleText.style.opacity = 1 - ((progress - 0.8) * 5);
+                } else {
+                    scaleText.style.opacity = 1;
                 }
-            );
+            }
         });
-
-        // =============================================
-        // FAQ Accordion
-        // =============================================
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-        }); // end DOMContentLoaded
     </script>
-
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
-
 </body>
-
 </html>

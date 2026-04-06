@@ -1,1356 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Landing Pages | Custom Pages That Drive Orders | Naslogic</title>
-    <meta name="description"
-        content="Naslogic builds high-converting landing pages for restaurants and ghost kitchens. Get more reservations, catering leads, and direct online orders.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://naslogic.com/restaurants">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Restaurant Landing Pages That Drive Orders | Naslogic">
-    <meta property="og:description"
-        content="Custom-built landing pages for restaurants. More reservations, more direct orders, zero wasted ad spend.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com/restaurants">
-
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Restaurant Landing Page Design",
-        "description": "Naslogic builds high-converting, mobile-first landing pages specifically for restaurants, ghost kitchens, and catering services.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com"
-        },
-        "serviceType": "Landing Page Design for Restaurants",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a restaurant landing page cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our restaurant landing pages start at $199 with mobile-first design, perfect for hungry locals on the go."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do restaurants need a dedicated landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "To drive specific actions. Whether pushing a new catering menu, private events, or direct orders to avoid 3rd-party app fees, a landing page focuses the customer."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How fast can Naslogic deliver a restaurant landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We deliver production-ready restaurant landing pages on rapid turnarounds."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will the landing page work on mobile devices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. Nearly 90% of restaurant searches are done on mobile phones. Our pages load instantly to capture hungry customers."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can the landing page integrate with my CRM or booking software?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We integrate with popular restaurant tech like Toast, SevenRooms, and OpenTable."
-                }
-            }
-        ]
-    }
-    </script>
-
-
-    <!-- JSON-LD: BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-                {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://naslogic.com"
-                },
-                {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Restaurants Landing Pages",
-                        "item": "https://naslogic.com/restaurants"
-                }
-        ]
-}
-    </script>
-
-    <!-- Google Fonts -->
+    <title>Naslogic | Fine Dining & Michelin Landing Pages</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    
     <style>
-        /* =============================================
-           CSS Variables & Reset
-           ============================================= */
         :root {
-            --bg: #0A0A0A;
-            --text-main: #F0EDE8;
-            --text-muted: #888888;
-            --accent: #6EFF6A;
-            --accent-glow: rgba(110, 255, 106, 0.4);
-            --surface: #111111;
-            --surface-border: #222222;
-            --font-display: 'Anton', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --container: 1400px;
+            --charcoal: #050505;
+            --canvas: #FBF9F6;
+            --saffron: #D4AF37;
+            --truffle: #1A1A1A;
+            
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body, html {
+            background-color: var(--charcoal);
+            color: var(--canvas);
             font-family: var(--font-body);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* =============================================
-           Layout & Utilities
-           ============================================= */
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .section-padding {
-            padding: 120px 0;
-        }
-
-        /* =============================================
-           Typography
-           ============================================= */
-        h1, h2, h3, h4, .display-font {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: 0.02em;
-        }
-
-        p {
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
-
-        /* =============================================
-           Buttons — min 48px tap target
-           ============================================= */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            min-height: 48px;
-            min-width: 48px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--surface-border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* =============================================
-           Navigation
-           ============================================= */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
+            overflow-x: hidden;
             width: 100%;
-            padding: 24px 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: crosshair;
         }
 
-        .nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        ::selection { background: var(--saffron); color: var(--charcoal); }
 
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-main);
-            text-decoration: none;
-        }
+        h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; position: relative; z-index: 10; }
 
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            padding: 12px 0;
-        }
-
-        .nav-links a:not(.btn):hover {
-            color: var(--accent);
-        }
-
-        /* =============================================
-           Hero Section
-           ============================================= */
-        .hero {
+        /* Spotlight Effect wrapper */
+        .spotlight-wrapper {
             position: relative;
+            width: 100%;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
-                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
-            background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite alternate;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            line-height: 0.9;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
-        }
-
-        .hero-frag {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .hero-frag span {
-            display: block;
-            transform: translateY(110%);
-        }
-
-        .frag-1 { margin-left: 0; }
-        .frag-2 { margin-left: 10%; color: var(--text-muted); }
-        .frag-3 { margin-left: 3%; color: var(--accent); }
-
-        /* 50-Word AI Hook */
-        .hero-hook {
-            max-width: 600px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            opacity: 0;
-        }
-
-        /* =============================================
-           Problem Section
-           ============================================= */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .problem-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-transform: none;
-            font-family: var(--font-body);
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Comparison Table
-           ============================================= */
-        .comparison-table-wrap {
-            overflow-x: auto;
-            margin-top: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
-        }
-
-        .comparison-table thead {
-            background: var(--surface);
-        }
-
-        .comparison-table th {
-            padding: 24px 30px;
-            text-align: left;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .comparison-table th:last-child {
-            color: var(--accent);
-        }
-
-        .comparison-table td {
-            padding: 20px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-muted);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table td:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ff4444;
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Portfolio Section
-           ============================================= */
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .showcase-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .showcase-card:hover {
-            border-color: rgba(110, 255, 106, 0.3);
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .showcase-info {
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .showcase-title {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .showcase-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 6px 16px;
-            border-radius: 100px;
-            border: 1px solid var(--surface-border);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* =============================================
-           Process Section
-           ============================================= */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 50px 35px;
-            text-align: center;
-            position: relative;
-            transition: border-color 0.3s;
-        }
-
-        .step-card:hover {
-            border-color: var(--accent);
-        }
-
-        .step-num {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(110, 255, 106, 0.08);
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .step-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-
-        /* =============================================
-           FAQ Section
-           ============================================= */
-        .faq-list {
-            margin-top: 60px;
-            max-width: 800px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            font-weight: 600;
-            text-align: left;
-            padding: 28px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 48px;
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 28px;
-        }
-
-        .faq-answer p {
-            font-size: 1.05rem;
-        }
-
-        /* =============================================
-           CTA Banner
-           ============================================= */
-        .cta-banner {
-            background: var(--accent);
-            border-radius: 40px;
-            padding: 100px 50px;
-            text-align: center;
-            color: #000;
-            margin: 120px 5%;
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            margin-bottom: 20px;
-        }
-
-        .cta-banner p {
-            color: #222;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-banner .btn {
-            background: #000;
-            color: var(--accent);
-            font-size: 1.1rem;
-            padding: 22px 44px;
-        }
-
-        .cta-banner .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        /* =============================================
-           Footer
-           ============================================= */
-        .footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 40px 0;
-        }
-
-        .footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            padding: 8px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =============================================
-           Section Headers
-           ============================================= */
-        .section-header {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .section-sub {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        /* Sticky FAB */
-        .fab {
+        /* The dark overlying mask */
+        .lux-mask {
             position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            min-height: 48px;
-            border-radius: 100px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            z-index: 99;
-            box-shadow: 0 10px 30px var(--accent-glow);
-            animation: pulse 2s infinite;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: radial-gradient(circle 300px at var(--x, 50%) var(--y, 50%), transparent 0%, rgba(5, 5, 5, 0.95) 100%);
+            z-index: 5;
+            pointer-events: none;
+            transition: background 0.1s ease;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
+        /* Nav */
+        nav {
+            position: absolute; top: 0; width: 100%;
+            padding: 3rem 5vw;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100;
         }
 
-        /* =============================================
-           Responsive — Mobile First
-           ============================================= */
-        @media (max-width: 1024px) {
-            .comparison-table th,
-            .comparison-table td {
-                padding: 16px 20px;
-                font-size: 0.9rem;
-            }
+        .logo {
+            font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.15em;
+            color: var(--canvas); text-decoration: none; text-transform: uppercase;
         }
+
+        .reservations {
+            font-family: var(--font-body); font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 0.2em; color: var(--saffron); text-decoration: none;
+            padding-bottom: 5px; border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: border-color 0.4s ease;
+        }
+
+        .reservations:hover { border-color: var(--saffron); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column; justify-content: center;
+            position: relative; padding-top: 10vh;
+        }
+
+        /* Ambient background video/image simulating dark, moving atmosphere */
+        .ambient-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; filter: brightness(0.4) contrast(1.2);
+            z-index: 0; opacity: 0.5;
+        }
+
+        .hero-tag {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em;
+            color: var(--saffron); margin-bottom: 2rem; display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 10vw, 8rem);
+            max-width: 900px; margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .hero h1 i { color: var(--saffron); }
+
+        .hero p {
+            font-size: 1.25rem; font-style: italic; color: #999;
+            max-width: 500px; line-height: 1.8;
+        }
+
+        /* The Menu Interactive Section */
+        .tasting-menu {
+            padding: 10rem 0;
+            position: relative;
+            background: var(--charcoal);
+        }
+
+        .menu-item {
+            display: flex; justify-content: space-between; align-items: baseline;
+            padding: 3rem 0; border-bottom: 1px solid rgba(251, 249, 246, 0.1);
+            position: relative; cursor: pointer;
+        }
+
+        .menu-left { max-width: 60%; }
+
+        .menu-title {
+            font-family: var(--font-display); font-size: 2.5rem;
+            transition: color 0.4s ease; margin-bottom: 0.5rem;
+        }
+
+        .menu-desc {
+            font-family: var(--font-body); font-size: 1rem; color: #888;
+            letter-spacing: 0.05em; font-weight: 300;
+        }
+
+        .menu-price {
+            font-family: var(--font-body); font-size: 1rem; color: var(--saffron);
+            letter-spacing: 0.2em;
+        }
+
+        /* The hidden dish image that follows cursor when hovering a menu item */
+        .dish-hover {
+            position: fixed; width: 400px; height: 400px;
+            object-fit: cover; border-radius: 50%;
+            pointer-events: none; z-index: -1; opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+            transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+        }
+
+        .menu-item:hover .menu-title { color: var(--saffron); }
+
+        /* Strategy Section */
+        .plating {
+            padding: 10rem 0;
+            background: var(--truffle);
+        }
+
+        .plating-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+        }
+
+        .plating h2 { font-size: 3.5rem; margin-bottom: 3rem; color: var(--saffron); }
+
+        .plating p { font-size: 1.2rem; line-height: 1.8; color: #AAA; margin-bottom: 2rem; font-weight: 300; }
+
+        /* The Statement */
+        .statement {
+            padding: 20rem 0; text-align: center;
+        }
+
+        .statement h2 {
+            font-size: clamp(3rem, 6vw, 5rem); max-width: 1000px; margin: 0 auto 3rem;
+            line-height: 1.3; font-style: italic;
+        }
+
+        .statement .author {
+            display: block; font-family: var(--font-body); font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 0.3em; color: var(--saffron);
+        }
+
+        /* Final CTA */
+        .finale { padding: 10rem 0 15rem; text-align: center; }
+
+        .btn-gold {
+            display: inline-block; background: transparent; color: var(--saffron);
+            border: 1px solid var(--saffron); padding: 1.5rem 4rem;
+            font-family: var(--font-body); font-size: 0.8rem; text-transform: uppercase;
+            letter-spacing: 0.3em; text-decoration: none;
+            transition: all 0.5s ease; position: relative; overflow: hidden;
+        }
+
+        .btn-gold:hover { background: var(--saffron); color: var(--charcoal); }
 
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: clamp(2.8rem, 12vw, 5rem);
-            }
-
-            .frag-2 { margin-left: 0; }
-            .frag-3 { margin-left: 0; }
-
-            .showcase-img {
-                height: 250px;
-            }
-
-            .showcase-info {
-                padding: 20px;
-            }
-
-            .cta-banner {
-                padding: 60px 24px;
-                margin: 80px 5%;
-                border-radius: 24px;
-            }
-
-            .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 14px 16px;
-                font-size: 0.85rem;
-            }
+            .plating-grid { grid-template-columns: 1fr; }
+            .menu-item { flex-direction: column; gap: 1rem; }
+            .lux-mask { display: none; } /* disable spotlight on mobile */
         }
-
-        /* Scroll reveal utility */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
-
 <body>
 
-    <!-- ==========================================
-         Navigation
-         ========================================== -->
-    <nav class="nav" aria-label="Main navigation">
-        <div class="container">
-            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
-            <div class="nav-links">
-                <a href="naslogic.html">Home</a>
-                <a href="#portfolio">Work</a>
-                <a href="#faq">FAQ</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
+    <!-- Dark Spotlight Mask -->
+    <div class="lux-mask" id="lux-mask"></div>
+
+    <!-- Hidden hover images for the menu -->
+    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1000&auto=format&fit=crop" class="dish-hover" id="dish-1">
+    <img src="https://images.unsplash.com/photo-1621841957884-1210fe19b66d?q=80&w=1000&auto=format&fit=crop" class="dish-hover" id="dish-2">
+    <img src="https://images.unsplash.com/photo-1508499298414-b81682705fd5?q=80&w=1000&auto=format&fit=crop" class="dish-hover" id="dish-3">
+
+    <div class="spotlight-wrapper">
+        <nav>
+            <a href="/" class="logo">Naslogic</a>
+            <a href="#book" class="reservations">Book A Table</a>
+        </nav>
+
+        <header class="hero">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000&auto=format&fit=crop" class="ambient-bg" alt="Atmosphere">
+            <div class="container">
+                <span class="hero-tag">Culinary Web Architecture</span>
+                <h1>Taste happens <br><i>before</i> the first bite.</h1>
+                <p>Your tasting menu is a $300 per head experience. But your website looks like a chaotic pizza delivery menu. We engineer Michelin-grade digital aesthetics that fully book your dining room weeks in advance.</p>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-sep" aria-hidden="true">›</li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span class="breadcrumb-current" itemprop="name">Restaurants Landing Pages</span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- ==========================================
-         Hero Section
-         H1 — one per page, primary keyword target
-         ========================================== -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
-                <div class="hero-frag frag-2"><span>For Restaurants</span></div>
-                <div class="hero-frag frag-3"><span>& Ghost Kitchens</span></div>
-            </h1>
-            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
-            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for the hospitality industry. We design pages that turn website visitors into booked reservations, catering leads, and direct online orders. No generic templates.</p>
-            <div class="hero-ctas">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
-                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See Restaurant Examples</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Problem Section
-         H2 — second in hierarchy
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Why Most Restaurant Websites Fail</h2>
-        <p class="section-sub fade-up">Restaurants invest in marketing, but poor websites cause hungry customers to bounce to delivery apps.</p>
-
-        <div class="problem-grid">
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📉</div>
-                <h3>Traffic That Never Converts</h3>
-                <p>Customers can't find your menu or ordering link easily on mobile, so they leave frustrated.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📱</div>
-                <h3>Broken Mobile Experience</h3>
-                <p>If your site loads slowly, you lose revenue to competitors or 3rd-party apps that take 30% cuts.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">🏗️</div>
-                <h3>Generic, Cookie-Cutter Design</h3>
-                <p>Template websites fail to capture the atmosphere and crave-ability of your food.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Comparison Table
-         AI engines pull from HTML tables
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
-        <p class="section-sub fade-up">See why top restaurateurs choose a specialist over a one-size-fits-all agency.</p>
-
-        <div class="comparison-table-wrap fade-up">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Generic Agency</th>
-                        <th>Naslogic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hospitality industry expertise</td>
-                        <td><span class="cross">✗</span> No industry focus</td>
-                        <td><span class="check">✓</span> Built for restaurants</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile-first design</td>
-                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
-                        <td><span class="check">✓</span> 100% mobile-optimized</td>
-                    </tr>
-                    <tr>
-                        <td>Conversion-focused layout</td>
-                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
-                        <td><span class="check">✓</span> Every element drives action</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-ready structure</td>
-                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
-                        <td><span class="check">✓</span> Schema markup, clean headings</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery speed</td>
-                        <td>4 to 12 weeks typical</td>
-                        <td><span class="check">✓</span> Days, not months</td>
-                    </tr>
-                    <tr>
-                        <td>CRM integration</td>
-                        <td>Extra fees required</td>
-                        <td><span class="check">✓</span> Toast, OpenTable, SevenRooms</td>
-                    </tr>
-                    <tr>
-                        <td>Price transparency</td>
-                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
-                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Portfolio Section
-         ========================================== -->
-    <section id="portfolio" class="section-padding container">
-        <h2 class="section-header fade-up">Restaurant Pages We Have Built</h2>
-        <p class="section-sub fade-up">Conversion-first landing pages designed specifically for restaurants and catering services.</p>
-
-        <div class="portfolio-showcase">
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 1: Direct Ordering (High Energy) -->
-                <div class="showcase-img" role="img" aria-label="Restaurant direct ordering landing page by Naslogic with mobile menu and online order integration" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#210f2d; font-family:'Rubik', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Rubik:wght@400;600;800;900&display=swap');
-                        .rest1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:radial-gradient(circle at 80% 20%, #3e1c55 0%, #210f2d 100%); overflow:hidden; }
-                        .rest1-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 50px; z-index:2; border-bottom:1px solid rgba(255,255,255,0.05); }
-                        .rest1-logo { font-family:'Teko', sans-serif; font-size:50px; line-height:0.8; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:2px; display:flex; align-items:center; gap:10px; }
-                        .rest1-logo span { color:#ff5722; }
-                        .rest1-logo-icon { width:45px; height:45px; background:#ff5722; border-radius:12px; transform:rotate(-10deg); display:flex; align-items:center; justify-content:center; font-size:24px; }
-                        .rest1-links { display:flex; gap:30px; font-size:16px; font-weight:800; color:#fff; text-transform:uppercase; letter-spacing:1px; }
-                        .rest1-cart { display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.1); padding:10px 20px; border-radius:100px; font-weight:800; }
-                        .rest1-cart-icon { position:relative; }
-                        .rest1-cart-badge { position:absolute; top:-8px; right:-8px; background:#aeea00; color:#000; font-size:12px; font-weight:900; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
-                        .rest1-hero { flex:1; display:flex; padding:0 50px; align-items:center; position:relative; z-index:2; }
-                        .rest1-content { flex:0.55; position:relative; z-index:3; }
-                        .rest1-title { font-family:'Teko', sans-serif; font-size:100px; line-height:0.85; text-transform:uppercase; margin-bottom:15px; text-shadow:4px 4px 0px rgba(0,0,0,0.5); }
-                        .rest1-title span { color:#ff5722; }
-                        .rest1-desc { font-size:20px; line-height:1.5; color:#d1c4e9; max-width:450px; margin-bottom:30px; font-weight:600; }
-                        .rest1-tags { display:flex; gap:12px; margin-bottom:40px; }
-                        .rest1-tag { padding:8px 16px; background:rgba(255,87,34,0.15); border:2px solid #ff5722; border-radius:8px; color:#ff5722; font-weight:800; font-size:14px; text-transform:uppercase; letter-spacing:1px; }
-                        .rest1-btns { display:flex; gap:20px; }
-                        .rest1-btn-main { background:#aeea00; color:#000; font-family:'Rubik', sans-serif; font-size:22px; font-weight:900; text-transform:uppercase; padding:18px 40px; border-radius:100px; box-shadow:0 10px 20px rgba(174,234,0,0.3); border:none; letter-spacing:1px; display:inline-flex; align-items:center; gap:12px; }
-                        .rest1-visual { flex:0.45; position:relative; height:100%; display:flex; justify-content:center; align-items:center; }
-                        .rest1-burger { width:450px; height:450px; background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23ff5722" opacity="0.8"/><text x="50" y="50" font-family="Arial" font-size="40" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="central">🍔</text></svg>') center/contain no-repeat; filter:drop-shadow(20px 30px 20px rgba(0,0,0,0.6)); transform:rotate(5deg) scale(1.1); }
-                        .rest1-float { position:absolute; background:#fff; color:#000; padding:15px 25px; border-radius:20px; font-weight:900; font-size:18px; box-shadow:0 15px 30px rgba(0,0,0,0.4); display:flex; flex-direction:column; }
-                        .rest1-float-sub { font-size:12px; color:#777; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px; }
-                        .rest1-float1 { top:20%; left:-50px; transform:rotate(-5deg); border-bottom:5px solid #ff5722; }
-                        .rest1-float2 { bottom:20%; right:0; transform:rotate(5deg); border-bottom:5px solid #aeea00; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="rest1-wrap">
-                        <div class="rest1-nav">
-                            <div class="rest1-logo"><div class="rest1-logo-icon">🔥</div> SMASH<span>BROS</span></div>
-                            <div class="rest1-links">
-                                <span>Menu</span>
-                                <span>Locations</span>
-                                <span>Rewards</span>
-                            </div>
-                            <div class="rest1-cart">
-                                <div class="rest1-cart-icon">🛒 <div class="rest1-cart-badge">2</div></div>
-                                $24.50
-                            </div>
-                        </div>
-                        <div class="rest1-hero">
-                            <div class="rest1-content">
-                                <h1 class="rest1-title">Double Smash. <span>Zero Wait.</span></h1>
-                                <p class="rest1-desc">Crispy edges, juicy centers, and our secret sauce. Order direct to skip the delivery app fees and get it hot.</p>
-                                <div class="rest1-tags">
-                                    <div class="rest1-tag">🔥 100% Angus</div>
-                                    <div class="rest1-tag">⚡ Fast Delivery</div>
-                                </div>
-                                <div class="rest1-btns">
-                                    <button class="rest1-btn-main">Order Delivery Now <span>→</span></button>
-                                </div>
-                            </div>
-                            <div class="rest1-visual">
-                                <div class="rest1-burger"></div>
-                                <div class="rest1-float rest1-float1">
-                                    <span class="rest1-float-sub">Est. Delivery</span>
-                                    25 - 35 Min
-                                </div>
-                                <div class="rest1-float rest1-float2">
-                                    <span class="rest1-float-sub">Rating</span>
-                                    ⭐ 4.9 (2k+)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="tasting-menu container">
+            <span class="hero-tag" style="margin-bottom: 4rem; text-align: center;">The Frictionless Menu</span>
+            
+            <div class="menu-item" data-dish="dish-1">
+                <div class="menu-left">
+                    <h3 class="menu-title">Visual Restraint</h3>
+                    <p class="menu-desc">Eliminating noisy imagery, chaotic PDF menus, and aggressive primary colors.</p>
                 </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Direct Ordering Promo</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Ghost Kitchen</span>
-                            <span class="tag">Direct Orders</span>
-                            <span class="tag">High-Conversion</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
+                <div class="menu-price">COURSE I</div>
+            </div>
+            
+            <div class="menu-item" data-dish="dish-2">
+                <div class="menu-left">
+                    <h3 class="menu-title">Atmospheric Pacing</h3>
+                    <p class="menu-desc">UX that mimics the quiet, deliberate pacing of a high-end sommelier.</p>
+                </div>
+                <div class="menu-price">COURSE II</div>
+            </div>
+            
+            <div class="menu-item" data-dish="dish-3">
+                <div class="menu-left">
+                    <h3 class="menu-title">Exquisite Booking</h3>
+                    <p class="menu-desc">Integrating Resy or Tock without compromising the integrity of the design.</p>
+                </div>
+                <div class="menu-price">COURSE III</div>
+            </div>
+        </section>
+
+        <section class="plating">
+            <div class="container plating-grid">
+                <div>
+                    <span class="hero-tag">The Philosophy</span>
+                    <h2>Food should be framed, not shouted.</h2>
+                    <p>Red and yellow invoke hunger and urgency—tactics for fast food. Fine dining requires the exact opposite. We utilize negative space, 'truffle' charcoals, and cinematic spotlighting to frame your culinary art with reverence.</p>
+                    <p>By elevating the digital aesthetic, we actively repel bargain diners complaining about portion sizes, and attract the clientele who understand the price of artistry.</p>
+                </div>
+                <div>
+                    <!-- Abstract image implying elegance -->
+                    <img src="https://images.unsplash.com/photo-1541530962304-411db1bd5e52?q=80&w=1000&auto=format&fit=crop" style="width: 100%; height: auto; outline: 1px solid rgba(212, 175, 55, 0.2); outline-offset: 20px;">
                 </div>
             </div>
+        </section>
 
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 2: Catering (Corporate/Refined) -->
-                <div class="showcase-img" role="img" aria-label="Corporate catering landing page built by Naslogic with event booking and lead capture form" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#f9f9fa; font-family:'Lato', sans-serif; color:#2d3748;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lato:wght@300;400;700&display=swap');
-                        .rest2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#ffffff; overflow:hidden; }
-                        .rest2-nav { display:flex; justify-content:space-between; align-items:center; padding:35px 80px; position:relative; z-index:3; border-bottom:1px solid rgba(0,0,0,0.05); }
-                        .rest2-logo { font-family:'Cormorant Garamond', serif; font-size:34px; font-weight:700; color:#1a202c; letter-spacing:3px; text-transform:uppercase; }
-                        .rest2-links { display:flex; gap:45px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#4a5568; }
-                        .rest2-btn-outline { border:1px solid #1a202c; color:#1a202c; padding:12px 30px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:700; }
-                        .rest2-hero { flex:1; display:flex; padding:0 80px; align-items:center; position:relative; z-index:3; gap:60px; }
-                        .rest2-content { flex:1; }
-                        .rest2-subtitle { font-family:'Lato', sans-serif; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:4px; color:#8fbc8f; margin-bottom:20px; }
-                        .rest2-title { font-family:'Cormorant Garamond', serif; font-size:75px; font-weight:600; line-height:1.05; color:#1a202c; margin-bottom:30px; }
-                        .rest2-desc { font-size:18px; color:#4a5568; margin-bottom:40px; line-height:1.7; font-weight:300; max-width:500px; }
-                        .rest2-logos { display:flex; gap:30px; margin-top:20px; opacity:0.6; align-items:center; }
-                        .rest2-logo-mock { height:30px; width:100px; background:#cbd5e0; border-radius:4px; }
-                        .rest2-form-col { flex:0.85; display:flex; justify-content:flex-end; }
-                        .rest2-form { width:100%; max-width:480px; background:#ffffff; border:1px solid #e2e8f0; padding:50px; box-shadow:0 30px 60px rgba(0,0,0,0.08); position:relative; }
-                        .rest2-form::before { content:''; position:absolute; top:0; left:0; width:100%; height:6px; background:#8fbc8f; }
-                        .rest2-form-title { font-family:'Cormorant Garamond', serif; font-size:36px; font-weight:600; color:#1a202c; margin-bottom:10px; line-height:1.1; }
-                        .rest2-form-sub { font-size:15px; color:#718096; margin-bottom:35px; }
-                        .rest2-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; }
-                        .rest2-input { width:100%; height:55px; background:#f7fafc; border:1px solid #e2e8f0; padding:0 20px; font-size:15px; color:#4a5568; font-family:'Lato', sans-serif; transition:border 0.3s; }
-                        .rest2-input:focus { border-color:#8fbc8f; outline:none; }
-                        .rest2-select { width:100%; height:55px; background:#f7fafc; border:1px solid #e2e8f0; padding:0 20px; font-size:15px; color:#718096; font-family:'Lato', sans-serif; appearance:none; }
-                        .rest2-btn { width:100%; height:60px; background:#1a202c; color:#fff; font-family:'Lato', sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:2px; border:none; margin-top:10px; cursor:pointer; }
-                        .rest2-decor { position:absolute; bottom:0; right:0; width:50%; height:60%; background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 Q100 50 50 100 Q0 50 50 0" fill="%238fbc8f" opacity="0.05"/></svg>') right bottom/contain no-repeat; z-index:0; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
+        <section class="statement container">
+            <h2>"We stopped acting like a restaurant and started acting like a gallery. After Naslogic rebuilt our UX, our private room bookings surged by 150%. The site simply looks too expensive for casual dining."</h2>
+            <span class="author">Chef Laurent M. — Proprietor</span>
+        </section>
 
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="rest2-wrap">
-                        <div class="rest2-decor"></div>
-                        <div class="rest2-nav">
-                            <div class="rest2-logo">PROVISIONS</div>
-                            <div class="rest2-links">
-                                <span>Menus</span>
-                                <span>Venues</span>
-                                <span>Journal</span>
-                            </div>
-                            <div class="rest2-btn-outline">Inquire</div>
-                        </div>
-                        <div class="rest2-hero">
-                            <div class="rest2-content">
-                                <div class="rest2-subtitle">Corporate & Private Events</div>
-                                <h1 class="rest2-title">Elevate Your Next Gathering.</h1>
-                                <p class="rest2-desc">Bespoke culinary experiences for corporate retreats, charity galas, and milestone celebrations. Crafted with seasonal, locally-sourced ingredients.</p>
-                                <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#718096; margin-bottom:10px;">Trusted By</div>
-                                <div class="rest2-logos">
-                                    <div class="rest2-logo-mock"></div>
-                                    <div class="rest2-logo-mock"></div>
-                                    <div class="rest2-logo-mock"></div>
-                                </div>
-                            </div>
-                            <div class="rest2-form-col">
-                                <div class="rest2-form">
-                                    <div class="rest2-form-title">Request a Proposal</div>
-                                    <div class="rest2-form-sub">Our catering directors will respond within 24 hours.</div>
-                                    <div class="rest2-grid">
-                                        <div class="rest2-input" style="display:flex; align-items:center;">First Name</div>
-                                        <div class="rest2-input" style="display:flex; align-items:center;">Last Name</div>
-                                    </div>
-                                    <div class="rest2-input" style="display:flex; align-items:center; margin-bottom:20px;">Corporate Email</div>
-                                    <div class="rest2-grid">
-                                        <div class="rest2-select" style="display:flex; align-items:center; justify-content:space-between;">Event Date <span>▾</span></div>
-                                        <div class="rest2-select" style="display:flex; align-items:center; justify-content:space-between;">Guest Count <span>▾</span></div>
-                                    </div>
-                                    <button class="rest2-btn">Submit Inquiry</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Corporate Catering Leads</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Catering</span>
-                            <span class="tag">Event Booking</span>
-                            <span class="tag">B2B Sales</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
+        <section class="finale" id="book">
+            <div class="container">
+                <span class="hero-tag" style="margin-bottom: 3rem;">Service is Open</span>
+                <a href="mailto:hello@naslogic.com" class="btn-gold">Commission A Design Tasting</a>
             </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Process Section
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live restaurant landing page that drives orders and generates qualified leads for your restaurant.</p>
-
-        <div class="process-steps">
-            <div class="step-card fade-up">
-                <div class="step-num">01</div>
-                <h3>Book a Call</h3>
-                <p>We learn your restaurant concept, menu goals, and map out the customer journey.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">02</div>
-                <h3>We Build It</h3>
-                <p>Our team designs and develops a mobile-first, conversion-optimized landing page tailored to hospitality marketing.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">03</div>
-                <h3>You Grow</h3>
-                <p>Your page goes live and starts converting visitors into reservations, catering leads, and direct orders.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ Section — Powers FAQPage Schema
-         ========================================== -->
-    <section id="faq" class="section-padding container">
-        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
-        <p class="section-sub fade-up">Common questions from restaurant owners about our landing page design.</p>
-
-        <div class="faq-list fade-up">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much does a restaurant landing page cost?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Our restaurant landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Why do restaurants need a dedicated landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>To drive specific actions. Whether pushing a new catering menu, private events, or direct orders to avoid 3rd-party app fees, a landing page focuses the customer.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How fast can Naslogic deliver a restaurant landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>We deliver production-ready restaurant landing pages on rapid turnarounds.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will the landing page work on mobile devices?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. Nearly 90% of restaurant searches are done on mobile phones. Our pages load instantly to capture hungry customers.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can the landing page integrate with my CRM or booking software?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We integrate with popular restaurant tech like Toast, SevenRooms, and OpenTable.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA Banner
-         ========================================== -->
-    <section class="cta-banner fade-up">
-        <h2>Ready to Drive More Direct Revenue?</h2>
-        <p>Stop losing 30% to delivery apps simply because your website is hard to use. Get a landing page that converts.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
-    </section>
-
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
-        <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/fitness" class="related-link">Fitness & Gyms Landing Pages</a>
-                <a href="/ecommerce" class="related-link">E-Commerce Brands Landing Pages</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
+        </section>
     </div>
 
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div>
-                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
-            </div>
-            <div class="footer-links">
-                <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
-            </div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
-
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-
     <script>
-        // =============================================
-        // Initialize GSAP
-        // =============================================
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Spotlight interaction
+        const mask = document.getElementById('lux-mask');
+        let maskX = window.innerWidth / 2;
+        let maskY = window.innerHeight / 2;
+        let targetX = maskX;
+        let targetY = maskY;
 
-        // =============================================
-        // Hero Entrance Timeline
-        // =============================================
-        const heroTl = gsap.timeline();
-        heroTl.to(".hero-frag span", {
-            y: "0%",
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            delay: 0.2
-        })
-        .to(".hero-hook", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.8")
-        .to(".hero-ctas", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.9");
-
-        // =============================================
-        // Scroll Reveal — Fade Up
-        // =============================================
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 88%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
+        document.addEventListener('mousemove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
         });
 
-        // =============================================
-        // FAQ Accordion
-        // =============================================
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
+        // Smoothly animate the gradient center
+        function animateMask() {
+            maskX += (targetX - maskX) * 0.1;
+            maskY += (targetY - maskY) * 0.1;
+            mask.style.setProperty('--x', `${maskX}px`);
+            mask.style.setProperty('--y', `${maskY}px`);
+            requestAnimationFrame(animateMask);
+        }
+        animateMask();
+
+        // Menu Dish reveal hover
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        menuItems.forEach(item => {
+            const dishId = item.getAttribute('data-dish');
+            const dishEl = document.getElementById(dishId);
+            
+            item.addEventListener('mouseenter', () => {
+                dishEl.style.opacity = '1';
+                dishEl.style.transform = `translate(-50%, -50%) scale(1)`;
+                dishEl.style.zIndex = '4'; // placing right under mask
+            });
+            
+            item.addEventListener('mousemove', (e) => {
+                // dish slightly lags behind cursor
+                dishEl.style.left = `${e.clientX}px`;
+                dishEl.style.top = `${e.clientY}px`;
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                dishEl.style.opacity = '0';
+                dishEl.style.transform = `translate(-50%, -50%) scale(0.8)`;
+                setTimeout(() => { dishEl.style.zIndex = '-1'; }, 500);
             });
         });
-        }); // end DOMContentLoaded
     </script>
-
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
-
 </body>
-
 </html>

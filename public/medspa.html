@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naslogic | Luxury MedSpa Landing Pages</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-obsidian: #0A0A09;
+            --bg-obsidian-light: #121210;
+            --text-champagne: #EFECE6;
+            --text-muted: #A39E93;
+            --accent-gold: #C6AD7A;
+            --accent-gold-dim: #8F7D56;
+            --glass-bg: rgba(239, 236, 230, 0.02);
+            --glass-border: rgba(239, 236, 230, 0.08);
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-label: 'Syncopate', sans-serif;
+            
+            --transition-smooth: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            --transition-fast: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-obsidian);
+            color: var(--text-champagne);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        ::-moz-selection { background: var(--accent-gold); color: var(--bg-obsidian); }
+        ::selection { background: var(--accent-gold); color: var(--bg-obsidian); }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        .label {
+            font-family: var(--font-label);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .text-italic {
+            font-style: italic;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 2rem; }
+        }
+
+        section {
+            padding: 10rem 0;
+            position: relative;
+        }
+
+        /* Buttons */
+        .btn {
+            background: transparent;
+            color: var(--text-champagne);
+            font-family: var(--font-label);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            padding: 1.5rem 3rem;
+            border: 1px solid var(--accent-gold);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: color var(--transition-fast);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-smooth);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--bg-obsidian);
+        }
+
+        .btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: var(--font-label);
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            color: var(--text-champagne);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(198, 173, 122, 0.08) 0%, transparent 50%),
+                        linear-gradient(to bottom, var(--bg-obsidian) 0%, transparent 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 8vw, 7rem);
+            margin-bottom: 2rem;
+            color: var(--text-champagne);
+            line-height: 1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .hero-image-wrapper {
+            position: absolute;
+            right: 10%;
+            top: 60%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 600px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2);
+        }
+
+        .hero-image-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--bg-obsidian), transparent 50%),
+                        linear-gradient(to top, var(--bg-obsidian), transparent 50%);
+        }
+
+        /* Pain Section */
+        .pain-section {
+            background-color: var(--bg-obsidian-light);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .pain-title {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            color: var(--text-muted);
+        }
+
+        .pain-title span {
+            color: var(--text-champagne);
+            display: block;
+        }
+
+        .pain-copy {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .pain-copy strong {
+            color: var(--accent-gold);
+            font-weight: 400;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            position: relative;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 4rem 3rem;
+            backdrop-filter: blur(10px);
+            transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-gold-dim);
+        }
+
+        .glass-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .glass-card p {
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .glass-card-icon {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-family: var(--font-display);
+            font-style: italic;
+        }
+
+        /* Testimonial Section */
+        .social-proof {
+            text-align: center;
+            background: linear-gradient(to bottom, var(--bg-obsidian) 0%, var(--bg-obsidian-light) 100%);
+        }
+
+        .testimonial {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-quote {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.3;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .quote-marks {
+            color: var(--accent-gold-dim);
+            font-size: 6rem;
+            position: absolute;
+            top: -2rem;
+            left: -4rem;
+            opacity: 0.3;
+            font-family: var(--font-display);
+        }
+
+        .testimonial-author {
+            font-family: var(--font-label);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+        }
+        
+        .testimonial-role {
+            display: block;
+            margin-top: 0.5rem;
+            color: var(--text-muted);
+            font-family: var(--font-body);
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Process Section */
+        .process-section {
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .process-list {
+            list-style: none;
+            margin-top: 5rem;
+        }
+
+        .process-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width var(--transition-smooth);
+        }
+
+        .process-item:hover::after {
+            width: 100%;
+        }
+
+        .process-num {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--accent-gold-dim);
+            font-style: italic;
+            width: 15%;
+            line-height: 1;
+        }
+
+        .process-content {
+            width: 85%;
+        }
+
+        .process-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-obsidian-light);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--glass-border);
+            padding: 2rem 0;
+            cursor: pointer;
+        }
+
+        .faq-question {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-champagne);
+            transition: color 0.3s ease;
+        }
+        
+        .faq-item:hover .faq-question {
+            color: var(--accent-gold);
+        }
+
+        .faq-icon {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.4s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        .faq-answer p {
+            padding-top: 1.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 15rem 0;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(198, 173, 122, 0.1) 0%, var(--bg-obsidian) 70%);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        footer {
+            background-color: var(--bg-obsidian);
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-family: var(--font-label);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .solution-grid { grid-template-columns: 1fr; }
+            .pain-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .process-item { flex-direction: column; }
+            .process-num { margin-bottom: 1rem; }
+            .process-content { width: 100%; }
+            .hero-image-wrapper { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">NASLOGIC</a>
+        <a href="#audit" class="nav-logo" style="color: var(--accent-gold);">REQUEST AUDIT</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container relative">
+            <div class="hero-content">
+                <span class="label reveal">The MedSpa Agency</span>
+                <h1 class="reveal delay-1">Stop Competing on Price. <br><span class="text-italic" style="color: var(--accent-gold);">Start Competing on Prestige.</span></h1>
+                <p class="reveal delay-2">Generic landing pages attract bargain hunters. We architect immersive web experiences for luxury aesthetics practices that make your $5k treatment plans feel like a necessary indulgence.</p>
+                <div class="reveal delay-3">
+                    <a href="#audit" class="btn">Elevate Your Practice</a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative abstract element representing skin/texture -->
+        <div class="hero-image-wrapper reveal delay-3">
+            <div class="hero-image-mask"></div>
+            <!-- Using a subtle, highly stylized placeholder image from Unsplash that feels like editorial beauty -->
+            <img class="hero-image" src="https://images.unsplash.com/photo-1616394584738-1d4ac1967285?auto=format&fit=crop&q=80&w=800" alt="Abstract sculpture representing form">
+        </div>
+    </section>
+
+    <section class="pain-section">
+        <div class="container">
+            <div class="pain-grid">
+                <div class="reveal">
+                    <span class="label">The Clinic Paradox</span>
+                    <h2 class="pain-title">Elite Injectors.<br><span>Bargain Design.</span></h2>
+                </div>
+                <div class="reveal delay-1">
+                    <p class="pain-copy">
+                        You offer state-of-the-art procedures in a pristine, architecturally stunning clinic. But your online presence looks like a 2014 Groupon ad.<br><br>
+                        When high-net-worth clients experience friction or cheap design before they even book, <strong>they assume cheap results.</strong> They filter you out. You're losing $10k recurring patients because your landing page doesn't match your syringe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution-section">
+        <div class="container">
+            <span class="label text-center reveal" style="text-align: center;">The Digital Concierge</span>
+            <h2 class="text-center reveal delay-1" style="text-align: center; font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 2rem;">A Velvet Rope Experience.</h2>
+            
+            <div class="solution-grid">
+                <div class="glass-card reveal">
+                    <div class="glass-card-icon">01.</div>
+                    <h3>Cinematic Authority</h3>
+                    <p>We discard templates entirely. Your page is custom-coded to feel like the lobby of a 5-star hotel—using typography, pacing, and color science to establish immediate trust and premier pricing.</p>
+                </div>
+                <div class="glass-card reveal delay-1">
+                    <div class="glass-card-icon">02.</div>
+                    <h3>Frictionless Intake</h3>
+                    <p>Booking a consultation shouldn't feel like a DMV form. We design fluid, conversational micro-interactions that capture highly qualified leads while feeling like an elite white-glove service.</p>
+                </div>
+                <div class="glass-card reveal delay-2">
+                    <div class="glass-card-icon">03.</div>
+                    <h3>Curated Desire</h3>
+                    <p>We don't just list "Neuromodulators" and "HA Fillers." Our copywriters frame your treatments around the ultimate desire—confidence, youth, and undetectable enhancement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="container">
+            <div class="testimonial reveal">
+                <span class="quote-marks">"</span>
+                <p class="testimonial-quote">Our premium total-face rejuvenation packages increased by 310% in three months. We completely stopped getting questions about discounts, and started getting requests for the VIP treatment.</p>
+                <span class="testimonial-author">DR. ELENA ROUX</span>
+                <span class="testimonial-role">Founder, Aesthetics Institute Beverly Hills</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <span class="label reveal">The Methodology</span>
+            <h2 class="reveal delay-1" style="font-size: clamp(3rem, 5vw, 4.5rem);">Architecting Trust.</h2>
+            
+            <ul class="process-list">
+                <li class="process-item reveal">
+                    <div class="process-num">I</div>
+                    <div class="process-content">
+                        <h3>The Clinical Consultation</h3>
+                        <p>We audit your most profitable treatments, ideal patient profile, and current bottlenecks. We unearth the exact messaging required to pull affluent clients away from competitors.</p>
+                    </div>
+                </li>
+                <li class="process-item reveal">
+                    <div class="process-num">II</div>
+                    <div class="process-content">
+                        <h3>The Aesthetic Blueprint</h3>
+                        <p>Our designers craft an immersive visual language specific to your brand. No stock medical photos—we guide you on art direction to capture the luxury essence of your practice.</p>
+                    </div>
+                </li>
+                <li class="process-item reveal">
+                    <div class="process-num">III</div>
+                    <div class="process-content">
+                        <h3>The Launch & Scale</h3>
+                        <p>We deliver a meticulously coded, ultra-fast landing page integrated directly with your booking software (Zenoti, MangoMint, Jane). Built to dominate paid traffic campaigns.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container faq-container">
+            <div class="faq-header reveal">
+                <span class="label">Clarity</span>
+                <h2>Frequently Asked</h2>
+            </div>
+            
+            <div class="faq-item reveal delay-1">
+                <div class="faq-question">
+                    Will this integrate with our current booking system?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Whether you use Zenoti, MangoMint, Boulevard, or Jane App, we seamlessly embed your booking flows without compromising the high-end aesthetic of the landing page.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item reveal delay-2">
+                <div class="faq-question">
+                    Do we need to provide new photography?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>If you have high-tier editorial imagery, we will utilize it. If not, we provide an art-direction brief for your local photographer, or curate ultra-premium, non-generic lifestyle assets that align with the "Clinical Silk & Glass" aesthetic.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item reveal delay-3">
+                <div class="faq-question">
+                    What is the typical timeline for delivery?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>From our initial strategy call to final deployment, the process takes exactly 14 working days. We operate with clinical precision—no agency bloat, no endless revision cycles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="audit">
+        <div class="container">
+            <span class="label reveal">The Next Step</span>
+            <h2 class="reveal delay-1">Command Your Market.</h2>
+            <p class="reveal delay-2">Only accepting 3 new MedSpa partners this quarter to ensure absolute focus on conversion excellence.</p>
+            <div class="reveal delay-3">
+                <a href="mailto:hello@naslogic.com" class="btn">Apply For Partnership</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NASLOGIC ALL RIGHTS RESERVED - THE MEDSPA CONVERSION AGENCY</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth reveal on scroll using Vanilla JS + Intersection Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+            
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+
+            // Trigger initial reveals immediately for above-the-fold content
+            setTimeout(() => {
+                const initialReveals = document.querySelectorAll('.hero .reveal');
+                initialReveals.forEach(el => el.classList.add('active'));
+            }, 100);
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    
+                    // Close all others
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('open');
+                    });
+                    
+                    // Toggle current
+                    if (!isOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

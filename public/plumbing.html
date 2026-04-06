@@ -1,1358 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plumbing Landing Pages | Custom Pages That Book Calls | Naslogic</title>
-    <meta name="description"
-        content="Naslogic builds high-converting landing pages for plumbing contractors. Get more leak repair leads, water heater installs, and booked service calls with a page engineered for your market.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://naslogic.com/plumbing">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Plumbing Landing Pages That Book Calls | Naslogic">
-    <meta property="og:description"
-        content="Custom-built landing pages for plumbing contractors. More leads, more booked calls, zero wasted ad spend.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com/plumbing">
-
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Plumbing Landing Page Design",
-        "description": "Naslogic builds high-converting, mobile-first landing pages specifically for plumbing contractors. Our pages are designed to convert visitors into booked estimates for services like leak repair, water heater installation, and repiping.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com"
-        },
-        "serviceType": "Landing Page Design for Plumbing Contractors",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a plumbing landing page cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our plumbing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do plumbers need a dedicated landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Plumbers spend significant budgets driving traffic, but most send visitors to generic homepages. A dedicated landing page with a single call-to-action can increase conversion rates by 2x to 5x compared to a standard website."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How fast can Naslogic deliver a plumbing landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We deliver production-ready plumbing landing pages on rapid turnarounds. Most single-page projects are completed within days."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will the landing page work on mobile devices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. Over 75% of homeowners searching for an emergency plumber do so on their phone. Our pages are engineered to load fast and capture mobile leads."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can the landing page integrate with my CRM or booking software?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We integrate with popular CRMs like ServiceTitan and Housecall Pro, as well as general tools like HubSpot and Calendly."
-                }
-            }
-        ]
-    }
-    </script>
-
-
-    <!-- JSON-LD: BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-                {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://naslogic.com"
-                },
-                {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Plumbing Contractors Landing Pages",
-                        "item": "https://naslogic.com/plumbing"
-                }
-        ]
-}
-    </script>
-
-    <!-- Google Fonts -->
+    <title>Naslogic | Premium Plumbing & Hydro-architecture</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&family=Manrope:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* =============================================
-           CSS Variables & Reset
-           ============================================= */
         :root {
-            --bg: #0A0A0A;
-            --text-main: #F0EDE8;
-            --text-muted: #888888;
-            --accent: #6EFF6A;
-            --accent-glow: rgba(110, 255, 106, 0.4);
-            --surface: #111111;
-            --surface-border: #222222;
-            --font-display: 'Anton', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --container: 1400px;
+            --abyss: #071321;
+            --abyss-deep: #03080F;
+            --copper: #E68A4D; /* brighter copper */
+            --copper-dark: #B87333;
+            --ceramic: #F5F5F5;
+            
+            --font-display: 'Bai Jamjuree', sans-serif;
+            --font-body: 'Manrope', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
+            background-color: var(--abyss);
+            color: var(--ceramic);
             font-family: var(--font-body);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        ::selection { background: var(--copper); color: var(--abyss); }
 
-        /* =============================================
-           Layout & Utilities
-           ============================================= */
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 5%;
-        }
+        h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; }
 
-        .section-padding {
-            padding: 120px 0;
-        }
-
-        /* =============================================
-           Typography
-           ============================================= */
-        h1, h2, h3, h4, .display-font {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: 0.02em;
-        }
-
-        p {
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
-
-        /* =============================================
-           Buttons — min 48px tap target
-           ============================================= */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            min-height: 48px;
-            min-width: 48px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--surface-border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* =============================================
-           Navigation
-           ============================================= */
-        .nav {
+        /* Liquid Background Engine */
+        .liquid-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 24px 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0; opacity: 0.4;
+            background: radial-gradient(circle at 50% 50%, rgba(230, 138, 77, 0.05) 0%, transparent 60%);
         }
 
-        .nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Abstract CSS water wave effect */
+        .wave-container {
+            position: fixed;
+            width: 100vw; height: 100vh;
+            top: 0; left: 0; z-index: 0;
+            overflow: hidden; pointer-events: none;
         }
 
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            padding: 12px 0;
-        }
-
-        .nav-links a:not(.btn):hover {
-            color: var(--accent);
-        }
-
-        /* =============================================
-           Hero Section
-           ============================================= */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
-        }
-
-        .hero-bg {
+        .wave {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
-                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
-            background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite alternate;
+            left: 50%; top: 50%;
+            width: 200vw; height: 200vw;
+            margin-left: -100vw; margin-top: -100vw;
+            background: linear-gradient(to bottom, rgba(7, 19, 33, 0), rgba(3, 8, 15, 0.8));
+            border-radius: 40%;
+            animation: spin 30s infinite linear;
+            opacity: 0.1;
         }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
+        .wave:nth-child(2) { animation-duration: 45s; opacity: 0.15; border-radius: 45%; }
+        .wave:nth-child(3) { animation-duration: 60s; opacity: 0.2; border-radius: 35%; }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Grid */
+        .grid-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: linear-gradient(rgba(245, 245, 245, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245, 245, 245, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px; z-index: 0; pointer-events: none;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
+        /* Main Content wrapper */
+        .main-wrapper { position: relative; z-index: 10; padding-left: 10vw; }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; right: 0; width: 90vw;
+            padding: 3rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100;
         }
 
-        .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            line-height: 0.9;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
+        .logo {
+            font-family: var(--font-display); font-size: 1.5rem;
+            color: var(--ceramic); text-decoration: none;
+            letter-spacing: 0.2em; text-transform: uppercase;
         }
 
-        .hero-frag {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        .logo span { color: var(--copper); }
+
+        .btn-copper {
+            display: inline-block; padding: 1rem 3rem;
+            background: transparent; color: var(--copper);
+            border: 1px solid var(--copper); font-family: var(--font-display);
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em;
+            text-decoration: none; position: relative; overflow: hidden;
+            transition: color 0.4s ease; border-radius: 2px;
         }
 
-        .hero-frag span {
-            display: block;
-            transform: translateY(110%);
+        .btn-copper::before {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 100%; height: 0%; background: var(--copper);
+            transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1); z-index: -1;
         }
 
-        .frag-1 { margin-left: 0; }
-        .frag-2 { margin-left: 10%; color: var(--text-muted); }
-        .frag-3 { margin-left: 3%; color: var(--accent); }
+        .btn-copper:hover { color: var(--abyss); }
+        .btn-copper:hover::before { height: 100%; }
 
-        /* 50-Word AI Hook */
-        .hero-hook {
-            max-width: 600px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0;
+        /* Hero */
+        .hero {
+            height: 100vh; display: flex; align-items: center;
+            position: relative; margin-right: 5vw;
         }
 
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            opacity: 0;
+        .hero h1 {
+            font-size: clamp(4rem, 8vw, 7rem); margin-bottom: 2rem;
+            text-transform: uppercase; letter-spacing: -0.02em;
         }
 
-        /* =============================================
-           Problem Section
-           ============================================= */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+        .hero h1 span { color: var(--copper); display: block; position: relative; }
+        
+        .hero h1 span::after {
+            content: ''; position: absolute; left: 0; bottom: 10px;
+            width: 300px; height: 8px; background: var(--copper);
+            mix-blend-mode: overlay;
         }
 
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: border-color 0.3s, transform 0.3s;
+        .hero p {
+            font-size: 1.25rem; font-weight: 300; color: rgba(245, 245, 245, 0.6);
+            max-width: 500px; line-height: 1.6; margin-bottom: 4rem;
         }
 
-        .problem-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
+        /* The Animated Pipe Element (Unforgettable Feature) */
+        .pipe-system {
+            position: absolute; top: 0; left: -5vw;
+            width: 10vw; height: 100%; z-index: -1;
         }
 
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        #master-pipe {
+            stroke-dasharray: 4000;
+            stroke-dashoffset: 4000;
+            transition: stroke-dashoffset 0.1s;
         }
 
-        .problem-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-transform: none;
-            font-family: var(--font-body);
-            font-weight: 700;
+        /* Logic Sections */
+        .logic-section {
+            padding: 15rem 0; margin-right: 5vw;
+            border-top: 1px solid rgba(245, 245, 245, 0.05);
         }
 
-        /* =============================================
-           Comparison Table
-           ============================================= */
-        .comparison-table-wrap {
-            overflow-x: auto;
-            margin-top: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
-        }
-
-        .comparison-table thead {
-            background: var(--surface);
-        }
-
-        .comparison-table th {
-            padding: 24px 30px;
-            text-align: left;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .comparison-table th:last-child {
-            color: var(--accent);
-        }
-
-        .comparison-table td {
-            padding: 20px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-muted);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table td:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ff4444;
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Portfolio Section
-           ============================================= */
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .showcase-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .showcase-card:hover {
-            border-color: rgba(110, 255, 106, 0.3);
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .showcase-info {
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .showcase-title {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .showcase-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        .l-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
         }
 
         .tag {
-            padding: 6px 16px;
-            border-radius: 100px;
-            border: 1px solid var(--surface-border);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-family: var(--font-display); font-size: 0.8rem;
+            color: var(--copper); text-transform: uppercase; letter-spacing: 0.2em;
+            display: block; margin-bottom: 2rem;
         }
 
-        /* =============================================
-           Process Section
-           ============================================= */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+        .logic-section h2 { font-size: 3rem; margin-bottom: 2rem; }
+
+        .logic-section p {
+            font-size: 1.1rem; color: rgba(245, 245, 245, 0.5);
+            line-height: 1.8; font-weight: 300; max-width: 500px;
         }
 
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 50px 35px;
-            text-align: center;
-            position: relative;
-            transition: border-color 0.3s;
+        /* Interactive Diagram */
+        .diagram-box {
+            border: 1px solid rgba(230, 138, 77, 0.3);
+            background: rgba(3, 8, 15, 0.8);
+            backdrop-filter: blur(5px);
+            padding: 4rem; position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
         }
 
-        .step-card:hover {
-            border-color: var(--accent);
+        .diagram-box:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+        .diagram-box h3 { font-size: 2rem; color: var(--copper); margin-bottom: 1rem; }
+        .diagram-box p { color: var(--ceramic); font-weight: 300; }
+
+        .diagram-line {
+            position: absolute; width: 1px; height: 100px; background: var(--copper);
+            top: -100px; left: 50px; opacity: 0.5;
         }
 
-        .step-num {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(110, 255, 106, 0.08);
-            line-height: 1;
-            margin-bottom: 20px;
+        /* Quote */
+        .quote { padding: 10rem 5vw 10rem 0; }
+        
+        .quote p {
+            font-size: clamp(2.5rem, 5vw, 4rem); font-family: var(--font-display);
+            line-height: 1.2; color: var(--ceramic); max-width: 900px; margin-bottom: 3rem;
         }
 
-        .step-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
+        .quote span {
+            color: var(--copper); font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase;
         }
 
-        /* =============================================
-           FAQ Section
-           ============================================= */
-        .faq-list {
-            margin-top: 60px;
-            max-width: 800px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            font-weight: 600;
-            text-align: left;
-            padding: 28px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 48px;
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 28px;
-        }
-
-        .faq-answer p {
-            font-size: 1.05rem;
-        }
-
-        /* =============================================
-           CTA Banner
-           ============================================= */
-        .cta-banner {
-            background: var(--accent);
-            border-radius: 40px;
-            padding: 100px 50px;
-            text-align: center;
-            color: #000;
-            margin: 120px 5%;
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            margin-bottom: 20px;
-        }
-
-        .cta-banner p {
-            color: #222;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-banner .btn {
-            background: #000;
-            color: var(--accent);
-            font-size: 1.1rem;
-            padding: 22px 44px;
-        }
-
-        .cta-banner .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        /* =============================================
-           Footer
-           ============================================= */
-        .footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 40px 0;
-        }
-
-        .footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            padding: 8px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =============================================
-           Section Headers
-           ============================================= */
-        .section-header {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .section-sub {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        /* Sticky FAB */
-        .fab {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            min-height: 48px;
-            border-radius: 100px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            z-index: 99;
-            box-shadow: 0 10px 30px var(--accent-glow);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
-        }
-
-        /* =============================================
-           Responsive — Mobile First
-           ============================================= */
-        @media (max-width: 1024px) {
-            .comparison-table th,
-            .comparison-table td {
-                padding: 16px 20px;
-                font-size: 0.9rem;
-            }
-        }
+        .cta { padding: 15rem 0; text-align: left; }
+        .cta h2 { font-size: clamp(4rem, 8vw, 7rem); margin-bottom: 4rem; color: var(--copper); }
 
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: clamp(2.8rem, 12vw, 5rem);
-            }
-
-            .frag-2 { margin-left: 0; }
-            .frag-3 { margin-left: 0; }
-
-            .showcase-img {
-                height: 250px;
-            }
-
-            .showcase-info {
-                padding: 20px;
-            }
-
-            .cta-banner {
-                padding: 60px 24px;
-                margin: 80px 5%;
-                border-radius: 24px;
-            }
-
-            .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 14px 16px;
-                font-size: 0.85rem;
-            }
+            .l-grid { grid-template-columns: 1fr; }
+            .main-wrapper { padding-left: 5vw; }
+            .pipe-system { display: none; }
+            nav { width: 100%; right: auto; left: 0; }
         }
-
-        /* Scroll reveal utility */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
-
 <body>
 
-    <!-- ==========================================
-         Navigation
-         ========================================== -->
-    <nav class="nav" aria-label="Main navigation">
-        <div class="container">
-            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
-            <div class="nav-links">
-                <a href="naslogic.html">Home</a>
-                <a href="#portfolio">Work</a>
-                <a href="#faq">FAQ</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-sep" aria-hidden="true">›</li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span class="breadcrumb-current" itemprop="name">Plumbing Contractors Landing Pages</span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- ==========================================
-         Hero Section
-         H1 — one per page, primary keyword target
-         ========================================== -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
-                <div class="hero-frag frag-2"><span>For Plumbing</span></div>
-                <div class="hero-frag frag-3"><span>Contractors</span></div>
-            </h1>
-            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
-            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for plumbing contractors. We design pages that turn website visitors into booked service calls for leak repairs, water heater installs, and repiping. No generic templates. Every page is custom-engineered to match your plumbing market and generate qualified leads on autopilot.</p>
-            <div class="hero-ctas">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
-                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See Plumbing Examples</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Problem Section
-         H2 — second in hierarchy
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Why Most Plumbing Websites Fail</h2>
-        <p class="section-sub fade-up">Plumbers invest in marketing, but their websites let them down. Homeowners with a burst pipe or broken water heater need to trust you instantly — or they bounce to the next contractor.</p>
-
-        <div class="problem-grid">
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📉</div>
-                <h3>Traffic That Never Converts</h3>
-                <p>You get clicks from homeowners searching for emergency plumbers, but your site does not give them a clear next step. They leave without ever booking a call.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📱</div>
-                <h3>Broken Mobile Experience</h3>
-                <p>Over 75% of homeowners search for plumbers on their phone. If your site loads slowly, you are losing high-ticket install leads every single day.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">🏗️</div>
-                <h3>Generic, Cookie-Cutter Design</h3>
-                <p>Template websites make plumbing companies look like every other contractor in town. Homeowners cannot tell you apart from the competition.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Comparison Table
-         AI engines pull from HTML tables
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
-        <p class="section-sub fade-up">See why plumbers choose a specialist over a one-size-fits-all agency.</p>
-
-        <div class="comparison-table-wrap fade-up">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Generic Agency</th>
-                        <th>Naslogic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Plumbing industry expertise</td>
-                        <td><span class="cross">✗</span> No industry focus</td>
-                        <td><span class="check">✓</span> Built for plumbers</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile-first design</td>
-                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
-                        <td><span class="check">✓</span> 100% mobile-optimized</td>
-                    </tr>
-                    <tr>
-                        <td>Conversion-focused layout</td>
-                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
-                        <td><span class="check">✓</span> Every element drives action</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-ready structure</td>
-                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
-                        <td><span class="check">✓</span> Schema markup, clean headings</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery speed</td>
-                        <td>4 to 12 weeks typical</td>
-                        <td><span class="check">✓</span> Days, not months</td>
-                    </tr>
-                    <tr>
-                        <td>CRM integration</td>
-                        <td>Extra fees required</td>
-                        <td><span class="check">✓</span> ServiceTitan, Housecall Pro</td>
-                    </tr>
-                    <tr>
-                        <td>Price transparency</td>
-                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
-                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Portfolio Section
-         ========================================== -->
-    <section id="portfolio" class="section-padding container">
-        <h2 class="section-header fade-up">Plumbing Pages We Have Built</h2>
-        <p class="section-sub fade-up">Conversion-first landing pages designed specifically for plumbing companies to turn visitors into scheduled service calls and signed contracts.</p>
-
-        <div class="portfolio-showcase">
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 1: Emergency Plumbing (Urgency/Reliability) -->
-                <div class="showcase-img" role="img" aria-label="Emergency plumbing landing page by Naslogic with 24/7 service call booking integration" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#003366; font-family:'Open Sans', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600;700&display=swap');
-                        .plg1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:radial-gradient(circle at 70% 30%, #004080 0%, #002244 100%); overflow:hidden; }
-                        .plg1-top { background:#ffd54f; color:#000; font-size:14px; font-weight:700; text-transform:uppercase; padding:12px 50px; display:flex; justify-content:space-between; align-items:center; }
-                        .plg1-nav { background:rgba(255,255,255,0.03); backdrop-filter:blur(8px); display:flex; justify-content:space-between; align-items:center; padding:20px 50px; border-bottom:1px solid rgba(255,255,255,0.1); z-index:2; }
-                        .plg1-logo { font-family:'Montserrat', sans-serif; font-size:36px; font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:-1px; display:flex; align-items:center; gap:10px; }
-                        .leg1-logo-icon { width:40px; height:40px; background:#e63946; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; }
-                        .plg1-links { display:flex; gap:30px; font-size:16px; font-weight:700; color:#cbd5e1; }
-                        .plg1-call { font-family:'Montserrat', sans-serif; background:#e63946; color:#fff; font-size:24px; font-weight:800; padding:12px 24px; border-radius:8px; box-shadow:0 10px 20px rgba(230,57,70,0.3); }
-                        .plg1-hero { flex:1; display:flex; padding:0 50px; align-items:center; position:relative; z-index:2; gap:50px; }
-                        .plg1-content { flex:1; }
-                        .plg1-badge { display:inline-flex; align-items:center; gap:10px; background:rgba(255,213,79,0.1); color:#ffd54f; font-size:14px; font-weight:700; text-transform:uppercase; padding:8px 16px; border-radius:4px; margin-bottom:25px; border:1px solid rgba(255,213,79,0.3); }
-                        .plg1-title { font-family:'Montserrat', sans-serif; font-size:80px; font-weight:900; line-height:0.95; color:#fff; margin-bottom:25px; text-transform:uppercase; }
-                        .plg1-desc { font-size:22px; color:#e2e8f0; margin-bottom:40px; line-height:1.5; font-weight:600; max-width:500px; }
-                        .plg1-trust { display:flex; gap:30px; }
-                        .plg1-trust-item { display:flex; align-items:center; gap:12px; font-size:16px; font-weight:700; }
-                        .plg1-trust-icon { width:32px; height:32px; background:#00c853; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; }
-                        .plg1-form-col { flex:0.8; height:100%; display:flex; align-items:center; justify-content:center; }
-                        .plg1-form { width:100%; max-width:440px; background:#fff; border-radius:12px; padding:40px; color:#0f172a; box-shadow:0 40px 80px rgba(0,0,0,0.5); position:relative; }
-                        .plg1-form-top { background:#e63946; color:#fff; position:absolute; top:-20px; left:50%; transform:translateX(-50%); padding:8px 24px; border-radius:20px; font-size:14px; font-weight:700; text-transform:uppercase; display:flex; align-items:center; gap:8px; white-space:nowrap; box-shadow:0 5px 15px rgba(230,57,70,0.4); }
-                        .plg1-form-top .pulse { width:10px; height:10px; background:#fff; border-radius:50%; animation:pulse 1s infinite; }
-                        @keyframes pulse { 0% {transform:scale(0.8); opacity:0.8;} 50% {transform:scale(1.2); opacity:1;} 100% {transform:scale(0.8); opacity:0.8;} }
-                        .plg1-form h3 { font-family:'Montserrat', sans-serif; font-size:32px; font-weight:800; text-transform:uppercase; text-align:center; margin-bottom:10px; line-height:1.1; margin-top:10px; }
-                        .plg1-form p { text-align:center; font-size:16px; color:#64748b; margin-bottom:30px; font-weight:600; }
-                        .plg1-input { width:100%; height:55px; background:#f8fafc; border:2px solid #e2e8f0; border-radius:8px; margin-bottom:16px; padding:0 20px; color:#94a3b8; font-size:16px; font-weight:600; display:flex; align-items:center; }
-                        .plg1-btn { width:100%; height:65px; background:#ffd54f; color:#000; font-family:'Montserrat', sans-serif; font-size:22px; font-weight:800; padding:0; border:none; border-radius:8px; display:flex; align-items:center; justify-content:center; text-transform:uppercase; margin-top:10px; box-shadow:0 10px 20px rgba(255,213,79,0.3); transition:transform 0.2s; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="plg1-wrap">
-                        <div class="plg1-top">
-                            <span>Lic# C-36 987654 | Fully Insured</span>
-                            <span>$49 Dispatch Fee Waived On Repairs</span>
-                        </div>
-                        <div class="plg1-nav">
-                            <div class="plg1-logo"><div class="leg1-logo-icon">💧</div> ROOTER PROS</div>
-                            <div class="plg1-links">
-                                <span>Drain Clearing</span>
-                                <span>Water Heaters</span>
-                                <span>Pipe Repair</span>
-                            </div>
-                            <div class="plg1-call">(555) 432-1000</div>
-                        </div>
-                        <div class="plg1-hero">
-                            <div class="plg1-content">
-                                <div class="plg1-badge">🚨 Emergency Plumbers On Call</div>
-                                <h1 class="plg1-title">Water Problem? We Fix It Flowing.</h1>
-                                <p class="plg1-desc">Burst pipes, overflowing toilets, and no hot water. We dispatch licensed plumbers to your door in 60 minutes or less.</p>
-                                <div class="plg1-trust">
-                                    <div class="plg1-trust-item"><div class="plg1-trust-icon">✓</div> Upfront Pricing</div>
-                                    <div class="plg1-trust-item"><div class="plg1-trust-icon">✓</div> 5-Star Rated</div>
-                                </div>
-                            </div>
-                            <div class="plg1-form-col">
-                                <div class="plg1-form">
-                                    <div class="plg1-form-top"><div class="pulse"></div> 5 Trucks Available Now</div>
-                                    <h3>Request Plumber</h3>
-                                    <p>Fast, reliable service when you need it.</p>
-                                    <div class="plg1-input">Name</div>
-                                    <div class="plg1-input">Phone Number</div>
-                                    <div class="plg1-input">Zip Code</div>
-                                    <button class="plg1-btn">Send Technician Now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">24/7 Emergency Plumbers</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Residential Plumbing</span>
-                            <span class="tag">Lead Gen</span>
-                            <span class="tag">Emergency Service</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 2: Commercial Pipe & Drain (Scale/Industrial) -->
-                <div class="showcase-img" role="img" aria-label="Commercial plumbing landing page built by Naslogic for hydro jetting and repiping leads" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#1a1f24; font-family:'Inter', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-                        .plg2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#111518; overflow:hidden; }
-                        .plg2-bg { position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,229,255,0.05) 0%, rgba(26,31,36,1) 50%, rgba(17,21,24,1) 100%); z-index:0; }
-                        .plg2-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:40px 40px; z-index:1; }
-                        .plg2-nav { display:flex; justify-content:space-between; align-items:center; padding:35px 60px; position:relative; z-index:3; border-bottom:1px solid rgba(255,255,255,0.05); }
-                        .plg2-logo { font-family:'Rajdhani', sans-serif; font-size:38px; font-weight:700; color:#fff; letter-spacing:2px; text-transform:uppercase; }
-                        .plg2-logo span { color:#00e5ff; }
-                        .plg2-links { display:flex; gap:35px; font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:#8b9eb3; }
-                        .plg2-btn-ghost { border:1px solid rgba(0,229,255,0.5); color:#00e5ff; padding:10px 24px; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:2px; }
-                        .plg2-hero { flex:1; display:flex; padding:0 60px; align-items:center; position:relative; z-index:3; gap:60px; }
-                        .plg2-content { flex:1.1; }
-                        .plg2-badge { display:inline-block; font-family:'Rajdhani', sans-serif; font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:3px; color:#00e5ff; border:1px solid rgba(0,229,255,0.3); padding:8px 16px; margin-bottom:25px; background:rgba(0,229,255,0.05); }
-                        .plg2-title { font-family:'Rajdhani', sans-serif; font-size:85px; font-weight:700; line-height:0.95; color:#fff; margin-bottom:25px; text-transform:uppercase; letter-spacing:1px; }
-                        .plg2-desc { font-size:18px; color:#a1aab3; margin-bottom:45px; line-height:1.6; font-weight:400; max-width:600px; }
-                        .plg2-cta { background:#00e5ff; color:#000; padding:20px 45px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:1px; display:inline-flex; align-items:center; gap:10px; margin-right:20px; box-shadow:0 0 20px rgba(0,229,255,0.2); }
-                        .plg2-visual { flex:0.9; display:flex; flex-direction:column; gap:20px; }
-                        .plg2-feat { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); padding:30px; display:flex; align-items:center; gap:20px; backdrop-filter:blur(5px); transition:border-color 0.3s; }
-                        .plg2-feat:hover { border-color:rgba(0,229,255,0.3); }
-                        .plg2-f-icon { width:50px; height:50px; background:rgba(0,229,255,0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#00e5ff; font-family:'Rajdhani', sans-serif; font-size:24px; font-weight:700; }
-                        .plg2-f-text h4 { font-family:'Rajdhani', sans-serif; font-size:24px; font-weight:600; text-transform:uppercase; color:#fff; margin-bottom:5px; letter-spacing:1px; line-height:1; }
-                        .plg2-f-text p { font-size:14px; color:#8b9eb3; margin:0; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="plg2-wrap">
-                        <div class="plg2-bg"></div>
-                        <div class="plg2-grid"></div>
-                        <div class="plg2-nav">
-                            <div class="plg2-logo">FLOW<span>TECH</span> INDUSTRIAL</div>
-                            <div class="plg2-links">
-                                <span>Hydro Jetting</span>
-                                <span>Excavation</span>
-                                <span>Property Management</span>
-                            </div>
-                            <div class="plg2-btn-ghost">Client Portal</div>
-                        </div>
-                        <div class="plg2-hero">
-                            <div class="plg2-content">
-                                <div class="plg2-badge">Commercial & Municipal</div>
-                                <h1 class="plg2-title">Heavy-Duty Drain Solutions.</h1>
-                                <p class="plg2-desc">We keep commercial facilities operating. Advanced hydro jetting, video pipe inspection, and trenchless repair for restaurants, multi-family, and industrial sites.</p>
-                                <div>
-                                    <div class="plg2-cta">Schedule Site Assessment</div>
-                                    <span style="color:#8b9eb3; font-size:14px; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Or Call 24/7 Dispatch</span>
-                                </div>
-                            </div>
-                            <div class="plg2-visual">
-                                <div class="plg2-feat">
-                                    <div class="plg2-f-icon">01</div>
-                                    <div class="plg2-f-text">
-                                        <h4>High-Pressure Hydro Jetting</h4>
-                                        <p>Clearing severe grease and debris blockages.</p>
-                                    </div>
-                                </div>
-                                <div class="plg2-feat">
-                                    <div class="plg2-f-icon">02</div>
-                                    <div class="plg2-f-text">
-                                        <h4>Trenchless Pipe Lining</h4>
-                                        <p>Rehabilitate aging pipes without excavation.</p>
-                                    </div>
-                                </div>
-                                <div class="plg2-feat">
-                                    <div class="plg2-f-icon">03</div>
-                                    <div class="plg2-f-text">
-                                        <h4>Grease Trap Maintenance</h4>
-                                        <p>Ensuring compliance for commercial kitchens.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Commercial Pipe & Drain</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Commercial</span>
-                            <span class="tag">Hydro Jetting</span>
-                            <span class="tag">B2B Leads</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Process Section
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live plumbing landing page that books service calls and generates qualified leads for your plumbing business.</p>
-
-        <div class="process-steps">
-            <div class="step-card fade-up">
-                <div class="step-num">01</div>
-                <h3>Book a Call</h3>
-                <p>We learn your plumbing niche — residential repair, water heaters, commercial repiping — and map out your ideal customer journey.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">02</div>
-                <h3>We Build It</h3>
-                <p>Our team designs and develops a mobile-first, conversion-optimized landing page tailored to plumbing marketing best practices.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">03</div>
-                <h3>You Grow</h3>
-                <p>Your page goes live and starts converting visitors into booked service calls, free estimates, and signed contracts.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ Section — Powers FAQPage Schema
-         ========================================== -->
-    <section id="faq" class="section-padding container">
-        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
-        <p class="section-sub fade-up">Common questions from plumbing contractors about our landing page design and lead generation services.</p>
-
-        <div class="faq-list fade-up">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much does a plumbing landing page cost?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Our plumbing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Why do plumbers need a dedicated landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Plumbers spend significant budgets driving traffic, but most send visitors to generic homepages. A dedicated landing page with a single call-to-action can increase conversion rates by 2x to 5x compared to a standard website.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How fast can Naslogic deliver a plumbing landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>We deliver production-ready plumbing landing pages on rapid turnarounds. Most single-page projects are completed within days.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will the landing page work on mobile devices?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. Over 75% of homeowners searching for an emergency plumber do so on their phone. Our pages are engineered to load fast and capture mobile leads.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can the landing page integrate with my CRM or booking software?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We integrate with popular CRMs like ServiceTitan and Housecall Pro, as well as general tools like HubSpot and Calendly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA Banner
-         ========================================== -->
-    <section class="cta-banner fade-up">
-        <h2>Ready to Book More Plumbing Jobs?</h2>
-        <p>Stop losing homeowners to competitors with better websites. Get a landing page that converts emergency searches into signed tickets.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
-    </section>
-
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
-        <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/roofing" class="related-link">Roofing Contractors Landing Pages</a>
-                <a href="/hvac" class="related-link">HVAC Contractors Landing Pages</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
+    <div class="liquid-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
     </div>
 
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div>
-                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
-            </div>
-            <div class="footer-links">
-                <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
-            </div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
-            </div>
+    <nav>
+        <a href="/" class="logo">Naslogic<span>/</span></a>
+        <a href="#deploy" class="btn-copper" style="padding: 0.8rem 2rem;">Initiate System</a>
+    </nav>
+
+    <div class="main-wrapper">
+        
+        <!-- The Giant SVG Pipe mapped to scroll -->
+        <div class="pipe-system" id="pipe-container">
+            <svg viewBox="0 0 100 4000" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+                <!-- Base faint pipe -->
+                <path d="M50,0 V800 Q50,850 80,850 H150" fill="none" stroke="rgba(245,245,245,0.05)" stroke-width="2"/>
+                <path d="M50,0 V3800" fill="none" stroke="rgba(245,245,245,0.05)" stroke-width="2"/>
+                <!-- Animated fill pipe -->
+                <path id="master-pipe" d="M50,0 V3800" fill="none" stroke="var(--copper)" stroke-width="4" stroke-linecap="round"/>
+                <!-- Joints -->
+                <circle cx="50" cy="800" r="8" fill="var(--abyss)" stroke="var(--copper)" stroke-width="2"/>
+                <circle cx="50" cy="1800" r="8" fill="var(--abyss)" stroke="var(--copper)" stroke-width="2"/>
+                <circle cx="50" cy="2800" r="8" fill="var(--abyss)" stroke="var(--copper)" stroke-width="2"/>
+            </svg>
         </div>
-    </footer>
 
-    <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
+        <section class="hero">
+            <div>
+                <span class="tag">System Level 1</span>
+                <h1>Flow Is <br><span>Structural.</span></h1>
+                <p>Plumbing isn't just about plunging toilets; it's the vascular system of an estate. Yet your website treats it like a dirty afterthought. We engineer hydro-dynamic, high-end digital architecture that elevates your firm above the 'handyman' label.</p>
+                <a href="#deploy" class="btn-copper">Deploy Architecture</a>
+            </div>
+        </section>
 
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+        <section class="logic-section">
+            <div class="l-grid">
+                <div>
+                    <span class="tag">The Anomaly</span>
+                    <h2>Ditch the<br>Clip Art.</h2>
+                    <p>Wrenches, water droplets, and smiling plumbers giving a thumbs up. This is the visual language of a budget emergency service. When you are bidding on repiping a $4M home, your digital presence must communicate structural mastery and technical precision, not cheap labor.</p>
+                </div>
+                <div class="diagram-box">
+                    <div class="diagram-line"></div>
+                    <h3>Precision Routing</h3>
+                    <p>We replace chaotic contact forms with a frictionless, high-end intelligent intake sequence. It qualifies whether a user needs a $200 unclogging or a $20,000 mainline replacement, routing them accordingly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="logic-section" style="border-top: none;">
+            <div class="l-grid">
+                <div class="diagram-box" style="transform: perspective(1000px) rotateY(5deg) rotateX(5deg);">
+                    <div class="diagram-line"></div>
+                    <h3>Technical Aesthetics</h3>
+                    <p>By utilizing 'Abyss' blues and 'Polished Copper', we mimic the feeling of clean, modern structural engineering. The high-contrast UI immediately deters bargain shoppers and attracts premium re-piping clients.</p>
+                </div>
+                <div>
+                    <span class="tag">The Correction</span>
+                    <h2>Hydro-Dynamic<br>Conversion.</h2>
+                    <p>A website should flow like perfectly engineered piping. Zero dead ends. Zero leaks. We track every user movement, ensuring the path to booking a premium consultation is utterly frictionless.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote">
+            <p>"We went from doing 80% emergency service calls to 70% high-ticket planned installations. The site design completely changed how homeowners perceive our value. We are structural engineers to them now."</p>
+            <span>James T. — Founder, Precision Hydro-Systems</span>
+        </section>
+
+        <section class="cta" id="deploy">
+            <span class="tag">Final Node</span>
+            <h2>Architect<br>Your Flow.</h2>
+            <a href="mailto:hello@naslogic.com" class="btn-copper" style="padding: 1.5rem 4rem; font-size: 1rem;">Initialize Build Request</a>
+        </section>
+
+    </div>
 
     <script>
-        // =============================================
-        // Initialize GSAP
-        // =============================================
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Pipe scroll animation
+        const pipe = document.getElementById('master-pipe');
+        
+        // Calculate stroke length
+        // Setting stroke dasharray in CSS to a huge number handles the base SVG, but we calculate precisely for dynamic screen height
+        const pathLength = pipe.getTotalLength();
+        pipe.style.strokeDasharray = pathLength;
+        pipe.style.strokeDashoffset = pathLength;
 
-        // =============================================
-        // Hero Entrance Timeline
-        // =============================================
-        const heroTl = gsap.timeline();
-        heroTl.to(".hero-frag span", {
-            y: "0%",
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            delay: 0.2
-        })
-        .to(".hero-hook", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.8")
-        .to(".hero-ctas", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.9");
-
-        // =============================================
-        // Scroll Reveal — Fade Up
-        // =============================================
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 88%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
+        window.addEventListener('scroll', () => {
+            // Find scroll percentage
+            const scrollPerc = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            // Draw the pipe down as we scroll
+            const drawLength = pathLength * scrollPerc;
+            // The offset is pathLength down to 0
+            pipe.style.strokeDashoffset = pathLength - drawLength;
         });
 
-        // =============================================
-        // FAQ Accordion
-        // =============================================
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-        }); // end DOMContentLoaded
+        // Initialize immediately
+        pipe.style.strokeDashoffset = pathLength;
     </script>
-
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
-
 </body>
-
 </html>

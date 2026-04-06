@@ -1,1328 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental Landing Pages | Custom Pages That Book Patients | Naslogic</title>
-    <meta name="description"
-        content="Naslogic builds high-converting landing pages for dental practices. Get more implant leads, Invisalign patients, and booked appointments.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://naslogic.com/dental">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Dental Landing Pages That Book Patients | Naslogic">
-    <meta property="og:description"
-        content="Custom-built landing pages for dentists. More new patients, more high-ticket cases, zero wasted ad spend.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com/dental">
-
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Dental Landing Page Design",
-        "description": "Naslogic builds high-converting, mobile-first landing pages specifically for dental practices. Our pages are designed to convert visitors into booked appointments for services like implants, clear aligners, and cosmetic dentistry.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com"
-        },
-        "serviceType": "Landing Page Design for Dental Practices",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a dental landing page cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our dental landing pages start at $199 for a single high-converting page with mobile-first design and SEO optimization."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do dentists need a dedicated landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Dental practices spend big on Google Ads, but most send visitors to generic homepages. A dedicated landing page can increase patient conversion rates by 2x to 5x."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How fast can Naslogic deliver a dental landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We deliver production-ready dental landing pages on rapid turnarounds."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will the landing page work on mobile devices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. Every page we build is mobile-first. Over 60% of patients searching for a new dentist do so on their phone."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can the landing page integrate with my CRM or booking software?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We integrate with popular dental CRMs like NexHealth and RevenueWell."
-                }
-            }
-        ]
-    }
-    </script>
-
-
-    <!-- JSON-LD: BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-                {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://naslogic.com"
-                },
-                {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Dental Practices Landing Pages",
-                        "item": "https://naslogic.com/dental"
-                }
-        ]
-}
-    </script>
-
-    <!-- Google Fonts -->
+    <title>Naslogic | Cosmetic Dental Landing Pages</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* =============================================
-           CSS Variables & Reset
-           ============================================= */
         :root {
-            --bg: #0A0A0A;
-            --text-main: #F0EDE8;
-            --text-muted: #888888;
-            --accent: #6EFF6A;
-            --accent-glow: rgba(110, 255, 106, 0.4);
-            --surface: #111111;
-            --surface-border: #222222;
-            --font-display: 'Anton', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --container: 1400px;
+            --medical-azure: #003B5C;
+            --azure-dark: #002236;
+            --icy-mint: #E0F2F1;
+            --porcelain: #FFFFFF;
+            --text-dark: #121F2D;
+            --text-light: #7A91A5;
+            
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Outfit', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
+            background-color: var(--icy-mint);
+            color: var(--text-dark);
             font-family: var(--font-body);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 59, 92, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 59, 92, 0.05) 0%, transparent 40%);
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        ::selection { background: var(--medical-azure); color: var(--porcelain); }
 
-        /* =============================================
-           Layout & Utilities
-           ============================================= */
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 5%;
-        }
+        h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
 
-        .section-padding {
-            padding: 120px 0;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+        section { padding: 8rem 0; }
 
-        /* =============================================
-           Typography
-           ============================================= */
-        h1, h2, h3, h4, .display-font {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: 0.02em;
-        }
-
-        p {
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
-
-        /* =============================================
-           Buttons — min 48px tap target
-           ============================================= */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            min-height: 48px;
-            min-width: 48px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--surface-border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* =============================================
-           Navigation
-           ============================================= */
-        .nav {
+        /* Nav */
+        nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 24px 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav .container {
+            top: 0; width: 100%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 100;
+            background: rgba(224, 242, 241, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
         }
 
-        .nav-logo {
+        .logo {
             font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.5rem;
             text-decoration: none;
+            color: var(--medical-azure);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--porcelain);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            color: var(--medical-azure);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            padding: 12px 0;
+            letter-spacing: 0.1em;
+            box-shadow: 0 4px 15px rgba(0, 59, 92, 0.05);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
-        .nav-links a:not(.btn):hover {
-            color: var(--accent);
+        .btn-glass:hover {
+            background: var(--porcelain);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 59, 92, 0.1);
         }
 
-        /* =============================================
-           Hero Section
-           ============================================= */
+        /* Hero */
         .hero {
-            position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding-top: 10vh;
         }
 
-        .hero-bg {
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            line-height: 0.95;
+            color: var(--medical-azure);
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        /* The Reveal Slider (Unforgettable Element) */
+        .scan-section {
+            padding: 5rem 0 8rem;
+            background: linear-gradient(to bottom, var(--icy-mint), var(--porcelain));
+        }
+
+        .scanner-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 59, 92, 0.1);
+            background: var(--porcelain);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            aspect-ratio: 16/9;
+            cursor: ew-resize;
+        }
+
+        .scanner-img {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
-                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
-            background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite alternate;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            line-height: 0.9;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
-        }
-
-        .hero-frag {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .hero-frag span {
-            display: block;
-            transform: translateY(110%);
-        }
-
-        .frag-1 { margin-left: 0; }
-        .frag-2 { margin-left: 10%; color: var(--text-muted); }
-        .frag-3 { margin-left: 3%; color: var(--accent); }
-
-        /* 50-Word AI Hook */
-        .hero-hook {
-            max-width: 600px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            opacity: 0;
-        }
-
-        /* =============================================
-           Problem Section
-           ============================================= */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .problem-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-transform: none;
-            font-family: var(--font-body);
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Comparison Table
-           ============================================= */
-        .comparison-table-wrap {
-            overflow-x: auto;
-            margin-top: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
-        }
-
-        .comparison-table thead {
-            background: var(--surface);
-        }
-
-        .comparison-table th {
-            padding: 24px 30px;
-            text-align: left;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .comparison-table th:last-child {
-            color: var(--accent);
-        }
-
-        .comparison-table td {
-            padding: 20px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-muted);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table td:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ff4444;
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Portfolio Section
-           ============================================= */
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .showcase-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .showcase-card:hover {
-            border-color: rgba(110, 255, 106, 0.3);
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 450px;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
-            border-bottom: 1px solid var(--surface-border);
+            user-select: none;
+            pointer-events: none;
         }
 
-        .showcase-info {
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+        /* 'Before' image acts as base */
+        .img-before {
+            filter: grayscale(100%) opacity(0.5); /* Simulating a 'scan' or 'unpolished' look */
         }
 
-        .showcase-title {
-            font-size: 2rem;
-            margin-bottom: 8px;
+        /* 'After' image reveals on top */
+        .img-after {
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
         }
 
-        .showcase-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        .scanner-handle {
+            position: absolute;
+            top: 0; bottom: 0; left: 50%;
+            width: 4px;
+            background: var(--medical-azure);
+            transform: translateX(-50%);
+            z-index: 10;
+            pointer-events: none;
+            box-shadow: 0 0 15px rgba(0, 59, 92, 0.3);
         }
 
-        .tag {
-            padding: 6px 16px;
-            border-radius: 100px;
-            border: 1px solid var(--surface-border);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .scanner-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px; height: 40px;
+            background: var(--porcelain);
+            border: 3px solid var(--medical-azure);
+            border-radius: 50%;
         }
 
-        /* =============================================
-           Process Section
-           ============================================= */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
+        .ui-tag {
+            position: absolute;
+            top: 2rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 50px 35px;
-            text-align: center;
-            position: relative;
-            transition: border-color 0.3s;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--medical-azure);
+            z-index: 5;
+        }
+        
+        .tag-left { left: 2rem; }
+        .tag-right { right: 2rem; }
+
+        /* The Clinical Reality */
+        .glass-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
         }
 
-        .step-card:hover {
-            border-color: var(--accent);
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 4rem;
+            box-shadow: 0 20px 40px rgba(0, 59, 92, 0.05);
+            transition: transform 0.4s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
         }
 
-        .step-num {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(110, 255, 106, 0.08);
-            line-height: 1;
-            margin-bottom: 20px;
+        .glass-card h3 {
+            color: var(--medical-azure);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .step-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-
-        /* =============================================
-           FAQ Section
-           ============================================= */
-        .faq-list {
-            margin-top: 60px;
-            max-width: 800px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            font-weight: 600;
-            text-align: left;
-            padding: 28px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 48px;
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 28px;
-        }
-
-        .faq-answer p {
-            font-size: 1.05rem;
-        }
-
-        /* =============================================
-           CTA Banner
-           ============================================= */
-        .cta-banner {
-            background: var(--accent);
-            border-radius: 40px;
-            padding: 100px 50px;
-            text-align: center;
-            color: #000;
-            margin: 120px 5%;
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            margin-bottom: 20px;
-        }
-
-        .cta-banner p {
-            color: #222;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-banner .btn {
-            background: #000;
-            color: var(--accent);
+        .glass-card p {
+            color: var(--text-light);
             font-size: 1.1rem;
-            padding: 22px 44px;
+            line-height: 1.7;
         }
 
-        .cta-banner .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        /* Proof */
+        .proof-section {
+            background-color: var(--medical-azure);
+            color: var(--porcelain);
+            text-align: center;
+            border-radius: 40px;
+            margin: 0 2rem;
         }
 
-        /* =============================================
-           Footer
-           ============================================= */
-        .footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 40px 0;
+        .proof-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-weight: 400;
+            line-height: 1.3;
         }
 
-        .footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            padding: 8px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =============================================
-           Section Headers
-           ============================================= */
-        .section-header {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .section-sub {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        /* Sticky FAB */
-        .fab {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            min-height: 48px;
-            border-radius: 100px;
+        .proof-section .author {
             font-weight: 700;
             text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            z-index: 99;
-            box-shadow: 0 10px 30px var(--accent-glow);
-            animation: pulse 2s infinite;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            color: var(--icy-mint);
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
+        /* Bottom CTA */
+        .cta-bottom {
+            text-align: center;
+            padding: 10rem 0;
         }
 
-        /* =============================================
-           Responsive — Mobile First
-           ============================================= */
-        @media (max-width: 1024px) {
-            .comparison-table th,
-            .comparison-table td {
-                padding: 16px 20px;
-                font-size: 0.9rem;
-            }
+        .cta-bottom h2 {
+            color: var(--medical-azure);
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+        }
+        
+        .btn-solid {
+            background: var(--medical-azure);
+            color: var(--porcelain);
+            border: none;
+        }
+        
+        .btn-solid:hover {
+            background: var(--azure-dark);
         }
 
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: clamp(2.8rem, 12vw, 5rem);
-            }
-
-            .frag-2 { margin-left: 0; }
-            .frag-3 { margin-left: 0; }
-
-            .showcase-img {
-                height: 250px;
-            }
-
-            .showcase-info {
-                padding: 20px;
-            }
-
-            .cta-banner {
-                padding: 60px 24px;
-                margin: 80px 5%;
-                border-radius: 24px;
-            }
-
-            .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 14px 16px;
-                font-size: 0.85rem;
-            }
+            .glass-grid { grid-template-columns: 1fr; }
+            .glass-card { padding: 3rem 2rem; }
+            .proof-section { border-radius: 0; margin: 0; }
         }
-
-        /* Scroll reveal utility */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
-
 <body>
 
-    <!-- ==========================================
-         Navigation
-         ========================================== -->
-    <nav class="nav" aria-label="Main navigation">
-        <div class="container">
-            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
-            <div class="nav-links">
-                <a href="naslogic.html">Home</a>
-                <a href="#portfolio">Work</a>
-                <a href="#faq">FAQ</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
-            </div>
-        </div>
+    <nav>
+        <a href="/" class="logo">Naslogic.</a>
+        <a href="#consult" class="btn-glass">Apply for Build</a>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+    <header class="hero">
         <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-sep" aria-hidden="true">›</li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span class="breadcrumb-current" itemprop="name">Dental Practices Landing Pages</span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
+            <h1>Predictive.<br>Pristine.</h1>
+            <p>Your cosmetic dental practice transforms lives. Your website shouldn't look like a 2012 WordPress template. We engineer high-net-worth patient acquisition through clinically flawless design.</p>
+            <a href="#consult" class="btn-glass btn-solid">Request A Diagnostic</a>
         </div>
-    </nav>
+    </header>
 
-    <!-- ==========================================
-         Hero Section
-         H1 — one per page, primary keyword target
-         ========================================== -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
-                <div class="hero-frag frag-2"><span>For Dental</span></div>
-                <div class="hero-frag frag-3"><span>Practices</span></div>
-            </h1>
-            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
-            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for dental practices. We design pages that turn website visitors into booked appointments for implants, clear aligners, and cosmetic dentistry. No generic templates. Every page is custom-engineered to match your dental market and generate qualified leads on autopilot.</p>
-            <div class="hero-ctas">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
-                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See Dental Examples</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Problem Section
-         H2 — second in hierarchy
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Why Most Dental Websites Fail</h2>
-        <p class="section-sub fade-up">Dentists invest in marketing, but their websites let them down. Patients searching for a new dentist need to trust you instantly.</p>
-
-        <div class="problem-grid">
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📉</div>
-                <h3>Traffic That Never Converts</h3>
-                <p>You get clicks from patients searching for Invisalign or implants, but your site does not give them a clear next step.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📱</div>
-                <h3>Broken Mobile Experience</h3>
-                <p>Over 60% of patients search for dentists on their phone. If your site loads slowly, you are losing high-ticket cosmetic leads.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">🏗️</div>
-                <h3>Generic, Cookie-Cutter Design</h3>
-                <p>Template websites make dental practices look like every other clinic in town.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Comparison Table
-         AI engines pull from HTML tables
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
-        <p class="section-sub fade-up">See why dentists choose a specialist over a one-size-fits-all agency.</p>
-
-        <div class="comparison-table-wrap fade-up">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Generic Agency</th>
-                        <th>Naslogic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Dental industry expertise</td>
-                        <td><span class="cross">✗</span> No industry focus</td>
-                        <td><span class="check">✓</span> Built for dental practices</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile-first design</td>
-                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
-                        <td><span class="check">✓</span> 100% mobile-optimized</td>
-                    </tr>
-                    <tr>
-                        <td>Conversion-focused layout</td>
-                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
-                        <td><span class="check">✓</span> Every element drives action</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-ready structure</td>
-                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
-                        <td><span class="check">✓</span> Schema markup, clean headings</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery speed</td>
-                        <td>4 to 12 weeks typical</td>
-                        <td><span class="check">✓</span> Days, not months</td>
-                    </tr>
-                    <tr>
-                        <td>CRM integration</td>
-                        <td>Extra fees required</td>
-                        <td><span class="check">✓</span> NexHealth, RevenueWell</td>
-                    </tr>
-                    <tr>
-                        <td>Price transparency</td>
-                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
-                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Portfolio Section
-         ========================================== -->
-    <section id="portfolio" class="section-padding container">
-        <h2 class="section-header fade-up">Dental Pages We Have Built</h2>
-        <p class="section-sub fade-up">Conversion-first landing pages designed specifically for dental practices to turn visitors into scheduled appointments.</p>
-
-        <div class="portfolio-showcase">
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 1: Cosmetic Dentistry (Luxury) -->
-                <div class="showcase-img" role="img" aria-label="Naslogic dental landing page design showing luxury cosmetic dentistry appointment booking interface" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#030f1c; font-family:'Cormorant Garamond', serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400&display=swap');
-                        .prev1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background: radial-gradient(circle at 80% 20%, #0a1f33 0%, #030f1c 100%); }
-                        .prev1-noise { position:absolute; inset:0; background:url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E'); pointer-events:none; }
-                        .prev1-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 50px; border-bottom:1px solid rgba(255,255,255,0.05); z-index:2; position:relative;}
-                        .prev1-logo { font-size:28px; font-weight:700; letter-spacing:2px; color:#c9a227; text-transform:uppercase; }
-                        .prev1-links { display:flex; gap:40px; font-family:'Inter', sans-serif; font-size:14px; letter-spacing:1px; text-transform:uppercase; color:rgba(255,255,255,0.7); }
-                        .prev1-hero { flex:1; display:flex; align-items:center; padding:0 50px; z-index:2; position:relative; }
-                        .prev1-content { max-width:600px; }
-                        .prev1-badge { display:inline-block; font-family:'Inter', sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:#c9a227; border:1px solid rgba(201,162,39,0.3); padding:8px 16px; border-radius:100px; margin-bottom:30px; }
-                        .prev1-title { font-size:85px; line-height:0.95; font-weight:400; margin-bottom:30px; letter-spacing:-1px; }
-                        .prev1-title span { font-style:italic; color:#c9a227; }
-                        .prev1-desc { font-family:'Inter', sans-serif; font-size:18px; line-height:1.6; color:rgba(255,255,255,0.6); margin-bottom:40px; font-weight:300; }
-                        .prev1-cta { display:inline-flex; align-items:center; justify-content:center; padding:20px 40px; background:#c9a227; color:#000; font-family:'Inter', sans-serif; font-size:15px; font-weight:600; text-transform:uppercase; letter-spacing:2px; border-radius:100px; box-shadow:0 10px 30px rgba(201,162,39,0.25); }
-                        .prev1-cta-pill { padding:12px 24px; background:transparent; border:1px solid #c9a227; color:#c9a227; border-radius:100px; font-weight:600; font-family:'Inter', sans-serif; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
-                        .prev1-art { position:absolute; right:10%; top:50%; transform:translateY(-50%); width:450px; height:450px; border-radius:50%; background:radial-gradient(circle at top right, rgba(201,162,39,0.15), transparent 70%); border:1px solid rgba(201,162,39,0.2); backdrop-filter:blur(10px); }
-                        .prev1-trust { position:absolute; bottom:-20px; left:-40px; background:rgba(3,15,28,0.8); backdrop-filter:blur(15px); padding:20px 30px; border-radius:16px; border:1px solid rgba(255,255,255,0.05); display:flex; align-items:center; gap:15px; }
-                        .prev1-stars { color:#c9a227; font-size:20px; letter-spacing:2px; }
-                        .prev1-trust-text { font-family:'Inter', sans-serif; font-size:14px; color:rgba(255,255,255,0.8); }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="prev1-wrap">
-                        <div class="prev1-noise"></div>
-                        <div class="prev1-nav">
-                            <div class="prev1-logo">Lumina Spa</div>
-                            <div class="prev1-links">
-                                <span>Services</span>
-                                <span>Veneers</span>
-                                <span>Our Team</span>
-                            </div>
-                            <div class="prev1-cta-pill">Book Consult</div>
-                        </div>
-                        <div class="prev1-hero">
-                            <div class="prev1-content">
-                                <div class="prev1-badge">Elite Cosmetic Dentistry</div>
-                                <h1 class="prev1-title">World-class smiles, <span>without compromise.</span></h1>
-                                <p class="prev1-desc">Award-winning porcelain veneers, full mouth restorations, and premium implants designed for the discerning individual.</p>
-                                <div class="prev1-cta">Schedule Private Consultation</div>
-                            </div>
-                            <div class="prev1-art">
-                                <div class="prev1-trust">
-                                    <div>
-                                        <div class="prev1-stars">★★★★★</div>
-                                        <div class="prev1-trust-text">500+ Perfect Smiles Crafted</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Cosmetic Dentistry & Implants</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Cosmetic Dentistry</span>
-                            <span class="tag">High-Ticket</span>
-                            <span class="tag">Patient Booking</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 2: Orthodontics (Modern tech) -->
-                <div class="showcase-img" role="img" aria-label="Orthodontics clear aligner landing page built by Naslogic with patient scheduling integration" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#0a0a0f; font-family:'Space Grotesk', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
-                        .prev2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; overflow:hidden; }
-                        .prev2-blobs { position:absolute; inset:0; z-index:0; }
-                        .prev2-blob1 { position:absolute; top:-100px; right:-100px; width:600px; height:600px; border-radius:50%; background:#00f0ff; opacity:0.15; filter:blur(100px); }
-                        .prev2-blob2 { position:absolute; bottom:-200px; left:10%; width:700px; height:700px; border-radius:50%; background:#4338ca; opacity:0.15; filter:blur(120px); }
-                        .prev2-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 50px; z-index:2; position:relative; }
-                        .prev2-logo { font-size:26px; font-weight:700; letter-spacing:-1px; }
-                        .prev2-logo span { color:#00f0ff; }
-                        .prev2-links { display:flex; gap:30px; font-size:15px; font-weight:600; color:rgba(255,255,255,0.7); }
-                        .prev2-cta-pill { padding:14px 28px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; border-radius:8px; font-weight:600; font-size:14px; }
-                        .prev2-hero { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:2; position:relative; padding:0 20px; }
-                        .prev2-badge { background:rgba(0,240,255,0.1); color:#00f0ff; border:1px solid rgba(0,240,255,0.2); padding:8px 20px; border-radius:100px; font-size:13px; font-weight:600; letter-spacing:1px; margin-bottom:30px; }
-                        .prev2-title { font-size:100px; font-weight:700; line-height:0.9; letter-spacing:-3px; margin-bottom:25px; max-width:900px; }
-                        .prev2-title-glow { background:linear-gradient(90deg, #fff, #00f0ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-                        .prev2-desc { font-size:20px; color:rgba(255,255,255,0.6); max-width:600px; margin-bottom:45px; line-height:1.5; }
-                        .prev2-cta { padding:22px 48px; background:#00f0ff; color:#000; font-size:16px; font-weight:700; border-radius:8px; box-shadow:0 0 40px rgba(0,240,255,0.3); text-transform:uppercase; letter-spacing:1px; }
-                        .prev2-floating1 { position:absolute; top:30%; left:8%; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); backdrop-filter:blur(20px); padding:20px; border-radius:16px; display:flex; align-items:center; gap:15px; }
-                        .prev2-icon { width:40px; height:40px; border-radius:50%; background:rgba(0,240,255,0.1); display:flex; align-items:center; justify-content:center; color:#00f0ff; font-weight:700; font-size:20px; }
-                        .prev2-stat { font-family:'Space Grotesk', sans-serif; font-size:24px; font-weight:700; line-height:1; }
-                        .prev2-stat-sub { font-size:12px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px; margin-top:5px; }
-                        .prev2-floating2 { position:absolute; bottom:20%; right:10%; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); backdrop-filter:blur(20px); padding:20px; border-radius:16px; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="prev2-wrap">
-                        <div class="prev2-blobs">
-                            <div class="prev2-blob1"></div>
-                            <div class="prev2-blob2"></div>
-                        </div>
-                        <div class="prev2-nav">
-                            <div class="prev2-logo">Align<span>Tech</span></div>
-                            <div class="prev2-links">
-                                <span>How It Works</span>
-                                <span>Pricing</span>
-                                <span>Results</span>
-                            </div>
-                            <div class="prev2-cta-pill">Free Scan</div>
-                        </div>
-                        <div class="prev2-hero">
-                            <div class="prev2-badge">Diamond+ Invisalign Provider</div>
-                            <h1 class="prev2-title">Straight teeth in <span class="prev2-title-glow">half the time.</span></h1>
-                            <p class="prev2-desc">Experience cutting-edge 3D scanning and digitally customized clear aligners from the state's top-rated orthodontic team.</p>
-                            <div class="prev2-cta">Schedule Virtual Consult</div>
-                        </div>
-                        
-                        <div class="prev2-floating1">
-                            <div class="prev2-icon">✓</div>
-                            <div>
-                                <div class="prev2-stat">98%</div>
-                                <div class="prev2-stat-sub">Success Rate</div>
-                            </div>
-                        </div>
-                        <div class="prev2-floating2">
-                            <div class="prev2-stars" style="color:#00f0ff; font-size:22px; letter-spacing:2px; margin-bottom:5px;">★★★★★</div>
-                            <div class="prev2-stat-sub" style="color:#fff;">1,200+ 5-Star Reviews</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Clear Aligner Specialists</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Orthodontics</span>
-                            <span class="tag">Invisalign</span>
-                            <span class="tag">Lead Gen</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Process Section
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live dental landing page that books appointments and generates qualified leads for your dental practice.</p>
-
-        <div class="process-steps">
-            <div class="step-card fade-up">
-                <div class="step-num">01</div>
-                <h3>Book a Call</h3>
-                <p>We learn your dental niche — cosmetic, implants, general — and map out your ideal patient journey.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">02</div>
-                <h3>We Build It</h3>
-                <p>Our team designs and develops a mobile-first, conversion-optimized landing page tailored to dental marketing best practices.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">03</div>
-                <h3>You Grow</h3>
-                <p>Your page goes live and starts converting visitors into booked appointments and new patient consultations.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ Section — Powers FAQPage Schema
-         ========================================== -->
-    <section id="faq" class="section-padding container">
-        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
-        <p class="section-sub fade-up">Common questions from dentists about our landing page design.</p>
-
-        <div class="faq-list fade-up">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much does a dental landing page cost?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Our dental landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Why do dentists need a dedicated landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Dental practices spend big on Google Ads, but most send visitors to generic homepages. A dedicated landing page can increase patient conversion rates by 2x to 5x.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How fast can Naslogic deliver a dental landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>We deliver production-ready dental landing pages on rapid turnarounds.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will the landing page work on mobile devices?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. Every page we build is mobile-first. Over 60% of patients searching for a new dentist do so on their phone.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can the landing page integrate with my CRM or booking software?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We integrate with popular dental CRMs like NexHealth and RevenueWell.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA Banner
-         ========================================== -->
-    <section class="cta-banner fade-up">
-        <h2>Ready to Book More High-Ticket Patients?</h2>
-        <p>Stop losing patients to competitors with better websites. Get a landing page that converts dental searches into booked appointments.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
-    </section>
-
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
+    <section class="scan-section">
         <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/fitness" class="related-link">Fitness & Gyms Landing Pages</a>
-                <a href="/legal" class="related-link">Law Firms & Attorneys Landing Pages</a>
+            <div class="scanner-container" id="scanner">
+                <div class="ui-tag tag-left">CURRENT PATHOLOGY</div>
+                <div class="ui-tag tag-right">THE NASLOGIC RESULT</div>
+                <!-- Abstract "smile/tooth" or clean white textural imagery -->
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1500&auto=format&fit=crop" class="scanner-img img-before" alt="Base">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1500&auto=format&fit=crop" class="scanner-img img-after" id="scanner-after" alt="Enhanced">
+                <div class="scanner-handle" id="scanner-handle"></div>
             </div>
         </div>
     </section>
 
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
-    </div>
-
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer id="contact" class="footer">
+    <section style="padding-top: 0;">
         <div class="container">
-            <div>
-                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
-            </div>
-            <div class="footer-links">
-                <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
-            </div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
+            <div class="glass-grid">
+                <div class="glass-card">
+                    <h3>The Hygiene Trap</h3>
+                    <p>Smiling families holding toothbrushes don't sell $30k full-mouth restorations. They sell semi-annual cleanings. If your web presence feels like a general practitioner's clinic, affluent patients seeking cosmetic perfection will assume your aesthetic skills match your digital ones.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>The Glassmorphic Upgrade</h3>
+                    <p>We build digital experiences that feel like unboxing a luxury tech product. Pristine whitespace, translucent clinical layering, and frictionless typography that establishes immediate dominance in your local market.</p>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
+    <section class="proof-section">
+        <div class="container" style="padding: 6rem 5%;">
+            <h2>"Our volume of cosmetic consultations tripled in a month without increasing our ad spend. The site design does the filtering for us—patients walk in already pre-sold on the aesthetic quality of our work."</h2>
+            <div class="author">Dr. Michael V. — Lead Cosmetologist</div>
+        </div>
+    </section>
 
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <section class="cta-bottom" id="consult">
+        <div class="container">
+            <h2>Architect the Perfect Smile.</h2>
+            <p style="color: var(--text-light); margin-bottom: 3rem; font-size: 1.2rem;">We are accepting only 4 dental practices this quarter to ensure absolute focus.</p>
+            <a href="mailto:hello@naslogic.com" class="btn-glass btn-solid" style="padding: 1.2rem 3rem;">Schedule Technical Audit</a>
+        </div>
+    </section>
 
     <script>
-        // =============================================
-        // Initialize GSAP
-        // =============================================
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // High-Tech Scanner Slider
+        const scanner = document.getElementById('scanner');
+        const scannerAfter = document.getElementById('scanner-after');
+        const scannerHandle = document.getElementById('scanner-handle');
+        
+        let isSliding = false;
 
-        // =============================================
-        // Hero Entrance Timeline
-        // =============================================
-        const heroTl = gsap.timeline();
-        heroTl.to(".hero-frag span", {
-            y: "0%",
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            delay: 0.2
-        })
-        .to(".hero-hook", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.8")
-        .to(".hero-ctas", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.9");
+        function updateSlider(x) {
+            const rect = scanner.getBoundingClientRect();
+            // Get position relative to the container
+            let pos = x - rect.left;
+            
+            // Clamp between 0 and width
+            pos = Math.max(0, Math.min(pos, rect.width));
+            
+            // Convert to percentage
+            const percentage = (pos / rect.width) * 100;
+            
+            // Apply to clip path and handle
+            scannerAfter.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+            scannerHandle.style.left = `${percentage}%`;
+        }
 
-        // =============================================
-        // Scroll Reveal — Fade Up
-        // =============================================
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 88%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
+        // Mouse Events
+        scanner.addEventListener('mousedown', (e) => {
+            isSliding = true;
+            updateSlider(e.clientX);
         });
 
-        // =============================================
-        // FAQ Accordion
-        // =============================================
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
-            });
+        window.addEventListener('mouseup', () => { isSliding = false; });
+        
+        window.addEventListener('mousemove', (e) => {
+            if (!isSliding) return;
+            updateSlider(e.clientX);
         });
-        }); // end DOMContentLoaded
+
+        // Touch Events
+        scanner.addEventListener('touchstart', (e) => {
+            isSliding = true;
+            updateSlider(e.touches[0].clientX);
+        });
+
+        window.addEventListener('touchend', () => { isSliding = false; });
+        
+        window.addEventListener('touchmove', (e) => {
+            if (!isSliding) return;
+            // Prevent scrolling while interacting with the slider
+            e.preventDefault();
+            updateSlider(e.touches[0].clientX);
+        }, { passive: false });
     </script>
-
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
-
 </body>
-
 </html>

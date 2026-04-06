@@ -1,1330 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Landing Pages | Product Drops That Sell Out | Naslogic</title>
-    <meta name="description"
-        content="Naslogic builds high-converting landing pages for DTC and E-Commerce. Lower CAC and increase ROAS with a beautifully engineered product page.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://naslogic.com/ecommerce">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="E-Commerce Landing Pages That Convert | Naslogic">
-    <meta property="og:description"
-        content="Custom advertorials and product drop landing pages for DTC brands.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com/ecommerce">
-
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "E-Commerce Landing Page Design",
-        "description": "Naslogic builds high-converting landing pages specifically for DTC and E-Commerce brands to maximize ROAS.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com"
-        },
-        "serviceType": "Landing Page Design for E-Commerce Brands",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a e-commerce landing page cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our e-commerce landing pages start at $199 with conversion-focused layouts for higher AOV."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why use a landing page over a standard Shopify product page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Driving ad traffic to a standard catalog page results in high bounce rates. A dedicated landing page acts as a sales letter, removing distractions and increasing ROAS significantly."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How fast can Naslogic deliver an e-commerce page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We deliver production-ready landing pages on rapid turnarounds, perfect for upcoming product drops."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will the landing page work on mobile devices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. Over 80% of DTC traffic is mobile. Our pages are rigorously tested for mobile checkout flow."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can the landing page integrate with my CRM or booking software?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We integrate perfectly with Shopify, Klaviyo, and ReCharge."
-                }
-            }
-        ]
-    }
-    </script>
-
-
-    <!-- JSON-LD: BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-                {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://naslogic.com"
-                },
-                {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "E-Commerce Brands Landing Pages",
-                        "item": "https://naslogic.com/ecommerce"
-                }
-        ]
-}
-    </script>
-
-    <!-- Google Fonts -->
+    <title>Naslogic | High-Fashion E-Commerce Landing Pages</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* =============================================
-           CSS Variables & Reset
-           ============================================= */
         :root {
-            --bg: #0A0A0A;
-            --text-main: #F0EDE8;
-            --text-muted: #888888;
-            --accent: #6EFF6A;
-            --accent-glow: rgba(110, 255, 106, 0.4);
-            --surface: #111111;
-            --surface-border: #222222;
-            --font-display: 'Anton', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --container: 1400px;
+            --black: #000000;
+            --white: #FFFFFF;
+            --ash: #888888;
+            --ash-light: #EAEAEA;
+            
+            --font-display: 'Oswald', sans-serif;
+            --font-body: 'Cormorant', serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
+            background-color: var(--white);
+            color: var(--black);
             font-family: var(--font-body);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            font-size: 18px;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        ::selection { background: var(--black); color: var(--white); }
+
+        h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: 1; letter-spacing: -0.02em; }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 5vw; }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            padding: 2rem 5vw; display: flex; justify-content: space-between; align-items: center;
+            z-index: 100; mix-blend-mode: difference; color: var(--white);
         }
 
-        /* =============================================
-           Layout & Utilities
-           ============================================= */
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 5%;
-        }
+        .logo { font-family: var(--font-display); font-size: 2rem; font-weight: 700; text-decoration: none; color: inherit; }
+        
+        .contact { font-family: var(--font-display); font-size: 1rem; text-decoration: none; color: inherit; }
 
-        .section-padding {
-            padding: 120px 0;
-        }
-
-        /* =============================================
-           Typography
-           ============================================= */
-        h1, h2, h3, h4, .display-font {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: 0.02em;
-        }
-
-        p {
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
-
-        /* =============================================
-           Buttons — min 48px tap target
-           ============================================= */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            min-height: 48px;
-            min-width: 48px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--surface-border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* =============================================
-           Navigation
-           ============================================= */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 24px 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            padding: 12px 0;
-        }
-
-        .nav-links a:not(.btn):hover {
-            color: var(--accent);
-        }
-
-        /* =============================================
-           Hero Section
-           ============================================= */
+        /* Hero */
         .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
+            height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: center;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
-                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
-            background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite alternate;
+        .hero h1 {
+            font-size: clamp(6rem, 15vw, 15rem); font-weight: 700;
+            color: var(--black); position: relative; z-index: 2;
+            mix-blend-mode: exclusion; color: var(--white);
         }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
+        .hero-img {
+            position: absolute; top: 15%; right: 10%; width: 45vw; height: 70vh;
+            object-fit: cover; z-index: 0; filter: grayscale(100%);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
+        /* Editorial Lookbook (The Core Element) */
+        .lookbook { padding: 10rem 0; }
+
+        .lb-intro {
+            font-size: 2.5rem; font-style: italic; max-width: 800px;
+            color: var(--ash); margin-bottom: 8rem; line-height: 1.3;
+        }
+        
+        .lb-intro span { color: var(--black); }
+
+        .editorial-grid {
+            display: grid; grid-template-columns: repeat(12, 1fr);
+            gap: 2rem; align-items: start;
         }
 
-        .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            line-height: 0.9;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
+        /* Skew scroll classes */
+        .scrolling-image {
+            width: 100%; height: auto; object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+            will-change: transform;
         }
 
-        .hero-frag {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        .scrolling-image-container { overflow: hidden; position: relative; }
+        .scrolling-image-container:hover .scrolling-image { filter: grayscale(0%); }
+
+        .img-large { grid-column: 1 / 8; aspect-ratio: 4/5; }
+        .img-small { grid-column: 9 / 13; aspect-ratio: 3/4; margin-top: 50%; }
+
+        /* Typography Block in Grid */
+        .typo-block {
+            grid-column: 2 / 7; margin-top: 15rem;
+            position: relative; z-index: 5;
         }
 
-        .hero-frag span {
-            display: block;
-            transform: translateY(110%);
+        .typo-block h2 { font-size: clamp(4rem, 8vw, 7rem); margin-bottom: 2rem; }
+        .typo-block p { font-size: 1.5rem; line-height: 1.6; color: var(--ash); }
+
+        .img-medium { grid-column: 8 / 13; aspect-ratio: 2/3; margin-top: 5rem; }
+
+        /* Draw/Cart Mechanic Simulation */
+        .drawer-sim {
+            padding: 10rem 0; border-top: 1px solid var(--black);
+            display: flex; justify-content: space-between; cursor: pointer;
+            transition: background 0.4s ease;
         }
 
-        .frag-1 { margin-left: 0; }
-        .frag-2 { margin-left: 10%; color: var(--text-muted); }
-        .frag-3 { margin-left: 3%; color: var(--accent); }
+        .drawer-sim:hover { background: var(--black); color: var(--white); }
+        
+        .ds-left h2 { font-size: 5rem; font-weight: 300; }
+        .ds-right { font-family: var(--font-display); font-size: 1.5rem; display: flex; align-items: center; }
 
-        /* 50-Word AI Hook */
-        .hero-hook {
-            max-width: 600px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0;
-        }
+        /* Quotation */
+        .statement { padding: 15rem 0; text-align: center; }
+        .statement h3 { font-family: var(--font-body); font-style: italic; font-size: clamp(3rem, 5vw, 4rem); max-width: 1000px; margin: 0 auto 2rem; text-transform: none; }
+        .author { font-family: var(--font-display); font-size: 1rem; letter-spacing: 2px; }
 
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            opacity: 0;
+        /* CTA */
+        .cta { background: var(--black); color: var(--white); padding: 10rem 0; text-align: center; }
+        .cta h2 { font-size: clamp(5rem, 10vw, 8rem); margin-bottom: 3rem; }
+        
+        .btn-editorial {
+            display: inline-block; padding: 1rem 3rem; font-family: var(--font-display); font-size: 1.2rem;
+            text-transform: uppercase; text-decoration: none; border: 1px solid var(--white); color: var(--white);
+            transition: all 0.3s;
         }
-
-        /* =============================================
-           Problem Section
-           ============================================= */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .problem-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-transform: none;
-            font-family: var(--font-body);
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Comparison Table
-           ============================================= */
-        .comparison-table-wrap {
-            overflow-x: auto;
-            margin-top: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
-        }
-
-        .comparison-table thead {
-            background: var(--surface);
-        }
-
-        .comparison-table th {
-            padding: 24px 30px;
-            text-align: left;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .comparison-table th:last-child {
-            color: var(--accent);
-        }
-
-        .comparison-table td {
-            padding: 20px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-muted);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table td:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ff4444;
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Portfolio Section
-           ============================================= */
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .showcase-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .showcase-card:hover {
-            border-color: rgba(110, 255, 106, 0.3);
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .showcase-info {
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .showcase-title {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .showcase-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 6px 16px;
-            border-radius: 100px;
-            border: 1px solid var(--surface-border);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* =============================================
-           Process Section
-           ============================================= */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 50px 35px;
-            text-align: center;
-            position: relative;
-            transition: border-color 0.3s;
-        }
-
-        .step-card:hover {
-            border-color: var(--accent);
-        }
-
-        .step-num {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(110, 255, 106, 0.08);
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .step-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-
-        /* =============================================
-           FAQ Section
-           ============================================= */
-        .faq-list {
-            margin-top: 60px;
-            max-width: 800px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            font-weight: 600;
-            text-align: left;
-            padding: 28px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 48px;
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 28px;
-        }
-
-        .faq-answer p {
-            font-size: 1.05rem;
-        }
-
-        /* =============================================
-           CTA Banner
-           ============================================= */
-        .cta-banner {
-            background: var(--accent);
-            border-radius: 40px;
-            padding: 100px 50px;
-            text-align: center;
-            color: #000;
-            margin: 120px 5%;
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            margin-bottom: 20px;
-        }
-
-        .cta-banner p {
-            color: #222;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-banner .btn {
-            background: #000;
-            color: var(--accent);
-            font-size: 1.1rem;
-            padding: 22px 44px;
-        }
-
-        .cta-banner .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        /* =============================================
-           Footer
-           ============================================= */
-        .footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 40px 0;
-        }
-
-        .footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            padding: 8px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =============================================
-           Section Headers
-           ============================================= */
-        .section-header {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .section-sub {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        /* Sticky FAB */
-        .fab {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            min-height: 48px;
-            border-radius: 100px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            z-index: 99;
-            box-shadow: 0 10px 30px var(--accent-glow);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
-        }
-
-        /* =============================================
-           Responsive — Mobile First
-           ============================================= */
-        @media (max-width: 1024px) {
-            .comparison-table th,
-            .comparison-table td {
-                padding: 16px 20px;
-                font-size: 0.9rem;
-            }
-        }
+        .btn-editorial:hover { background: var(--white); color: var(--black); }
 
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: clamp(2.8rem, 12vw, 5rem);
-            }
-
-            .frag-2 { margin-left: 0; }
-            .frag-3 { margin-left: 0; }
-
-            .showcase-img {
-                height: 250px;
-            }
-
-            .showcase-info {
-                padding: 20px;
-            }
-
-            .cta-banner {
-                padding: 60px 24px;
-                margin: 80px 5%;
-                border-radius: 24px;
-            }
-
-            .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 14px 16px;
-                font-size: 0.85rem;
-            }
+            .hero-img { width: 80vw; right: 5%; }
+            .img-large { grid-column: 1 / 13; }
+            .img-small { grid-column: 2 / 12; margin-top: 2rem; }
+            .typo-block { grid-column: 1 / 13; margin-top: 5rem; padding: 0 5%; }
+            .img-medium { grid-column: 1 / 13; }
+            .ds-left h2 { font-size: 3rem; }
         }
-
-        /* Scroll reveal utility */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
-
 <body>
 
-    <!-- ==========================================
-         Navigation
-         ========================================== -->
-    <nav class="nav" aria-label="Main navigation">
-        <div class="container">
-            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
-            <div class="nav-links">
-                <a href="naslogic.html">Home</a>
-                <a href="#portfolio">Work</a>
-                <a href="#faq">FAQ</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
-            </div>
-        </div>
+    <nav>
+        <a href="/" class="logo">NASLOGIC</a>
+        <a href="#build" class="contact">COLLECTION '26</a>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-sep" aria-hidden="true">›</li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span class="breadcrumb-current" itemprop="name">E-Commerce Brands Landing Pages</span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
-        </div>
-    </nav>
+    <header class="hero container">
+        <h1>DON'T<br>SELL.</h1>
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop" class="hero-img" alt="Fashion">
+        <h1 style="text-align: right; margin-top: -5rem;">SEDUCE.</h1>
+    </header>
 
-    <!-- ==========================================
-         Hero Section
-         H1 — one per page, primary keyword target
-         ========================================== -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
-                <div class="hero-frag frag-2"><span>For E-Commerce</span></div>
-                <div class="hero-frag frag-3"><span>Brands</span></div>
-            </h1>
-            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
-            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for DTC and E-Commerce brands. We design advertorials and product pages that maximize ROAS, increase AOV, and turn cold traffic into loyal buyers. No generic Shopify templates.</p>
-            <div class="hero-ctas">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
-                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See E-Commerce Examples</a>
+    <section class="lookbook container">
+        <p class="lb-intro">Your high-end apparel line deserves more than a standard Shopify template. <span>We architect editorial ecommerce experiences</span> that elevate a $300 garment into an absolute necessity.</p>
+
+        <div class="editorial-grid">
+            <div class="scrolling-image-container img-large">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" class="scrolling-image" alt="Look 1">
+            </div>
+            
+            <div class="scrolling-image-container img-small">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop" class="scrolling-image" alt="Look 2">
+            </div>
+
+            <div class="typo-block">
+                <h2>THE GRID IS DEAD</h2>
+                <p>Standard e-commerce matrices devalue luxury. By treating the page like a Vogue editorial spread—using dramatic scale, asymmetric masonry, and massive typography—we force the buyer into an immersive scroll. They stop comparing prices because they are engrossed in the art.</p>
+            </div>
+
+            <div class="scrolling-image-container img-medium">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop" class="scrolling-image" alt="Look 3">
             </div>
         </div>
     </section>
 
-    <!-- ==========================================
-         Problem Section
-         H2 — second in hierarchy
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Why Most DTC Brands Burn Ad Spend</h2>
-        <p class="section-sub fade-up">Brands invest heavily in Meta and TikTok ads, but poor landing page experiences destroy their ROAS.</p>
-
-        <div class="problem-grid">
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📉</div>
-                <h3>Traffic That Never Converts</h3>
-                <p>You send expensive traffic to a basic product page filled with distractions. They leave without adding to cart.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📱</div>
-                <h3>Broken Mobile Experience</h3>
-                <p>If your site loads slowly on mobile, your bounce rate spikes and your advertising dollars go to waste.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">🏗️</div>
-                <h3>Generic, Cookie-Cutter Design</h3>
-                <p>Standard Shopify themes don't tell a persuasive brand story or handle objections effectively.</p>
-            </div>
+    <div class="drawer-sim container">
+        <div class="ds-left">
+            <h2>HAPTIC<br>INTERACTIONS</h2>
         </div>
-    </section>
-
-    <!-- ==========================================
-         Comparison Table
-         AI engines pull from HTML tables
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
-        <p class="section-sub fade-up">See why 8-figure brands choose a specialist over a standard web agency.</p>
-
-        <div class="comparison-table-wrap fade-up">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Generic Agency</th>
-                        <th>Naslogic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>DTC conversion expertise</td>
-                        <td><span class="cross">✗</span> No industry focus</td>
-                        <td><span class="check">✓</span> Built for e-commerce</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile-first design</td>
-                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
-                        <td><span class="check">✓</span> 100% mobile-optimized</td>
-                    </tr>
-                    <tr>
-                        <td>Conversion-focused layout</td>
-                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
-                        <td><span class="check">✓</span> Every element drives action</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-ready structure</td>
-                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
-                        <td><span class="check">✓</span> Schema markup, clean headings</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery speed</td>
-                        <td>4 to 12 weeks typical</td>
-                        <td><span class="check">✓</span> Days, not months</td>
-                    </tr>
-                    <tr>
-                        <td>CRM integration</td>
-                        <td>Extra fees required</td>
-                        <td><span class="check">✓</span> Shopify, Klaviyo, ReCharge</td>
-                    </tr>
-                    <tr>
-                        <td>Price transparency</td>
-                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
-                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="ds-right">
+            [ HOVER ]
         </div>
-    </section>
-
-    <!-- ==========================================
-         Portfolio Section
-         ========================================== -->
-    <section id="portfolio" class="section-padding container">
-        <h2 class="section-header fade-up">E-Commerce Pages We Have Built</h2>
-        <p class="section-sub fade-up">High-ROAS landing pages designed specifically for DTC brands to drive massive sales volume.</p>
-
-        <div class="portfolio-showcase">
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 1: Supplement Advertorial (Wellness) -->
-                <div class="showcase-img" role="img" aria-label="DTC supplement advertorial landing page by Naslogic optimized for high ROAS and mobile checkout" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#fcfaf6; font-family:'Inter', sans-serif; color:#2a3627;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Outfit:wght@400;600;700&display=swap');
-                        .ecom1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background: linear-gradient(135deg, #fcfaf6 0%, #eef0ea 100%); overflow:hidden; }
-                        .ecom1-grain { position:absolute; inset:0; opacity:0.4; }
-                        .ecom1-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 50px; border-bottom:1px solid rgba(42,54,39,0.1); position:relative; z-index:2; }
-                        .ecom1-logo { font-family:'Playfair Display', serif; font-size:24px; font-weight:600; letter-spacing:1px; color:#1b4332; }
-                        .ecom1-links { display:flex; gap:30px; font-family:'Outfit', sans-serif; font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:1px; }
-                        .ecom1-cta-pill { padding:10px 24px; background:#1b4332; color:#fff; border-radius:100px; font-family:'Outfit', sans-serif; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:1px; }
-                        .ecom1-hero { flex:1; display:flex; padding:0 50px; align-items:center; position:relative; z-index:2; gap:40px; }
-                        .ecom1-content { flex:1.2; }
-                        .ecom1-badge { display:inline-flex; align-items:center; gap:8px; font-family:'Outfit', sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#1b4332; background:rgba(27,67,50,0.1); padding:8px 16px; border-radius:100px; margin-bottom:25px; }
-                        .ecom1-badge span { color:#f59e0b; font-size:16px; }
-                        .ecom1-title { font-family:'Playfair Display', serif; font-size:75px; line-height:1.05; margin-bottom:25px; color:#1b4332; }
-                        .ecom1-title i { color:#8a9a86; }
-                        .ecom1-desc { font-family:'Outfit', sans-serif; font-size:18px; line-height:1.6; color:#4a5d43; margin-bottom:40px; max-width:500px; }
-                        .ecom1-btn { display:inline-flex; padding:22px 45px; background:#1b4332; color:#fff; font-family:'Outfit', sans-serif; font-weight:700; font-size:16px; border-radius:100px; text-transform:uppercase; letter-spacing:1.5px; box-shadow:0 15px 35px rgba(27,67,50,0.25); position:relative; overflow:hidden; }
-                        .ecom1-btn::after { content:''; position:absolute; inset:0; border:2px solid rgba(255,255,255,0.2); border-radius:100px; }
-                        .ecom1-visual { flex:0.8; height:100%; position:relative; display:flex; align-items:center; justify-content:center; }
-                        .ecom1-circle { position:absolute; width:400px; height:400px; background:#8a9a86; border-radius:50%; filter:blur(80px); opacity:0.2; }
-                        .ecom1-bottle { width:260px; height:400px; background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.4)); border:1px solid rgba(255,255,255,0.8); backdrop-filter:blur(10px); border-radius:20px; box-shadow:0 30px 60px rgba(0,0,0,0.08); position:relative; z-index:2; display:flex; align-items:center; justify-content:center; }
-                        .ecom1-bottle-label { width:80%; height:70%; border:1px solid rgba(27,67,50,0.2); border-radius:10px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'Playfair Display', serif; color:#1b4332; }
-                        .ecom1-trust { position:absolute; bottom:50px; left:-50px; background:#fff; padding:20px 30px; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.06); display:flex; align-items:center; gap:15px; z-index:3; border:1px solid rgba(0,0,0,0.03); }
-                        .ecom1-trust-stars { color:#f59e0b; font-size:20px; letter-spacing:2px; }
-                        .ecom1-trust-text { font-family:'Outfit', sans-serif; font-size:14px; font-weight:700; color:#1b4332; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="ecom1-wrap">
-                        <svg class="ecom1-grain" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#noiseFilter)"/></svg>
-                        <div class="ecom1-nav">
-                            <div class="ecom1-logo">VITA+ROOTS</div>
-                            <div class="ecom1-links">
-                                <span>Science</span>
-                                <span>Reviews</span>
-                                <span>FAQ</span>
-                            </div>
-                            <div class="ecom1-cta-pill">Claim Offer</div>
-                        </div>
-                        <div class="ecom1-hero">
-                            <div class="ecom1-content">
-                                <div class="ecom1-badge"><span>★</span> Over 2 Million Bottles Sold</div>
-                                <h1 class="ecom1-title">The deeply researched <i>daily ritual</i>.</h1>
-                                <p class="ecom1-desc">Clinically proven organic compounds that enhance cellular energy, reduce bloat, and restore mental clarity in just 14 days.</p>
-                                <div class="ecom1-btn">Secure 50% Off Today</div>
-                            </div>
-                            <div class="ecom1-visual">
-                                <div class="ecom1-circle"></div>
-                                <div class="ecom1-bottle">
-                                    <div class="ecom1-bottle-label">
-                                        <div style="font-size:12px; letter-spacing:3px; text-transform:uppercase; margin-bottom:10px; font-family:'Outfit', sans-serif;">Daily Greens</div>
-                                        <div style="font-size:32px; font-weight:600; line-height:1; text-align:center;">VITA+<br>ROOTS</div>
-                                    </div>
-                                </div>
-                                <div class="ecom1-trust">
-                                    <div>
-                                        <div class="ecom1-trust-stars">★★★★★</div>
-                                        <div class="ecom1-trust-text">14,392 clinical reviews</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Supplement Advertorial</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Health & Wellness</span>
-                            <span class="tag">Advertorial</span>
-                            <span class="tag">High AOV</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 2: Streetwear Hype Drop (Urgency) -->
-                <div class="showcase-img" role="img" aria-label="Streetwear product drop landing page built by Naslogic with mobile-first hype design" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#050505; font-family:'Inter', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;900&display=swap');
-                        .ecom2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#0a0a0a; overflow:hidden; }
-                        .ecom2-noise { position:absolute; inset:0; opacity:0.1; mix-blend-mode:overlay; z-index:1; pointer-events:none; background:url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E'); }
-                        .ecom2-bgword { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-family:'Bebas Neue', display; font-size:450px; color:#ffffff; opacity:0.04; white-space:nowrap; z-index:0; line-height:0.8; letter-spacing:-10px; }
-                        .ecom2-nav { display:flex; justify-content:space-between; align-items:center; padding:30px 50px; position:relative; z-index:3; }
-                        .ecom2-logo { font-size:28px; font-weight:900; letter-spacing:-1px; text-transform:uppercase; color:#fff; }
-                        .ecom2-links { display:flex; gap:35px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#aaa; }
-                        .ecom2-links span:last-child { color:#e60000; }
-                        .ecom2-cart { width:45px; height:45px; border-radius:50%; background:#1a1a1a; display:flex; align-items:center; justify-content:center; border:1px solid #333; }
-                        .ecom2-hero { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; z-index:3; padding:0 30px; }
-                        .ecom2-badge { background:#e60000; color:#fff; font-size:14px; font-weight:900; text-transform:uppercase; letter-spacing:3px; padding:6px 16px; margin-bottom:25px; display:inline-block; clip-path:polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); }
-                        .ecom2-title { font-family:'Bebas Neue', display; font-size:140px; line-height:0.85; margin-bottom:20px; letter-spacing:1px; color:#fff; }
-                        .ecom2-title span { color:#e60000; }
-                        .ecom2-desc { font-size:18px; color:#888; max-width:500px; margin-bottom:40px; line-height:1.5; font-weight:400; }
-                        .ecom2-cta { display:inline-flex; align-items:center; justify-content:center; padding:0 50px; height:64px; background:#fff; color:#000; font-size:18px; font-weight:900; text-transform:uppercase; letter-spacing:1px; box-shadow:8px 8px 0px #e60000; transition:all 0.2s; border:2px solid #fff; }
-                        .ecom2-timer { position:absolute; left:50px; bottom:50px; background:#111; border:1px solid #333; padding:20px 30px; display:flex; flex-direction:column; gap:8px; border-left:4px solid #e60000; }
-                        .ecom2-timer-label { font-size:12px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:2px; }
-                        .ecom2-timer-val { font-family:'Bebas Neue', display; font-size:48px; line-height:1; color:#fff; letter-spacing:3px; }
-                        .ecom2-badge-float { position:absolute; right:50px; bottom:60px; width:100px; height:100px; border-radius:50%; background:transparent; border:1px dashed #666; display:flex; align-items:center; justify-content:center; text-transform:uppercase; font-size:12px; font-weight:900; text-align:center; color:#fff; letter-spacing:2px; animation:spin 10s linear infinite; }
-                        @keyframes spin { 100% { transform:rotate(360deg); } }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="ecom2-wrap">
-                        <div class="ecom2-noise"></div>
-                        <div class="ecom2-bgword">FW25 CAPSULE</div>
-                        <div class="ecom2-nav">
-                            <div class="ecom2-logo">OBELISK //</div>
-                            <div class="ecom2-links">
-                                <span>Lookbook</span>
-                                <span>Archive</span>
-                                <span>Drop 04</span>
-                            </div>
-                            <div class="ecom2-cart"><span style="color:#fff; font-weight:700;">2</span></div>
-                        </div>
-                        <div class="ecom2-hero">
-                            <div class="ecom2-badge">Extremely Limited</div>
-                            <h1 class="ecom2-title">HEAVYWEIGHT<br><span>HOODIE</span> DROP.</h1>
-                            <p class="ecom2-desc">800GSM Japanese cotton. Custom distressed wash. Only 200 units worldwide. Members early access active.</p>
-                            <div class="ecom2-cta">Add to Cart - $185</div>
-                        </div>
-                        <div class="ecom2-timer">
-                            <div class="ecom2-timer-label">Public Sale Unlocks In</div>
-                            <div class="ecom2-timer-val">00:14:59</div>
-                        </div>
-                        <div class="ecom2-badge-float">Sold<br>Out<br>Soon</div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">Streetwear Product Drop</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Apparel</span>
-                            <span class="tag">Hype Drop</span>
-                            <span class="tag">Mobile-First</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Process Section
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live e-commerce landing page that drives sales and generates qualified leads for your e-commerce brand.</p>
-
-        <div class="process-steps">
-            <div class="step-card fade-up">
-                <div class="step-num">01</div>
-                <h3>Book a Call</h3>
-                <p>We analyze your top-performing creatives, offers, and target demographics.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">02</div>
-                <h3>We Build It</h3>
-                <p>Our team designs and develops a mobile-first, high-converting advertorial or product page.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">03</div>
-                <h3>You Grow</h3>
-                <p>Your page goes live and starts scaling your ROAS and driving profitable acquisitions.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ Section — Powers FAQPage Schema
-         ========================================== -->
-    <section id="faq" class="section-padding container">
-        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
-        <p class="section-sub fade-up">Common questions from e-commerce founders about our landing page design.</p>
-
-        <div class="faq-list fade-up">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much does a e-commerce landing page cost?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Our e-commerce landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Why use a landing page over a standard Shopify product page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Driving ad traffic to a standard catalog page results in high bounce rates. A dedicated landing page acts as a sales letter, removing distractions and increasing ROAS significantly.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How fast can Naslogic deliver an e-commerce page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>We deliver production-ready landing pages on rapid turnarounds, perfect for upcoming product drops.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will the landing page work on mobile devices?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. Over 80% of DTC traffic is mobile. Our pages are rigorously tested for mobile checkout flow.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can the landing page integrate with my CRM or booking software?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We integrate perfectly with Shopify, Klaviyo, and ReCharge.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA Banner
-         ========================================== -->
-    <section class="cta-banner fade-up">
-        <h2>Ready to Scale Your ROAS?</h2>
-        <p>Stop wasting ad spend on low-converting product pages. Get a custom landing page that actually sells.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
-    </section>
-
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
-        <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/saas" class="related-link">SaaS Startups Landing Pages</a>
-                <a href="/restaurants" class="related-link">Restaurants Landing Pages</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
     </div>
 
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer id="contact" class="footer">
+    <!-- Hidden description text that only shows on hover, acting like a structural explanation -->
+    <div class="container" style="padding-bottom: 5rem; border-bottom: 1px solid var(--black); margin-bottom: 5rem;">
+        <p style="font-size: 1.5rem; max-width: 800px; color: var(--ash);">
+            "Quick View" modals that pop up aggressively break the illusion of luxury. We build sleek, horizontal drawer mechanics that slide seamlessly onto the page, feeling more like pulling open a high-end packaging box.
+        </p>
+    </div>
+
+    <section class="statement container">
+        <h3>"We completely abandoned the generic e-commerce grid. After Naslogic pushed the editorial redesign, our AOV (Average Order Value) increased by $140. When the website looks like a runway, you don't need to offer discounts."</h3>
+        <span class="author">ELENA ROUX - FOUNDER, MAISON ROUX</span>
+    </section>
+
+    <section class="cta" id="build">
         <div class="container">
-            <div>
-                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
-            </div>
-            <div class="footer-links">
-                <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
-            </div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
-            </div>
+            <h2>OWN THE RUNWAY</h2>
+            <a href="mailto:hello@naslogic.com" class="btn-editorial">COMMISSION A DESIGN</a>
         </div>
-    </footer>
-
-    <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
-
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    </section>
 
     <script>
-        // =============================================
-        // Initialize GSAP
-        // =============================================
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Scroll velocity image skew effect (The Unforgettable Element)
+        const images = document.querySelectorAll('.scrolling-image');
+        
+        let lastScrollY = window.scrollY;
+        let skewY = 0;
+        let ticking = false;
 
-        // =============================================
-        // Hero Entrance Timeline
-        // =============================================
-        const heroTl = gsap.timeline();
-        heroTl.to(".hero-frag span", {
-            y: "0%",
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            delay: 0.2
-        })
-        .to(".hero-hook", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.8")
-        .to(".hero-ctas", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.9");
+        function updateVelocity() {
+            // Calculate delta Y
+            const currentScrollY = window.scrollY;
+            const deltaY = currentScrollY - lastScrollY;
+            lastScrollY = currentScrollY;
 
-        // =============================================
-        // Scroll Reveal — Fade Up
-        // =============================================
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 88%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        });
+            // Target skew based on velocity
+            // Clamp it so it doesn't get ridiculously skewed
+            let targetSkew = deltaY * 0.05; 
+            targetSkew = Math.max(-5, Math.min(5, targetSkew));
 
-        // =============================================
-        // FAQ Accordion
-        // =============================================
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
+            skewY += (targetSkew - skewY) * 0.1;
+
+            images.forEach(img => {
+                // Skew image container
+                img.style.transform = `skewY(${skewY}deg) scale(1.05)`;
             });
-        });
-        }); // end DOMContentLoaded
+
+            // Need to return to 0 when stopped
+            if (Math.abs(deltaY) < 1) {
+                skewY += (0 - skewY) * 0.05; 
+            }
+
+            requestAnimationFrame(updateVelocity);
+        }
+
+        // Start render loop
+        requestAnimationFrame(updateVelocity);
+
+        // Simple smooth restoration on resize/scroll halt
+        setInterval(() => {
+            if(window.scrollY === lastScrollY) {
+                skewY += (0 - skewY) * 0.1;
+                images.forEach(img => {
+                    img.style.transform = `skewY(${skewY}deg) scale(1.05)`;
+                });
+            }
+        }, 100);
     </script>
-
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
-
 </body>
-
 </html>

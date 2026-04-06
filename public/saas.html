@@ -1,1417 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS Landing Pages | Startup Pages That Convert | Naslogic</title>
-    <meta name="description"
-        content="Naslogic builds high-converting landing pages for SaaS startups. Get more signups, lower CAC, and better MRR with a page engineered for software.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://naslogic.com/saas">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="SaaS Landing Pages That Drive MRR | Naslogic">
-    <meta property="og:description"
-        content="Custom-built landing pages for B2B and B2C SaaS. Higher signups, premium design, lower acquisition costs.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com/saas">
-
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "SaaS Landing Page Design",
-        "description": "Naslogic builds high-converting, mobile-first landing pages specifically for SaaS startups and tech companies.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com"
-        },
-        "serviceType": "Landing Page Design for SaaS Startups",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a SaaS landing page cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our SaaS landing pages start at $199 for a highly optimized, conversion-ready page."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do SaaS companies need custom landing pages?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You need to lower your CAC and stand out in a crowded market. A custom SaaS landing page clearly explains the value prop and drives trials 2x to 5x better than generic templates."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How fast can Naslogic deliver a SaaS landing page?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Startups move fast and so do we. We deliver production-ready landing pages on rapid turnarounds."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will the landing page work on mobile devices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. Every page is mobile-first, ensuring smooth conversions across all devices."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can the landing page integrate with my CRM or booking software?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We integrate perfectly with SaaS tools like HubSpot, Segment, Stripe, and Mixpanel."
-                }
-            }
-        ]
-    }
-    </script>
-
-
-    <!-- JSON-LD: BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-                {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://naslogic.com"
-                },
-                {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "SaaS Startups Landing Pages",
-                        "item": "https://naslogic.com/saas"
-                }
-        ]
-}
-    </script>
-
-    <!-- Google Fonts -->
+    <title>Naslogic | Elite SaaS & DevOps Landing Pages</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        /* =============================================
-           CSS Variables & Reset
-           ============================================= */
         :root {
-            --bg: #0A0A0A;
-            --text-main: #F0EDE8;
-            --text-muted: #888888;
-            --accent: #6EFF6A;
-            --accent-glow: rgba(110, 255, 106, 0.4);
-            --surface: #111111;
-            --surface-border: #222222;
-            --font-display: 'Anton', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --container: 1400px;
+            --space: #0D0D12;
+            --space-light: #16161D;
+            --indigo: #4F46E5;
+            --indigo-glow: rgba(79, 70, 229, 0.4);
+            --green: #10B981;
+            --text-main: #E2E8F0;
+            --text-dim: #94A3B8;
+            
+            --font-sys: 'Space Mono', monospace;
+            --font-body: 'Chivo', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg);
+            background-color: var(--space);
             color: var(--text-main);
             font-family: var(--font-body);
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            /* Cyber grid background */
+            background-image: 
+                linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        ::selection { background: var(--indigo); color: var(--text-main); }
 
-        /* =============================================
-           Layout & Utilities
-           ============================================= */
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 5%;
-        }
+        h1, h2, h3 { font-family: var(--font-sys); line-height: 1.1; }
 
-        .section-padding {
-            padding: 120px 0;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; position: relative; }
 
-        /* =============================================
-           Typography
-           ============================================= */
-        h1, h2, h3, h4, .display-font {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: 0.02em;
-        }
-
-        p {
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
-
-        /* =============================================
-           Buttons — min 48px tap target
-           ============================================= */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            min-height: 48px;
-            min-width: 48px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--surface-border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* =============================================
-           Navigation
-           ============================================= */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 24px 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        /* Nav */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            padding: 2rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(to bottom, rgba(13, 13, 18, 0.9), transparent);
         }
 
-        .nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .logo {
+            font-family: var(--font-sys); font-size: 1.2rem; font-weight: 700;
+            color: var(--text-main); text-decoration: none;
+        }
+        
+        .logo span { color: var(--indigo); }
+
+        .btn-sys {
+            background: rgba(79, 70, 229, 0.1);
+            border: 1px solid var(--indigo);
+            color: var(--indigo);
+            font-family: var(--font-sys); font-size: 0.8rem;
+            padding: 0.6rem 1.5rem; text-decoration: none;
+            transition: all 0.3s ease; box-shadow: 0 0 10px var(--indigo-glow);
         }
 
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-main);
-            text-decoration: none;
+        .btn-sys:hover {
+            background: var(--indigo); color: var(--text-main);
+            box-shadow: 0 0 20px var(--indigo);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            padding: 12px 0;
-        }
-
-        .nav-links a:not(.btn):hover {
-            color: var(--accent);
-        }
-
-        /* =============================================
-           Hero Section
-           ============================================= */
+        /* Hero */
         .hero {
-            position: relative;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
+            display: flex; flex-direction: column; justify-content: center;
+            position: relative; padding-top: 10vh;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 1) 100%),
-                radial-gradient(ellipse at 80% 20%, rgba(110, 255, 106, 0.12), transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(110, 255, 106, 0.08), transparent 50%);
-            background-size: 200% 200%;
-            animation: gradientMove 15s ease infinite alternate;
+        /* Glitch effect on header */
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 2rem; position: relative;
+            text-transform: uppercase;
         }
+        
+        .hero h1 .string { color: var(--green); }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        .hero-content {
+        .terminal-block {
+            background: var(--space-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px; padding: 2rem;
+            font-family: var(--font-sys); font-size: 0.9rem;
+            color: var(--text-dim); max-width: 700px; margin-bottom: 3rem;
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.5);
             position: relative;
-            z-index: 10;
         }
 
-        .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
-            line-height: 0.9;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
+        .terminal-block::before {
+            content: '● ● ●'; position: absolute;
+            top: 0.5rem; left: 1rem; color: #444; font-size: 0.5rem; letter-spacing: 2px;
         }
 
-        .hero-frag {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        .cursor {
+            display: inline-block; width: 10px; height: 1.2em;
+            background: var(--green); vertical-align: middle;
+            animation: blink 1s step-end infinite;
         }
 
-        .hero-frag span {
-            display: block;
-            transform: translateY(110%);
-        }
+        @keyframes blink { 50% { opacity: 0; } }
 
-        .frag-1 { margin-left: 0; }
-        .frag-2 { margin-left: 10%; color: var(--text-muted); }
-        .frag-3 { margin-left: 3%; color: var(--accent); }
-
-        /* 50-Word AI Hook */
-        .hero-hook {
-            max-width: 600px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            opacity: 0;
-        }
-
-        /* =============================================
-           Problem Section
-           ============================================= */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .problem-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-transform: none;
-            font-family: var(--font-body);
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Comparison Table
-           ============================================= */
-        .comparison-table-wrap {
-            overflow-x: auto;
-            margin-top: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
-        }
-
-        .comparison-table thead {
-            background: var(--surface);
-        }
-
-        .comparison-table th {
-            padding: 24px 30px;
-            text-align: left;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .comparison-table th:last-child {
-            color: var(--accent);
-        }
-
-        .comparison-table td {
-            padding: 20px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-muted);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table td:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ff4444;
-            font-weight: 700;
-        }
-
-        /* =============================================
-           Portfolio Section
-           ============================================= */
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .showcase-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .showcase-card:hover {
-            border-color: rgba(110, 255, 106, 0.3);
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--surface-border);
-        }
-
-        .showcase-info {
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .showcase-title {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .showcase-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 6px 16px;
-            border-radius: 100px;
-            border: 1px solid var(--surface-border);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* =============================================
-           Process Section
-           ============================================= */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 50px 35px;
-            text-align: center;
+        /* Tech/Logic Flow */
+        .architecture {
+            padding: 8rem 0;
+            border-top: 1px dotted rgba(79, 70, 229, 0.3);
             position: relative;
-            transition: border-color 0.3s;
         }
 
-        .step-card:hover {
-            border-color: var(--accent);
+        .node-track {
+            position: absolute; left: 5%; top: 0; bottom: 0;
+            width: 1px; background: rgba(79, 70, 229, 0.2);
+            z-index: 0;
+        }
+        
+        .node-progress {
+            position: absolute; top: 0; left: -1px; width: 3px; background: var(--indigo);
+            height: 0%; box-shadow: 0 0 10px var(--indigo);
+            transition: height 0.1s;
         }
 
-        .step-num {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(110, 255, 106, 0.08);
-            line-height: 1;
-            margin-bottom: 20px;
+        .node {
+            position: relative; padding-left: 5rem; margin-bottom: 8rem; z-index: 1;
         }
 
-        .step-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
+        .node::before {
+            content: ''; position: absolute; left: calc(5% - 5px); top: 5px;
+            width: 11px; height: 11px; border-radius: 50%;
+            background: var(--space); border: 2px solid var(--text-dim);
+            transition: all 0.4s ease;
         }
 
-        /* =============================================
-           FAQ Section
-           ============================================= */
-        .faq-list {
-            margin-top: 60px;
-            max-width: 800px;
+        .node.active::before {
+            border-color: var(--indigo); background: var(--indigo);
+            box-shadow: 0 0 15px var(--indigo);
         }
 
-        .faq-item {
-            border-bottom: 1px solid var(--surface-border);
+        .node h3 { color: var(--text-main); font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .node p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.7; max-width: 600px; }
+
+        /* The Dashboard Illusion */
+        .dash-container {
+            width: 100%; height: 500px;
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            background: linear-gradient(145deg, var(--space-light), var(--space));
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.5), 0 20px 50px rgba(0,0,0,0.5);
+            border-radius: 8px; position: relative; overflow: hidden;
+            margin: 5rem 0;
+            display: flex; justify-content: center; align-items: center;
         }
 
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            font-weight: 600;
-            text-align: left;
-            padding: 28px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 48px;
-            transition: color 0.3s;
+        /* 3D Grid inside dashboard */
+        .grid-3d {
+            width: 200%; height: 200%;
+            background-image: 
+                linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(500px) rotateX(60deg) translateY(-100px);
+            animation: moveGrid 10s linear infinite;
         }
 
-        .faq-question:hover {
-            color: var(--accent);
+        @keyframes moveGrid { 0% { background-position: 0 0; } 100% { background-position: 0 50px; } }
+
+        .dash-text {
+            position: absolute; text-align: center;
+            font-family: var(--font-sys); z-index: 2;
+        }
+        
+        .dash-text h2 { font-size: 3rem; color: var(--text-main); text-shadow: 0 0 20px rgba(79,70,229,0.5); margin-bottom: 1rem; }
+
+        /* Proof / Output */
+        .output-log {
+            padding: 8rem 0;
         }
 
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
+        .log-box {
+            border-left: 2px solid var(--green);
+            padding-left: 2rem; margin-bottom: 2rem;
+            font-family: var(--font-sys);
         }
 
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
+        .log-time { color: var(--text-dim); font-size: 0.8rem; margin-bottom: 1rem; display: block; }
+        
+        .log-msg { color: var(--green); font-size: 1.2rem; line-height: 1.6; }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
+        /* CTA */
+        .cta-bottom {
+            padding: 10rem 0 15rem; text-align: center;
         }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 28px;
-        }
-
-        .faq-answer p {
-            font-size: 1.05rem;
-        }
-
-        /* =============================================
-           CTA Banner
-           ============================================= */
-        .cta-banner {
-            background: var(--accent);
-            border-radius: 40px;
-            padding: 100px 50px;
-            text-align: center;
-            color: #000;
-            margin: 120px 5%;
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            margin-bottom: 20px;
-        }
-
-        .cta-banner p {
-            color: #222;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-banner .btn {
-            background: #000;
-            color: var(--accent);
-            font-size: 1.1rem;
-            padding: 22px 44px;
-        }
-
-        .cta-banner .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        /* =============================================
-           Footer
-           ============================================= */
-        .footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 40px 0;
-        }
-
-        .footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            padding: 8px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =============================================
-           Section Headers
-           ============================================= */
-        .section-header {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .section-sub {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        /* Sticky FAB */
-        .fab {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            min-height: 48px;
-            border-radius: 100px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            z-index: 99;
-            box-shadow: 0 10px 30px var(--accent-glow);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(110, 255, 106, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(110, 255, 106, 0); }
-        }
-
-        /* =============================================
-           Responsive — Mobile First
-           ============================================= */
-        @media (max-width: 1024px) {
-            .comparison-table th,
-            .comparison-table td {
-                padding: 16px 20px;
-                font-size: 0.9rem;
-            }
-        }
+        
+        .cta-bottom h2 { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 3rem; }
 
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: clamp(2.8rem, 12vw, 5rem);
-            }
-
-            .frag-2 { margin-left: 0; }
-            .frag-3 { margin-left: 0; }
-
-            .showcase-img {
-                height: 250px;
-            }
-
-            .showcase-info {
-                padding: 20px;
-            }
-
-            .cta-banner {
-                padding: 60px 24px;
-                margin: 80px 5%;
-                border-radius: 24px;
-            }
-
-            .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 14px 16px;
-                font-size: 0.85rem;
-            }
+            .node { padding-left: 3rem; }
+            .node-track { left: 0; }
+            .node::before { left: calc(0% - 5px); }
         }
-
-        /* Scroll reveal utility */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
-
 <body>
 
-    <!-- ==========================================
-         Navigation
-         ========================================== -->
-    <nav class="nav" aria-label="Main navigation">
-        <div class="container">
-            <a href="naslogic.html" class="nav-logo">NASLOGIC.</a>
-            <div class="nav-links">
-                <a href="naslogic.html">Home</a>
-                <a href="#portfolio">Work</a>
-                <a href="#faq">FAQ</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Get a Free Quote</a>
-            </div>
-        </div>
+    <nav>
+        <a href="/" class="logo">Naslogic<span>/</span>Dev</a>
+        <a href="#init" class="btn-sys">sudo ./deploy</a>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+    <header class="hero container">
+        <h1>Your code is brilliant.<br>Your landing page is a <span class="string">"404"</span>.</h1>
+        <div class="terminal-block">
+            <span style="color: var(--indigo)">naslogic@dev:~$</span> cat diagnosis.txt<br><br>
+            <span id="typewriter"></span><span class="cursor"></span>
+        </div>
+        <a href="#init" class="btn-sys" style="align-self: flex-start; padding: 1rem 3rem;">Initialize Build &nbsp;&nbsp;→</a>
+    </header>
+
+    <section class="architecture">
+        <!-- Node Track logic built via absolute positioning to match nodes -->
+        <div class="node-track"><div class="node-progress" id="node-progress"></div></div>
+        
+        <div class="container" style="padding:0;"> <!-- override padding to stick to left -->
+            <div class="node">
+                <h3>01 / Deprecating the Vector Trash</h3>
+                <p>Enterprise SaaS buyers (CTOs, Lead Engineers) instantly bounce when they see generic "tech startup" illustrations of people high-fiving near a giant graph. We strip the fluff and build dark, technical, highly-engineered interfaces that respect their intelligence.</p>
+            </div>
+            <div class="node">
+                <h3>02 / Lexical Parsing (Copywriting)</h3>
+                <p>"Next-generation AI-powered synergistics" means absolutely nothing. We write sharp, feature-matrix copy. We articulate exact throughputs, integration hooks, and uptime metrics because developers buy specs, not marketing slogans.</p>
+            </div>
+            <div class="node">
+                <h3>03 / Component Rendering</h3>
+                <p>We deploy 'Terminal Cybernetics'. Monospace data tags, interactive CLI simulators, and extremely crisp data presentation. The website itself acts as a proof-of-concept for how clean your actual software runs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="dash-container">
+            <div class="grid-3d"></div>
+            <div class="dash-text">
+                <h2>DEPENDENCY RESOLVED.</h2>
+                <p style="color: var(--text-dim); font-family: var(--font-body);">Conversion mechanics injected.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="output-log container">
+        <div class="log-box">
+            <span class="log-time">[2026-04-06 14:32:11.455] INFO:</span>
+            <span class="log-msg">"Our enterprise demo requests jumped 215% after Naslogic pushed the new site. By making it look intensely technical instead of 'friendly', we completely locked in the technical decision-makers."</span>
+            <span class="log-time" style="margin-top: 1rem;">>> J. Harrison, CTO, DataMesh Inc.</span>
+        </div>
+    </section>
+
+    <section class="cta-bottom" id="init">
         <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-sep" aria-hidden="true">›</li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span class="breadcrumb-current" itemprop="name">SaaS Startups Landing Pages</span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- ==========================================
-         Hero Section
-         H1 — one per page, primary keyword target
-         ========================================== -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">
-                <div class="hero-frag frag-1"><span>Landing Pages</span></div>
-                <div class="hero-frag frag-2"><span>For SaaS</span></div>
-                <div class="hero-frag frag-3"><span>Startups</span></div>
-            </h1>
-            <!-- 50-Word AI Hook: Immediately answers "what does this company do" for AI scrapers -->
-            <p class="hero-hook">Naslogic builds high-converting landing pages exclusively for SaaS startups. We design pages that turn website visitors into free trials, booked demos, and paying users. No generic templates.</p>
-            <div class="hero-ctas">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="font-size: 1.05rem; padding: 20px 40px;">Get Your Free Quote</a>
-                <a href="#portfolio" class="btn btn-outline" style="font-size: 1.05rem; padding: 20px 40px;">See SaaS Examples</a>
-            </div>
+            <h2>Compile Your MVP.</h2>
+            <p style="color: var(--text-dim); margin-bottom: 3rem; max-width: 600px; margin: 0 auto 3rem;">Skip the marketing agency bloat. We build high-converting SaaS landing pages with the exactness of a senior engineering team.</p>
+            <a href="mailto:hello@naslogic.com" class="btn-sys" style="font-size: 1rem; padding: 1.2rem 4rem;">POST /api/v1/build</a>
         </div>
     </section>
-
-    <!-- ==========================================
-         Problem Section
-         H2 — second in hierarchy
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Why Most Startup Websites Fail</h2>
-        <p class="section-sub fade-up">Startups spend a fortune on ads and content, but poor messaging and design kills their conversion rates.</p>
-
-        <div class="problem-grid">
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📉</div>
-                <h3>Traffic That Never Converts</h3>
-                <p>You get clicks from ideal ICPs, but your site is confusing to navigate. They leave without starting a trial.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">📱</div>
-                <h3>Broken Mobile Experience</h3>
-                <p>Muddled value propositions mean visitors bounce before understanding your software.</p>
-            </div>
-            <div class="problem-card fade-up">
-                <div class="problem-icon">🏗️</div>
-                <h3>Generic, Cookie-Cutter Design</h3>
-                <p>Template websites make your SaaS look like a cheap side-project, not an enterprise-grade solution.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Comparison Table
-         AI engines pull from HTML tables
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">Naslogic vs. Generic Agencies</h2>
-        <p class="section-sub fade-up">See why founders choose a specialist over a slow, traditional agency.</p>
-
-        <div class="comparison-table-wrap fade-up">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Generic Agency</th>
-                        <th>Naslogic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>SaaS scaling expertise</td>
-                        <td><span class="cross">✗</span> No industry focus</td>
-                        <td><span class="check">✓</span> Built for software startups</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile-first design</td>
-                        <td><span class="cross">✗</span> Desktop-first afterthought</td>
-                        <td><span class="check">✓</span> 100% mobile-optimized</td>
-                    </tr>
-                    <tr>
-                        <td>Conversion-focused layout</td>
-                        <td><span class="cross">✗</span> Looks pretty, low conversions</td>
-                        <td><span class="check">✓</span> Every element drives action</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-ready structure</td>
-                        <td><span class="cross">✗</span> Missing schema, poor hierarchy</td>
-                        <td><span class="check">✓</span> Schema markup, clean headings</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery speed</td>
-                        <td>4 to 12 weeks typical</td>
-                        <td><span class="check">✓</span> Days, not months</td>
-                    </tr>
-                    <tr>
-                        <td>CRM integration</td>
-                        <td>Extra fees required</td>
-                        <td><span class="check">✓</span> HubSpot, Stripe, Mixpanel</td>
-                    </tr>
-                    <tr>
-                        <td>Price transparency</td>
-                        <td><span class="cross">✗</span> Hidden fees, long proposals</td>
-                        <td><span class="check">✓</span> Clear pricing, no surprises</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Portfolio Section
-         ========================================== -->
-    <section id="portfolio" class="section-padding container">
-        <h2 class="section-header fade-up">SaaS Pages We Have Built</h2>
-        <p class="section-sub fade-up">Conversion-first landing pages designed specifically for software startups to drive MRR.</p>
-
-        <div class="portfolio-showcase">
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 1: B2B Enterprise AI SaaS -->
-                <div class="showcase-img" role="img" aria-label="B2B SaaS landing page by Naslogic designed for enterprise demo booking and free trial conversion" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#0b162c; font-family:'Inter', sans-serif; color:#ffffff;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
-                        .saas1-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#0b162c; overflow:hidden; }
-                        .saas1-bg { position:absolute; inset:0; background:radial-gradient(circle at 70% -20%, rgba(99,102,241,0.25) 0%, transparent 60%); z-index:0; }
-                        .saas1-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 60px; position:relative; z-index:2; border-bottom:1px solid rgba(255,255,255,0.05); }
-                        .saas1-logo { font-family:'Space Grotesk', sans-serif; font-size:26px; font-weight:700; color:#fff; display:flex; align-items:center; gap:12px; }
-                        .saas1-logo-icon { width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg, #6366f1, #3b82f6); box-shadow:0 0 15px rgba(99,102,241,0.5); }
-                        .saas1-links { display:flex; gap:40px; font-size:14px; font-weight:500; color:#cbd5e1; }
-                        .saas1-nav-btns { display:flex; gap:15px; align-items:center; }
-                        .saas1-btn-ghost { color:#fff; font-size:14px; font-weight:500; }
-                        .saas1-btn-primary { background:#fff; color:#0f172a; padding:10px 20px; border-radius:6px; font-size:14px; font-weight:600; }
-                        .saas1-hero { flex:1; display:flex; flex-direction:column; align-items:center; padding:60px 20px 0; position:relative; z-index:2; text-align:center; }
-                        .saas1-badge { background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); color:#818cf8; padding:6px 16px; border-radius:100px; font-size:13px; font-weight:600; margin-bottom:25px; display:inline-flex; align-items:center; gap:8px; }
-                        .saas1-title { font-family:'Space Grotesk', sans-serif; font-size:65px; font-weight:700; line-height:1.1; color:#fff; margin-bottom:25px; max-width:900px; letter-spacing:-1px; }
-                        .saas1-title span { background:linear-gradient(to right, #818cf8, #60a5fa); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-                        .saas1-desc { font-size:18px; color:#94a3b8; margin-bottom:40px; line-height:1.6; max-width:600px; }
-                        .saas1-ctas { display:flex; gap:20px; justify-content:center; margin-bottom:60px; }
-                        .saas1-btn-main { background:#6366f1; color:#fff; border-radius:8px; padding:18px 36px; font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; box-shadow:0 15px 30px rgba(99,102,241,0.3); display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.1); }
-                        .saas1-btn-sec { background:rgba(255,255,255,0.05); color:#fff; border-radius:8px; padding:18px 36px; font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; gap:10px; }
-                        .saas1-dash { width:80%; height:300px; background:rgba(15,23,42,0.6); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.1); border-radius:20px 20px 0 0; box-shadow:0 -20px 50px rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; }
-                        .saas1-dash-header { height:40px; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; padding:0 20px; gap:8px; }
-                        .saas1-dot { width:10px; height:10px; border-radius:50%; background:#334155; }
-                        .saas1-dash-body { flex:1; display:flex; padding:20px; gap:20px; }
-                        .saas1-dash-nav { width:150px; background:rgba(255,255,255,0.02); border-radius:12px; display:flex; flex-direction:column; gap:10px; padding:15px; }
-                        .saas1-nav-item { height:20px; background:rgba(255,255,255,0.05); border-radius:4px; }
-                        .saas1-dash-content { flex:1; display:flex; flex-direction:column; gap:20px; }
-                        .saas1-chart { flex:1; background:rgba(255,255,255,0.02); border-radius:12px; position:relative; overflow:hidden; }
-                        .saas1-line { position:absolute; bottom:0; left:0; width:100%; height:60%; background:linear-gradient(to top, rgba(99,102,241,0.2) 0%, transparent 100%); clip-path:polygon(0 100%, 0 80%, 20% 60%, 40% 70%, 60% 30%, 80% 40%, 100% 10%, 100% 100%); }
-                        .saas1-line-path { position:absolute; bottom:0; left:0; width:100%; height:60%; border-top:2px solid #6366f1; clip-path:polygon(0 80%, 20% 60%, 40% 70%, 60% 30%, 80% 40%, 100% 10%); }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="saas1-wrap">
-                        <div class="saas1-bg"></div>
-                        <div class="saas1-nav">
-                            <div class="saas1-logo"><div class="saas1-logo-icon"></div> NeuralFlow</div>
-                            <div class="saas1-links">
-                                <span>Platform</span>
-                                <span>Solutions</span>
-                                <span>Enterprise</span>
-                                <span>Pricing</span>
-                            </div>
-                            <div class="saas1-nav-btns">
-                                <span class="saas1-btn-ghost">Log in</span>
-                                <span class="saas1-btn-primary">Book Demo</span>
-                            </div>
-                        </div>
-                        <div class="saas1-hero">
-                            <div class="saas1-badge"><span style="display:inline-block; width:6px; height:6px; background:#818cf8; border-radius:50%;"></span> Enterprise AI OS 2.0 is Live</div>
-                            <h1 class="saas1-title">Intelligence that scales with your <span>workforce.</span></h1>
-                            <p class="saas1-desc">Connect all your organizational data to train secure, proprietary AI models. Automate workflows without writing a single line of code.</p>
-                            <div class="saas1-ctas">
-                                <div class="saas1-btn-main">Request Enterprise Demo</div>
-                                <div class="saas1-btn-sec">Documentation <span style="font-size:14px;">↗</span></div>
-                            </div>
-                            <div class="saas1-dash">
-                                <div class="saas1-dash-header">
-                                    <div class="saas1-dot"></div><div class="saas1-dot"></div><div class="saas1-dot"></div>
-                                </div>
-                                <div class="saas1-dash-body">
-                                    <div class="saas1-dash-nav">
-                                        <div class="saas1-nav-item" style="width:70%; background:rgba(99,102,241,0.5);"></div>
-                                        <div class="saas1-nav-item" style="width:100%;"></div>
-                                        <div class="saas1-nav-item" style="width:80%;"></div>
-                                        <div class="saas1-nav-item" style="width:90%;"></div>
-                                    </div>
-                                    <div class="saas1-dash-content">
-                                        <div style="display:flex; justify-content:space-between;">
-                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
-                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
-                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
-                                            <div style="width:150px; height:60px; background:rgba(255,255,255,0.02); border-radius:8px;"></div>
-                                        </div>
-                                        <div class="saas1-chart">
-                                            <div class="saas1-line"></div>
-                                            <div class="saas1-line-path"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">B2B AI Software</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">B2B SaaS</span>
-                            <span class="tag">Enterprise</span>
-                            <span class="tag">Book Demo</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-
-            <div class="showcase-card fade-up">
-                <!-- PREVIEW 2: PLG Consumer SaaS -->
-                <div class="showcase-img" role="img" aria-label="Product-led growth SaaS landing page built by Naslogic with free trial signup optimization" style="overflow:hidden; position:relative; height:450px; pointer-events:none; background:#f9fafb; font-family:'Manrope', sans-serif; color:#111827;">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Manrope:wght@400;500;600&display=swap');
-                        .saas2-wrap { transform:scale(0.72); transform-origin:top left; width:139%; height:139%; position:absolute; top:0; left:0; display:flex; flex-direction:column; background:#fbfcfe; overflow:hidden; }
-                        .saas2-nav { display:flex; justify-content:space-between; align-items:center; padding:25px 50px; position:relative; z-index:2; }
-                        .saas2-logo { font-family:'Plus Jakarta Sans', sans-serif; font-size:24px; font-weight:800; color:#111827; display:flex; align-items:center; gap:10px; letter-spacing:-0.5px; }
-                        .saas2-logo-icon { width:32px; height:32px; background:#10b981; border-radius:10px; position:relative; overflow:hidden; }
-                        .saas2-logo-icon::after { content:''; position:absolute; bottom:0; right:0; width:16px; height:16px; background:#fb7185; border-radius:50% 0 0 0; }
-                        .saas2-links { display:flex; gap:35px; background:#fff; padding:12px 30px; border-radius:100px; box-shadow:0 10px 25px rgba(0,0,0,0.03); border:1px solid #f3f4f6; font-size:14px; font-weight:600; color:#4b5563; }
-                        .saas2-nav-btns { display:flex; gap:15px; align-items:center; }
-                        .saas2-btn-login { color:#4b5563; font-weight:600; font-size:14px; }
-                        .saas2-btn-signup { background:#111827; color:#fff; padding:12px 24px; border-radius:100px; font-weight:600; font-size:14px; }
-                        .saas2-hero { flex:1; display:flex; padding:0 50px; align-items:center; position:relative; z-index:2; gap:40px; }
-                        .saas2-content { flex:1; max-width:600px; }
-                        .saas2-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:68px; font-weight:800; line-height:1.05; color:#111827; margin-bottom:20px; letter-spacing:-2px; }
-                        .saas2-title span { position:relative; display:inline-block; }
-                        .saas2-title span::after { content:''; position:absolute; bottom:5px; left:0; width:100%; height:15px; background:rgba(16,185,129,0.2); z-index:-1; transform:rotate(-1deg); }
-                        .saas2-desc { font-size:18px; color:#4b5563; margin-bottom:40px; line-height:1.6; max-width:500px; font-weight:500; }
-                        .saas2-input-group { display:flex; gap:10px; max-width:480px; margin-bottom:20px; }
-                        .saas2-input { flex:1; background:#fff; border:2px solid #e5e7eb; border-radius:100px; padding:0 24px; font-family:'Manrope', sans-serif; font-size:16px; color:#111827; outline:none; transition:border 0.3s; box-shadow:0 10px 25px rgba(0,0,0,0.02); height:60px; }
-                        .saas2-input:focus { border-color:#10b981; }
-                        .saas2-btn-submit { background:#10b981; color:#fff; border:none; border-radius:100px; padding:0 30px; font-family:'Plus Jakarta Sans', sans-serif; font-size:16px; font-weight:700; cursor:pointer; box-shadow:0 10px 25px rgba(16,185,129,0.3); height:60px; white-space:nowrap; }
-                        .saas2-trust { font-size:13px; color:#6b7280; font-weight:500; display:flex; align-items:center; gap:8px; }
-                        .saas2-visual { flex:1; position:relative; height:100%; display:flex; justify-content:center; align-items:center; }
-                        .saas2-app-window { width:90%; height:450px; background:#fff; border-radius:24px; box-shadow:0 30px 60px rgba(0,0,0,0.08); border:1px solid #f3f4f6; display:flex; flex-direction:column; overflow:hidden; position:relative; right:-30px;}
-                        .saas2-app-header { height:40px; border-bottom:1px solid #f3f4f6; display:flex; align-items:center; padding:0 20px; gap:8px; background:#f9fafb; }
-                        .saas2-dot { width:12px; height:12px; border-radius:50%; }
-                        .saas2-app-body { flex:1; display:flex; padding:20px; gap:20px; background:#fff; }
-                        .saas2-card { flex:1; background:#f9fafb; border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:15px; border:1px solid #f3f4f6; }
-                        .saas2-c-head { display:flex; justify-content:space-between; align-items:center; }
-                        .saas2-c-avatar { width:40px; height:40px; border-radius:50%; background:#e5e7eb; }
-                        .saas2-c-line { height:12px; background:#e5e7eb; border-radius:6px; margin-bottom:8px; }
-                        .saas2-badge-float { position:absolute; top:20%; left:-40px; background:#fff; padding:15px 20px; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.1); border:1px solid #f3f4f6; display:flex; align-items:center; gap:12px; font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; font-size:16px; }
-                        .saas2-badge-icon { width:30px; height:30px; background:rgba(251,113,133,0.1); color:#fb7185; border-radius:8px; display:flex; align-items:center; justify-content:center; }
-                
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                    <div class="saas2-wrap">
-                        <div class="saas2-nav">
-                            <div class="saas2-logo"><div class="saas2-logo-icon"></div> Tasky</div>
-                            <div class="saas2-links">
-                                <span>Features</span>
-                                <span>Templates</span>
-                                <span>Integration</span>
-                                <span>Pricing</span>
-                            </div>
-                            <div class="saas2-nav-btns">
-                                <span class="saas2-btn-login">Log In</span>
-                                <span class="saas2-btn-signup">Get Started Free</span>
-                            </div>
-                        </div>
-                        <div class="saas2-hero">
-                            <div class="saas2-content">
-                                <h1 class="saas2-title">Manage projects without the <span>chaos.</span></h1>
-                                <p class="saas2-desc">The ridiculously simple way for modern teams to plan, organize, and execute work together in real-time.</p>
-                                <div class="saas2-input-group">
-                                    <div class="saas2-input" style="display:flex; align-items:center; color:#9ca3af;">Enter your work email...</div>
-                                    <button class="saas2-btn-submit">Start For Free</button>
-                                </div>
-                                <div class="saas2-trust">
-                                    <span style="display:inline-block; margin-right:5px;">🚀</span> 
-                                    Free forever plan. No credit card required.
-                                </div>
-                            </div>
-                            <div class="saas2-visual">
-                                <div class="saas2-app-window">
-                                    <div class="saas2-app-header">
-                                        <div class="saas2-dot" style="background:#fca5a5;"></div>
-                                        <div class="saas2-dot" style="background:#fcd34d;"></div>
-                                        <div class="saas2-dot" style="background:#86efac;"></div>
-                                    </div>
-                                    <div class="saas2-app-body">
-                                        <div class="saas2-card">
-                                            <div class="saas2-c-head">
-                                                <div style="font-weight:700; font-size:14px; color:#111827;">To Do</div>
-                                                <div style="font-size:14px; color:#9ca3af;">3</div>
-                                            </div>
-                                            <div style="background:#fff; padding:15px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.02); border:1px solid #f3f4f6;">
-                                                <div class="saas2-c-line" style="width:80%;"></div>
-                                                <div class="saas2-c-line" style="width:50%;"></div>
-                                                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:15px;">
-                                                    <div style="display:flex; gap:5px;"><div class="saas2-c-avatar" style="width:24px; height:24px;"></div></div>
-                                                    <div style="font-size:11px; color:#10b981; background:rgba(16,185,129,0.1); padding:4px 8px; border-radius:100px;">Design</div>
-                                                </div>
-                                            </div>
-                                            <div style="background:#fff; padding:15px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.02); border:1px solid #f3f4f6;">
-                                                <div class="saas2-c-line" style="width:90%;"></div>
-                                                <div class="saas2-c-line" style="width:60%;"></div>
-                                                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:15px;">
-                                                    <div style="display:flex; gap:5px;"><div class="saas2-c-avatar" style="width:24px; height:24px;"></div></div>
-                                                    <div style="font-size:11px; color:#fb7185; background:rgba(251,113,133,0.1); padding:4px 8px; border-radius:100px;">Urgent</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="saas2-card" style="opacity:0.6;">
-                                            <div class="saas2-c-head">
-                                                <div style="font-weight:700; font-size:14px; color:#111827;">In Progress</div>
-                                                <div style="font-size:14px; color:#9ca3af;">1</div>
-                                            </div>
-                                            <div style="background:#fff; padding:15px; border-radius:12px; border:1px solid #f3f4f6;">
-                                                <div class="saas2-c-line" style="width:70%;"></div>
-                                                <div class="saas2-c-line" style="width:40%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="saas2-badge-float">
-                                    <div class="saas2-badge-icon">🔥</div>
-                                    <div>
-                                        Task Completed!
-                                        <div style="font-size:12px; color:#6b7280; font-weight:500; font-family:'Manrope';">Just now by Sarah</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <div>
-                        <h3 class="showcase-title">PLG Consumer App</h3>
-                        <div class="showcase-tags">
-                            <span class="tag">Product-Led Growth</span>
-                            <span class="tag">Free Trials</span>
-                            <span class="tag">B2C</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         Process Section
-         ========================================== -->
-    <section class="section-padding container">
-        <h2 class="section-header fade-up">How It Works</h2>
-        <p class="section-sub fade-up">Three steps from initial call to a live SaaS landing page that drives signups and generates qualified leads for your SaaS startup.</p>
-
-        <div class="process-steps">
-            <div class="step-card fade-up">
-                <div class="step-num">01</div>
-                <h3>Book a Call</h3>
-                <p>We learn your product, ICP, and value proposition.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">02</div>
-                <h3>We Build It</h3>
-                <p>Our team designs and develops a mobile-first, conversion-optimized landing page tailored to software marketing.</p>
-            </div>
-            <div class="step-card fade-up">
-                <div class="step-num">03</div>
-                <h3>You Grow</h3>
-                <p>Your page goes live and starts driving signups, decreasing CAC, and growing MRR.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ Section — Powers FAQPage Schema
-         ========================================== -->
-    <section id="faq" class="section-padding container">
-        <h2 class="section-header fade-up">Frequently Asked Questions</h2>
-        <p class="section-sub fade-up">Common questions from founders about our landing page design.</p>
-
-        <div class="faq-list fade-up">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much does a SaaS landing page cost?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Our SaaS landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Why do SaaS companies need custom landing pages?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>You need to lower your CAC and stand out in a crowded market. A custom SaaS landing page clearly explains the value prop and drives trials 2x to 5x better than generic templates.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How fast can Naslogic deliver a SaaS landing page?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Startups move fast and so do we. We deliver production-ready landing pages on rapid turnarounds.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will the landing page work on mobile devices?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. Every page is mobile-first, ensuring smooth conversions across all devices.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can the landing page integrate with my CRM or booking software?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We integrate perfectly with SaaS tools like HubSpot, Segment, Stripe, and Mixpanel.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         CTA Banner
-         ========================================== -->
-    <section class="cta-banner fade-up">
-        <h2>Ready to Grow MRR?</h2>
-        <p>Stop burning runway on bad conversions. Get a landing page that turns traffic into active users.</p>
-        <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn">Get Your Free Quote</a>
-    </section>
-
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
-        <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/ecommerce" class="related-link">E-Commerce Brands Landing Pages</a>
-                <a href="/realestate" class="related-link">Real Estate Landing Pages</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
-    </div>
-
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div>
-                <a href="naslogic.html" class="nav-logo" style="font-size: 1.5rem;">NASLOGIC.</a>
-            </div>
-            <div class="footer-links">
-                <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Fort Myers, FL</span>
-            </div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; <script>document.write(new Date().getFullYear())</script> Naslogic. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Fixed FAB -->
-    <a href="javascript:void(0)" onclick="openQuoteModal()" class="fab">Get a Quote</a>
-
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
-        // =============================================
-        // Initialize GSAP
-        // =============================================
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Typewriter effect
+        const textToType = "You spent 14 months building an incredible SaaS product, but your marketing site looks like a $20 template. Engineers scrutinize the quality of your DOM and your aesthetic choices before they ever look at your API docs. We fix this.";
+        let i = 0;
+        const typeContainer = document.getElementById('typewriter');
+        
+        function typeWriter() {
+            if (i < textToType.length) {
+                typeContainer.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, 30);
+            }
+        }
+        
+        // Start typing after 1s
+        setTimeout(typeWriter, 1000);
 
-        // =============================================
-        // Hero Entrance Timeline
-        // =============================================
-        const heroTl = gsap.timeline();
-        heroTl.to(".hero-frag span", {
-            y: "0%",
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            delay: 0.2
-        })
-        .to(".hero-hook", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.8")
-        .to(".hero-ctas", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.9");
+        // Node progress timeline
+        const progress = document.getElementById('node-progress');
+        const nodes = document.querySelectorAll('.node');
 
-        // =============================================
-        // Scroll Reveal — Fade Up
-        // =============================================
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 88%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        });
+        window.addEventListener('scroll', () => {
+            if(nodes.length === 0) return;
+            // Track height mapping to vertical scroll
+            const firstNode = nodes[0];
+            const lastNode = nodes[nodes.length - 1];
+            
+            const startScroll = firstNode.getBoundingClientRect().top + window.scrollY - window.innerHeight/2;
+            const endScroll = lastNode.getBoundingClientRect().top + window.scrollY - window.innerHeight/2;
+            
+            let scrolled = window.scrollY - startScroll;
+            let total = endScroll - startScroll;
+            let percentage = (scrolled / total) * 100;
+            percentage = Math.max(0, Math.min(100, percentage));
+            
+            progress.style.height = `${percentage}%`;
 
-        // =============================================
-        // FAQ Accordion
-        // =============================================
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
+            nodes.forEach((node) => {
+                const rect = node.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.6) {
+                    node.classList.add('active');
+                } else {
+                    node.classList.remove('active');
                 }
             });
         });
-        }); // end DOMContentLoaded
     </script>
-
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
-
 </body>
-
 </html>
