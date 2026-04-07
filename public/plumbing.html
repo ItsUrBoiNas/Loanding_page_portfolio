@@ -3,325 +3,404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naslogic | Premium Plumbing & Hydro-architecture</title>
+    <title>Naslogic | Trade & Plumbing Excellence</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&family=Manrope:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --abyss: #071321;
-            --abyss-deep: #03080F;
-            --copper: #E68A4D; /* brighter copper */
-            --copper-dark: #B87333;
-            --ceramic: #F5F5F5;
+            --water-deep: #051923;
+            --water-mid: #00A6FB;
+            --water-light: #EBF8FF;
+            --copper: #B87333;
             
-            --font-display: 'Bai Jamjuree', sans-serif;
-            --font-body: 'Manrope', sans-serif;
+            --font-display: 'Anton', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html { scroll-behavior: smooth; }
-
         body {
-            background-color: var(--abyss);
-            color: var(--ceramic);
+            background-color: var(--water-light);
+            color: var(--water-deep);
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-            position: relative;
+            overflow-y: hidden; /* We unlock this after the flush */
         }
 
-        ::selection { background: var(--copper); color: var(--abyss); }
+        ::selection { background: var(--water-mid); color: #FFF; }
 
-        h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; }
+        h1, h2 { font-family: var(--font-display); letter-spacing: 1px; text-transform: uppercase; }
 
-        /* Liquid Background Engine */
-        .liquid-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: 0; opacity: 0.4;
-            background: radial-gradient(circle at 50% 50%, rgba(230, 138, 77, 0.05) 0%, transparent 60%);
-        }
-
-        /* Abstract CSS water wave effect */
-        .wave-container {
-            position: fixed;
-            width: 100vw; height: 100vh;
-            top: 0; left: 0; z-index: 0;
-            overflow: hidden; pointer-events: none;
-        }
-
-        .wave {
-            position: absolute;
-            left: 50%; top: 50%;
-            width: 200vw; height: 200vw;
-            margin-left: -100vw; margin-top: -100vw;
-            background: linear-gradient(to bottom, rgba(7, 19, 33, 0), rgba(3, 8, 15, 0.8));
-            border-radius: 40%;
-            animation: spin 30s infinite linear;
-            opacity: 0.1;
-        }
-
-        .wave:nth-child(2) { animation-duration: 45s; opacity: 0.15; border-radius: 45%; }
-        .wave:nth-child(3) { animation-duration: 60s; opacity: 0.2; border-radius: 35%; }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        /* Grid */
-        .grid-overlay {
+        /* --- THE PRE-FLUSH LAYER (JUNK UI) --- */
+        #pre-flush {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(rgba(245, 245, 245, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(245, 245, 245, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px; z-index: 0; pointer-events: none;
+            background: #dcdcdc; z-index: 1000;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: transform 1s cubic-bezier(0.5, -0.5, 0.2, 1.5);
+            background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, #dcdcdc 25%, #dcdcdc 75%, #ccc 75%, #ccc);
+            background-position: 0 0, 10px 10px; background-size: 20px 20px;
         }
 
-        /* Main Content wrapper */
-        .main-wrapper { position: relative; z-index: 10; padding-left: 10vw; }
+        #pre-flush-content {
+            background: #fff; border: 3px solid #888; padding: 3rem; text-align: center;
+            box-shadow: 10px 10px 0px #888; margin-bottom: 5rem;
+        }
+        #pre-flush-content h1 { color: #555; }
+        #pre-flush-content p { color: #777; margin-top: 1rem; font-family: 'Comic Sans MS', sans-serif; }
 
-        /* Nav */
+        /* The Valve UI */
+        .valve-container {
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        #valve {
+            width: 150px; height: 150px; border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ff8c42, var(--copper), #5e3a1a);
+            border: 8px solid #5e3a1a; cursor: pointer;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), inset 0 -10px 20px rgba(0,0,0,0.5);
+            display: flex; justify-content: center; align-items: center;
+            color: #FFF; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; text-align: center;
+            transition: transform 0.1s;
+        }
+
+        .valve-instruction { margin-bottom: 1rem; font-weight: bold; color: #444; }
+
+        /* The Pressure Bar */
+        .pressure-bg {
+            width: 300px; height: 20px; background: #FFF; border: 2px solid #555;
+            margin-top: 2rem; border-radius: 10px; overflow: hidden;
+        }
+        #pressure-fill {
+            width: 0%; height: 100%; background: var(--water-mid);
+            transition: width 0.1s linear, background-color 0.3s;
+        }
+
+        /* The Wave Transition Element */
+        #flush-wave {
+            position: fixed; top: -100vh; left: 0; width: 100vw; height: 200vh;
+            background: linear-gradient(to bottom, var(--water-mid), var(--water-deep));
+            z-index: 999; pointer-events: none;
+            transition: top 1.5s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        /* --- THE POST-FLUSH LAYER (NASLOGIC UI) --- */
+        #post-flush {
+            opacity: 0; padding-top: 15vh; /* revealed later */
+            transition: opacity 1s 1s; padding-bottom: 10rem;
+        }
+
         nav {
-            position: fixed; top: 0; right: 0; width: 90vw;
-            padding: 3rem 5%;
+            position: absolute; top: 0; width: 100%; padding: 2rem 5%;
             display: flex; justify-content: space-between; align-items: center;
-            z-index: 100;
         }
 
-        .logo {
-            font-family: var(--font-display); font-size: 1.5rem;
-            color: var(--ceramic); text-decoration: none;
-            letter-spacing: 0.2em; text-transform: uppercase;
-        }
-
-        .logo span { color: var(--copper); }
-
-        .btn-copper {
-            display: inline-block; padding: 1rem 3rem;
-            background: transparent; color: var(--copper);
-            border: 1px solid var(--copper); font-family: var(--font-display);
-            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em;
-            text-decoration: none; position: relative; overflow: hidden;
-            transition: color 0.4s ease; border-radius: 2px;
-        }
-
-        .btn-copper::before {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 100%; height: 0%; background: var(--copper);
-            transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1); z-index: -1;
-        }
-
-        .btn-copper:hover { color: var(--abyss); }
-        .btn-copper:hover::before { height: 100%; }
-
-        /* Hero */
-        .hero {
-            height: 100vh; display: flex; align-items: center;
-            position: relative; margin-right: 5vw;
-        }
-
-        .hero h1 {
-            font-size: clamp(4rem, 8vw, 7rem); margin-bottom: 2rem;
-            text-transform: uppercase; letter-spacing: -0.02em;
-        }
-
-        .hero h1 span { color: var(--copper); display: block; position: relative; }
+        .logo { font-family: var(--font-display); font-size: 2rem; color: var(--water-deep); text-decoration: none; }
         
-        .hero h1 span::after {
-            content: ''; position: absolute; left: 0; bottom: 10px;
-            width: 300px; height: 8px; background: var(--copper);
-            mix-blend-mode: overlay;
+        .btn-water {
+            background: var(--water-deep); color: var(--water-light); font-size: 0.9rem;
+            padding: 1rem 2rem; font-weight: bold; text-transform: uppercase; text-decoration: none;
+            border-radius: 5px; transition: background 0.3s;
         }
+        .btn-water:hover { background: var(--water-mid); }
 
-        .hero p {
-            font-size: 1.25rem; font-weight: 300; color: rgba(245, 245, 245, 0.6);
-            max-width: 500px; line-height: 1.6; margin-bottom: 4rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 
-        /* The Animated Pipe Element (Unforgettable Feature) */
-        .pipe-system {
-            position: absolute; top: 0; left: -5vw;
-            width: 10vw; height: 100%; z-index: -1;
-        }
+        h1.hero-title { font-size: clamp(5rem, 12vw, 10rem); line-height: 0.9; color: var(--water-deep); margin-bottom: 1rem; }
+        .hero-desc { font-size: 1.3rem; line-height: 1.8; color: #444; max-width: 600px; margin: 2rem 0; }
 
-        #master-pipe {
-            stroke-dasharray: 4000;
-            stroke-dashoffset: 4000;
-            transition: stroke-dashoffset 0.1s;
-        }
+        .image-banner { width: 100%; height: 40vh; background: url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; border-radius: 10px; margin: 4rem 0; }
 
-        /* Logic Sections */
-        .logic-section {
-            padding: 15rem 0; margin-right: 5vw;
-            border-top: 1px solid rgba(245, 245, 245, 0.05);
-        }
+        .cta-box { background: var(--water-deep); padding: 5rem; text-align: center; color: #FFF; border-radius: 10px; }
+        .cta-box h2 { font-size: 4rem; margin-bottom: 2rem; }
 
-        .l-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-        }
-
-        .tag {
-            font-family: var(--font-display); font-size: 0.8rem;
-            color: var(--copper); text-transform: uppercase; letter-spacing: 0.2em;
-            display: block; margin-bottom: 2rem;
-        }
-
-        .logic-section h2 { font-size: 3rem; margin-bottom: 2rem; }
-
-        .logic-section p {
-            font-size: 1.1rem; color: rgba(245, 245, 245, 0.5);
-            line-height: 1.8; font-weight: 300; max-width: 500px;
-        }
-
-        /* Interactive Diagram */
-        .diagram-box {
-            border: 1px solid rgba(230, 138, 77, 0.3);
-            background: rgba(3, 8, 15, 0.8);
-            backdrop-filter: blur(5px);
-            padding: 4rem; position: relative;
-            transform-style: preserve-3d;
-            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-            transition: transform 0.5s ease;
-        }
-
-        .diagram-box:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
-        .diagram-box h3 { font-size: 2rem; color: var(--copper); margin-bottom: 1rem; }
-        .diagram-box p { color: var(--ceramic); font-weight: 300; }
-
-        .diagram-line {
-            position: absolute; width: 1px; height: 100px; background: var(--copper);
-            top: -100px; left: 50px; opacity: 0.5;
-        }
-
-        /* Quote */
-        .quote { padding: 10rem 5vw 10rem 0; }
-        
-        .quote p {
-            font-size: clamp(2.5rem, 5vw, 4rem); font-family: var(--font-display);
-            line-height: 1.2; color: var(--ceramic); max-width: 900px; margin-bottom: 3rem;
-        }
-
-        .quote span {
-            color: var(--copper); font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase;
-        }
-
-        .cta { padding: 15rem 0; text-align: left; }
-        .cta h2 { font-size: clamp(4rem, 8vw, 7rem); margin-bottom: 4rem; color: var(--copper); }
-
-        @media (max-width: 768px) {
-            .l-grid { grid-template-columns: 1fr; }
-            .main-wrapper { padding-left: 5vw; }
-            .pipe-system { display: none; }
-            nav { width: 100%; right: auto; left: 0; }
-        }
     </style>
 </head>
 <body>
 
-    <div class="liquid-bg"></div>
-    <div class="grid-overlay"></div>
-    <div class="wave-container">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
+    <!-- The Wave Effect -->
+    <div id="flush-wave"></div>
 
-    <nav>
-        <a href="/" class="logo">Naslogic<span>/</span></a>
-        <a href="#deploy" class="btn-copper" style="padding: 0.8rem 2rem;">Initiate System</a>
-    </nav>
-
-    <div class="main-wrapper">
-        
-        <!-- The Giant SVG Pipe mapped to scroll -->
-        <div class="pipe-system" id="pipe-container">
-            <svg viewBox="0 0 100 4000" preserveAspectRatio="none" style="width: 100%; height: 100%;">
-                <!-- Base faint pipe -->
-                <path d="M50,0 V800 Q50,850 80,850 H150" fill="none" stroke="rgba(245,245,245,0.05)" stroke-width="2"/>
-                <path d="M50,0 V3800" fill="none" stroke="rgba(245,245,245,0.05)" stroke-width="2"/>
-                <!-- Animated fill pipe -->
-                <path id="master-pipe" d="M50,0 V3800" fill="none" stroke="var(--copper)" stroke-width="4" stroke-linecap="round"/>
-                <!-- Joints -->
-                <circle cx="50" cy="800" r="8" fill="var(--abyss)" stroke="var(--copper)" stroke-width="2"/>
-                <circle cx="50" cy="1800" r="8" fill="var(--abyss)" stroke="var(--copper)" stroke-width="2"/>
-                <circle cx="50" cy="2800" r="8" fill="var(--abyss)" stroke="var(--copper)" stroke-width="2"/>
-            </svg>
+    <!-- PRE-FLUSH JUNK UI -->
+    <div id="pre-flush">
+        <div id="pre-flush-content">
+            <h1>Bob's Plumbing Co.</h1>
+            <p>Welcome to our website. We fix pipes.</p>
         </div>
 
-        <section class="hero">
-            <div>
-                <span class="tag">System Level 1</span>
-                <h1>Flow Is <br><span>Structural.</span></h1>
-                <p>Plumbing isn't just about plunging toilets; it's the vascular system of an estate. Yet your website treats it like a dirty afterthought. We engineer hydro-dynamic, high-end digital architecture that elevates your firm above the 'handyman' label.</p>
-                <a href="#deploy" class="btn-copper">Deploy Architecture</a>
+        <div class="valve-container">
+            <div class="valve-instruction">HOLD TO FLUSH SYSTEM</div>
+            <div id="valve">FLUSH</div>
+            
+            <div class="pressure-bg">
+                <div id="pressure-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POST-FLUSH NASLOGIC UI -->
+    <div id="post-flush">
+        <nav>
+            <a href="/" class="logo">NASLOGIC</a>
+            <a href="mailto:hello@naslogic.com" class="btn-water">Dispatch Team</a>
+        </nav>
+
+        <section class="container hero">
+            <h1 class="hero-title">HYDRO<br>DYNAMIC.</h1>
+            <p class="hero-desc">The average commercial plumbing contract is $50,000+. You cannot win commercial bids with a website built for residential toilet repairs. We build structural, aggressive digital footprints for master plumbers.</p>
+            <a href="mailto:hello@naslogic.com" class="btn-water">Initiate Pipeline</a>
+        </section>
+
+        <section class="container">
+            <div class="image-banner"></div>
+        </section>
+
+        <section class="container">
+            <div class="cta-box">
+                <h2>CLEAR THE BLOCKAGE.</h2>
+                <a href="mailto:hello@naslogic.com" class="btn-water" style="background:#FFF; color:var(--water-deep);">Commission A Build</a>
             </div>
         </section>
-
-        <section class="logic-section">
-            <div class="l-grid">
-                <div>
-                    <span class="tag">The Anomaly</span>
-                    <h2>Ditch the<br>Clip Art.</h2>
-                    <p>Wrenches, water droplets, and smiling plumbers giving a thumbs up. This is the visual language of a budget emergency service. When you are bidding on repiping a $4M home, your digital presence must communicate structural mastery and technical precision, not cheap labor.</p>
-                </div>
-                <div class="diagram-box">
-                    <div class="diagram-line"></div>
-                    <h3>Precision Routing</h3>
-                    <p>We replace chaotic contact forms with a frictionless, high-end intelligent intake sequence. It qualifies whether a user needs a $200 unclogging or a $20,000 mainline replacement, routing them accordingly.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="logic-section" style="border-top: none;">
-            <div class="l-grid">
-                <div class="diagram-box" style="transform: perspective(1000px) rotateY(5deg) rotateX(5deg);">
-                    <div class="diagram-line"></div>
-                    <h3>Technical Aesthetics</h3>
-                    <p>By utilizing 'Abyss' blues and 'Polished Copper', we mimic the feeling of clean, modern structural engineering. The high-contrast UI immediately deters bargain shoppers and attracts premium re-piping clients.</p>
-                </div>
-                <div>
-                    <span class="tag">The Correction</span>
-                    <h2>Hydro-Dynamic<br>Conversion.</h2>
-                    <p>A website should flow like perfectly engineered piping. Zero dead ends. Zero leaks. We track every user movement, ensuring the path to booking a premium consultation is utterly frictionless.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="quote">
-            <p>"We went from doing 80% emergency service calls to 70% high-ticket planned installations. The site design completely changed how homeowners perceive our value. We are structural engineers to them now."</p>
-            <span>James T. — Founder, Precision Hydro-Systems</span>
-        </section>
-
-        <section class="cta" id="deploy">
-            <span class="tag">Final Node</span>
-            <h2>Architect<br>Your Flow.</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-copper" style="padding: 1.5rem 4rem; font-size: 1rem;">Initialize Build Request</a>
-        </section>
-
     </div>
 
     <script>
-        // Pipe scroll animation
-        const pipe = document.getElementById('master-pipe');
-        
-        // Calculate stroke length
-        // Setting stroke dasharray in CSS to a huge number handles the base SVG, but we calculate precisely for dynamic screen height
-        const pathLength = pipe.getTotalLength();
-        pipe.style.strokeDasharray = pathLength;
-        pipe.style.strokeDashoffset = pathLength;
+        // Flush Physics Engine
+        const valve = document.getElementById('valve');
+        const pressureFill = document.getElementById('pressure-fill');
+        const preFlush = document.getElementById('pre-flush');
+        const postFlush = document.getElementById('post-flush');
+        const flushWave = document.getElementById('flush-wave');
 
-        window.addEventListener('scroll', () => {
-            // Find scroll percentage
-            const scrollPerc = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-            // Draw the pipe down as we scroll
-            const drawLength = pathLength * scrollPerc;
-            // The offset is pathLength down to 0
-            pipe.style.strokeDashoffset = pathLength - drawLength;
-        });
+        let isHolding = false;
+        let pressure = 0; // 0 to 100
+        let isFlushed = false;
 
-        // Initialize immediately
-        pipe.style.strokeDashoffset = pathLength;
+        let pressureInterval;
+
+        function startPressure() {
+            if(isFlushed) return;
+            isHolding = true;
+            valve.style.transform = 'scale(0.95)';
+            document.body.style.cursor = 'wait';
+
+            pressureInterval = setInterval(() => {
+                pressure += 2; // fills in ~1.5 seconds
+                
+                // Color map: starts blue, turns red as it gets high pressure
+                if(pressure > 70) {
+                    pressureFill.style.backgroundColor = '#FF2A00'; // danger red
+                }
+
+                pressureFill.style.width = `${Math.min(100, pressure)}%`;
+
+                // Add shake effect to pre-flush screen based on pressure
+                const shake = (pressure / 100) * 15;
+                preFlush.style.transform = `translate(${Math.random() * shake - shake/2}px, ${Math.random() * shake - shake/2}px)`;
+
+                if(pressure >= 100) {
+                    triggerFlush();
+                }
+            }, 30);
+        }
+
+        function stopPressure() {
+            if(isFlushed) return;
+            isHolding = false;
+            valve.style.transform = 'scale(1)';
+            document.body.style.cursor = 'default';
+            
+            clearInterval(pressureInterval);
+            pressure = 0;
+            pressureFill.style.width = '0%';
+            pressureFill.style.backgroundColor = 'var(--water-mid)';
+            preFlush.style.transform = `translate(0,0)`;
+        }
+
+        valve.addEventListener('mousedown', startPressure);
+        valve.addEventListener('touchstart', startPressure);
+
+        window.addEventListener('mouseup', stopPressure);
+        window.addEventListener('touchend', stopPressure);
+
+        function triggerFlush() {
+            isFlushed = true;
+            clearInterval(pressureInterval);
+
+            // 1. Drop the wave
+            flushWave.style.top = '100vh';
+
+            // 2. Drop the junk UI along WITH the wave
+            preFlush.style.transition = 'transform 1.2s cubic-bezier(0.7, 0, 0.3, 1)';
+            preFlush.style.transform = 'translateY(150vh) rotate(5deg)';
+
+            // 3. Reveal the actual site
+            postFlush.style.opacity = '1';
+            document.body.style.overflowY = 'auto';
+            document.body.style.cursor = 'default';
+
+            // 4. Remove junk from DOM completely after animation
+            setTimeout(() => {
+                preFlush.remove();
+                flushWave.remove();
+            }, 2000);
+        }
+
     </script>
+
+<!-- NASLOGIC UNIVERSAL INTAKE MODAL -->
+<style>
+#nas-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+    z-index: 999999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    font-family: inherit;
+}
+#nas-modal-overlay.active { opacity: 1; pointer-events: auto; }
+#nas-modal-content {
+    background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1);
+    width: 90%; max-width: 500px; padding: 3rem; color: #FFF;
+    position: relative; transform: translateY(20px); transition: transform 0.4s ease;
+}
+#nas-modal-overlay.active #nas-modal-content { transform: translateY(0); }
+.nas-close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem; color: #888;
+    background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
+}
+.nas-close-btn:hover { color: #FFF; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
+.nas-form-group { margin-bottom: 1.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+}
+.nas-input:focus { border-color: #FFF; }
+.nas-submit-btn {
+    width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: background 0.3s, color 0.3s;
+}
+.nas-submit-btn:hover { background: #CCC; }
+.nas-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#nas-form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; display: none; }
+.nas-success { color: #10B981; }
+.nas-error { color: #EF4444; }
+</style>
+
+<div id="nas-modal-overlay">
+    <div id="nas-modal-content">
+        <button class="nas-close-btn" id="nas-close-modal">&times;</button>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        
+        <form id="nas-lead-form">
+            <input type="hidden" name="formType" value="quote">
+            <div class="nas-form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Project Details</label>
+                <input type="text" name="details" class="nas-input" required>
+            </div>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <div id="nas-form-status"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('nas-modal-overlay');
+    const closeBtn = document.getElementById('nas-close-modal');
+    const form = document.getElementById('nas-lead-form');
+    const statusDiv = document.getElementById('nas-form-status');
+    const submitBtn = document.getElementById('nas-submit-btn');
+
+    // Intercept mailto links
+    document.querySelectorAll('a[href^="mailto:hello@naslogic.com"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.add('active');
+        });
+    });
+
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            statusDiv.style.display = 'none';
+        });
+    }
+
+    if(overlay) {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.remove('active');
+                statusDiv.style.display = 'none';
+            }
+        });
+    }
+
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI updates
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting...';
+            statusDiv.style.display = 'none';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch('/api/lead-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await res.json();
+                
+                statusDiv.style.display = 'block';
+                if(res.ok) {
+                    statusDiv.className = 'nas-success';
+                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    form.reset();
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (err) {
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'nas-error';
+                statusDiv.innerText = err.message || 'An error occurred during transmission.';
+                submitBtn.innerText = 'Commission Build';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+<!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
+
 </body>
 </html>

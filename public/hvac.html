@@ -11,386 +11,398 @@
     
     <style>
         :root {
-            --frost: #E0F7FA;
-            --frost-deep: #B2EBF2;
-            --forge: #FF5722;
-            --forge-deep: #D84315;
-            --carbon: #121212;
-            --carbon-light: #1E1E1E;
-            --white: #FFFFFF;
+            /* We will manipulate these entirely in JS based on the scroll thermostat */
+            --thermo-bg-top: #3D0000;
+            --thermo-bg-bot: #FF2A00;
+            
+            --thermo-text: #FFFFFF;
             
             --font-display: 'Chakra Petch', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        
+        /* Turn off smooth scroll so the temperature dial feels 1:1 responsive */
+        html { scroll-behavior: auto; }
 
         body {
-            background-color: var(--carbon);
-            color: var(--frost);
+            /* Start extremely hot */
+            background: linear-gradient(180deg, var(--thermo-bg-top) 0%, var(--thermo-bg-bot) 100%);
+            color: var(--thermo-text);
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            transition: background 0.1s;
+            min-height: 400vh; /* Make plenty of room to scroll down */
         }
 
-        ::selection { background: var(--forge); color: var(--white); }
-
-        h1, h2, h3 { 
-            font-family: var(--font-display); 
-            text-transform: uppercase;
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; position: relative; z-index: 2; }
-        
-        section { padding: 10rem 0; position: relative; }
-
-        /* The Thermal Background Gradient */
-        #thermal-bg {
+        /* The Giant Thermostat Ring in the Background */
+        .thermostat-ring-container {
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            /* Starts very hot, transitions to cold */
-            background: linear-gradient(135deg, var(--forge-deep) 0%, var(--carbon) 50%, var(--carbon) 100%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw; height: 100vw;
+            max-width: 800px; max-height: 800px;
             z-index: 0;
             opacity: 0.15;
+            pointer-events: none;
+            display: flex; justify-content: center; align-items: center;
         }
+
+        .thermostat-svg {
+            width: 100%; height: 100%;
+            transform: rotate(-90deg); /* Start the circle drawing from top */
+        }
+
+        .thermostat-num {
+            position: absolute;
+            font-family: var(--font-display);
+            font-size: 15rem;
+            font-weight: 700;
+            text-align: center;
+            opacity: 0.4;
+        }
+
+        .thermostat-circle-bg {
+            fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 4;
+        }
+
+        .thermostat-circle-fill {
+            fill: none; stroke: currentColor; stroke-width: 6; stroke-linecap: round;
+            stroke-dasharray: 2000; /* Will be updated in JS */
+            stroke-dashoffset: 0;
+        }
+
+        /* Text Distortion Filter for extreme heat */
+        .heat-haze {
+            filter: url(#heat-displacement);
+            transition: filter 0.1s;
+        }
+
+        /* Content layer */
+        .content { position: relative; z-index: 10; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+        
+        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; }
 
         /* Nav */
         nav {
-            position: absolute;
-            top: 0; width: 100%;
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
+            position: fixed; top: 0; width: 100%; padding: 2rem 5%;
+            display: flex; justify-content: space-between; align-items: center; z-index: 100;
         }
 
-        .logo {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .logo span { color: var(--forge); }
+        .logo { font-family: var(--font-display); font-size: 1.5rem; color: #FFF; text-decoration: none; }
+        .logo span { opacity: 0.5; }
 
         .btn-thermal {
-            background: transparent;
-            color: var(--white);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 0.8rem 2rem;
-            font-family: var(--font-display);
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
+            background: transparent; color: #FFF; border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.8rem 2rem; font-family: var(--font-display); text-transform: uppercase;
+            text-decoration: none; border-radius: 50px; backdrop-filter: blur(5px);
+            transition: background 0.3s;
         }
+        .btn-thermal:hover { background: #FFF; color: #000; }
 
-        .btn-thermal::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,87,34,0.4), transparent);
-            transition: left 0.5s ease;
+        h1 { font-size: clamp(3rem, 8vw, 7rem); line-height: 1; margin-bottom: 2rem; text-transform: uppercase; }
+        
+        p { font-size: 1.3rem; max-width: 600px; line-height: 1.6; opacity: 0.8; font-weight: 300; }
+
+        .metric-cards { display: flex; gap: 2rem; margin-top: 4rem; }
+        .metric-card {
+            border-left: 2px solid rgba(255,255,255,0.2); padding-left: 2rem;
         }
-
-        .btn-thermal:hover {
-            border-color: var(--forge);
-            box-shadow: 0 0 15px rgba(255,87,34,0.3);
-        }
-
-        .btn-thermal:hover::before { left: 100%; }
-
-        .btn-thermal.active {
-            background: var(--frost);
-            color: var(--carbon);
-            border-color: var(--frost);
-        }
-        .btn-thermal.active:hover { box-shadow: 0 0 15px rgba(224,247,250,0.5); }
-        .btn-thermal.active::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 6rem);
-            line-height: 1;
-            margin-bottom: 2rem;
-            max-width: 900px;
-        }
-
-        .hero h1 span.hot { color: var(--forge); }
-        .hero h1 span.cold { color: var(--frost); }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.6);
-            max-width: 600px;
-            line-height: 1.6;
-            margin-bottom: 3rem;
-            padding-left: 1.5rem;
-            border-left: 2px solid rgba(255,255,255,0.2);
-        }
-
-        /* Tech Specs Grid */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .tech-card {
-            background: rgba(30, 30, 30, 0.4);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 3rem 2rem;
-            backdrop-filter: blur(10px);
-            border-radius: 8px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--frost-deep);
-        }
-
-        .spec-number {
-            font-family: var(--font-display);
-            color: var(--forge);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .tech-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .tech-card p {
-            color: rgba(255,255,255,0.5);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        /* Blueprint graphic */
-        .blueprint-section {
-            background: var(--carbon-light);
-            border-top: 1px dashed rgba(255,255,255,0.1);
-            border-bottom: 1px dashed rgba(255,255,255,0.1);
-            overflow: hidden;
-        }
-
-        .bp-graphic {
-            width: 100%;
-            height: 400px;
-            border: 1px solid rgba(224, 247, 250, 0.2);
-            position: relative;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 49px,
-                rgba(224, 247, 250, 0.05) 49px,
-                rgba(224, 247, 250, 0.05) 50px
-            ), repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 49px,
-                rgba(224, 247, 250, 0.05) 49px,
-                rgba(224, 247, 250, 0.05) 50px
-            );
-        }
-
-        /* Animated Airflow Lines */
-        .flow-line {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--frost), transparent);
-            width: 100%;
-            animation: flow 3s infinite linear;
-            opacity: 0.5;
-        }
-
-        .flow-1 { top: 20%; animation-delay: 0s; }
-        .flow-2 { top: 50%; animation-delay: -1.5s; }
-        .flow-3 { top: 80%; animation-delay: -0.7s; }
-
-        @keyframes flow {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .bp-text {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .bp-text h2 {
-            font-size: 4rem;
-            color: var(--white);
-            text-shadow: 0 0 20px rgba(224, 247, 250, 0.3);
-        }
-
-        /* Proof */
-        .thermal-proof {
-            text-align: center;
-        }
-
-        .thermal-proof h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--white);
-            max-width: 900px;
-            margin: 0 auto 2rem;
-            text-transform: none;
-            font-weight: 400;
-        }
-
-        .system-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(224, 247, 250, 0.1);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--frost);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .led {
-            width: 8px; height: 8px;
-            background: var(--frost);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--frost);
-        }
+        .metric-num { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 0.5rem; }
 
         /* CTA */
-        .cta-bottom {
-            text-align: center;
-            padding-bottom: 12rem;
-        }
-
-        .cta-bottom h2 {
-            font-size: clamp(4rem, 8vw, 7rem);
-            margin-bottom: 2rem;
-            color: var(--frost);
-        }
-
+        .cta-bottom { text-align: center; }
+        .cta-bottom h2 { font-size: 5rem; margin-bottom: 2rem; }
+        
         @media (max-width: 768px) {
-            .tech-grid { grid-template-columns: 1fr; }
+            .metric-cards { flex-direction: column; }
+            .thermostat-num { font-size: 8rem; }
         }
     </style>
 </head>
 <body>
 
-    <div id="thermal-bg"></div>
+    <!-- SVG Filters for extreme heat haze -->
+    <svg style="display: none;">
+        <defs>
+            <filter id="heat-displacement">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" result="noise">
+                    <animate attributeName="baseFrequency" values="0.05;0.07;0.05" dur="0.2s" repeatCount="indefinite" />
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="B" id="displace-scale" />
+            </filter>
+        </defs>
+    </svg>
 
+    <!-- The Dial -->
+    <div class="thermostat-ring-container">
+        <svg class="thermostat-svg" viewBox="0 0 200 200">
+            <circle class="thermostat-circle-bg" cx="100" cy="100" r="90"></circle>
+            <circle class="thermostat-circle-fill" id="dial-fill" cx="100" cy="100" r="90"></circle>
+        </svg>
+        <div class="thermostat-num" id="temp-display">105&deg;</div>
+    </div>
+
+    <!-- Content -->
     <nav>
         <a href="/" class="logo">NASLOGIC<span>_</span></a>
-        <a href="#control" class="btn-thermal">Execute Build</a>
+        <a href="mailto:hello@naslogic.com" class="btn-thermal">Route Dispatch</a>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <h1>Master <span class="hot">The Heat.</span><br>Command <span class="cold">The Cold.</span></h1>
-            <p>You install $15,000 smart climate systems, but your website looks like a 1990s yellow pages ad. We engineer technical, high-performance web applications that position your HVAC firm as the only logical choice.</p>
-            <a href="#control" class="btn-thermal" style="padding: 1.2rem 3rem; font-size: 1.1rem;">Initialize Diagnostic</a>
-        </div>
-    </header>
+    <div class="content">
+        <section class="section container">
+            <div class="heat-haze" id="haze-target">
+                <h1>MASTER <br>THE CLIMATE.</h1>
+                <p>Homeowners in a crisis don't care about your company history. When their AC dies in 105° heat, they want immediate, friction-free relief. We engineer technical, high-performance HVAC landing pages that filter out bargain hunters and convert emergency calls ruthlessly.</p>
+            </div>
+        </section>
 
-    <section>
-        <div class="container">
-            <h2 style="font-size: 3rem; color: var(--white); margin-bottom: 4rem;">System Architecture</h2>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <div class="spec-number">SPEC_01</div>
-                    <h3>Eliminating the Van Logo</h3>
-                    <p>Homeowners don't care what your trucks look like. They want assurance that you can solve their temperature crisis immediately. We strip away the corporate fluff and focus entirely on speed, reliability, and technical supremacy.</p>
-                </div>
-                <div class="tech-card">
-                    <div class="spec-number">SPEC_02</div>
-                    <h3>Thermal Flow Design</h3>
-                    <p>We visualize comfort. As users navigate your site, intuitive background gradients and precise typography subliminally communicate temperature control, lowering their anxiety before they even call.</p>
-                </div>
-                <div class="tech-card">
-                    <div class="spec-number">SPEC_03</div>
-                    <h3>Frictionless Dispatch</h3>
-                    <p>No more confusing dropdowns. We implement rapid-intake UX that allows shivering or sweating homeowners to request emergency dispatch in 3 clicks, routing directly to your ServiceTitan or Housecall Pro.</p>
+        <section class="section container">
+            <div style="margin-left:auto; width: 60%">
+                <h2>SYSTEM ROUTING</h2>
+                <p>We replace your generic contact form with an intelligent dispatch UI that seamlessly categorizes service requests, ensuring you only talk to high-ticket installation leads or active emergencies.</p>
+                <div class="metric-cards">
+                    <div class="metric-card">
+                        <div class="metric-num">+400%</div>
+                        <div style="font-size: 0.9rem; text-transform:uppercase;">Emergency Dispatches</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-num">3 CLICKS</div>
+                        <div style="font-size: 0.9rem; text-transform:uppercase;">To Route Field Tech</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="blueprint-section">
-        <div class="container" style="padding: 0;">
-            <div class="bp-graphic">
-                <div class="flow-line flow-1"></div>
-                <div class="flow-line flow-2"></div>
-                <div class="flow-line flow-3"></div>
-                <div class="bp-text">
-                    <h2>FLAWLESS ROUTING</h2>
-                </div>
+        <section class="section container">
+            <div>
+                <h2>THE ARCHITECTURE</h2>
+                <p>A $15,000 smart climate system deserves a $15,000 digital presentation. As your prospective client scrolls, we utilize scroll-linked dynamic background rendering to literally visualize their problem being solved. We cool the room down. Psychological conversion.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="thermal-proof">
-        <div class="container">
-            <div class="system-status" style="margin-bottom: 3rem;">
-                <div class="led"></div>
-                Output Log Verified
-            </div>
-            <h2>"Our previous site was buried on page 3. Naslogic deployed the new architecture, and our emergency dispatch requests went up 400% during the first heat wave of the summer. It converts ruthlessly."</h2>
-            <p style="color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">- David C., Operations Director, Apex Climate</p>
-        </div>
-    </section>
-
-    <section class="cta-bottom" id="control">
-        <div class="container">
-            <h2>Take Control.</h2>
-            <p style="color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 3rem; font-size: 1.1rem;">Ready to upgrade your system from a leaky duct to a high-velocity conversion machine?</p>
-            <a href="mailto:hello@naslogic.com" class="btn-thermal active" style="padding: 1.5rem 4rem; font-size: 1.2rem;">Boot Sequence</a>
-        </div>
-    </section>
+        <section class="section container cta-bottom">
+            <h2 id="final-cta-text">ACHIEVE OPTIMAL FLOW.</h2>
+            <p style="margin: 0 auto 3rem;">Initiate complete system overhaul procedures today.</p>
+            <a href="mailto:hello@naslogic.com" class="btn-thermal" style="padding: 1.5rem 4rem; font-size: 1.2rem;">Boot Sequence</a>
+        </section>
+    </div>
 
     <script>
-        // Thermal Background Scroll Effect
-        const thermalBg = document.getElementById('thermal-bg');
-        
+        // Thermostat Physics Engine
+        const dialFill = document.getElementById('dial-fill');
+        const tempDisplay = document.getElementById('temp-display');
+        const hazeTarget = document.getElementById('haze-target');
+        const displaceMap = document.getElementById('displace-scale');
+        const textH2 = document.getElementById('final-cta-text');
+
+        // Setup SVG dash array
+        const circleLength = 2 * Math.PI * 90; // r=90
+        dialFill.style.strokeDasharray = circleLength;
+
+        // Colors
+        // Hot: rgb(255, 42, 0) -> rgb(61, 0, 0)
+        // Cold: rgb(224, 247, 250) -> rgb(0, 59, 92)
+        const hotBody = [ [61, 0, 0], [255, 42, 0] ]; // top, bot
+        const coldBody = [ [0, 59, 92], [224, 247, 250] ];
+
         window.addEventListener('scroll', () => {
-            if(!thermalBg) return;
+            const scrollPerc = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
             
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = window.scrollY / maxScroll; // 0 to 1
-            
-            // Start at forge (hot), end at frost (cold)
-            // Hot: 135deg, var(--forge-deep)
-            // Cold: 135deg, var(--frost-deep)
-            
-            // To make it look like it's cooling down, we shift the gradient
-            // At 0%: Hot is visible
-            // At 100%: Cold takes over
-            const hotStop = Math.max(-50, 0 - (scrollPercent * 150));
-            const midStop = 50 - (scrollPercent * 50); // 50 to 0
-            
-            thermalBg.style.background = `linear-gradient(135deg, var(--forge-deep) ${hotStop}%, var(--carbon) ${midStop}%, rgba(178, 235, 242, 0.2) 100%)`;
+            // Map scroll to temperature (105 to 68)
+            const currentTemp = Math.floor(105 - (scrollPerc * 37));
+            tempDisplay.innerHTML = `${currentTemp}&deg;`;
+
+            // Map scroll to Dial Fill
+            // 0% scroll = 100% full dial. 100% scroll = 0% dial
+            dialFill.style.strokeDashoffset = circleLength * scrollPerc;
+
+            // Map scroll to Haze (disappear completely at ~20% scroll)
+            const hazeScale = Math.max(0, 5 - (scrollPerc * 25));
+            displaceMap.setAttribute('scale', hazeScale);
+
+            // Interpolate colors
+            const rTop = Math.floor(hotBody[0][0] + (coldBody[0][0] - hotBody[0][0]) * scrollPerc);
+            const gTop = Math.floor(hotBody[0][1] + (coldBody[0][1] - hotBody[0][1]) * scrollPerc);
+            const bTop = Math.floor(hotBody[0][2] + (coldBody[0][2] - hotBody[0][2]) * scrollPerc);
+
+            const rBot = Math.floor(hotBody[1][0] + (coldBody[1][0] - hotBody[1][0]) * scrollPerc);
+            const gBot = Math.floor(hotBody[1][1] + (coldBody[1][1] - hotBody[1][1]) * scrollPerc);
+            const bBot = Math.floor(hotBody[1][2] + (coldBody[1][2] - hotBody[1][2]) * scrollPerc);
+
+            document.body.style.background = `linear-gradient(180deg, rgb(${rTop},${gTop},${bTop}) 0%, rgb(${rBot},${gBot},${bBot}) 100%)`;
+
+            // If temperature drops below 75, change the dial to frost blue style, otherwise fiery orange
+            if(currentTemp <= 75) {
+                tempDisplay.style.color = 'rgb(224, 247, 250)';
+                dialFill.style.color = 'rgb(224, 247, 250)';
+                textH2.style.color = 'rgb(224, 247, 250)';
+            } else {
+                tempDisplay.style.color = 'rgb(255, 42, 0)';
+                dialFill.style.color = 'rgb(255, 42, 0)';
+                textH2.style.color = '#FFF';
+            }
         });
+        
+        // init
+        window.dispatchEvent(new Event('scroll'));
     </script>
+
+<!-- NASLOGIC UNIVERSAL INTAKE MODAL -->
+<style>
+#nas-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+    z-index: 999999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    font-family: inherit;
+}
+#nas-modal-overlay.active { opacity: 1; pointer-events: auto; }
+#nas-modal-content {
+    background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1);
+    width: 90%; max-width: 500px; padding: 3rem; color: #FFF;
+    position: relative; transform: translateY(20px); transition: transform 0.4s ease;
+}
+#nas-modal-overlay.active #nas-modal-content { transform: translateY(0); }
+.nas-close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem; color: #888;
+    background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
+}
+.nas-close-btn:hover { color: #FFF; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
+.nas-form-group { margin-bottom: 1.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+}
+.nas-input:focus { border-color: #FFF; }
+.nas-submit-btn {
+    width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: background 0.3s, color 0.3s;
+}
+.nas-submit-btn:hover { background: #CCC; }
+.nas-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#nas-form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; display: none; }
+.nas-success { color: #10B981; }
+.nas-error { color: #EF4444; }
+</style>
+
+<div id="nas-modal-overlay">
+    <div id="nas-modal-content">
+        <button class="nas-close-btn" id="nas-close-modal">&times;</button>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        
+        <form id="nas-lead-form">
+            <input type="hidden" name="formType" value="quote">
+            <div class="nas-form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Project Details</label>
+                <input type="text" name="details" class="nas-input" required>
+            </div>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <div id="nas-form-status"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('nas-modal-overlay');
+    const closeBtn = document.getElementById('nas-close-modal');
+    const form = document.getElementById('nas-lead-form');
+    const statusDiv = document.getElementById('nas-form-status');
+    const submitBtn = document.getElementById('nas-submit-btn');
+
+    // Intercept mailto links
+    document.querySelectorAll('a[href^="mailto:hello@naslogic.com"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.add('active');
+        });
+    });
+
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            statusDiv.style.display = 'none';
+        });
+    }
+
+    if(overlay) {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.remove('active');
+                statusDiv.style.display = 'none';
+            }
+        });
+    }
+
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI updates
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting...';
+            statusDiv.style.display = 'none';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch('/api/lead-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await res.json();
+                
+                statusDiv.style.display = 'block';
+                if(res.ok) {
+                    statusDiv.className = 'nas-success';
+                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    form.reset();
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (err) {
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'nas-error';
+                statusDiv.innerText = err.message || 'An error occurred during transmission.';
+                submitBtn.innerText = 'Commission Build';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+<!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
+
 </body>
 </html>

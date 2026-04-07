@@ -20,21 +20,11 @@
             
             --font-display: 'Bodoni Moda', serif;
             --font-body: 'DM Sans', sans-serif;
-            
-            --transition-slow: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-fast: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-            background-color: var(--pitch-black);
-        }
+        html { scroll-behavior: smooth; background-color: var(--pitch-black); }
 
         body {
             background-color: var(--pitch-black);
@@ -47,424 +37,352 @@
 
         ::selection { background: var(--crimson-seal); color: var(--manila-paper); }
 
-        h1, h2, h3, h4 {
-            font-family: var(--font-display);
-        }
+        h1, h2, h3, h4 { font-family: var(--font-display); }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 5%; }
 
-        section {
-            padding: 8rem 0;
+        /* The UV Decryption Physics */
+        .redacted-wrapper {
             position: relative;
+            display: inline;
         }
+
+        .redacted {
+            position: relative;
+            cursor: crosshair;
+            display: inline;
+            padding: 0 2px;
+        }
+
+        /* The black bar covering the text */
+        .redacted::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--pitch-black);
+            mix-blend-mode: normal;
+            transition: width 0.4s ease, opacity 0.4s ease;
+            transform-origin: right;
+            border: 1px solid #222;
+        }
+
+        /* When the UV light (mouse) hits it, the bar shrinks */
+        .redacted.revealed::after {
+            width: 0%;
+            opacity: 0;
+            border: none;
+        }
+
+        /* Glowing trailing effect */
+        #uv-light {
+            position: fixed;
+            width: 400px; height: 100px;
+            background: radial-gradient(ellipse at center, rgba(139, 28, 28, 0.4) 0%, rgba(139,28,28,0) 80%);
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            z-index: 1000;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+        
+        body:hover #uv-light { opacity: 1; }
 
         /* Nav */
         nav {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 2.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
+            position: absolute; top: 0; left: 0; width: 100%;
+            padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100;
         }
 
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            text-decoration: none;
-            color: var(--manila-paper);
-            text-transform: uppercase;
+        .nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; text-decoration: none; color: var(--manila-paper); text-transform: uppercase; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; padding: 1.5rem 3rem;
+            background-color: transparent; border: 1px solid var(--crimson-seal);
+            color: var(--manila-paper); text-decoration: none; font-family: var(--font-body);
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em;
+            transition: background 0.4s ease;
         }
 
-        .nav-cta {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
+        .btn-primary:hover { background-color: var(--crimson-seal); }
+
+        /* Document Headers */
+        .stamp {
+            display: inline-block;
+            border: 2px solid var(--crimson-seal);
             color: var(--crimson-seal);
-            text-decoration: none;
-            position: relative;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            transform: rotate(-15deg);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+        
+        .secret-tag {
+            color: #555;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+            margin-bottom: 3rem;
+            display: inline-block;
         }
 
         /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(244, 241, 234, 0.1);
-        }
+        .hero { position: relative; padding: 15vh 0 10vh; border-bottom: 1px solid #111; }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(139, 28, 28, 0.15) 0%, transparent 60%);
-            z-index: -1;
-            pointer-events: none;
-        }
+        .hero h1 { font-size: clamp(3rem, 7vw, 6rem); line-height: 1.1; margin-bottom: 3rem; font-weight: 400; }
+        
+        .hero-desc { font-size: 1.25rem; line-height: 1.8; color: var(--manila-dim); margin-bottom: 4rem; max-width: 600px; }
 
-        .hero h1 {
-            font-size: clamp(4.5rem, 10vw, 8rem);
-            line-height: 0.9;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            letter-spacing: -0.04em;
-        }
-
-        .hero h1 span {
-            display: block;
-            margin-left: 15%;
-            font-style: italic;
-            color: var(--crimson-seal);
-        }
-
-        .hero-desc {
-            font-size: 1.25rem;
-            line-height: 1.5;
-            color: var(--manila-dim);
-            max-width: 400px;
-            margin-left: 15%;
+        /* Dossier file section */
+        .dossier { padding: 10rem 0; }
+        
+        .paragraph-block {
+            font-size: 1.5rem;
+            line-height: 2;
+            color: var(--manila-paper);
             margin-bottom: 4rem;
         }
 
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            padding: 1.5rem 3rem;
-            background-color: var(--crimson-seal);
-            color: var(--manila-paper);
-            text-decoration: none;
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-left: 15%;
-            position: relative;
-            overflow: hidden;
-            transition: transform var(--transition-fast);
-        }
+        .cta-bottom { text-align: center; padding: 10rem 0 15rem; }
+        .cta-bottom h2 { font-size: 4rem; margin-bottom: 3rem; }
 
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            background-color: var(--crimson-dark);
-        }
-
-        /* Brutal Lines */
-        .vert-line {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: rgba(244, 241, 234, 0.05);
-            z-index: -1;
-        }
-        .vl-1 { left: 15%; }
-        .vl-2 { right: 15%; }
-
-        /* Problem Section */
-        .docket-section {
-            background-color: var(--pitch-black-light);
-        }
-        
-        .docket-header {
-            font-family: var(--font-body);
-            text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            font-size: 0.75rem;
-            color: var(--crimson-seal);
-            margin-bottom: 4rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .docket-header::after {
-            content: '';
-            height: 1px;
-            background: var(--crimson-seal);
-            flex-grow: 1;
-            max-width: 100px;
-        }
-
-        .statement-text {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            font-family: var(--font-display);
-            margin-bottom: 3rem;
-            max-width: 900px;
-        }
-
-        .statement-sub {
-            font-size: 1.25rem;
-            color: var(--manila-dim);
-            max-width: 500px;
-            margin-left: auto;
-            border-left: 1px solid var(--crimson-seal);
-            padding-left: 2rem;
-        }
-
-        /* Case Study Timeline (The Unforgettable Element) */
-        .case-study {
-            border-top: 1px solid rgba(244, 241, 234, 0.1);
-            border-bottom: 1px solid rgba(244, 241, 234, 0.1);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 1px;
-            background: rgba(244, 241, 234, 0.1);
-        }
-
-        .timeline-progress {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -1px;
-            width: 3px;
-            background: var(--crimson-seal);
-            transform-origin: top;
-            transform: scaleY(0);
-            transition: transform 0.1s ease;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 4rem;
-            margin-bottom: 6rem;
-            opacity: 0.3;
-            transition: opacity var(--transition-slow);
-        }
-
-        .timeline-item.active {
-            opacity: 1;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 10px;
-            width: 11px;
-            height: 11px;
-            background: var(--pitch-black);
-            border: 1px solid var(--manila-dim);
-            border-radius: 50%;
-            transition: border-color var(--transition-fast), background var(--transition-fast);
-        }
-
-        .timeline-item.active::before {
-            border-color: var(--crimson-seal);
-            background: var(--crimson-seal);
-        }
-
-        .t-date {
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            color: var(--manila-dim);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .t-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .t-desc {
-            color: var(--manila-dim);
-            line-height: 1.6;
-        }
-
-        /* Testimonial */
-        .verdict {
-            text-align: center;
-            background-color: var(--pitch-black-light);
-        }
-
-        .verdict blockquote {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-style: italic;
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            line-height: 1.2;
-            color: var(--manila-paper);
-        }
-
-        .v-author {
-            font-family: var(--font-body);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.85rem;
-            color: var(--crimson-seal);
-            display: block;
-        }
-
-        .v-role {
-            color: var(--manila-dim);
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Final CTA */
-        .closing-argument {
-            text-align: center;
-            padding: 12rem 0;
-        }
-
-        .closing-argument h2 {
-            font-size: clamp(3rem, 6vw, 6rem);
-            margin-bottom: 2rem;
-        }
-
-        /* Reveal Animation utility */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all var(--transition-slow);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 span, .hero-desc, .btn-primary { margin-left: 0; }
-            .statement-sub { margin-left: 0; margin-top: 3rem; }
-            .vert-line { display: none; }
-        }
     </style>
 </head>
 <body>
 
-    <div class="vert-line vl-1"></div>
-    <div class="vert-line vl-2"></div>
+    <!-- UV Decryption Light -->
+    <div id="uv-light"></div>
 
     <nav>
         <a href="/" class="nav-logo">Naslogic</a>
-        <a href="#consult" class="nav-cta">Retain Us</a>
+        <a href="mailto:hello@naslogic.com" class="btn-primary" style="padding: 1rem 2rem;">RETAIN US</a>
     </nav>
 
-    <section class="hero">
-        <div class="container reveal visible">
-            <h1>Command Your <br><span>Market.</span></h1>
-            <p class="hero-desc">Your firm handles high-stakes, 7-figure cases. Yet your landing page looks identical to the bargain lawyer down the street. It's time to build a digital presence that commands undisputed authority.</p>
-            <a href="#consult" class="btn-primary">Review the Evidence</a>
-        </div>
+    <section class="hero container">
+        <div class="secret-tag">CLASSIFIED: DOCUMENT 004-A</div>
+        <div class="stamp" style="position: absolute; top: 10%; right: 10%;">CONFIDENTIAL</div>
+
+        <h1>When <span class="redacted-wrapper"><span class="redacted">affluent clients</span></span><br>
+        judge you, they 
+        <span class="redacted-wrapper"><span class="redacted" style="color: var(--crimson-seal);">don't read.</span></span></h1>
+        
+        <p class="hero-desc">Your firm handles high-stakes, 7-figure cases. Yet your landing page looks identical to the bargain lawyer down the street. It's time to build a digital presence that <span class="redacted-wrapper"><span class="redacted">commands undisputed authority.</span></span></p>
+        
+        <a href="mailto:hello@naslogic.com" class="btn-primary">DECRYPT THE SOLUTION</a>
     </section>
 
-    <section class="docket-section">
-        <div class="container">
-            <div class="docket-header reveal">Exhibit A: The Commodity Trap</div>
-            <h2 class="statement-text reveal">When affluent clients search for representation, they don't read. They judge.</h2>
-            <p class="statement-sub reveal">A generic, template-driven landing page instantly devalues your expertise. If your digital exterior lacks tension, authority, and narrative weight, high-net-worth clients will assume your interior counsel lacks the same.</p>
-        </div>
+    <section class="dossier container">
+        <p class="paragraph-block">A generic, template-driven landing page <span class="redacted-wrapper"><span class="redacted">instantly devalues your expertise</span></span>. We eliminate stock photos of gavels, fake leather textures, and column illustrations. We replace them with stark, editorial typography and tension that <span class="redacted-wrapper"><span class="redacted">forces the reader to pay attention</span></span>.</p>
+
+        <p class="paragraph-block">"We fight for you" means nothing. We write copy that speaks to the specific anxieties and high-stakes nature of <span class="redacted-wrapper"><span class="redacted">your ideal client's situation</span></span>. We position you not as a choice, but as the <span class="redacted-wrapper"><span class="redacted">only logical verdict</span></span>.</p>
+
+        <div class="stamp" style="transform: rotate(5deg); margin-top: 2rem;">EXHIBIT B</div>
     </section>
 
-    <section class="case-study">
-        <div class="container">
-            <div class="docket-header reveal" style="justify-content: center; margin-bottom: 6rem; flex-direction: column;">
-                <div>Exhibit B: The Transformation</div>
-                <div style="height: 40px; width: 1px; background: var(--crimson-seal); margin-top: 1rem;"></div>
-            </div>
-            
-            <div class="timeline" id="timeline">
-                <div class="timeline-progress" id="timeline-progress"></div>
-                
-                <div class="timeline-item">
-                    <span class="t-date">PHASE 01: THE INVESTIGATION</span>
-                    <h3 class="t-title">Stripping the Boilerplate.</h3>
-                    <p class="t-desc">We eliminate stock photos of gavels, fake leather textures, and column illustrations. We replace them with stark, editorial typography and stark contrast that forces the reader to pay attention.</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <span class="t-date">PHASE 02: THE ARGUMENT</span>
-                    <h3 class="t-title">Copywriting with Teeth.</h3>
-                    <p class="t-desc">"We fight for you" means nothing. We write copy that speaks to the specific anxieties and high-stakes nature of your ideal client's situation. We position you not as a choice, but as the only logical verdict.</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <span class="t-date">PHASE 03: THE VERDICT</span>
-                    <h3 class="t-title">Frictionless Retainment.</h3>
-                    <p class="t-desc">We construct micro-interactions designed to convert. A seamless, high-end lead capture flow that feels more like an exclusive intake assessment than a desperate contact form.</p>
-                </div>
-            </div>
-        </div>
+    <section class="dossier container" style="border-top: 1px solid #111; padding-top: 5rem;">
+        <h3 style="font-family: var(--font-body); letter-spacing: 2px; color: #555; font-size: 1rem; margin-bottom: 2rem;">TESTIMONY LOG:</h3>
+        <p class="paragraph-block" style="font-style: italic;">"We went from competing on retainer fees to dictating them. The site <span class="redacted-wrapper"><span class="redacted">filters out bargain-hunters</span></span> and attracts clients who understand the cost of losing. Our qualified intake calls increased by <span class="redacted-wrapper"><span class="redacted">240%</span></span>."</p>
+        <span style="display:block; text-align:right; color: var(--crimson-seal); letter-spacing: 2px;">- MARCUS L. (PARTNER)</span>
     </section>
 
-    <section class="verdict">
-        <div class="container reveal">
-            <div class="docket-header" style="justify-content: center;">The Verdict</div>
-            <blockquote>"We went from competing on retainer fees to dictating them. The site filters out bargain-hunters and attracts clients who understand the cost of losing. Our qualified intake calls increased by 240% in 60 days."</blockquote>
-            <span class="v-author">Marcus L.</span>
-            <span class="v-role">Partner, Private Defense Group, Chicago IL</span>
-        </div>
-    </section>
-
-    <section class="closing-argument" id="consult">
-        <div class="container reveal">
-            <h2>The Defense Rests.</h2>
-            <p class="hero-desc" style="margin: 0 auto 3rem; text-align: center;">We only construct 4 law firm landing pages per month to maintain exact precision. Submit your current site for our ruthless audit.</p>
-            <a href="mailto:hello@naslogic.com" class="btn-primary" style="margin: 0;">Request A Case Review</a>
-        </div>
+    <section class="cta-bottom container">
+        <h2 class="redacted-wrapper"><span class="redacted">The Defense Rests.</span></h2>
+        <p style="margin: 0 auto 4rem; color: var(--manila-dim);">We only construct 4 law firm landing pages per month to maintain precision. Submit your site.</p>
+        <a href="mailto:hello@naslogic.com" class="btn-primary">SUBMIT FOR REVIEW</a>
     </section>
 
     <script>
-        // Simple reveal observer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+        // UV Light cursor tracker
+        const uv = document.getElementById('uv-light');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Timeline Scroll Effect
-        const timeline = document.getElementById('timeline');
-        const progress = document.getElementById('timeline-progress');
-        const items = document.querySelectorAll('.timeline-item');
-
-        window.addEventListener('scroll', () => {
-            if(!timeline) return;
-            const rect = timeline.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            uv.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
             
-            // Calculate progress based on timeline position in viewport
-            let scrollPerc = (viewportHeight / 2 - rect.top) / rect.height;
-            scrollPerc = Math.max(0, Math.min(1, scrollPerc));
-            
-            progress.style.transform = `scaleY(${scrollPerc})`;
-
-            items.forEach((item, index) => {
-                const itemRect = item.getBoundingClientRect();
-                if (itemRect.top < viewportHeight * 0.7) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
+            checkRedactionDistances();
         });
+
+        // The Redaction Physics Algorithm
+        const redactedElements = document.querySelectorAll('.redacted');
+        const MAX_DISTANCE = 150; // How close the mouse needs to be to reveal it
+
+        function checkRedactionDistances() {
+            redactedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                // Get center of element roughly
+                const elX = rect.left + rect.width / 2;
+                const elY = rect.top + rect.height / 2;
+
+                const dist = Math.hypot(elX - mouseX, elY - mouseY);
+
+                if (dist < MAX_DISTANCE) {
+                    el.classList.add('revealed');
+                } else {
+                    el.classList.remove('revealed');
+                }
+            });
+        }
     </script>
+
+<!-- NASLOGIC UNIVERSAL INTAKE MODAL -->
+<style>
+#nas-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+    z-index: 999999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    font-family: inherit;
+}
+#nas-modal-overlay.active { opacity: 1; pointer-events: auto; }
+#nas-modal-content {
+    background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1);
+    width: 90%; max-width: 500px; padding: 3rem; color: #FFF;
+    position: relative; transform: translateY(20px); transition: transform 0.4s ease;
+}
+#nas-modal-overlay.active #nas-modal-content { transform: translateY(0); }
+.nas-close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem; color: #888;
+    background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
+}
+.nas-close-btn:hover { color: #FFF; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
+.nas-form-group { margin-bottom: 1.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+}
+.nas-input:focus { border-color: #FFF; }
+.nas-submit-btn {
+    width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: background 0.3s, color 0.3s;
+}
+.nas-submit-btn:hover { background: #CCC; }
+.nas-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#nas-form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; display: none; }
+.nas-success { color: #10B981; }
+.nas-error { color: #EF4444; }
+</style>
+
+<div id="nas-modal-overlay">
+    <div id="nas-modal-content">
+        <button class="nas-close-btn" id="nas-close-modal">&times;</button>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        
+        <form id="nas-lead-form">
+            <input type="hidden" name="formType" value="quote">
+            <div class="nas-form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Project Details</label>
+                <input type="text" name="details" class="nas-input" required>
+            </div>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <div id="nas-form-status"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('nas-modal-overlay');
+    const closeBtn = document.getElementById('nas-close-modal');
+    const form = document.getElementById('nas-lead-form');
+    const statusDiv = document.getElementById('nas-form-status');
+    const submitBtn = document.getElementById('nas-submit-btn');
+
+    // Intercept mailto links
+    document.querySelectorAll('a[href^="mailto:hello@naslogic.com"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.add('active');
+        });
+    });
+
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            statusDiv.style.display = 'none';
+        });
+    }
+
+    if(overlay) {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.remove('active');
+                statusDiv.style.display = 'none';
+            }
+        });
+    }
+
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI updates
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting...';
+            statusDiv.style.display = 'none';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch('/api/lead-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await res.json();
+                
+                statusDiv.style.display = 'block';
+                if(res.ok) {
+                    statusDiv.className = 'nas-success';
+                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    form.reset();
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (err) {
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'nas-error';
+                statusDiv.innerText = err.message || 'An error occurred during transmission.';
+                submitBtn.innerText = 'Commission Build';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+<!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
+
 </body>
 </html>

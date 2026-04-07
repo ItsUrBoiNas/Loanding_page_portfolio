@@ -3,388 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naslogic | Elite Fitness & Performance Facilities</title>
+    <title>Naslogic | Elite Performance Marketing</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&family=Manrope:wght@800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --void: #050505;
-            --iron: #111111;
-            --iron-light: #222222;
+            --bg-base: #111111;
             --kinetic: #CCFF00;
-            --white: #FFFFFF;
-            --text-dim: #888888;
+            --kinetic-glare: rgba(204, 255, 0, 0.4);
+            --text-base: #FFFFFF;
             
             --font-display: 'Teko', sans-serif;
             --font-body: 'Manrope', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
+        
         body {
-            background-color: var(--void);
-            color: var(--white);
+            background-color: var(--bg-base);
+            color: var(--text-base);
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            border-left: 5px solid var(--kinetic);
-            border-right: 5px solid var(--kinetic);
+            /* Initially LOCKED. No native scroll until Resistance breaks. */
+            overflow: hidden; 
         }
 
-        ::selection { background: var(--kinetic); color: var(--void); }
+        ::selection { background: var(--kinetic); color: var(--bg-base); }
 
-        h1, h2, h3 { 
-            font-family: var(--font-display); 
-            text-transform: uppercase; 
-            line-height: 0.9; 
-            letter-spacing: 0.02em;
+        h1, h2 { font-family: var(--font-display); text-transform: uppercase; line-height: 0.85; }
+
+        /* --- THE LOCKOUT ENGINE (Resistance Physics) --- */
+        #resistance-layer {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            z-index: 1000; background: var(--bg-base);
+            transition: opacity 0.5s ease;
         }
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-        
-        section { position: relative; }
+        /* 
+           These texts are massive and oppose each other. 
+           We will use JS to pull them apart based on scroll wheel DELTA.
+        */
+        .heavy-text {
+            font-size: 25vw; color: transparent; -webkit-text-stroke: 2px #333;
+            letter-spacing: -5px; transition: transform 0.05s linear;
+        }
 
-        /* Nav */
+        #text-top { transform: translateY(10vh); }
+        #text-bot { transform: translateY(-10vh); }
+
+        .instruction-box {
+            position: absolute; bottom: 5rem;
+            text-align: center; font-family: var(--font-display); font-size: 2rem;
+            color: #555; pointer-events: none;
+        }
+
+        .meter-container { width: 300px; height: 4px; background: #222; margin-top: 1rem; }
+        #meter-fill { width: 0%; height: 100%; background: var(--kinetic); transition: width 0.1s linear, box-shadow 0.1s; }
+
+        /* The Flash Bang (when resistance breaks) */
+        #flash {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: var(--kinetic); z-index: 9999; opacity: 0; pointer-events: none;
+        }
+
+        /* --- POST-BREAKTHROUGH FLOW STATE (The actual site) --- */
+        .flow-state {
+            opacity: 0; /* invisible until break */
+            position: relative; z-index: 10;
+        }
+
         nav {
-            position: absolute;
-            top: 0; width: 100%;
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
+            padding: 3rem 5%; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid #222;
         }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            color: var(--white);
-            text-decoration: none;
-        }
-
+        .logo { font-family: var(--font-display); font-size: 3rem; color: #FFF; text-decoration: none; }
         .logo span { color: var(--kinetic); }
 
-        .btn-kinetic {
-            background: var(--kinetic);
-            color: var(--void);
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            padding: 0.5rem 2rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            transform: skewX(-10deg);
+        .btn-strike {
+            background: var(--text-base); color: var(--bg-base); border: none;
+            padding: 1rem 3rem; font-family: var(--font-display); font-size: 2rem;
+            text-transform: uppercase; transform: skewX(-15deg); cursor: pointer;
+            transition: all 0.2s; text-decoration: none; display: inline-block;
         }
+        .btn-strike span { transform: skewX(15deg); display: block; }
+        .btn-strike:hover { background: var(--kinetic); box-shadow: 0 0 40px var(--kinetic-glare); transform: skewX(-15deg) scale(1.05); }
 
-        .btn-kinetic span { transform: skewX(10deg); } /* un-skew text */
+        .hero { padding: 10vh 5%; display: flex; align-items: center; height: 85vh; border-bottom: 2px solid #222; }
 
-        .btn-kinetic:hover {
-            background: var(--white);
-            box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
-        }
-
-        /* Hero */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Diagonal background slash */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 50%; height: 100%;
-            background: var(--iron);
-            transform-origin: bottom left;
-            transform: skewX(-15deg);
-            z-index: -1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: clamp(6rem, 15vw, 12rem);
-            color: transparent;
-            -webkit-text-stroke: 2px var(--white);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero h1::after {
-            content: 'NO EXCUSES';
-            position: absolute;
-            left: 5px; top: 5px;
-            color: var(--kinetic);
-            -webkit-text-stroke: 0px;
-            z-index: -1;
-        }
-
-        .hero h1.filled {
-            color: var(--white);
-            -webkit-text-stroke: 0px;
-        }
+        .hero h1 { font-size: clamp(6rem, 15vw, 15rem); margin-bottom: 2rem; position: relative; }
         
-        .hero h1.filled::after { display: none; }
-
-        .hero p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            max-width: 500px;
-            color: var(--text-dim);
-            line-height: 1.6;
-            margin-bottom: 3rem;
-            border-left: 3px solid var(--kinetic);
-            padding-left: 1.5rem;
+        .hero h1 span { 
+            display: block; color: transparent; -webkit-text-stroke: 2px #FFF; 
+            margin-left: 20vw; text-shadow: -10px 10px 0px var(--kinetic);
         }
 
-        /* Massive Kinetic Text (Unforgettable Element) */
-        .kinetic-scroll-zone {
-            height: 200vh; /* gives us room to scroll */
-            position: relative;
-            background: var(--void);
-        }
+        .cta-big { padding: 20rem 5%; text-align: center; }
+        .cta-big h2 { font-size: clamp(4rem, 10vw, 8rem); margin-bottom: 4rem; }
 
-        .sticky-container {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        #scale-text {
-            font-family: var(--font-display);
-            font-size: 10vw;
-            color: var(--kinetic);
-            white-space: nowrap;
-            text-align: center;
-            line-height: 0.8;
-            will-change: transform;
-        }
-
-        /* Marquee */
-        .marquee {
-            background: var(--white);
-            padding: 1rem 0;
-            overflow: hidden;
-            display: flex;
-            white-space: nowrap;
-            transform: rotate(-2deg) scale(1.05); /* aggressive slant */
-            margin: 5rem 0;
-        }
-
-        .marquee-content {
-            display: inline-flex;
-            animation: scroll-left 15s linear infinite;
-        }
-
-        .marquee-content span {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            color: var(--void);
-            padding: 0 2rem;
-        }
-
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Grid */
-        .combat-grid {
-            padding: 10rem 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
-        }
-
-        .glitch-card {
-            background: var(--iron);
-            padding: 4rem;
-            position: relative;
-            border: 1px solid var(--iron-light);
-            transition: all 0.3s ease;
-        }
-
-        .glitch-card:hover { border-color: var(--kinetic); }
-
-        .glitch-card h3 {
-            font-size: 4rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .glitch-card p {
-            font-size: 1.1rem;
-            color: var(--text-dim);
-            line-height: 1.8;
-        }
-
-        .glitch-card-num {
-            position: absolute;
-            top: 1rem; right: 1rem;
-            font-family: var(--font-display);
-            font-size: 8rem;
-            color: var(--void);
-            -webkit-text-stroke: 1px var(--iron-light);
-            line-height: 0.8;
-            pointer-events: none;
-        }
-
-        /* Quote */
-        .strike-quote {
-            padding: 10rem 5%;
-            text-align: center;
-            background: var(--iron);
-        }
-
-        .strike-quote p {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 6vw, 5rem);
-            color: var(--white);
-            max-width: 1000px;
-            margin: 0 auto 2rem;
-            line-height: 1;
-        }
-
-        .strike-quote .author {
-            color: var(--kinetic);
-            font-size: 1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.2rem;
-        }
-
-        /* CTA Bottom */
-        .cta-bottom {
-            padding: 15rem 0;
-            text-align: center;
-        }
-
-        .cta-bottom h2 {
-            font-size: clamp(5rem, 10vw, 8rem);
-            margin-bottom: 3rem;
-        }
+        .grid-blocks { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 2px solid #222;}
+        .block { padding: 10rem 5%; border-right: 2px solid #222; }
+        .block h3 { font-size: 5rem; margin-bottom: 2rem; color: var(--kinetic); }
+        .block p { font-size: 1.5rem; line-height: 1.5; color: #888; }
 
         @media (max-width: 768px) {
-            .combat-grid { grid-template-columns: 1fr; }
-            .hero::before { width: 100%; transform: skewX(0); top: 50%; }
+            .grid-blocks { grid-template-columns: 1fr; }
+            .block { border-right: none; border-bottom: 2px solid #222; }
+            .heavy-text { font-size: 30vw; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="/" class="logo">NASLOGIC<span>.</span></a>
-        <a href="#build" class="btn-kinetic"><span>DEPLOY FUNNEL</span></a>
-    </nav>
+    <!-- THE FLASH -->
+    <div id="flash"></div>
 
-    <header class="hero">
-        <div class="container hero-content">
-            <h1>NO EXCUSES</h1>
-            <h1 class="filled">ONLY RESULTS</h1>
-            <p>Your performance lab produces elite athletes, but your landing page looks like a $10/month commercial gym. We engineer high-BPM, conversion-aggressive funnels for premium fitness facilities.</p>
-            <a href="#build" class="btn-kinetic" style="padding: 1rem 3rem;"><span>ENTER THE LAB</span></a>
-        </div>
-    </header>
-
-    <div class="marquee">
-        <div class="marquee-content" id="mq">
-            <span>DROP THE DEAD WEIGHT</span><span>///</span>
-            <span>OPTIMIZE CONVERSION</span><span>///</span>
-            <span>ELIMINATE FRICTION</span><span>///</span>
-            <span>SCALE YOUR ROSTER</span><span>///</span>
+    <!-- THE RESISTANCE ENGINE -->
+    <div id="resistance-layer">
+        <h1 class="heavy-text" id="text-top">RESISTANCE</h1>
+        <h1 class="heavy-text" id="text-bot">IS HEAVY.</h1>
+        <div class="instruction-box">
+            FORCE THE SCROLL
+            <div class="meter-container"><div id="meter-fill"></div></div>
         </div>
     </div>
 
-    <!-- Massive Scaling Text Interaction -->
-    <section class="kinetic-scroll-zone">
-        <div class="sticky-container">
-            <div id="scale-text">WEAK DESIGN<br>KILLS LEADS.</div>
-        </div>
-    </section>
+    <!-- THE FLOW STATE (Actual Content) -->
+    <div class="flow-state" id="flow-state">
+        <nav>
+            <a href="/" class="logo">NASLOGIC<span>.</span></a>
+            <a href="mailto:hello@naslogic.com" class="btn-strike"><span>INITIATE</span></a>
+        </nav>
 
-    <section class="container">
-        <div class="combat-grid">
-            <div class="glitch-card">
-                <div class="glitch-card-num">01</div>
-                <h3>THE BRO-GYM ERA IS DEAD</h3>
-                <p>High-ticket personal training and elite performance facilities cannot survive on generalized messaging. If your copy sounds like a supplement ad from 2010, affluent clients seeking specialized coaching will immediately bounce.</p>
+        <section class="hero">
+            <div>
+                <h1>FLOW <span>STATE.</span></h1>
             </div>
-            <div class="glitch-card">
-                <div class="glitch-card-num">02</div>
-                <h3>AGGRESSIVE RESTRAINT</h3>
-                <p>We deploy 'Kinetic Velocity'—a design system relying on stark black voids, blinding neon accents, and brutal, legible typography. It filters out the tire-kickers and demands respect from the moment the page loads.</p>
+            <div style="max-width: 400px; margin-left: 5rem;">
+                <p style="font-size: 1.3rem; line-height: 1.6; color: #888;">If your facility charges $3,000 for elite coaching, your website cannot have "friction." We remove all standard templates, building vicious, frictionless conversion engines that filter out the weak and capture high-intent athletes instantly.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="strike-quote">
-        <p>"Our ROAS doubled in absolutely no time. The new landing page weeds out people looking for a treadmill, and only brings in people ready to train like professionals."</p>
-        <span class="author">Mike T. — Head Coach, Iron Apex Performance</span>
-    </section>
+        <section class="grid-blocks">
+            <div class="block">
+                <h3>THE HOOK</h3>
+                <p>We deploy kinetic physics. A site that physically feels heavy, then extremely fluid, instantly separating your brand conceptually from every generic gym in the city.</p>
+            </div>
+            <div class="block">
+                <h3>THE CLOSE</h3>
+                <p>No generic forms. High-contrast, brutalist intake UI that forces commitment and routes directly into your dispatch. Immediate transmission. Zero latency.</p>
+            </div>
+        </section>
 
-    <section class="cta-bottom" id="build">
-        <div class="container">
-            <h2>READY TO DOMINATE?</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-kinetic" style="font-size: 2rem; padding: 1rem 4rem;"><span>START THE OVERHAUL</span></a>
-        </div>
-    </section>
+        <section class="cta-big">
+            <h2>DOMINATE YOUR MARKET.</h2>
+            <a href="mailto:hello@naslogic.com" class="btn-strike" style="font-size: 3rem; padding: 2rem 6rem;"><span>COMMISSION SITE</span></a>
+        </section>
+    </div>
 
     <script>
-        // Duplicate marquee
-        const mq = document.getElementById('mq');
-        mq.innerHTML += mq.innerHTML + mq.innerHTML;
+        // The Friction Resistance Logic
+        const textTop = document.getElementById('text-top');
+        const textBot = document.getElementById('text-bot');
+        const meterFill = document.getElementById('meter-fill');
+        const flash = document.getElementById('flash');
+        const resistanceLayer = document.getElementById('resistance-layer');
+        const flowState = document.getElementById('flow-state');
 
-        // Scaling text scroll physics
-        const scaleText = document.getElementById('scale-text');
-        const scrollZone = document.querySelector('.kinetic-scroll-zone');
+        let effort = 0; // Starts at 0, must reach 100
+        const effortThreshold = 100;
+        let isBroken = false;
 
-        window.addEventListener('scroll', () => {
-            const rect = scrollZone.getBoundingClientRect();
-            const viewportH = window.innerHeight;
+        // Force wheel capture
+        window.addEventListener('wheel', (e) => {
+            if(isBroken) return; // if broken, native scroll is active
+
+            // Prevent default scroll behavior while fighting
+            e.preventDefault(); 
             
-            // Check if scrollZone is in view
-            if (rect.top <= viewportH && rect.bottom >= 0) {
-                // Calculate how far we've scrolled into the zone
-                // 0 = just entered, 1 = leaving entirely
-                let progress = -rect.top / (rect.height - viewportH);
-                progress = Math.max(0, Math.min(1, progress));
+            const force = Math.abs(e.deltaY); // get wheel force
+            // Extremely heavy friction formula. Takes immense scrolling to push up
+            effort += force * 0.05; 
 
-                // Scale from 1 to 5, fading to white
-                const scale = 1 + (progress * 5);
-                // Transition color: kinetic (#CCFF00) to white (#FFFFFF)
-                // Roughly: CC->FF, FF->FF, 00->FF
-                const r = Math.floor(204 + (progress * 51));
-                const b = Math.floor(progress * 255);
+            // Text moves apart slowly based on effort
+            // Top text moves UP (negative Y), Bottom text moves DOWN (positive Y)
+            const gap = effort * 1.5; // multiplier
+            textTop.style.transform = `translateY(${10 - gap}vh)`;
+            textBot.style.transform = `translateY(${-10 + gap}vh)`;
+
+            // Color gets more intense as effort builds
+            const intensity = effort / effortThreshold;
+            const r = Math.floor(51 + (204 - 51) * intensity);
+            const g = Math.floor(51 + (255 - 51) * intensity);
+            const b = Math.floor(51 + (0 - 51) * intensity);
+
+            // update meter
+            meterFill.style.width = `${Math.min(100, intensity * 100)}%`;
+            meterFill.style.boxShadow = `0 0 ${intensity * 30}px var(--kinetic)`;
+            
+            textTop.style.webkitTextStrokeColor = `rgba(${r},${g},${b}, 0.8)`;
+            textBot.style.webkitTextStrokeColor = `rgba(${r},${g},${b}, 0.8)`;
+
+            if(effort >= effortThreshold) {
+                triggerBreakthrough();
+            }
+        }, { passive: false }); // passive false is required to preventDefault on wheel
+
+        // Also add touch/swipe support for mobile
+        let touchStartY = 0;
+        window.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, {passive: false});
+        window.addEventListener('touchmove', e => {
+            if(isBroken) return;
+            e.preventDefault();
+            const touchCurrentY = e.touches[0].clientY;
+            const force = Math.abs(touchStartY - touchCurrentY);
+            effort += force * 0.1;
+            touchStartY = touchCurrentY; // reset to measure next delta
+
+            // duplicate logic
+            const gap = effort * 1.5; 
+            textTop.style.transform = `translateY(${10 - gap}vh)`;
+            textBot.style.transform = `translateY(${-10 + gap}vh)`;
+            const intensity = effort / effortThreshold;
+            meterFill.style.width = `${Math.min(100, intensity * 100)}%`;
+            if(effort >= effortThreshold) triggerBreakthrough();
+        }, {passive: false});
+
+
+        // The Breakdown decay. If they stop scrolling, gravity pulls it back to 0!
+        // This is what makes it physically punishing.
+        setInterval(() => {
+            if(isBroken) return;
+            if(effort > 0) {
+                effort -= 1; // slow drain
+                effort = Math.max(0, effort);
+                const gap = effort * 1.5; 
+                textTop.style.transform = `translateY(${10 - gap}vh)`;
+                textBot.style.transform = `translateY(${-10 + gap}vh)`;
+                meterFill.style.width = `${Math.min(100, (effort/effortThreshold) * 100)}%`;
+            }
+        }, 50);
+
+        function triggerBreakthrough() {
+            isBroken = true;
+            
+            // 1. The pure neon flash bang
+            flash.style.opacity = '1';
+
+            setTimeout(() => {
+                // 2. Hide the resistance layer completely
+                resistanceLayer.style.display = 'none';
+
+                // 3. Reveal the Flow State UX
+                flowState.style.opacity = '1';
+                document.body.style.overflow = 'auto'; // UNLOCK NATIVE SCROLL
                 
-                scaleText.style.transform = `scale(${scale})`;
-                scaleText.style.color = `rgb(${r}, 255, ${b})`;
-                
-                // If it scales too much, fade it out
-                if (progress > 0.8) {
-                    scaleText.style.opacity = 1 - ((progress - 0.8) * 5);
-                } else {
-                    scaleText.style.opacity = 1;
-                }
+                // 4. Fade flash out
+                flash.style.transition = 'opacity 1.5s ease-out';
+                flash.style.opacity = '0';
+
+                // 5. Scroll slightly to imply frictionless movement
+                window.scrollTo({ top: 50, behavior: 'smooth' });
+
+            }, 200); // quick flash bang duration
+        }
+
+    </script>
+
+<!-- NASLOGIC UNIVERSAL INTAKE MODAL -->
+<style>
+#nas-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+    z-index: 999999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    font-family: inherit;
+}
+#nas-modal-overlay.active { opacity: 1; pointer-events: auto; }
+#nas-modal-content {
+    background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1);
+    width: 90%; max-width: 500px; padding: 3rem; color: #FFF;
+    position: relative; transform: translateY(20px); transition: transform 0.4s ease;
+}
+#nas-modal-overlay.active #nas-modal-content { transform: translateY(0); }
+.nas-close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem; color: #888;
+    background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
+}
+.nas-close-btn:hover { color: #FFF; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
+.nas-form-group { margin-bottom: 1.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+}
+.nas-input:focus { border-color: #FFF; }
+.nas-submit-btn {
+    width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: background 0.3s, color 0.3s;
+}
+.nas-submit-btn:hover { background: #CCC; }
+.nas-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#nas-form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; display: none; }
+.nas-success { color: #10B981; }
+.nas-error { color: #EF4444; }
+</style>
+
+<div id="nas-modal-overlay">
+    <div id="nas-modal-content">
+        <button class="nas-close-btn" id="nas-close-modal">&times;</button>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        
+        <form id="nas-lead-form">
+            <input type="hidden" name="formType" value="quote">
+            <div class="nas-form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Project Details</label>
+                <input type="text" name="details" class="nas-input" required>
+            </div>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <div id="nas-form-status"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('nas-modal-overlay');
+    const closeBtn = document.getElementById('nas-close-modal');
+    const form = document.getElementById('nas-lead-form');
+    const statusDiv = document.getElementById('nas-form-status');
+    const submitBtn = document.getElementById('nas-submit-btn');
+
+    // Intercept mailto links
+    document.querySelectorAll('a[href^="mailto:hello@naslogic.com"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.add('active');
+        });
+    });
+
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            statusDiv.style.display = 'none';
+        });
+    }
+
+    if(overlay) {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.remove('active');
+                statusDiv.style.display = 'none';
             }
         });
-    </script>
+    }
+
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI updates
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting...';
+            statusDiv.style.display = 'none';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch('/api/lead-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await res.json();
+                
+                statusDiv.style.display = 'block';
+                if(res.ok) {
+                    statusDiv.className = 'nas-success';
+                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    form.reset();
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (err) {
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'nas-error';
+                statusDiv.innerText = err.message || 'An error occurred during transmission.';
+                submitBtn.innerText = 'Commission Build';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+<!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
+
 </body>
 </html>

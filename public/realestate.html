@@ -3,434 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naslogic | Ultra-Luxury Real Estate Landing Pages</title>
+    <title>Naslogic | Elite Real Estate Landing Pages</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --vantablack: #030303;
             --onyx: #0A0A0A;
-            --champagne: #E6DFCD;
-            --champagne-dim: #A8A190;
-            --gold: #C09B5A;
+            --marble: #E8E8E8;
+            --gold: #C5A059;
             
             --font-display: 'Italiana', serif;
-            --font-body: 'Jost', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; } /* Custom cursor everywhere */
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
         
-        html { scroll-behavior: smooth; background: var(--vantablack); }
-
         body {
-            background-color: var(--vantablack);
-            color: var(--champagne);
+            background-color: var(--onyx);
+            color: var(--marble);
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            font-weight: 300;
+            overflow: hidden; /* No scroll, entirely cinematic */
+            width: 100vw; height: 100vh;
         }
 
-        ::selection { background: var(--gold); color: var(--vantablack); }
+        ::selection { background: var(--gold); color: var(--onyx); }
 
-        /* Custom Cursor */
-        .cursor-dot {
-            width: 8px; height: 8px;
-            background: var(--champagne);
-            border-radius: 50%;
-            position: fixed;
-            top: 0; left: 0;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-        }
+        h1, h2, h3 { font-family: var(--font-display); font-weight: normal; }
 
-        .cursor-ring {
-            width: 40px; height: 40px;
-            border: 1px solid rgba(230, 223, 205, 0.4);
-            border-radius: 50%;
-            position: fixed;
-            top: 0; left: 0;
-            pointer-events: none;
-            z-index: 9998;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s, border-color 0.3s;
-        }
-
-        /* Hover states for cursor */
-        .hovering .cursor-ring {
-            width: 80px; height: 80px;
-            border-color: var(--gold);
-            background: rgba(192, 155, 90, 0.05);
-            backdrop-filter: blur(2px);
-        }
-
-        h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1; }
-
-        .container { max-width: 1600px; margin: 0 auto; padding: 0 4rem; }
-
-        /* Nav */
-        nav {
-            position: fixed; top: 0; width: 100%;
-            padding: 2.5rem 4rem;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 100; mix-blend-mode: difference;
-        }
-
-        .logo {
-            font-family: var(--font-display); font-size: 2rem;
-            text-decoration: none; color: var(--champagne);
-            letter-spacing: 0.1em;
-        }
-
-        .nav-book {
-            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2rem;
-            text-decoration: none; color: var(--champagne);
-            position: relative; display: inline-block; padding-bottom: 5px;
-        }
-
-        .nav-book::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 100%; height: 1px; background: var(--champagne);
-            transform: scaleX(0); transform-origin: right; transition: transform 0.4s ease;
-        }
-        .nav-book:hover::after { transform: scaleX(1); transform-origin: left; }
-
-        /* Hero */
-        .hero {
-            height: 100vh; position: relative;
-            display: flex; align-items: flex-end; padding-bottom: 8vh;
+        /* The Custom Fake Cursor Ring */
+        #cursor-ring {
+            position: fixed; width: 60px; height: 60px;
+            border: 1px solid rgba(197, 160, 89, 0.5); border-radius: 50%;
+            pointer-events: none; z-index: 10000;
+            transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s;
         }
         
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            opacity: 0.4; filter: contrast(1.2) brightness(0.7);
-            z-index: -1; animation: subtlePan 30s linear infinite alternate;
+        #cursor-dot {
+            position: fixed; width: 6px; height: 6px;
+            background: var(--gold); border-radius: 50%;
+            pointer-events: none; z-index: 10001;
+            transform: translate(-50%, -50%);
         }
 
-        @keyframes subtlePan { 0% { transform: scale(1.05) translate(0, 0); } 100% { transform: scale(1.1) translate(-2%, 2%); } }
-
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, var(--vantablack) 0%, transparent 60%); z-index: -1;
+        /* The Base Layer - Absolute Luxury Cinematic Video / Image */
+        .layer-cinematic {
+            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 1; overflow: hidden;
         }
+        
+        .layer-cinematic img {
+            width: 100%; height: 100%; object-fit: cover; filter: brightness(1.1) contrast(1.1);
+        }
+
+        .cinematic-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3); z-index: 2;
+        }
+
+        /* The Top Onyx Layer */
+        .layer-onyx {
+            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: var(--onyx); z-index: 10;
+            /* We clip a circle out of this layer using JS */
+            clip-path: circle(0px at 50% 50%);
+            transition: clip-path 0.1s;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+
+        nav {
+            position: absolute; top: 0; left: 0; width: 100%; padding: 3rem 5%;
+            display: flex; justify-content: space-between; align-items: center; z-index: 100;
+        }
+
+        .logo { font-family: var(--font-display); font-size: 2.5rem; color: var(--marble); text-decoration: none; text-transform: uppercase; letter-spacing: 5px; }
+        
+        .btn-onyx {
+            border: 1px solid var(--marble); color: var(--marble); background: transparent;
+            padding: 1rem 3rem; font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 3px;
+            text-transform: uppercase; text-decoration: none; transition: border-color 0.4s;
+        }
+        .btn-onyx:hover { border-color: var(--gold); }
 
         .hero h1 {
-            font-size: clamp(5rem, 12vw, 11rem);
-            color: var(--champagne);
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            position: relative;
+            font-size: clamp(4rem, 10vw, 10rem); line-height: 1; letter-spacing: -2px; margin-bottom: 2rem;
+            background: -webkit-linear-gradient(90deg, #FFF, #555); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #888;
+            font-weight: 300; line-height: 2; letter-spacing: 1px;
         }
 
-        .hero h1 span {
-            display: block; color: var(--gold);
-            font-style: italic; margin-left: 15%;
+        .instruction {
+            position: absolute; bottom: 5rem; left: 50%; transform: translateX(-50%);
+            font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--gold);
+            animation: pulse 2s infinite; pointer-events: none;
         }
 
-        /* The Reveal Section - Horizontal Scroll driven by Vertical Scroll */
-        .gallery-wrapper {
-            height: 400vh; /* creates scroll room */
-            position: relative;
+        @keyframes pulse { 0% {opacity:0.3} 50% {opacity:1} 100% {opacity:0.3} }
+
+        /* The trick: We invert the logic. The ONYX is the top layer, but it has a hole in it! 
+           Wait, clip-path circle keeps the INSIDE of the circle. We want to cut a HOLE in the Onyx.
+           To do that cross-browser perfectly, we actually make the CINEMATIC the top layer, 
+           and we use clip-path to ONLY show the cinematic inside the circle cursor! 
+        */
+        
+        /* Re-engineering layers for the hole punch effect */
+        .layer-onyx {
+            z-index: 1;
+            clip-path: none; /* remove previous clip */
         }
-
-        .gallery-sticky {
-            position: sticky; top: 0; height: 100vh;
-            overflow: hidden; background: var(--onyx);
-            display: flex; align-items: center;
-        }
-
-        .gallery-track {
-            display: flex; gap: 10vw; padding: 0 20vw;
-            will-change: transform;
-        }
-
-        .gallery-item {
-            width: 60vw; height: 75vh;
-            flex-shrink: 0; position: relative;
-            overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        .gallery-item img {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover; filter: grayscale(100%);
-            transition: filter 0.8s ease, transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .gallery-item:hover img {
-            filter: grayscale(0%);
-            transform: scale(1.05);
-        }
-
-        .gallery-item h2 {
-            position: relative; z-index: 2;
-            font-size: clamp(4rem, 8vw, 7rem);
-            color: var(--champagne);
-            mix-blend-mode: exclusion;
-            pointer-events: none; text-align: center;
-            opacity: 0; transform: translateY(40px);
-            transition: all 0.8s ease;
-        }
-
-        .gallery-item:hover h2 {
-            opacity: 1; transform: translateY(0);
-        }
-
-        /* Manifesto */
-        .manifesto {
-            padding: 15rem 0;
-            background: var(--vantablack);
-            text-align: center;
-            position: relative;
-        }
-
-        .manifesto p {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 6vw, 5rem);
-            max-width: 1200px; margin: 0 auto;
-            line-height: 1.1; color: var(--champagne-dim);
-            transition: color 0.5s;
-        }
-
-        .manifesto p span { color: var(--champagne); }
-
-        .manifesto-tag {
-            font-size: 0.8rem; text-transform: uppercase;
-            letter-spacing: 0.4em; color: var(--gold);
-            margin-bottom: 4rem; display: block;
-        }
-
-        /* Hover List - Unforgettable Interactive Element */
-        .portfolio-list {
-            padding: 10rem 0;
-            border-top: 1px solid rgba(230, 223, 205, 0.1);
-            position: relative;
-        }
-
-        .pl-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 4rem 0; border-bottom: 1px solid rgba(230, 223, 205, 0.1);
-            position: relative; z-index: 2;
-            transition: padding 0.5s ease;
-        }
-
-        .pl-item:hover { padding: 4rem 2rem; }
-
-        .pl-title { font-family: var(--font-display); font-size: 4rem; pointer-events: none; }
-        .pl-price { font-size: 1rem; letter-spacing: 0.2rem; color: var(--gold); pointer-events: none; }
-
-        .pl-bg {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            object-fit: cover; z-index: 0; opacity: 0; pointer-events: none;
-            transition: opacity 0.6s ease; filter: brightness(0.3);
-        }
-
-        .pl-item:hover ~ .pl-bg { opacity: 0; } /* Hide all by default when one is hovered... handled in JS for specificity */
-
-        /* Social Proof / The Closing */
-        .closing {
-            padding: 15rem 0 10rem;
-            text-align: center;
-            background: var(--onyx);
-        }
-
-        .closing blockquote {
-            font-family: var(--font-display);
-            font-size: 3.5rem; max-width: 1000px;
-            margin: 0 auto 3rem; font-style: italic; line-height: 1.2;
-        }
-
-        .btn-gold {
-            display: inline-block;
-            margin-top: 5rem;
-            padding: 1.5rem 4rem;
-            border: 1px solid var(--gold);
-            color: var(--gold); text-decoration: none;
-            text-transform: uppercase; letter-spacing: 0.3em;
-            font-size: 0.8rem;
-            position: relative; overflow: hidden;
-        }
-
-        .btn-gold::before {
-            content: ''; position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--gold);
-            transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-            z-index: -1;
-        }
-
-        .btn-gold:hover { color: var(--vantablack); }
-        .btn-gold:hover::before { transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .hero h1 span { margin-left: 0; }
-            .gallery-item { width: 85vw; }
-            .pl-title { font-size: 2.5rem; }
+        
+        .layer-cinematic {
+            z-index: 5;
+            /* This makes only the circle visible, everything outside the circle is transparent, revealing the Onyx below! */
+            clip-path: circle(250px at 50% 50%);
+            pointer-events: none; /* Let clicks pass through to Onyx layer CTA */
         }
     </style>
 </head>
 <body>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-ring" id="cursor-ring"></div>
+    <div id="cursor-ring"></div>
+    <div id="cursor-dot"></div>
 
-    <!-- Hidden background images for portfolio hover effect -->
-    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000&auto=format&fit=crop" class="pl-bg" id="bg-1">
-    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop" class="pl-bg" id="bg-2">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" class="pl-bg" id="bg-3">
+    <!-- The Base Layer (Onyx UI) -->
+    <div class="layer-onyx">
+        <nav>
+            <a href="/" class="logo">Naslogic</a>
+            <a href="mailto:hello@naslogic.com" class="btn-onyx hover-target">Commission Us</a>
+        </nav>
 
-    <nav>
-        <a href="/" class="logo interactive">NASLOGIC</a>
-        <a href="#inquire" class="nav-book interactive">COMMISSION A BUILD</a>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="container" style="width: 100%;">
-            <h1>Curate <span>Legacies.</span></h1>
+        <div class="hero">
+            <h1>Architecture<br>Requires Depth.</h1>
+            <p>You sell $20M estates, but your website looks like a Zillow clone. Top-tier luxury real estate requires an 'Onyx' digital presence—dark, cinematic, secretive, and flawlessly smooth.</p>
         </div>
-    </header>
 
-    <!-- Horizontal scroll gallery driven by vertical scroll -->
-    <div class="gallery-wrapper" id="gallery-wrapper">
-        <div class="gallery-sticky">
-            <div class="gallery-track" id="gallery-track">
-                <div class="gallery-item interactive">
-                    <img src="https://images.unsplash.com/photo-1613490908682-1ddab29124eb?q=80&w=1500&auto=format&fit=crop" alt="Estate 1">
-                    <h2>THE PROBLEM</h2>
-                </div>
-                <div class="gallery-item interactive">
-                    <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?q=80&w=1500&auto=format&fit=crop" alt="Estate 2">
-                    <h2>THE ZILLOW EFFECT</h2>
-                </div>
-                <div class="gallery-item interactive" style="background: var(--vantablack);">
-                    <img style="opacity:0;" src=""> <!-- Blank for text -->
-                    <p style="font-family: var(--font-body); font-size: 1.5rem; color: var(--champagne-dim); max-width: 600px; line-height: 1.8; padding: 4rem;">
-                        You sell $10M+ estates. Yet your landing page looks like a cluttered MLS database. <br><br>
-                        Ultra-high-net-worth buyers do not filter by "beds and baths". They buy art. We build digital spaces that treat your listings exactly like what they are: priceless masterpieces.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <div class="instruction">Move cursor to reveal the estate.</div>
     </div>
 
-    <section class="manifesto">
-        <div class="container">
-            <span class="manifesto-tag interactive">The Architecture of Conversion</span>
-            <p>We eliminate grid layouts. <span>We eliminate noisy forms.</span> We engineer cinematic pacing that forces the affluent buyer to <span>slow down and admire.</span></p>
-        </div>
-    </section>
-
-    <!-- High-end hover reveal list -->
-    <section class="portfolio-list container">
-        <span class="manifesto-tag">Visual Proof</span>
-        <div class="pl-item interactive hover-trigger" data-bg="bg-1">
-            <div class="pl-title">Oakhaven Manor</div>
-            <div class="pl-price">$12,500,000</div>
-        </div>
-        <div class="pl-item interactive hover-trigger" data-bg="bg-2">
-            <div class="pl-title">The Glass Pavilion</div>
-            <div class="pl-price">$8,200,000</div>
-        </div>
-        <div class="pl-item interactive hover-trigger" data-bg="bg-3">
-            <div class="pl-title">Aerie Penthouse</div>
-            <div class="pl-price">$24,000,000</div>
-        </div>
-    </section>
-
-    <section class="closing" id="inquire">
-        <div class="container">
-            <blockquote class="interactive">"Naslogic removed the bargain hunters entirely. By making our digital presence impossibly elegant, our average listing price acquired jumped by 300%. The site intimidates the unqualified."</blockquote>
-            <span class="manifesto-tag" style="margin-bottom: 0;">Sarah J. — Managing Partner, Sovereign Estates</span>
-            
-            <a href="mailto:hello@naslogic.com" class="btn-gold interactive">Engage Our Firm</a>
-        </div>
-    </section>
+    <!-- The Top Layer (Cinematic Reveal mapped to cursor) -->
+    <div class="layer-cinematic" id="lens">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop" alt="Mansion">
+        <div class="cinematic-overlay"></div>
+    </div>
 
     <script>
-        // Custom Cursor Logic
-        const dot = document.getElementById('cursor-dot');
+        const lens = document.getElementById('lens');
         const ring = document.getElementById('cursor-ring');
+        const dot = document.getElementById('cursor-dot');
+        const hoverTargets = document.querySelectorAll('.hover-target, a');
+
         let mouseX = window.innerWidth / 2;
         let mouseY = window.innerHeight / 2;
-        let ringX = mouseX;
-        let ringY = mouseY;
 
-        window.addEventListener('mousemove', (e) => {
+        let dotX = mouseX; let dotY = mouseY;
+        let ringX = mouseX; let ringY = mouseY;
+        let lensRadius = 0; // Starts at 0 to "grow" in
+        let targetRadius = 250;
+
+        document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            dot.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
         });
 
-        // Smooth follow for the ring
-        function animateCursor() {
+        // Hover expansions
+        hoverTargets.forEach(t => {
+            t.addEventListener('mouseenter', () => { targetRadius = 600; ring.style.width = '120px'; ring.style.height = '120px'; });
+            t.addEventListener('mouseleave', () => { targetRadius = 250; ring.style.width = '60px'; ring.style.height = '60px'; });
+        });
+
+        function animate() {
+            // physics lerping
+            dotX += (mouseX - dotX) * 0.5;
+            dotY += (mouseY - dotY) * 0.5;
+            
             ringX += (mouseX - ringX) * 0.15;
             ringY += (mouseY - ringY) * 0.15;
-            ring.style.transform = `translate(calc(${ringX}px - 50%), calc(${ringY}px - 50%))`;
-            requestAnimationFrame(animateCursor);
+
+            lensRadius += (targetRadius - lensRadius) * 0.1;
+
+            dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+            ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+            
+            // Apply clip-path to cinematic layer
+            lens.style.clipPath = `circle(${lensRadius}px at ${ringX}px ${ringY}px)`;
+
+            requestAnimationFrame(animate);
         }
-        animateCursor();
+        
+        requestAnimationFrame(animate);
 
-        // Hover states for interactive elements
-        const interactives = document.querySelectorAll('.interactive, a, button');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+    </script>
+
+<!-- NASLOGIC UNIVERSAL INTAKE MODAL -->
+<style>
+#nas-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+    z-index: 999999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    font-family: inherit;
+}
+#nas-modal-overlay.active { opacity: 1; pointer-events: auto; }
+#nas-modal-content {
+    background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1);
+    width: 90%; max-width: 500px; padding: 3rem; color: #FFF;
+    position: relative; transform: translateY(20px); transition: transform 0.4s ease;
+}
+#nas-modal-overlay.active #nas-modal-content { transform: translateY(0); }
+.nas-close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem; color: #888;
+    background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
+}
+.nas-close-btn:hover { color: #FFF; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
+.nas-form-group { margin-bottom: 1.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+}
+.nas-input:focus { border-color: #FFF; }
+.nas-submit-btn {
+    width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: background 0.3s, color 0.3s;
+}
+.nas-submit-btn:hover { background: #CCC; }
+.nas-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#nas-form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; display: none; }
+.nas-success { color: #10B981; }
+.nas-error { color: #EF4444; }
+</style>
+
+<div id="nas-modal-overlay">
+    <div id="nas-modal-content">
+        <button class="nas-close-btn" id="nas-close-modal">&times;</button>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        
+        <form id="nas-lead-form">
+            <input type="hidden" name="formType" value="quote">
+            <div class="nas-form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Project Details</label>
+                <input type="text" name="details" class="nas-input" required>
+            </div>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <div id="nas-form-status"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('nas-modal-overlay');
+    const closeBtn = document.getElementById('nas-close-modal');
+    const form = document.getElementById('nas-lead-form');
+    const statusDiv = document.getElementById('nas-form-status');
+    const submitBtn = document.getElementById('nas-submit-btn');
+
+    // Intercept mailto links
+    document.querySelectorAll('a[href^="mailto:hello@naslogic.com"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.add('active');
         });
+    });
 
-        // Horizontal Scroll Logic
-        const wrapper = document.getElementById('gallery-wrapper');
-        const track = document.getElementById('gallery-track');
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            statusDiv.style.display = 'none';
+        });
+    }
 
-        window.addEventListener('scroll', () => {
-            if(!wrapper) return;
-            const rect = wrapper.getBoundingClientRect();
-            // Start scrolling when top hits 0
-            if(rect.top <= 0 && rect.bottom >= window.innerHeight) {
-                // Calculate progress
-                const scrolled = -rect.top;
-                const maxScroll = rect.height - window.innerHeight;
-                const progress = scrolled / maxScroll;
-                
-                // Max horizontal movement (width of track - width of viewport)
-                const maxMove = track.scrollWidth - window.innerWidth;
-                track.style.transform = `translateX(-${progress * maxMove}px)`;
-            } else if (rect.top > 0) {
-                track.style.transform = `translateX(0px)`;
-            } else if (rect.bottom < window.innerHeight) {
-                const maxMove = track.scrollWidth - window.innerWidth;
-                track.style.transform = `translateX(-${maxMove}px)`;
+    if(overlay) {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.remove('active');
+                statusDiv.style.display = 'none';
             }
         });
+    }
 
-        // Portfolio Hover Reveal
-        const triggers = document.querySelectorAll('.hover-trigger');
-        const bgs = document.querySelectorAll('.pl-bg');
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI updates
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting...';
+            statusDiv.style.display = 'none';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
 
-        triggers.forEach(trigger => {
-            trigger.addEventListener('mouseenter', () => {
-                const targetId = trigger.getAttribute('data-bg');
-                document.getElementById(targetId).style.opacity = '1';
-                // Dim the list slightly
-                trigger.parentElement.style.mixBlendMode = 'difference';
-                trigger.parentElement.style.color = 'white';
-            });
-            trigger.addEventListener('mouseleave', () => {
-                const targetId = trigger.getAttribute('data-bg');
-                document.getElementById(targetId).style.opacity = '0';
-                trigger.parentElement.style.mixBlendMode = 'normal';
-            });
+            try {
+                const res = await fetch('/api/lead-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await res.json();
+                
+                statusDiv.style.display = 'block';
+                if(res.ok) {
+                    statusDiv.className = 'nas-success';
+                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    form.reset();
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (err) {
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'nas-error';
+                statusDiv.innerText = err.message || 'An error occurred during transmission.';
+                submitBtn.innerText = 'Commission Build';
+                submitBtn.disabled = false;
+            }
         });
-    </script>
+    }
+});
+</script>
+<!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
+
 </body>
 </html>

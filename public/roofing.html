@@ -3,361 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naslogic | Architectural Roofing Landing Pages</title>
+    <title>Naslogic | Premium Roofing Landing Pages</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Karla:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --slate: #2E3338;
-            --slate-dark: #1A1D20;
+            --slate: #2B303A;
             --copper: #B87333;
-            --copper-dark: #8C5726;
-            --cloud: #F5F7FA;
+            --sunlight: #fdf5e6;
             
             --font-display: 'Cinzel', serif;
-            --font-body: 'Lato', sans-serif;
-            
-            --spacing-large: 10rem;
+            --font-body: 'Karla', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
+        
         body {
-            background-color: var(--cloud);
-            color: var(--slate);
+            /* The body background will transition from storm slate to bright sunlight via JS */
+            background-color: var(--slate);
+            color: #FFF;
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            min-height: 200vh;
         }
 
-        ::selection { background: var(--copper); color: var(--cloud); }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-display);
-            font-weight: 500;
-            line-height: 1.2;
+        /* --- STORM SYSTEM LAYER --- */
+        #storm-layer {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 10;
+        }
+        
+        .rain {
+            position: absolute; width: 1px; height: 100px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.4));
+            animation: fall linear infinite;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
+        @keyframes fall {
+            from { transform: translateY(-100px); }
+            to   { transform: translateY(100vh); }
         }
 
         /* Nav */
         nav {
-            position: absolute;
-            top: 0; width: 100%;
-            padding: 3rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
+            position: fixed; top: 0; width: 100%; padding: 2rem 5%;
+            display: flex; justify-content: space-between; align-items: center; z-index: 100;
         }
 
-        .logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--cloud);
-            text-decoration: none;
-            letter-spacing: 0.1em;
-        }
-
-        .nav-btn {
-            color: var(--cloud);
-            font-family: var(--font-body);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-decoration: none;
-            border-bottom: 1px solid var(--copper);
-            padding-bottom: 0.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-btn:hover { color: var(--copper); }
-
-        /* Hero */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background-color: var(--slate-dark);
-            color: var(--cloud);
-            overflow: hidden;
-        }
-
-        /* Weather Shift Element */
-        .weather-shield {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1605814421111-e40e691ecdfb?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            /* Filter transition handled by scroll JS */
-            filter: grayscale(80%) brightness(0.4) contrast(1.2);
-            transition: filter 0.1s ease;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            width: 100%;
-        }
-
-        .label {
-            display: block;
-            font-family: var(--font-body);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3em;
-            color: var(--copper);
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 6vw, 6rem);
-            margin-bottom: 2rem;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            color: rgba(245, 247, 250, 0.8);
-            line-height: 1.6;
-        }
-
+        .logo { font-family: var(--font-display); font-size: 2rem; color: currentColor; text-decoration: none; }
+        
         .btn-copper {
-            display: inline-block;
-            background: transparent;
-            color: var(--copper);
-            border: 1px solid var(--copper);
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            transition: all 0.4s ease;
+            background: transparent; border: 2px solid var(--copper); color: currentColor;
+            padding: 1rem 2.5rem; text-transform: uppercase; font-weight: bold; letter-spacing: 2px;
+            font-family: var(--font-body); text-decoration: none; transition: all 0.4s; border-radius: 2px;
         }
 
-        .btn-copper:hover {
-            background: var(--copper);
-            color: var(--cloud);
-        }
+        .btn-copper:hover { background: var(--copper); color: #FFF !important; }
 
-        /* Elegance Section */
-        .architectural {
-            padding: var(--spacing-large) 0;
-            background: var(--cloud);
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 5%; }
 
-        .arch-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
+        /* Hero Content */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; text-align: center;
         }
+        
+        h1 { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 7rem); line-height: 1; margin-bottom: 2rem; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 span { color: var(--copper); }
+        
+        .hero p { font-size: 1.3rem; line-height: 1.6; max-width: 600px; margin: 0 auto 3rem; color: #BBB; }
 
-        .arch-text h2 {
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            color: var(--slate);
-            margin-bottom: 2rem;
+        /* The Sunlit Zone (Revealed via scroll) */
+        .solution-zone { padding: 15rem 0 10rem; }
+        
+        .sun-text {
+            color: #222; font-family: var(--font-display); font-size: 4rem; line-height: 1.2; margin-bottom: 2rem;
+            opacity: 0; transform: translateY(50px); transition: all 1s ease;
         }
+        .sun-text.active { opacity: 1; transform: translateY(0); }
 
-        .arch-text p {
-            color: var(--slate);
-            opacity: 0.8;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
+        .sun-desc { color: #555; font-size: 1.2rem; line-height: 1.8; max-width: 600px; opacity: 0; transition: all 1s ease 0.2s; }
+        .sun-desc.active { opacity: 1; }
 
-        .img-elegant {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 4px 50px 4px 4px;
-            box-shadow: 20px 20px 0 var(--copper);
-        }
-
-        /* Pillars Section */
-        .pillars {
-            padding: var(--spacing-large) 0;
-            background: var(--slate-dark);
-            color: var(--cloud);
-            text-align: center;
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
-            margin-top: 5rem;
-        }
-
-        .pillar-card {
-            border-top: 1px solid var(--copper);
-            padding-top: 3rem;
-            text-align: left;
-        }
-
-        .pillar-card h3 {
-            color: var(--copper);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .pillar-card p {
-            color: rgba(245, 247, 250, 0.7);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* Social Proof */
-        .testimonial {
-            padding: var(--spacing-large) 0;
-            background: var(--cloud);
-            text-align: center;
-        }
-
-        .quote-mark {
-            font-family: var(--font-display);
-            font-size: 8rem;
-            color: var(--copper);
-            line-height: 0;
-            opacity: 0.3;
-        }
-
-        .testimonial p {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 3vw, 3rem);
-            max-width: 900px;
-            margin: 2rem auto;
-            color: var(--slate);
-        }
-
-        .author {
-            display: block;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            color: var(--copper);
-            font-size: 0.85rem;
-        }
-
-        /* CTA */
-        .cta-bottom {
-            padding: var(--spacing-large) 0;
-            background: var(--slate);
-            color: var(--cloud);
-            text-align: center;
-        }
-
-        .cta-bottom h2 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            margin-bottom: 3rem;
-        }
-
-        @media (max-width: 768px) {
-            .arch-grid { grid-template-columns: 1fr; }
-            .pillars-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="/" class="logo">Naslogic.</a>
-        <a href="#consult" class="nav-btn">Request Prospectus</a>
+    <!-- Storm Engine Physics -->
+    <div id="storm-layer"></div>
+
+    <nav id="navbar">
+        <a href="/" class="logo">NASLOGIC</a>
+        <a href="mailto:hello@naslogic.com" class="btn-copper">Deploy Team</a>
     </nav>
 
-    <header class="hero">
-        <div class="weather-shield" id="weather"></div>
-        <div class="container hero-content">
-            <span class="label">Architectural Roofing</span>
-            <h1>The Crown Of<br>The Estate.</h1>
-            <p>We build elegant, high-converting digital experiences for premium roofing contractors. Stop competing on price and start commanding the respect your craftsmanship deserves.</p>
-            <a href="#consult" class="btn-copper">Curate Your Brand</a>
-        </div>
-    </header>
+    <div class="container hero">
+        <h1>THE <span>STORM</span><br>HAS HIT.</h1>
+        <p>Your prospective client's roof is leaking. They are panicked. They are frantic. Your landing page must reflect absolute protection and calm control, not a chaotic list of "about us" bullet points.</p>
+    </div>
 
-    <section class="architectural">
-        <div class="container arch-grid">
-            <div class="arch-text">
-                <span class="label">The Contrast</span>
-                <h2>You install slate.<br>Your website screams shingles.</h2>
-                <p>High-net-worth homeowners do not want a construction crew; they want an architectural partner who respects the integrity of their estate. If your landing page looks like a hazard zone of yellow tape and stock photos, they will find someone else who speaks their visual language.</p>
-                <p>We replace the 'brutalist construction' aesthetic with 'premium architectural protection'. Warm copper, elegant slate, and pristine typography.</p>
-            </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?q=80&w=1000&auto=format&fit=crop" class="img-elegant" alt="Luxury home exterior showing premium roof">
-            </div>
-        </div>
-    </section>
-
-    <section class="pillars">
-        <div class="container">
-            <span class="label">The Architecture</span>
-            <h2>Designing the Premium Funnel</h2>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <h3>01. Visual Integrity</h3>
-                    <p>We strip away the clutter. Generous whitespace, razor-sharp architectural photography, and typography that builds instant trust and positions your firm as a luxury service provider.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3>02. Protective Copywriting</h3>
-                    <p>We shift the narrative from 'cheap fixes' to 'generational protection' and 'architectural beauty'. The copy speaks directly to the anxieties of luxury homeowners.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3>03. Concierge Booking</h3>
-                    <p>No clunky contact forms. We build frictionless, elegant consultation request flows that qualify leads on budget and property size before they ever reach your inbox.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonial">
-        <div class="container">
-            <div class="quote-mark">"</div>
-            <p>By shifting our aesthetic from 'storm chaser' to 'architectural master', we completely changed our clientele. Naslogic built a site that makes it impossible for clients to haggle on price.</p>
-            <span class="author">E. Caldwell — President, Caldwell Architectural Roofing</span>
-        </div>
-    </section>
-
-    <section class="cta-bottom" id="consult">
-        <div class="container">
-            <span class="label">Partnership</span>
-            <h2>Ascend Your Brand.</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-copper">Begin Your Rebuild</a>
-        </div>
-    </section>
+    <div class="container solution-zone">
+        <h2 class="sun-text">We clear the storm.</h2>
+        <p class="sun-desc">We build psychological funnels. From the moment the user clicks, the visual hierarchy asserts your authority. Through scroll-linked physics, we literally simulate the resolution of their problem. You don't just fix roofs. You restore peace of mind. Commission a build today.</p>
+    </div>
 
     <script>
-        // Weather clearing scroll interaction for hero
-        const weather = document.getElementById('weather');
-        
+        // 1. Storm Generator
+        const stormLayer = document.getElementById('storm-layer');
+        const numDrops = 150;
+
+        for(let i=0; i<numDrops; i++) {
+            let drop = document.createElement('div');
+            drop.classList.add('rain');
+            drop.style.left = `${Math.random() * 100}vw`;
+            drop.style.animationDuration = `${0.3 + Math.random() * 0.4}s`;
+            drop.style.animationDelay = `${Math.random() * 2}s`;
+            drop.style.opacity = Math.random();
+            stormLayer.appendChild(drop);
+        }
+
+        // 2. Weather Scroll Physics
+        const navbar = document.getElementById('navbar');
+        const body = document.body;
+        const sunText = document.querySelector('.sun-text');
+        const sunDesc = document.querySelector('.sun-desc');
+
+        // Body bg transition: slate (#2B303A) -> sunlight (#fdf5e6)
+        // RGB slate: 43, 48, 58
+        // RGB sun: 253, 245, 230
+
         window.addEventListener('scroll', () => {
-            if(!weather) return;
-            const scrollPercent = window.scrollY / window.innerHeight;
-            if(scrollPercent < 1.5) { // Active just around the hero area
-                // Transition from dark grayscale storm -> bright colorful sunshine
-                const gray = Math.max(0, 80 - (scrollPercent * 100)); // 80 -> 0
-                const bright = Math.min(1, 0.4 + (scrollPercent * 0.8)); // 0.4 -> ~1.0
-                const contrast = Math.max(1, 1.2 - (scrollPercent * 0.2)); // 1.2 -> 1.0
-                
-                weather.style.filter = `grayscale(${gray}%) brightness(${bright}) contrast(${contrast})`;
+            // Scroll max limits
+            const maxScroll = window.innerHeight; 
+            let scrollY = window.scrollY;
+            if(scrollY < 0) scrollY = 0;
+            if(scrollY > maxScroll) scrollY = maxScroll;
+
+            const perc = scrollY / maxScroll;
+
+            // Fade out the physical rain
+            stormLayer.style.opacity = 1 - (perc * 1.5); // completely gone at ~66%
+
+            // Interpolate background color
+            const r = Math.floor(43 + (253 - 43) * perc);
+            const g = Math.floor(48 + (245 - 48) * perc);
+            const b = Math.floor(58 + (230 - 58) * perc);
+
+            body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+            // Toggle Text color inversion based on brightness
+            if(perc > 0.6) {
+                body.style.color = '#222';
+                navbar.style.color = '#222';
+                sunText.classList.add('active');
+                sunDesc.classList.add('active');
+            } else {
+                body.style.color = '#FFF';
+                navbar.style.color = '#FFF';
+                sunText.classList.remove('active');
+                sunDesc.classList.remove('active');
             }
         });
+
     </script>
+
+<!-- NASLOGIC UNIVERSAL INTAKE MODAL -->
+<style>
+#nas-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+    z-index: 999999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    font-family: inherit;
+}
+#nas-modal-overlay.active { opacity: 1; pointer-events: auto; }
+#nas-modal-content {
+    background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1);
+    width: 90%; max-width: 500px; padding: 3rem; color: #FFF;
+    position: relative; transform: translateY(20px); transition: transform 0.4s ease;
+}
+#nas-modal-overlay.active #nas-modal-content { transform: translateY(0); }
+.nas-close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem; color: #888;
+    background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
+}
+.nas-close-btn:hover { color: #FFF; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
+.nas-form-group { margin-bottom: 1.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+}
+.nas-input:focus { border-color: #FFF; }
+.nas-submit-btn {
+    width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: background 0.3s, color 0.3s;
+}
+.nas-submit-btn:hover { background: #CCC; }
+.nas-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#nas-form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; display: none; }
+.nas-success { color: #10B981; }
+.nas-error { color: #EF4444; }
+</style>
+
+<div id="nas-modal-overlay">
+    <div id="nas-modal-content">
+        <button class="nas-close-btn" id="nas-close-modal">&times;</button>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        
+        <form id="nas-lead-form">
+            <input type="hidden" name="formType" value="quote">
+            <div class="nas-form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Project Details</label>
+                <input type="text" name="details" class="nas-input" required>
+            </div>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <div id="nas-form-status"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('nas-modal-overlay');
+    const closeBtn = document.getElementById('nas-close-modal');
+    const form = document.getElementById('nas-lead-form');
+    const statusDiv = document.getElementById('nas-form-status');
+    const submitBtn = document.getElementById('nas-submit-btn');
+
+    // Intercept mailto links
+    document.querySelectorAll('a[href^="mailto:hello@naslogic.com"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.add('active');
+        });
+    });
+
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            statusDiv.style.display = 'none';
+        });
+    }
+
+    if(overlay) {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.remove('active');
+                statusDiv.style.display = 'none';
+            }
+        });
+    }
+
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI updates
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting...';
+            statusDiv.style.display = 'none';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch('/api/lead-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await res.json();
+                
+                statusDiv.style.display = 'block';
+                if(res.ok) {
+                    statusDiv.className = 'nas-success';
+                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    form.reset();
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (err) {
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'nas-error';
+                statusDiv.innerText = err.message || 'An error occurred during transmission.';
+                submitBtn.innerText = 'Commission Build';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+<!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
+
 </body>
 </html>

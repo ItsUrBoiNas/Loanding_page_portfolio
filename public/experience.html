@@ -4,886 +4,381 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaw-Dropping Digital Experience</title>
-    <!-- Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-dark: #050505;
+            --bg-dark: #000000;
             --text-light: #F4F4F0;
-            --accent: #D4FF00; /* Acid Green */
-            --accent-alt: #4B00E0; /* Deep Purple */
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00ea;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            cursor: none; /* Hide default cursor */
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
 
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            /* Make it 800vh to give us plenty of scroll depth for the tunnel */
+            height: 800vh;
         }
 
         /* Ambient Background */
         .ambient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 50%, rgba(75, 0, 224, 0.15), transparent 60%);
-            filter: blur(100px);
-            opacity: 0.8;
-            pointer-events: none;
-        }
-
-        .ambient-blob {
-            position: absolute;
-            width: 50vw;
-            height: 50vw;
-            border-radius: 50%;
-            background: radial-gradient(circle at center, rgba(212, 255, 0, 0.1), transparent 50%);
-            top: -20%;
-            left: -10%;
-            filter: blur(80px);
-            animation: floatBlob 20s ease-in-out infinite alternate;
-        }
-
-        @keyframes floatBlob {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(30%, 10%) scale(1.2); }
-        }
-
-        /* Typography */
-        h1, h2, h3, .display-text {
-            font-family: 'Syne', sans-serif;
-            text-transform: uppercase;
-            line-height: 0.9;
-            margin: 0;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.05), #000 70%);
+            z-index: -1; pointer-events: none;
         }
 
         /* Custom Cursor */
-        .cursor-dot {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-                        height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-                        background-color 0.3s ease;
-            mix-blend-mode: difference;
-        }
-
         .cursor-ring {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease;
-        }
-
-        /* Layout */
-        .section {
-            width: 100vw;
-            min-height: 100vh;
-            padding: 5vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-        }
-
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 9000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .preloader-text {
-            font-family: 'Syne', sans-serif;
-            font-size: 2vw;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.5em;
-            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-        }
-
-        .preloader-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--accent);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            z-index: 9001;
-        }
-
-        /* Hero */
-        .hero {
-            align-items: center;
-            text-align: center;
-            padding-top: 15vh;
-        }
-
-        .hero-title {
-            font-size: clamp(4rem, 12vw, 15rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-            position: relative;
-        }
-
-        .hero-title span {
-            display: block;
-            position: relative;
-        }
-
-        .hero-title .filled {
-            color: var(--text-light);
-            -webkit-text-stroke: 0px;
-        }
-
-        .hero-subtitle {
-            margin-top: 3rem;
-            font-size: clamp(1rem, 1.5vw, 2rem);
-            font-weight: 300;
-            max-width: 600px;
-            opacity: 0.7;
-            text-transform: none;
-            line-height: 1.5;
-        }
-
-        .hero-image-wrapper {
-            margin-top: 10vh;
-            width: 60vw;
-            height: 50vh;
-            overflow: hidden;
-            border-radius: 20px;
-            position: relative;
-            transform: translateY(100px);
-            opacity: 0;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 130%; /* For parallax */
-            object-fit: cover;
-            position: absolute;
-            top: -15%;
-            left: 0;
-            filter: grayscale(100%) contrast(1.2);
-            transition: filter 0.5s ease;
-        }
-
-        .hero-image-wrapper:hover .hero-image {
-            filter: grayscale(0%) contrast(1);
-        }
-
-        /* Marquee */
-        .marquee-section {
-            padding: 5vh 0;
-            background: var(--accent);
-            color: #000;
-            overflow: hidden;
-            display: flex;
-            white-space: nowrap;
-            transform: rotate(-2deg) scale(1.05);
-            margin: 10vh 0;
-        }
-
-        .marquee-inner {
-            display: flex;
-            font-family: 'Syne', sans-serif;
-            font-size: 5vw;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .marquee-part {
-            padding: 0 2vw;
-        }
-
-        /* Manifesto */
-        .manifesto {
-            min-height: 80vh;
-            justify-content: center;
-        }
-
-        .manifesto-text {
-            font-size: clamp(2rem, 5vw, 6rem);
-            max-width: 80vw;
-            font-family: 'Syne', sans-serif;
-            line-height: 1.1;
+            position: fixed; top: 0; left: 0; width: 40px; height: 40px;
+            border: 1px solid var(--neon-blue); border-radius: 50%;
+            pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s;
+            mix-blend-mode: screen;
         }
         
-        .char {
-            opacity: 0;
-            transform: translateY(100px) rotate(10deg);
-            display: inline-block;
+        .cursor-dot {
+            position: fixed; width: 4px; height: 4px; background: #FFF; border-radius: 50%;
+            pointer-events: none; z-index: 10000; transform: translate(-50%, -50%);
         }
 
-        /* Glass Cards */
-        .projects {
-            padding: 10vw 5vw;
+        /* Typography */
+        h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; line-height: 1; }
+
+        /* --- THE TUNNEL ENGINE --- */
+        #tunnel-viewport {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            perspective: 800px; overflow: hidden; pointer-events: none;
         }
 
-        .projects-title {
-            font-size: 4vw;
-            margin-bottom: 5vw;
+        .tunnel-camera {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            transform-style: preserve-3d;
+            /* We translateZ this camera based on scroll to "fly" forward */
         }
 
-        .cards-container {
-            display: flex;
-            gap: 3vw;
-            flex-wrap: wrap; /* Fallback for smaller screens */
+        /* Individual rings inside the tunnel */
+        .tunnel-ring {
+            position: absolute; top: 50%; left: 50%;
+            width: 800px; height: 500px;
+            border: 2px solid rgba(0, 243, 255, 0.2);
+            box-shadow: 0 0 50px rgba(0, 243, 255, 0.1), inset 0 0 50px rgba(0, 243, 255, 0.1);
+            transform-style: preserve-3d;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+        }
+        
+        .ring-content {
+            font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800;
+            color: #FFF; text-shadow: 0 0 20px var(--neon-blue);
+            transform: translateZ(50px);
         }
 
-        @media (min-width: 768px) {
-            .cards-container {
-                flex-wrap: nowrap;
-            }
+        /* Floating UI strictly for UX */
+        .fixed-ui {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 100;
+            pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 2rem 5%;
         }
 
-        .card {
-            flex: 1;
-            min-width: 300px;
-            height: 600px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.4s ease;
+        .nav { display: flex; justify-content: space-between; pointer-events: auto; }
+        .logo { font-family: 'Syne', sans-serif; font-size: 1.5rem; color: #FFF; text-decoration: none; font-weight: 800; letter-spacing: 2px;}
+        
+        .btn-neon {
+            border: 1px solid var(--neon-pink); color: var(--neon-pink); background: rgba(255,0,234,0.1);
+            padding: 1rem 3rem; text-decoration: none; font-family: 'Inter', sans-serif; text-transform: uppercase;
+            letter-spacing: 2px; font-size: 0.8rem; border-radius: 50px; backdrop-filter: blur(5px); transition: all 0.3s;
         }
+        .btn-neon:hover { background: var(--neon-pink); color: #000; box-shadow: 0 0 30px var(--neon-pink); }
 
-        .card:hover {
-            transform: translateY(-20px) !important;
-            background: rgba(255, 255, 255, 0.06);
-            /* custom cursor trigger hint */
-        }
+        .progress-container { width: 100%; height: 2px; background: rgba(255,255,255,0.1); margin-bottom: 2rem; }
+        .progress-bar { height: 100%; background: var(--neon-blue); width: 0%; box-shadow: 0 0 10px var(--neon-blue); }
+        
+        .scroll-hint { font-size: 0.8rem; letter-spacing: 5px; color: #888; text-transform: uppercase; text-align: center;}
 
-        .card-img {
-            width: 100%;
-            height: 60%;
-            background: #111;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .card:hover .card-img img {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .card h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* Footer */
-        .footer {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: #000;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .huge-text {
-            font-size: 15vw;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
-            position: relative;
-            z-index: 2;
-            transition: -webkit-text-stroke 0.3s ease, color 0.3s ease;
-        }
-
-        .huge-text:hover {
-            color: var(--accent);
-            -webkit-text-stroke: 0px;
-        }
-
-        .footer-glow {
-            position: absolute;
-            bottom: -20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60vw;
-            height: 40vw;
-            background: radial-gradient(ellipse at center, rgba(212, 255, 0, 0.2), transparent 70%);
-            filter: blur(60px);
-            z-index: 1;
-        }
-
-        /* Hover elements class */
-
-        /* Smooth scroll config */
-        html.lenis {
-          height: auto;
-        }
-
-        .lenis.lenis-smooth {
-          scroll-behavior: auto;
-        }
-
-        .lenis.lenis-smooth [data-lenis-prevent] {
-          overscroll-behavior: contain;
-        }
-
-        .lenis.lenis-stopped {
-          overflow: hidden;
-        }
-
-        .lenis.lenis-scrolling iframe {
-          pointer-events: none;
-        }
-
-        /* Make it mobile-responsive */
-        @media screen and (max-width: 768px) {
-            .hero-title { font-size: 18vw; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .hero-image-wrapper { width: 90vw; height: 40vh; }
-            .manifesto-text { font-size: 8vw; }
-            .card { transform: none !important; margin-bottom: 2rem; }
-            .preloader-text { font-size: 4vw; }
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
 
-    <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
 
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-text">IGNITING EXPERIENCE</div>
-        <div class="preloader-overlay"></div>
-    </div>
-
-    <!-- Ambient / Background effects -->
     <div class="ambient-bg"></div>
-    <div class="ambient-blob"></div>
 
-    <!-- Hero Section -->
-    <section class="section hero">
-        <h1 class="hero-title hover-target">
-            <span class="clip-text">WE CRAFT</span>
-            <span class="filled clip-text">DIGITAL</span>
-            <span class="clip-text">FEELINGS</span>
-        </h1>
-        <p class="hero-subtitle hover-target">
-            Not just websites. We build immersive, jaw-dropping experiences that command attention and refuse to be forgotten.
-        </p>
-        <div class="hero-image-wrapper hover-target">
-            <img class="hero-image" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Abstract render">
+    <div class="fixed-ui">
+        <div class="nav">
+            <a href="/" class="logo">NASLOGIC</a>
+            <a href="mailto:hello@naslogic.com" class="btn-neon">Commission System</a>
         </div>
-    </section>
-
-    <!-- Marquee -->
-    <div class="marquee-section hover-target">
-        <div class="marquee-inner">
-            <div class="marquee-part">DESIGN WITH PURPOSE • NO TEMPLATES • PURE MAGIC • </div>
-            <div class="marquee-part">DESIGN WITH PURPOSE • NO TEMPLATES • PURE MAGIC • </div>
-            <div class="marquee-part">DESIGN WITH PURPOSE • NO TEMPLATES • PURE MAGIC • </div>
-            <div class="marquee-part">DESIGN WITH PURPOSE • NO TEMPLATES • PURE MAGIC • </div>
+        <div>
+            <div class="progress-container"><div class="progress-bar" id="pb"></div></div>
+            <div class="scroll-hint">SCROLL TO TRAVERSE</div>
         </div>
     </div>
 
-    <!-- Manifesto / Text Reveal -->
-    <section class="section manifesto">
-        <h2 class="manifesto-text hover-target">
-            THE STANDARD IS EXCELLENCE. WHEN THEY SEE IT, THEY PAUSE. THEY SCROLL BACK UP TO WATCH IT AGAIN. THAT IS THE BAR.
-        </h2>
-    </section>
-
-    <!-- Projects / Cards -->
-    <section class="section projects">
-        <h2 class="projects-title display-text hover-target">Selected Work</h2>
-        <div class="cards-container">
-            <!-- PROJECT 1: Ethereal AI -->
-            <div class="card hover-target">
-                <div class="card-img" style="overflow:hidden; position:relative;">
-                    <div style="position:absolute; inset:0; z-index:10; font-family:'Inter', sans-serif; background:#050510; color:#fff;">
-                        <style>
-                            @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
-                            .exp1-wrap { width:100%; height:100%; position:absolute; inset:0; display:flex; flex-direction:column; overflow:hidden; }
-                            .exp1-bg { position:absolute; inset:0; background:radial-gradient(circle at 50% 120%, rgba(75,0,224,0.4), transparent 70%); }
-                            .exp1-nav { display:flex; justify-content:space-between; padding:20px; position:relative; z-index:2; }
-                            .exp1-logo { font-family:'Space Grotesk', sans-serif; font-size:16px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#fff; }
-                            .exp1-content { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; z-index:2; }
-                            .exp1-orb { width:120px; height:120px; border-radius:50%; background:conic-gradient(from 0deg, #4B00E0, #D4FF00, #4B00E0); filter:blur(20px); animation:spin 4s linear infinite; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); opacity:0.6; }
-                            @keyframes spin { 100% { transform:translate(-50%,-50%) rotate(360deg); } }
-                            .exp1-title { font-family:'Space Grotesk', sans-serif; font-size:48px; font-weight:300; margin-bottom:10px; position:relative; z-index:3; text-shadow:0 0 20px rgba(0,0,0,0.8); }
-                            .exp1-badge { background:rgba(212,255,0,0.1); color:#D4FF00; padding:6px 12px; border-radius:100px; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; border:1px solid rgba(212,255,0,0.3); margin-top:20px; position:relative; z-index:3; }
-                    
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                        <div class="exp1-wrap">
-                            <div class="exp1-bg"></div>
-                            <div class="exp1-nav">
-                                <div class="exp1-logo">Ethereal.ai</div>
-                                <div style="font-size:12px; font-weight:500;">ENTER</div>
-                            </div>
-                            <div class="exp1-content">
-                                <div class="exp1-orb"></div>
-                                <h1 class="exp1-title">Sentience.</h1>
-                                <div class="exp1-badge">Neural Engine Active</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h3>Ethereal AI</h3>
-                <p>WebGL / GSAP / Next.js</p>
-            </div>
-            
-            <!-- PROJECT 2: Vanguard -->
-            <div class="card hover-target d-offset" data-offset="50">
-                <div class="card-img" style="overflow:hidden; position:relative;">
-                    <div style="position:absolute; inset:0; z-index:10; font-family:'Inter', sans-serif; background:#fff; color:#000;">
-                        <style>
-                            @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-                            .exp2-wrap { width:100%; height:100%; position:absolute; inset:0; display:flex; flex-direction:column; overflow:hidden; }
-                            .exp2-nav { display:flex; justify-content:space-between; padding:20px; border-bottom:2px solid #000; }
-                            .exp2-logo { font-weight:900; font-size:18px; text-transform:uppercase; letter-spacing:-1px; }
-                            .exp2-content { flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 20px; margin-top:-20px; }
-                            .exp2-title { font-family:'Anton', sans-serif; font-size:85px; line-height:0.85; text-transform:uppercase; margin-bottom:15px; }
-                            .exp2-tagline { font-weight:600; font-size:12px; text-transform:uppercase; margin-bottom:25px; max-width:200px; }
-                            .exp2-btn { background:#D4FF00; color:#000; padding:12px 24px; font-weight:800; text-transform:uppercase; border:2px solid #000; display:inline-block; width:max-content; position:relative; box-shadow:4px 4px 0 #000; }
-                    
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                        <div class="exp2-wrap">
-                            <div class="exp2-nav">
-                                <div class="exp2-logo">Vanguard</div>
-                                <div style="width:20px; height:20px; border-radius:50%; background:#D4FF00; border:2px solid #000;"></div>
-                            </div>
-                            <div class="exp2-content">
-                                <h1 class="exp2-title">MOTION<br>IS LAW</h1>
-                                <p class="exp2-tagline">We build brands that refuse to stand still.</p>
-                                <div class="exp2-btn">Explore Works</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h3>Vanguard</h3>
-                <p>Branding / Motion / Web</p>
-            </div>
-            
-            <!-- PROJECT 3: Dark Matter -->
-            <div class="card hover-target d-offset" data-offset="100">
-                <div class="card-img" style="overflow:hidden; position:relative;">
-                    <div style="position:absolute; inset:0; z-index:10; font-family:'Inter', sans-serif; background:#070707; color:#fff;">
-                        <style>
-                            @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap');
-                            .exp3-wrap { width:100%; height:100%; position:absolute; inset:0; display:flex; flex-direction:column; overflow:hidden; border:1px solid rgba(255,255,255,0.1); box-sizing:border-box; }
-                            .exp3-noise { position:absolute; inset:0; background:url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.65\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E'); opacity:0.08; pointer-events:none; z-index:1; }
-                            .exp3-nav { display:flex; justify-content:center; padding:30px; position:relative; z-index:2; }
-                            .exp3-logo { font-size:12px; font-weight:300; letter-spacing:6px; text-transform:uppercase; color:rgba(255,255,255,0.6); }
-                            .exp3-content { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; z-index:2; }
-                            .exp3-title { font-family:'Cormorant Garamond', serif; font-size:54px; font-weight:400; font-style:italic; line-height:1; color:#fff; }
-                            .exp3-line { width:1px; height:40px; background:rgba(255,255,255,0.2); margin:20px 0; }
-                            .exp3-link { font-size:10px; font-weight:400; letter-spacing:2px; text-transform:uppercase; color:#fff; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:4px; }
-                    
-        /* Breadcrumb Navigation */
-        .breadcrumb { padding: 12px 0; font-size: 0.85rem; }
-        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .breadcrumb-list a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .breadcrumb-list a:hover { color: var(--accent); }
-        .breadcrumb-sep { color: var(--text-muted); opacity: 0.5; }
-        .breadcrumb-current { color: var(--text-main); }
-
-        /* Related Industries / Cross-links */
-        .related-industries { background: var(--surface); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 60px 0; }
-        .related-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-        .related-link { display: inline-flex; align-items: center; padding: 12px 24px; min-height: 48px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: 100px; color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
-        .related-link:hover { border-color: var(--accent); color: var(--accent); }
-        .pillar-backlink { text-align: center; padding: 40px 0; }
-        .pillar-backlink a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; transition: opacity 0.3s; }
-        .pillar-backlink a:hover { opacity: 0.8; }
-    </style>
-                        <div class="exp3-wrap">
-                            <div class="exp3-noise"></div>
-                            <div class="exp3-nav">
-                                <div class="exp3-logo">Dark Matter</div>
-                            </div>
-                            <div class="exp3-content">
-                                <h1 class="exp3-title">The Void</h1>
-                                <div class="exp3-line"></div>
-                                <div class="exp3-link">Immerse Now</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h3>Dark Matter</h3>
-                <p>Immersive Experience</p>
-            </div>
+    <div id="tunnel-viewport">
+        <div class="tunnel-camera" id="camera">
+            <!-- Rings generated by JS -->
         </div>
-    </section>
-
-    <!-- Footer -->
-
-    <!-- Related Industries — Cross-links for topic cluster equity -->
-    <section class="related-industries">
-        <div class="container">
-            <h2 class="section-header" style="font-size: clamp(1.8rem, 3vw, 3rem);">Landing Pages for Related Industries</h2>
-            <p class="section-sub">We also build high-converting pages for businesses in these industries.</p>
-            <div class="related-grid">
-                <a href="/restaurants" class="related-link">Restaurants Landing Pages</a>
-                <a href="/fitness" class="related-link">Fitness & Gyms Landing Pages</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillar Page Backlink -->
-    <div class="pillar-backlink">
-        <a href="/">← Explore all Naslogic landing page design services</a>
     </div>
 
-    <footer class="footer">
-        <div class="footer-glow"></div>
-        <h1 class="huge-text hover-target" onclick="openQuoteModal()" style="cursor:pointer">LET'S TALK</h1>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <!-- Related Industries -->
+    <div style="position: absolute; top: calc(800vh - 100vh); width: 100%; height: 100vh; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index: 50;">
+        <h1 style="font-size: 5rem; text-shadow: 0 0 30px var(--neon-pink); margin-bottom: 2rem; color: #FFF;">THE END.</h1>
+        <a href="mailto:hello@naslogic.com" class="btn-neon" style="pointer-events: auto; padding: 1.5rem 4rem; font-size: 1.2rem;">LET'S TALK</a>
+    </div>
 
     <script>
-        // Set initial card offsets if desktop
-        if(window.innerWidth >= 768) {
-            document.querySelectorAll('.d-offset').forEach(el => {
-                el.style.transform = `translateY(${el.dataset.offset}px)`;
-            });
+        // Custom Cursor Tracker
+        const ring = document.querySelector('.cursor-ring');
+        const dot = document.querySelector('.cursor-dot');
+        let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+        let ringX = mouseX, ringY = mouseY;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
+        });
+
+        // Infinite Tunnel Physics Generator
+        const camera = document.getElementById('camera');
+        const pb = document.getElementById('pb');
+        
+        const numRings = 40;
+        const spacingZ = 800; // pixels between each ring
+        const messages = [
+            "WE CRAFT FEELINGS",
+            "NOT TEMPLATES",
+            "THE STANDARD IS EXCELLENCE",
+            "EVERY PIXEL WEIGHED",
+            "EVERY INTERACTION TUNED",
+            "WHEN THEY SEE IT",
+            "THEY PAUSE",
+            "THEY SCROLL BACK UP",
+            "THAT IS THE BAR",
+            "NO COMPROMISES",
+            "PURE MAGIC"
+        ];
+
+        // Generate the rings in 3D Space
+        for(let i=0; i<numRings; i++) {
+            let ringEl = document.createElement('div');
+            ringEl.className = 'tunnel-ring';
+            
+            // Translate Z pushed deep into screen
+            const z = i * -spacingZ; 
+            ringEl.style.transform = `translate(-50%, -50%) translateZ(${z}px) rotateZ(${i * 10}deg)`;
+
+            // Color alternates to make the tunnel dynamic
+            if(i % 3 === 0) {
+                ringEl.style.borderColor = 'rgba(255, 0, 234, 0.3)';
+                ringEl.style.boxShadow = '0 0 50px rgba(255, 0, 234, 0.1), inset 0 0 50px rgba(255, 0, 234, 0.1)';
+            }
+
+            // Inject message if available
+            let msg = messages[i];
+            if(msg) {
+                let content = document.createElement('div');
+                content.className = 'ring-content';
+                content.innerText = msg;
+                if(i % 3 === 0) content.style.textShadow = '0 0 20px var(--neon-pink)';
+                ringEl.appendChild(content);
+            }
+
+            camera.appendChild(ringEl);
         }
 
-        // Register GSAP ScrollTrigger
-        window.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // The Scroll -> Fly engine
+        let currentZ = 0;
+        let targetZ = 0;
 
-        // Smooth Scrolling with Lenis
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-            infinite: false,
-        })
+        window.addEventListener('scroll', () => {
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            const perc = window.scrollY / maxScroll;
+            pb.style.width = `${perc * 100}%`;
+            
+            // The max Z we want the camera to travel to is roughly where the last ring is
+            targetZ = perc * (numRings * spacingZ);
+        });
 
-        lenis.on('scroll', ScrollTrigger.update)
+        function renderFrame() {
+            // Lerp the camera Z distance for smooth flying
+            currentZ += (targetZ - currentZ) * 0.05;
+            
+            // Cursor smoothing
+            ringX += (mouseX - ringX) * 0.2;
+            ringY += (mouseY - ringY) * 0.2;
+            ring.style.transform = `translate(calc(${ringX}px - 50%), calc(${ringY}px - 50%))`;
 
-        gsap.ticker.add((time)=>{
-          lenis.raf(time * 1000)
-        })
+            // MOUSE PARALLAX: The camera tilts depending on mouse position!
+            const rotY = (mouseX / window.innerWidth - 0.5) * 20; // -10deg to 10deg
+            const rotX = (mouseY / window.innerHeight - 0.5) * -20; // inverted
 
-        gsap.ticker.lagSmoothing(0)
+            camera.style.transform = `translateZ(${currentZ}px) rotateY(${rotY}deg) rotateX(${rotX}deg)`;
 
-        // Custom Cursor Logic
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorRing = document.querySelector('.cursor-ring');
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let dotX = mouseX;
-        let dotY = mouseY;
-        let ringX = mouseX;
-        let ringY = mouseY;
-
-        // Hide cursor for touch devices
-        if(window.matchMedia("(pointer: coarse)").matches) {
-            cursorDot.style.display = 'none';
-            cursorRing.style.display = 'none';
+            requestAnimationFrame(renderFrame);
         }
 
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+        requestAnimationFrame(renderFrame);
 
-        gsap.ticker.add(() => {
-            dotX += (mouseX - dotX) * 0.2;
-            dotY += (mouseY - dotY) * 0.2;
-            ringX += (mouseX - ringX) * 0.1;
-            ringY += (mouseY - ringY) * 0.1;
-
-            gsap.set(cursorDot, { x: dotX, y: dotY });
-            gsap.set(cursorRing, { x: ringX, y: ringY });
-        });
-
-        const hoverTargets = document.querySelectorAll('.hover-target');
-        hoverTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => {
-                cursorDot.style.width = '60px';
-                cursorDot.style.height = '60px';
-                cursorDot.style.backgroundColor = '#fff';
-                cursorRing.style.width = '80px';
-                cursorRing.style.height = '80px';
-                cursorRing.style.borderColor = 'transparent';
-            });
-            target.addEventListener('mouseleave', () => {
-                cursorDot.style.width = '10px';
-                cursorDot.style.height = '10px';
-                cursorDot.style.backgroundColor = 'var(--accent)';
-                cursorRing.style.width = '40px';
-                cursorRing.style.height = '40px';
-                cursorRing.style.borderColor = 'rgba(255,255,255,0.3)';
-            });
-        });
-
-        // Animations
-        window.addEventListener('load', () => {
-            const tl = gsap.timeline();
-
-            // 1. Preloader
-            tl.to('.preloader-text', {
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-                duration: 1,
-                ease: 'power4.inOut'
-            })
-            .to('.preloader-overlay', {
-                scaleY: 1,
-                duration: 0.8,
-                ease: 'power4.inOut',
-                delay: 0.3
-            })
-            .set('.preloader', { autoAlpha: 0 })
-            .to('.preloader-overlay', {
-                scaleY: 0,
-                transformOrigin: 'top',
-                duration: 0.8,
-                ease: 'power4.inOut'
-            }, '-=0.2');
-
-            // 2. Hero Reveal
-            const heroTitles = document.querySelectorAll('.hero-title span');
-            
-            tl.fromTo(heroTitles, 
-                { y: 100, opacity: 0, rotation: 5 }, 
-                { y: 0, opacity: 1, rotation: 0, duration: 1.2, stagger: 0.2, ease: 'power4.out' },
-                '-=0.4'
-            );
-
-            tl.fromTo('.hero-subtitle', 
-                { y: 20, opacity: 0 }, 
-                { y: 0, opacity: 0.7, duration: 1, ease: 'power3.out' },
-                '-=0.8'
-            );
-
-            tl.fromTo('.hero-image-wrapper',
-                { y: 100, opacity: 0, scale: 0.9 },
-                { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' },
-                '-=1'
-            );
-
-            // 3. Scroll Driven Parallax
-            gsap.to('.hero-image', {
-                yPercent: 20,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".hero",
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true
-                }
-            });
-
-            // 4. Marquee
-            const marqueeInner = document.querySelector('.marquee-inner');
-            gsap.to(marqueeInner, {
-                xPercent: -50,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".marquee-section",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 1
-                }
-            });
-
-            // 5. Text Splitting Reveal
-            // Using small timeout to ensure DOM is ready for SplitType
-            setTimeout(() => {
-                const manifestoSplit = new SplitType('.manifesto-text', { types: 'words, chars' });
-                
-                gsap.fromTo(manifestoSplit.chars, 
-                    { opacity: 0, y: 50, rotation: 10 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        rotation: 0,
-                        stagger: 0.02,
-                        duration: 1,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: ".manifesto",
-                            start: "top 70%",
-                            end: "top 30%",
-                            scrub: false,
-                            toggleActions: "play none none reverse"
-                        }
-                    }
-                );
-            }, 100);
-
-            // 6. Project Cards Reveal
-            const cards = gsap.utils.toArray('.card');
-            
-            gsap.fromTo(cards, 
-                { y: 100, opacity: 0 },
-                {
-                    y: (i) => window.innerWidth >= 768 ? i * 50 : 0,
-                    opacity: 1,
-                    duration: 1,
-                    stagger: 0.2,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: ".projects",
-                        start: "top 70%",
-                    }
-                }
-            );
-
-            // 7. Footer Parallax and Glow
-            gsap.fromTo('.huge-text', 
-                { scale: 0.8, y: 100 },
-                {
-                    scale: 1,
-                    y: 0,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: ".footer",
-                        start: "top 80%",
-                        end: "bottom bottom",
-                        scrub: 1
-                    }
-                }
-            );
-
-            gsap.to('.footer-glow', {
-                scale: 1.5,
-                opacity: 0.8,
-                scrollTrigger: {
-                    trigger: ".footer",
-                    start: "top 50%",
-                    end: "bottom bottom",
-                    scrub: 1
-                }
-            });
-        });
-        }); // end DOMContentLoaded
     </script>
 
-    <!-- Forms Module -->
-    <script src="/forms.js"></script>
+<!-- NASLOGIC UNIVERSAL INTAKE MODAL -->
+<style>
+#nas-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+    z-index: 999999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    font-family: inherit;
+}
+#nas-modal-overlay.active { opacity: 1; pointer-events: auto; }
+#nas-modal-content {
+    background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1);
+    width: 90%; max-width: 500px; padding: 3rem; color: #FFF;
+    position: relative; transform: translateY(20px); transition: transform 0.4s ease;
+}
+#nas-modal-overlay.active #nas-modal-content { transform: translateY(0); }
+.nas-close-btn {
+    position: absolute; top: 1.5rem; right: 1.5rem; color: #888;
+    background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
+}
+.nas-close-btn:hover { color: #FFF; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
+.nas-form-group { margin-bottom: 1.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+}
+.nas-input:focus { border-color: #FFF; }
+.nas-submit-btn {
+    width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: background 0.3s, color 0.3s;
+}
+.nas-submit-btn:hover { background: #CCC; }
+.nas-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#nas-form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; display: none; }
+.nas-success { color: #10B981; }
+.nas-error { color: #EF4444; }
+</style>
+
+<div id="nas-modal-overlay">
+    <div id="nas-modal-content">
+        <button class="nas-close-btn" id="nas-close-modal">&times;</button>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        
+        <form id="nas-lead-form">
+            <input type="hidden" name="formType" value="quote">
+            <div class="nas-form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="nas-input" required>
+            </div>
+            <div class="nas-form-group">
+                <label>Project Details</label>
+                <input type="text" name="details" class="nas-input" required>
+            </div>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <div id="nas-form-status"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('nas-modal-overlay');
+    const closeBtn = document.getElementById('nas-close-modal');
+    const form = document.getElementById('nas-lead-form');
+    const statusDiv = document.getElementById('nas-form-status');
+    const submitBtn = document.getElementById('nas-submit-btn');
+
+    // Intercept mailto links
+    document.querySelectorAll('a[href^="mailto:hello@naslogic.com"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.add('active');
+        });
+    });
+
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            statusDiv.style.display = 'none';
+        });
+    }
+
+    if(overlay) {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.remove('active');
+                statusDiv.style.display = 'none';
+            }
+        });
+    }
+
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI updates
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting...';
+            statusDiv.style.display = 'none';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch('/api/lead-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await res.json();
+                
+                statusDiv.style.display = 'block';
+                if(res.ok) {
+                    statusDiv.className = 'nas-success';
+                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    form.reset();
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to submit');
+                }
+            } catch (err) {
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'nas-error';
+                statusDiv.innerText = err.message || 'An error occurred during transmission.';
+                submitBtn.innerText = 'Commission Build';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+<!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
 
 </body>
 </html>
