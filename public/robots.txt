@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naslogic.com/sitemap.xml
+
+# Naslogic — Fort Myers Web Design & Landing Page Agency
+# https://naslogic.com

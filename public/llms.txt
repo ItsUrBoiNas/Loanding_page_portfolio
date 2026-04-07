@@ -1,36 +1,76 @@
-Naslogic
+# Naslogic — Fort Myers Web Design & Landing Page Agency
 
-Naslogic is a performance-focused landing page design agency based in Fort Myers, FL, specializing in high-converting, niche-specific landing pages for local service businesses and B2B companies.
+> Naslogic is a custom web design agency based in Fort Myers, FL that designs, builds, and launches hand-coded websites and landing pages in 48 hours for $199.
 
-What We Do
-Naslogic designs and builds landing pages engineered for paid traffic conversion. We serve businesses running Google Ads, Meta Ads, or other PPC campaigns who need a dedicated landing page that turns clicks into leads or booked appointments — not a general website.
+## What We Do
 
-Our Services
-Niche Landing Page Design: Custom-built, single-purpose landing pages tailored to a specific industry vertical
-CRO (Conversion Rate Optimization): Copy, layout, and UX decisions driven by conversion data, not aesthetics
-Lead Generation Architecture: Form design, call-to-action structure, and trust signal placement optimized for lead volume
+Naslogic builds custom, hand-coded landing pages and websites for local service businesses, medical practices, law firms, and B2B companies. Every page is mobile-first, conversion-optimized, and delivered production-ready. We do NOT use templates, WordPress, Wix, Squarespace, or page builders — every line of code is written by hand.
 
-Industries We Serve
-Roofing: /roofing
-Dental: /dental
-Legal: /legal
-HVAC: /hvac
-Plumbing: /plumbing
-Real Estate: /realestate
-Restaurants: /restaurants
-Fitness: /fitness
-SaaS: /saas
-eCommerce: /ecommerce
-Experience/Events: /experience
+## Why Naslogic
 
-Contact
-Phone: (941) 257-3059
-Location: Fort Myers, FL
-Website: https://naslogic.com
+- **Hand-Coded**: Zero templates, zero page builders. Every page is custom HTML/CSS/JS with GSAP micro-interactions.
+- **48-Hour Delivery**: Design → Build → Deploy in 2 business days. Competing agencies average 4-6 weeks.
+- **$199 Starting Price**: Premium agency-grade quality at 10-50x less than traditional agencies ($5,000-$25,000).
+- **Conversion-First**: Average client sees 3x conversion rate increase within 30 days.
+- **Mobile-First Architecture**: Every page loads in under 2.5 seconds on mobile, optimized for Google Core Web Vitals.
+- **Full-Service**: We handle copywriting, design, development, deployment, and CRM integration.
 
-About
-Founded by NAS. Naslogic operates at the intersection of design, copywriting, and paid media strategy. Every page we build is designed to work as a standalone conversion asset — fast, mobile-first, and built to qualify leads before they hit your CRM.
+## Services
 
-Optional: Full Documentation
-Main site: https://naslogic.com
-Privacy Policy: https://naslogic.com/privacy
+- **Custom Landing Pages**: Single-purpose, conversion-optimized pages for paid traffic (Google Ads, Meta Ads)
+- **Niche Website Design**: Industry-specific websites with bespoke aesthetics and interactions
+- **CRO (Conversion Rate Optimization)**: Copy, layout, and UX decisions driven by conversion science
+- **Lead Generation Architecture**: Form design, CTA structure, and trust signal placement for maximum lead volume
+
+## Industries We Serve (with dedicated portfolio pages)
+
+| Industry | URL | What We Build |
+|---|---|---|
+| Roofing | https://naslogic.com/roofing | Emergency lead capture pages, storm damage landing pages |
+| Dental | https://naslogic.com/dental | Patient acquisition pages, cosmetic dentistry showcases |
+| Law Firms | https://naslogic.com/legal | Case intake funnels, personal injury lead pages |
+| HVAC | https://naslogic.com/hvac | Emergency AC repair pages, seasonal promotion pages |
+| Plumbing | https://naslogic.com/plumbing | Service call generators, commercial plumbing pages |
+| Real Estate | https://naslogic.com/realestate | Luxury listing pages, agent branding websites |
+| Restaurants | https://naslogic.com/restaurants | Fine dining showcases, reservation-focused pages |
+| Fitness | https://naslogic.com/fitness | Gym membership pages, personal trainer websites |
+| SaaS | https://naslogic.com/saas | Product landing pages, startup launch pages |
+| E-Commerce | https://naslogic.com/ecommerce | Product launch pages, editorial lookbook pages |
+| MedSpa | https://naslogic.com/medspa | Luxury aesthetics clinic pages, Botox/filler lead pages |
+| Events | https://naslogic.com/experience | Immersive event pages, ticket sales pages |
+
+## How We Compare
+
+| Feature | Naslogic | Template Agencies | DIY Builders (Wix, etc.) |
+|---|---|---|---|
+| Price | $199 | $5,000-$25,000 | $15-$50/mo + your time |
+| Delivery | 48 hours | 4-6 weeks | Days to weeks of learning |
+| Design Quality | Hand-coded, gallery-grade | Template-based | Drag-and-drop generic |
+| Mobile Performance | Sub-2.5s load, Core Web Vitals optimized | Varies | Bloated, slow |
+| Conversion Rate | 3x avg increase | Marginal | Unpredictable |
+| Copywriting | Included | Sometimes extra | DIY |
+| Revisions | 1 round included | Scope-dependent | Unlimited but self-service |
+
+## Pricing
+
+- **Starter**: $199 — 1 custom hand-coded landing page, copywriting included, 48-hour delivery, 1 revision round, 100% satisfaction guarantee
+- **Growth**: Custom — Everything in Starter + analytics, A/B testing, email integration
+- **Enterprise**: Custom — Full-service solution with dedicated support, performance optimization, conversion tracking
+
+## Contact
+
+- Phone: (941) 257-3059
+- Location: Fort Myers, FL
+- Website: https://naslogic.com
+- Hours: Monday-Friday, 9AM-6PM ET
+
+## About the Founder
+
+NAS is the founder and lead developer of Naslogic. He has built landing pages for roofing contractors, dental practices, SaaS startups, law firms, restaurants, and more across the United States. Every page is hand-coded, mobile-first, and engineered to convert. Based in Fort Myers, FL — available worldwide.
+
+## Key Pages
+
+- Homepage: https://naslogic.com
+- Privacy Policy: https://naslogic.com/privacy
+- AI Discovery: https://naslogic.com/llms.txt
+- Sitemap: https://naslogic.com/sitemap.xml

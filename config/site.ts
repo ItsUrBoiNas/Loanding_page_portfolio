@@ -1,9 +1,9 @@
 
 export const siteConfig = {
-    name: "NAS - Landing Page Expert",
-    description: "I Build Landing Pages That Print Money",
-    url: "https://nasir.dev", // Placeholder, ideally should be the real URL
-    ogImage: "https://nasir.dev/og.jpg", // Placeholder
+    name: "Naslogic — Fort Myers Web Design & Landing Page Agency",
+    description: "Custom, hand-coded landing pages & websites designed and delivered in 48 hours for $199. Fort Myers, FL.",
+    url: "https://naslogic.com",
+    ogImage: "https://naslogic.com/og.jpg",
     contact: {
         phone: "(941) 257-3059",
         location: "Fort Myers, FL",

@@ -19,6 +19,7 @@ const nextConfig = {
       { source: '/saas', destination: '/saas.html' },
       { source: '/privacy', destination: '/privacy.html' },
       { source: '/experience', destination: '/experience.html' },
+      { source: '/medspa', destination: '/medspa.html' },
     ];
   },
 }
