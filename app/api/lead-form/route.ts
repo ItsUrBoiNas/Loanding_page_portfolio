@@ -69,8 +69,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Send notification email to all admin emails
-    const adminEmails = process.env.ADMIN_EMAILS
-      ? process.env.ADMIN_EMAILS.split(',').map((e) => e.trim())
+    const envEmails = process.env.ADMIN_EMAILS || process.env.ADMIN_EMAIL;
+    const adminEmails = envEmails
+      ? envEmails.split(',').map((e) => e.trim())
       : [process.env.DEFAULT_FROM_EMAIL || 'admin@example.com']
       
     const emailResult = await sendEmail({
@@ -81,7 +82,10 @@ export async function POST(request: NextRequest) {
 
     if (!emailResult.success) {
       console.error('Email sending failed:', emailResult.error)
-      // Still return success - we received the submission
+      return NextResponse.json(
+        { error: 'Email failed: ' + JSON.stringify(emailResult.error) },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json(
