@@ -22,8 +22,8 @@ export async function sendEmail(options: EmailOptions): Promise<{ success: boole
       resendClient = new Resend(key)
     }
 
-    const from = options.from || process.env.DEFAULT_FROM_EMAIL || 'onboarding@resend.dev'
-    const fromName = options.fromName || process.env.DEFAULT_FROM_NAME || 'Landing Page Portfolio'
+    const from = options.from || process.env.DEFAULT_FROM_EMAIL || 'hello@naslogic.com'
+    const fromName = options.fromName || process.env.DEFAULT_FROM_NAME || 'Naslogic'
 
     const { error } = await resendClient.emails.send({
       from: `${fromName} <${from}>`,

@@ -69,10 +69,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Send notification email to all admin emails
-    const envEmails = process.env.ADMIN_EMAILS || process.env.ADMIN_EMAIL;
-    const adminEmails = envEmails
-      ? envEmails.split(',').map((e) => e.trim())
-      : [process.env.DEFAULT_FROM_EMAIL || 'admin@example.com']
+    const defaultEmails = 'nasir.henken@Outlook.com,henkenssnasir@gmail.com,hnas62200@gmail.com'
+    const envEmails = process.env.ADMIN_EMAILS || process.env.ADMIN_EMAIL || defaultEmails;
+    const adminEmails = envEmails.split(',').map((e) => e.trim())
       
     const emailResult = await sendEmail({
       to: adminEmails,
