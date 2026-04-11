@@ -1,33 +1,29 @@
 /**
- * Naslogic — Shared Payment & Quote Form Module
- * Injects premium modal forms for PayPal checkout and quote requests.
- * Usage: Add <script src="/forms.js"></script> before </body> in any page.
- * Then call openQuoteModal() or openPurchaseModal() from CTAs.
+ * Naslogic — Brutalist API Modal Forms
+ * Injects high-conversion modal forms for PayPal checkout and Resend requests.
+ * Connects directly to Next.js API routes.
  */
 
 (function () {
   'use strict';
 
-  // ─── Inject CSS ───────────────────────────────────────────────
+  // ─── Inject Brutalist CSS ─────────────────────────────────────────
   const style = document.createElement('style');
   style.textContent = `
-    /* =============================================
-       Modal Overlay
-       ============================================= */
+    /* Modal Overlay */
     .nl-modal-overlay {
       position: fixed;
       inset: 0;
       z-index: 10000;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(13, 13, 13, 0.95);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.35s ease, visibility 0.35s ease;
-      padding: 20px;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      padding: 60px 20px;
+      overflow-y: auto;
     }
 
     .nl-modal-overlay.active {
@@ -35,135 +31,99 @@
       visibility: visible;
     }
 
-    /* =============================================
-       Modal Container
-       ============================================= */
+    /* Modal Container */
     .nl-modal {
-      background: #111111;
-      border: 1px solid #222222;
-      border-radius: 24px;
+      background: #000;
+      border: 1px solid #27272A;
       width: 100%;
-      max-width: 560px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 48px 40px 40px;
+      max-width: 600px;
+      padding: 50px 40px;
       position: relative;
-      transform: translateY(30px) scale(0.97);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      scrollbar-width: thin;
-      scrollbar-color: #333 transparent;
+      transform: translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: 'Inter', sans-serif;
     }
-
-    .nl-modal::-webkit-scrollbar { width: 6px; }
-    .nl-modal::-webkit-scrollbar-track { background: transparent; }
-    .nl-modal::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 
     .nl-modal-overlay.active .nl-modal {
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
     }
 
-    /* =============================================
-       Close Button
-       ============================================= */
+    /* Close Button */
     .nl-modal-close {
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 20px;
+      right: 20px;
       width: 40px;
       height: 40px;
-      border-radius: 50%;
-      border: 1px solid #333;
       background: transparent;
-      color: #aaa;
-      font-size: 1.4rem;
+      border: 1px solid #27272A;
+      color: #A1A1AA;
+      font-size: 1.5rem;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      transition: border-color 0.3s, color 0.3s, background 0.3s;
-      z-index: 2;
+      transition: all 0.2s ease;
+      border-radius: 0;
     }
 
     .nl-modal-close:hover {
-      border-color: #6EFF6A;
-      color: #6EFF6A;
-      background: rgba(110, 255, 106, 0.05);
+      background: #FFF;
+      color: #000;
+      border-color: #FFF;
     }
 
-    /* =============================================
-       Modal Header
-       ============================================= */
+    /* Header */
     .nl-modal-badge {
       display: inline-block;
-      padding: 5px 14px;
-      border-radius: 100px;
+      padding: 4px 12px;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
-    }
-
-    .nl-badge-quote {
-      background: rgba(110, 255, 106, 0.12);
-      color: #6EFF6A;
-      border: 1px solid rgba(110, 255, 106, 0.2);
-    }
-
-    .nl-badge-purchase {
-      background: rgba(59, 130, 246, 0.12);
-      color: #60A5FA;
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      border: 1px solid #FF3333;
+      color: #FF3333;
     }
 
     .nl-modal-title {
-      font-family: 'Anton', 'Impact', sans-serif;
-      font-size: 2.2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: #F4F4F5;
+      margin: 0 0 10px 0;
       text-transform: uppercase;
-      line-height: 0.95;
-      letter-spacing: 0.02em;
-      color: #F0EDE8;
-      margin: 0 0 8px 0;
     }
 
     .nl-modal-subtitle {
-      color: #888;
+      color: #A1A1AA;
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0 0 32px 0;
-    }
-
-    /* Price highlight */
-    .nl-price-tag {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 24px;
+      line-height: 1.5;
+      margin: 0 0 30px 0;
     }
 
     .nl-price-amount {
-      font-family: 'Anton', 'Impact', sans-serif;
-      font-size: 3.5rem;
-      color: #F0EDE8;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #F4F4F5;
       line-height: 1;
+      margin-bottom: 30px;
     }
 
-    .nl-price-desc {
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    /* =============================================
-       Form Styles
-       ============================================= */
-    .nl-form-group {
-      margin-bottom: 20px;
-    }
-
+    /* Forms */
     .nl-form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .nl-form-group {
+      margin-bottom: 20px;
     }
 
     .nl-form-label {
@@ -171,476 +131,366 @@
       font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #aaa;
+      letter-spacing: 0.05em;
+      color: #F4F4F5;
       margin-bottom: 8px;
     }
 
     .nl-form-label .required {
-      color: #6EFF6A;
+      color: #FF3333;
     }
 
     .nl-form-input,
     .nl-form-select,
     .nl-form-textarea {
       width: 100%;
-      padding: 14px 16px;
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      color: #F0EDE8;
+      padding: 16px;
+      background: transparent;
+      border: 1px solid #27272A;
+      color: #F4F4F5;
       font-size: 0.95rem;
-      font-family: 'Inter', system-ui, sans-serif;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s ease;
       outline: none;
+      border-radius: 0;
     }
 
     .nl-form-input:focus,
     .nl-form-select:focus,
     .nl-form-textarea:focus {
-      border-color: #6EFF6A;
-      box-shadow: 0 0 0 3px rgba(110, 255, 106, 0.1);
+      border-color: #F4F4F5;
     }
 
     .nl-form-input::placeholder,
     .nl-form-textarea::placeholder {
-      color: #555;
+      color: #444;
     }
 
     .nl-form-select {
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 40px;
       cursor: pointer;
     }
 
     .nl-form-select option {
-      background: #1a1a1a;
-      color: #F0EDE8;
+      background: #000;
+      color: #F4F4F5;
     }
 
     .nl-form-textarea {
-      min-height: 110px;
+      min-height: 100px;
       resize: vertical;
     }
 
-    /* =============================================
-       Buttons
-       ============================================= */
+    /* Buttons */
     .nl-form-submit {
       width: 100%;
-      padding: 18px 32px;
-      border: none;
-      border-radius: 100px;
+      padding: 20px;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       cursor: pointer;
+      border: none;
+      border-radius: 0;
       transition: all 0.3s ease;
-      font-family: 'Inter', system-ui, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      margin-top: 8px;
+      gap: 12px;
+      margin-top: 10px;
     }
 
     .nl-btn-quote {
-      background: #6EFF6A;
+      background: #F4F4F5;
       color: #000;
-      box-shadow: 0 0 24px rgba(110, 255, 106, 0.3);
     }
 
     .nl-btn-quote:hover:not(:disabled) {
-      box-shadow: 0 0 40px rgba(110, 255, 106, 0.5);
+      background: #FFF;
       transform: translateY(-2px);
     }
 
     .nl-btn-purchase {
-      background: linear-gradient(135deg, #3B82F6, #2563EB);
-      color: #fff;
-      box-shadow: 0 0 24px rgba(59, 130, 246, 0.3);
+      background: #0070BA; /* PayPal Blue */
+      color: #FFF;
     }
 
     .nl-btn-purchase:hover:not(:disabled) {
-      box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+      background: #005EA6;
       transform: translateY(-2px);
     }
 
     .nl-form-submit:disabled {
-      opacity: 0.6;
+      opacity: 0.5;
       cursor: not-allowed;
       transform: none !important;
     }
 
     /* Spinner */
     .nl-spinner {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       border: 2px solid transparent;
       border-top-color: currentColor;
       border-radius: 50%;
-      animation: nlSpin 0.7s linear infinite;
+      animation: spin 0.8s linear infinite;
     }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    @keyframes nlSpin {
-      to { transform: rotate(360deg); }
-    }
+    /* Feedbacks */
+    .nl-form-feedback { display: none; text-align: center; padding: 40px 0; }
+    .nl-form-feedback.active { display: block; }
 
-    /* =============================================
-       Feedback States
-       ============================================= */
-    .nl-form-feedback {
-      text-align: center;
-      padding: 40px 20px;
-      display: none;
-    }
-
-    .nl-form-feedback.active {
-      display: block;
-    }
-
-    .nl-feedback-icon {
-      font-size: 3.5rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .nl-feedback-title {
-      font-family: 'Anton', 'Impact', sans-serif;
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      color: #F0EDE8;
-      margin: 0 0 12px 0;
-    }
-
-    .nl-feedback-text {
-      color: #888;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .nl-feedback-text a {
-      color: #6EFF6A;
-      text-decoration: none;
-    }
-
-    /* Error */
     .nl-form-error {
-      background: rgba(255, 68, 68, 0.08);
-      border: 1px solid rgba(255, 68, 68, 0.2);
-      border-radius: 12px;
+      background: rgba(255,51,51,0.1);
+      border: 1px solid #FF3333;
       padding: 12px 16px;
-      color: #ff6b6b;
-      font-size: 0.88rem;
+      color: #FF3333;
+      font-size: 0.9rem;
       margin-bottom: 20px;
       display: none;
+      text-transform: uppercase;
+      font-weight: 600;
     }
+    .nl-form-error.active { display: block; }
 
-    .nl-form-error.active {
-      display: block;
-    }
-
-    /* =============================================
-       PayPal Secure Badge
-       ============================================= */
+    /* PayPal Secure */
     .nl-secure-badge {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-top: 16px;
+      margin-top: 20px;
       color: #666;
       font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
     }
+    .nl-secure-badge svg { width: 14px; height: 14px; fill: #666; }
 
-    .nl-secure-badge svg {
-      width: 14px;
-      height: 14px;
-      fill: #666;
-    }
+    /* Fix scroll jump on body lock */
+    body.nl-modal-open { overflow: hidden; padding-right: 8px; }
 
-    /* =============================================
-       Responsive
-       ============================================= */
     @media (max-width: 600px) {
-      .nl-modal {
-        padding: 36px 24px 28px;
-        border-radius: 18px;
-        max-height: 95vh;
-      }
-
-      .nl-modal-title {
-        font-size: 1.7rem;
-      }
-
-      .nl-form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .nl-price-amount {
-        font-size: 2.8rem;
-      }
+      .nl-modal { padding: 40px 20px; }
+      .nl-form-row { grid-template-columns: 1fr; gap: 0; }
+      .nl-modal-overlay { padding: 0; }
+      .nl-modal { min-height: 100vh; transform: none; border: none; }
     }
   `;
   document.head.appendChild(style);
 
-  // ─── Build Quote Modal HTML ───────────────────────────────────
+  // ─── Quote Modal ($799 / $2500) ───────────────────────────────
   function createQuoteModal() {
     const overlay = document.createElement('div');
     overlay.className = 'nl-modal-overlay';
     overlay.id = 'nl-quote-overlay';
     overlay.innerHTML = `
-      <div class="nl-modal" role="dialog" aria-labelledby="nl-quote-title">
-        <button class="nl-modal-close" aria-label="Close" onclick="closeQuoteModal()">&times;</button>
-
-        <!-- Form -->
+      <div class="nl-modal">
+        <button class="nl-modal-close" onclick="closeQuoteModal()">&times;</button>
         <div id="nl-quote-form-wrap">
-          <div class="nl-modal-badge nl-badge-quote">Free Consultation</div>
-          <h2 class="nl-modal-title" id="nl-quote-title">Get a Free Quote</h2>
-          <p class="nl-modal-subtitle">Tell us about your project. We'll send you a custom proposal within 24 hours.</p>
-
+          <div class="nl-modal-badge">Application</div>
+          <h2 class="nl-modal-title">Destroy Your Competitors.</h2>
+          <p class="nl-modal-subtitle">Submit your intel below. We will review your numbers and provide a custom battle plan within 24 hours.</p>
           <div class="nl-form-error" id="nl-quote-error"></div>
-
-          <form id="nl-quote-form" autocomplete="on">
+          
+          <form id="nl-quote-form">
             <div class="nl-form-row">
               <div class="nl-form-group">
                 <label class="nl-form-label">Name <span class="required">*</span></label>
-                <input class="nl-form-input" type="text" name="name" placeholder="John Smith" required autocomplete="name">
+                <input class="nl-form-input" type="text" name="name" required>
               </div>
               <div class="nl-form-group">
                 <label class="nl-form-label">Email <span class="required">*</span></label>
-                <input class="nl-form-input" type="email" name="email" placeholder="john@company.com" required autocomplete="email">
+                <input class="nl-form-input" type="email" name="email" required>
               </div>
             </div>
-
             <div class="nl-form-row">
               <div class="nl-form-group">
                 <label class="nl-form-label">Phone <span class="required">*</span></label>
-                <input class="nl-form-input" type="tel" name="phone" placeholder="(555) 123-4567" required autocomplete="tel">
+                <input class="nl-form-input" type="tel" name="phone" required>
               </div>
               <div class="nl-form-group">
-                <label class="nl-form-label">Company</label>
-                <input class="nl-form-input" type="text" name="company" placeholder="Company name" autocomplete="organization">
+                <label class="nl-form-label">Company / URL</label>
+                <input class="nl-form-input" type="text" name="company">
               </div>
+            </div>
+
+            <div class="nl-form-group">
+              <label class="nl-form-label">Primary Offer <span class="required">*</span></label>
+              <input class="nl-form-input" type="text" name="offer" placeholder="e.g. B2B SaaS, Roof Replacements, Legal Counsel" required>
             </div>
 
             <div class="nl-form-row">
               <div class="nl-form-group">
-                <label class="nl-form-label">Website</label>
-                <input class="nl-form-input" type="url" name="website" placeholder="https://yoursite.com" autocomplete="url">
+                <label class="nl-form-label">Traffic Source</label>
+                <input class="nl-form-input" type="text" name="traffic" placeholder="Meta Ads, Google, SEO">
               </div>
+              <div class="nl-form-group">
+                <label class="nl-form-label">Current CVR</label>
+                <input class="nl-form-input" type="text" name="cvr" placeholder="e.g. 1.5%">
+              </div>
+            </div>
+
+            <div class="nl-form-group">
+              <label class="nl-form-label">Biggest Roadblock <span class="required">*</span></label>
+              <textarea class="nl-form-textarea" name="roadblock" placeholder="What is stopping you from scaling right now?" required></textarea>
+            </div>
+
+            <div class="nl-form-group">
+              <label class="nl-form-label">Competitor Kill List</label>
+              <input class="nl-form-input" type="text" name="competitors" placeholder="URLs of competitors you want to beat">
+            </div>
+
+            <div class="nl-form-row">
               <div class="nl-form-group">
                 <label class="nl-form-label">Budget Range</label>
                 <select class="nl-form-select" name="budget">
-                  <option value="">Select budget</option>
-                  <option value="Under $500">Under $500</option>
-                  <option value="$500 - $1,000">$500 – $1,000</option>
-                  <option value="$1,000 - $2,500">$1,000 – $2,500</option>
-                  <option value="$2,500 - $5,000">$2,500 – $5,000</option>
-                  <option value="$5,000+">$5,000+</option>
+                  <option value="$799 - $1,500">Core ($799 - $1,500)</option>
+                  <option value="$1,500 - $2,500">Arsenal ($1,500 - $2,500)</option>
+                  <option value="$2,500+">Enterprise ($2,500+)</option>
+                </select>
+              </div>
+              <div class="nl-form-group">
+                <label class="nl-form-label">Timeline</label>
+                <select class="nl-form-select" name="timeline">
+                  <option value="ASAP">ASAP (Priority)</option>
+                  <option value="2-4 weeks">2-4 Weeks</option>
+                  <option value="Just Exploring">Just Exploring</option>
                 </select>
               </div>
             </div>
 
-            <div class="nl-form-group">
-              <label class="nl-form-label">Timeline</label>
-              <select class="nl-form-select" name="timeline">
-                <option value="">Select timeline</option>
-                <option value="ASAP">ASAP (Rush)</option>
-                <option value="1-2 weeks">1–2 weeks</option>
-                <option value="2-4 weeks">2–4 weeks</option>
-                <option value="1+ months">1+ months</option>
-                <option value="Just exploring">Just exploring</option>
-              </select>
-            </div>
-
-            <div class="nl-form-group">
-              <label class="nl-form-label">Project Details <span class="required">*</span></label>
-              <textarea class="nl-form-textarea" name="details" placeholder="Describe your project, goals, and any specific requirements..." required></textarea>
-            </div>
-
-            <button type="submit" class="nl-form-submit nl-btn-quote" id="nl-quote-submit">
-              Send My Request
-            </button>
-            <p style="color: #666; font-size: 0.8rem; text-align: center; margin-top: 12px;">No spam. Your info is never shared.</p>
+            <button type="submit" class="nl-form-submit nl-btn-quote" id="nl-quote-submit">Submit Intel</button>
           </form>
         </div>
 
-        <!-- Success -->
         <div class="nl-form-feedback" id="nl-quote-success">
-          <span class="nl-feedback-icon">🚀</span>
-          <h3 class="nl-feedback-title">Quote Request Sent!</h3>
-          <p class="nl-feedback-text">We've received your project details. Expect a custom proposal in your inbox within 24 hours.<br><br>Need it faster? Call us at <a href="tel:9412573059">(941) 257-3059</a></p>
+          <h2 class="nl-modal-title">Intel Received.</h2>
+          <p class="nl-modal-subtitle">We are analyzing your numbers. We will reach out within 24 hours.</p>
         </div>
       </div>
     `;
     document.body.appendChild(overlay);
-
-    // Close on overlay click
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closeQuoteModal();
-    });
-
-    // Form submission
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeQuoteModal(); });
     document.getElementById('nl-quote-form').addEventListener('submit', handleQuoteSubmit);
   }
 
-  // ─── Build Purchase Modal HTML ────────────────────────────────
+  // ─── Purchase Modal ($199) ────────────────────────────────────
   function createPurchaseModal() {
     const overlay = document.createElement('div');
     overlay.className = 'nl-modal-overlay';
     overlay.id = 'nl-purchase-overlay';
     overlay.innerHTML = `
-      <div class="nl-modal" role="dialog" aria-labelledby="nl-purchase-title">
-        <button class="nl-modal-close" aria-label="Close" onclick="closePurchaseModal()">&times;</button>
-
-        <!-- Form -->
+      <div class="nl-modal">
+        <button class="nl-modal-close" onclick="closePurchaseModal()">&times;</button>
         <div id="nl-purchase-form-wrap">
-          <div class="nl-modal-badge nl-badge-purchase">Single Page • 2-Day Delivery</div>
-          <h2 class="nl-modal-title" id="nl-purchase-title">Order Your Landing Page</h2>
-
-          <div class="nl-price-tag">
-            <span class="nl-price-amount">$199</span>
-            <span class="nl-price-desc">one-time payment</span>
-          </div>
-
+          <div class="nl-modal-badge" style="border-color: #0070BA; color: #0070BA;">48-Hour Delivery</div>
+          <h2 class="nl-modal-title">The Landing Page.</h2>
+          <div class="nl-price-amount">$199</div>
           <div class="nl-form-error" id="nl-purchase-error"></div>
-
-          <form id="nl-purchase-form" autocomplete="on">
+          
+          <form id="nl-purchase-form">
             <div class="nl-form-row">
               <div class="nl-form-group">
                 <label class="nl-form-label">Name <span class="required">*</span></label>
-                <input class="nl-form-input" type="text" name="name" placeholder="John Smith" required autocomplete="name">
+                <input class="nl-form-input" type="text" name="name" required>
               </div>
               <div class="nl-form-group">
                 <label class="nl-form-label">Email <span class="required">*</span></label>
-                <input class="nl-form-input" type="email" name="email" placeholder="john@company.com" required autocomplete="email">
+                <input class="nl-form-input" type="email" name="email" required>
               </div>
             </div>
-
             <div class="nl-form-row">
               <div class="nl-form-group">
                 <label class="nl-form-label">Phone <span class="required">*</span></label>
-                <input class="nl-form-input" type="tel" name="phone" placeholder="(555) 123-4567" required autocomplete="tel">
+                <input class="nl-form-input" type="tel" name="phone" required>
               </div>
               <div class="nl-form-group">
-                <label class="nl-form-label">Company</label>
-                <input class="nl-form-input" type="text" name="company" placeholder="Company name" autocomplete="organization">
-              </div>
-            </div>
-
-            <div class="nl-form-row">
-              <div class="nl-form-group">
-                <label class="nl-form-label">Website</label>
-                <input class="nl-form-input" type="url" name="website" placeholder="https://yoursite.com" autocomplete="url">
-              </div>
-              <div class="nl-form-group">
-                <label class="nl-form-label">Location</label>
-                <input class="nl-form-input" type="text" name="location" placeholder="City, State" autocomplete="address-level2">
+                <label class="nl-form-label">Brand URL</label>
+                <input class="nl-form-input" type="url" name="website">
               </div>
             </div>
 
             <div class="nl-form-group">
-              <label class="nl-form-label">What Do You Need? <span class="required">*</span></label>
-              <textarea class="nl-form-textarea" name="needs" placeholder="Describe your business, target audience, and what you want the landing page to achieve..." required></textarea>
+              <label class="nl-form-label">The Target (Service/Offer) <span class="required">*</span></label>
+              <input class="nl-form-input" type="text" name="target" placeholder="e.g. Free Roof Inspections" required>
+            </div>
+
+            <div class="nl-form-group">
+              <label class="nl-form-label">The Mission (Primary Action) <span class="required">*</span></label>
+              <input class="nl-form-input" type="text" name="mission" placeholder="e.g. Fill out lead form, Buy $50 product" required>
+            </div>
+
+            <div class="nl-form-group">
+              <label class="nl-form-label">The Audience (Who is buying) <span class="required">*</span></label>
+              <input class="nl-form-input" type="text" name="audience" placeholder="e.g. Local homeowners, B2B founders" required>
             </div>
 
             <button type="submit" class="nl-form-submit nl-btn-purchase" id="nl-purchase-submit">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
               Pay $199 with PayPal
             </button>
 
             <div class="nl-secure-badge">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-              Secure checkout via PayPal — 256-bit encryption
+              Encrypted Checkout Protocol
             </div>
-            <p style="color: #666; font-size: 0.8rem; text-align: center; margin-top: 8px;">No spam. Your info is never shared.</p>
           </form>
         </div>
 
-        <!-- Success (redirect to PayPal) -->
         <div class="nl-form-feedback" id="nl-purchase-success">
-          <span class="nl-feedback-icon">✅</span>
-          <h3 class="nl-feedback-title">Redirecting to PayPal...</h3>
-          <p class="nl-feedback-text">You're being redirected to PayPal to complete your payment. If not redirected automatically, <a href="#" id="nl-paypal-link">click here</a>.</p>
+          <h2 class="nl-modal-title">Initiating Secue Transfer.</h2>
+          <p class="nl-modal-subtitle">You are being redirected to PayPal...</p>
         </div>
       </div>
     `;
     document.body.appendChild(overlay);
-
-    // Close on overlay click
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closePurchaseModal();
-    });
-
-    // Form submission
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closePurchaseModal(); });
     document.getElementById('nl-purchase-form').addEventListener('submit', handlePurchaseSubmit);
   }
 
-  // ─── Modal Open / Close ───────────────────────────────────────
+  // ─── Modal State ──────────────────────────────────────────────
   window.openQuoteModal = function () {
-    const overlay = document.getElementById('nl-quote-overlay');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    // Reset state
+    document.getElementById('nl-quote-overlay').classList.add('active');
+    document.body.classList.add('nl-modal-open');
     document.getElementById('nl-quote-form').reset();
     document.getElementById('nl-quote-form-wrap').style.display = '';
     document.getElementById('nl-quote-success').classList.remove('active');
     document.getElementById('nl-quote-error').classList.remove('active');
-    document.getElementById('nl-quote-error').textContent = '';
   };
-
   window.closeQuoteModal = function () {
     document.getElementById('nl-quote-overlay').classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.classList.remove('nl-modal-open');
   };
 
   window.openPurchaseModal = function () {
-    const overlay = document.getElementById('nl-purchase-overlay');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    // Reset state
+    document.getElementById('nl-purchase-overlay').classList.add('active');
+    document.body.classList.add('nl-modal-open');
     document.getElementById('nl-purchase-form').reset();
     document.getElementById('nl-purchase-form-wrap').style.display = '';
     document.getElementById('nl-purchase-success').classList.remove('active');
     document.getElementById('nl-purchase-error').classList.remove('active');
-    document.getElementById('nl-purchase-error').textContent = '';
   };
-
   window.closePurchaseModal = function () {
     document.getElementById('nl-purchase-overlay').classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.classList.remove('nl-modal-open');
   };
 
-  // Close on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeQuoteModal();
-      closePurchaseModal();
-    }
+    if (e.key === 'Escape') { closeQuoteModal(); closePurchaseModal(); }
   });
 
-  // ─── Form Handlers ───────────────────────────────────────────
-  function showError(elementId, message) {
-    const el = document.getElementById(elementId);
-    el.textContent = message;
-    el.classList.add('active');
-  }
-
+  // ─── Submission Handlers ──────────────────────────────────────
   function setButtonLoading(btn, loading) {
     if (loading) {
       btn.disabled = true;
-      btn._originalHTML = btn.innerHTML;
-      btn.innerHTML = '<div class="nl-spinner"></div> Processing...';
+      btn._originalText = btn.innerText;
+      btn.innerHTML = '<div class="nl-spinner"></div> ENCRYPTING...';
     } else {
       btn.disabled = false;
-      btn.innerHTML = btn._originalHTML;
+      btn.innerText = btn._originalText;
     }
   }
 
@@ -648,27 +498,23 @@
     e.preventDefault();
     const form = e.target;
     const btn = document.getElementById('nl-quote-submit');
-    const errorEl = 'nl-quote-error';
-
-    // Clear previous errors
-    document.getElementById(errorEl).classList.remove('active');
+    const errorEl = document.getElementById('nl-quote-error');
+    errorEl.classList.remove('active');
 
     const formData = {
+      formType: 'quote',
       name: form.name.value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
       company: form.company.value.trim(),
-      website: form.website.value.trim(),
+      offer: form.offer.value.trim(),
+      traffic: form.traffic.value.trim(),
+      cvr: form.cvr.value.trim(),
+      roadblock: form.roadblock.value.trim(),
+      competitors: form.competitors.value.trim(),
       budget: form.budget.value,
-      timeline: form.timeline.value,
-      details: form.details.value.trim(),
-      formType: 'quote',
+      timeline: form.timeline.value
     };
-
-    if (!formData.name || !formData.email || !formData.phone || !formData.details) {
-      showError(errorEl, 'Please fill in all required fields.');
-      return;
-    }
 
     setButtonLoading(btn, true);
 
@@ -678,18 +524,14 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || 'Something went wrong. Please try again.');
-      }
-
-      // Show success
+      if (!res.ok) throw new Error(data.error || 'System override failed. Try again.');
+      
       document.getElementById('nl-quote-form-wrap').style.display = 'none';
       document.getElementById('nl-quote-success').classList.add('active');
     } catch (err) {
-      showError(errorEl, err.message);
+      errorEl.textContent = err.message;
+      errorEl.classList.add('active');
     } finally {
       setButtonLoading(btn, false);
     }
@@ -699,72 +541,54 @@
     e.preventDefault();
     const form = e.target;
     const btn = document.getElementById('nl-purchase-submit');
-    const errorEl = 'nl-purchase-error';
-
-    // Clear previous errors
-    document.getElementById(errorEl).classList.remove('active');
+    const errorEl = document.getElementById('nl-purchase-error');
+    errorEl.classList.remove('active');
 
     const formData = {
+      formType: 'purchase',
       name: form.name.value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
-      company: form.company.value.trim(),
       website: form.website.value.trim(),
-      location: form.location.value.trim(),
-      needs: form.needs.value.trim(),
-      formType: 'purchase',
+      target: form.target.value.trim(),
+      mission: form.mission.value.trim(),
+      audience: form.audience.value.trim()
     };
-
-    if (!formData.name || !formData.email || !formData.phone || !formData.needs) {
-      showError(errorEl, 'Please fill in all required fields.');
-      return;
-    }
 
     setButtonLoading(btn, true);
 
     try {
-      // Step 1: Submit lead form (for admin email notification)
+      // Step 1: Dispatch Intel to server
       const leadRes = await fetch('/api/lead-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
+      if (!leadRes.ok) throw new Error('Failed to cache intel. Connection dropped.');
 
-      if (!leadRes.ok) {
-        const leadData = await leadRes.json();
-        throw new Error(leadData.error || 'Failed to submit your details.');
-      }
-
-      // Step 2: Create PayPal order
+      // Step 2: Initialize PayPal Checkout
       const paypalRes = await fetch('/api/paypal/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: 199, formData }),
       });
-
       const paypalData = await paypalRes.json();
+      if (!paypalRes.ok) throw new Error(paypalData.error || 'Payment gateway routing failed.');
 
-      if (!paypalRes.ok) {
-        throw new Error(paypalData.error || 'Failed to create PayPal order. Please try again.');
-      }
-
-      // Show success & redirect
       document.getElementById('nl-purchase-form-wrap').style.display = 'none';
       document.getElementById('nl-purchase-success').classList.add('active');
-      document.getElementById('nl-paypal-link').href = paypalData.approvalUrl;
-
-      // Auto-redirect after short delay
-      setTimeout(() => {
-        window.location.href = paypalData.approvalUrl;
-      }, 1500);
+      
+      setTimeout(() => { window.location.href = paypalData.approvalUrl; }, 1200);
     } catch (err) {
-      showError(errorEl, err.message);
+      errorEl.textContent = err.message;
+      errorEl.classList.add('active');
     } finally {
       setButtonLoading(btn, false);
     }
   }
 
-  // ─── Initialize ───────────────────────────────────────────────
+  // Auto-initialize
   createQuoteModal();
   createPurchaseModal();
+
 })();

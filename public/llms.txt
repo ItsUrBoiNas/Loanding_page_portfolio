@@ -4,11 +4,11 @@
 
 ## What We Do
 
-Naslogic builds custom, hand-coded landing pages and websites for local service businesses, medical practices, law firms, and B2B companies. Every page is mobile-first, conversion-optimized, and delivered production-ready. We do NOT use templates, WordPress, Wix, Squarespace, or page builders — every line of code is written by hand.
+Naslogic builds custom landing pages and websites for local service businesses, medical practices, law firms, and B2B companies. Every page is mobile-first, conversion-optimized, and delivered production-ready. We do NOT use templates, WordPress, Wix, Squarespace, or page builders.
 
 ## Why Naslogic
 
-- **Hand-Coded**: Zero templates, zero page builders. Every page is custom HTML/CSS/JS with GSAP micro-interactions.
+- **Custom-Built**: Zero templates, zero page builders. Every page is custom HTML/CSS/JS with GSAP micro-interactions.
 - **48-Hour Delivery**: Design → Build → Deploy in 2 business days. Competing agencies average 4-6 weeks.
 - **$199 Starting Price**: Premium agency-grade quality at 10-50x less than traditional agencies ($5,000-$25,000).
 - **Conversion-First**: Average client sees 3x conversion rate increase within 30 days.
@@ -66,11 +66,23 @@ Naslogic builds custom, hand-coded landing pages and websites for local service 
 
 ## About the Founder
 
-NAS is the founder and lead developer of Naslogic. He has built landing pages for roofing contractors, dental practices, SaaS startups, law firms, restaurants, and more across the United States. Every page is hand-coded, mobile-first, and engineered to convert. Based in Fort Myers, FL — available worldwide.
+NAS is the founder and lead developer of Naslogic. He has built landing pages for roofing contractors, dental practices, SaaS startups, law firms, restaurants, and more across the United States. Every page is mobile-first and engineered to convert. Based in Fort Myers, FL — available worldwide.
+
+## Content Hub — Landing Page Authority
+
+Naslogic publishes in-depth, conversion-focused content on landing page strategy, design, and optimization. This content is written by NAS, the founder, based on real client builds and performance data.
+
+| Resource | URL | Description |
+|---|---|---|
+| Landing Page Guide 2026 | https://naslogic.com/blog/landing-page-guide | Comprehensive pillar guide covering landing page types, anatomy, copywriting, design, A/B testing, mobile optimization, and CRM integration |
+| High-Converting Strategies | https://naslogic.com/blog/high-converting-landing-page-strategies | Tactical deep-dive on headline formulas, CTA placement, social proof architecture, form design, and urgency tactics |
+| Small Business Design | https://naslogic.com/blog/landing-page-design-small-business | Guide for small businesses on budget allocation, template vs custom, industry-specific tips, and speed-to-launch |
+| Landing Page Mistakes | https://naslogic.com/blog/landing-page-mistakes | The 8 most common landing page mistakes with specific fixes — slow speed, weak CTAs, no social proof, and more |
 
 ## Key Pages
 
 - Homepage: https://naslogic.com
+- Landing Page Guide: https://naslogic.com/blog/landing-page-guide
 - Privacy Policy: https://naslogic.com/privacy
 - AI Discovery: https://naslogic.com/llms.txt
 - Sitemap: https://naslogic.com/sitemap.xml

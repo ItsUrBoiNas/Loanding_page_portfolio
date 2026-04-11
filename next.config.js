@@ -20,6 +20,10 @@ const nextConfig = {
       { source: '/privacy', destination: '/privacy.html' },
       { source: '/experience', destination: '/experience.html' },
       { source: '/medspa', destination: '/medspa.html' },
+      { source: '/blog/landing-page-guide', destination: '/blog/landing-page-guide.html' },
+      { source: '/blog/high-converting-landing-page-strategies', destination: '/blog/high-converting-landing-page-strategies.html' },
+      { source: '/blog/landing-page-design-small-business', destination: '/blog/landing-page-design-small-business.html' },
+      { source: '/blog/landing-page-mistakes', destination: '/blog/landing-page-mistakes.html' },
     ];
   },
 }

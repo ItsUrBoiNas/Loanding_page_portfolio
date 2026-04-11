@@ -22,42 +22,60 @@ export async function OPTIONS() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, phone, company, website, location, needs, details, budget, timeline, references, formType } = body
+    const { 
+      name, email, phone, company, website, 
+      budget, timeline, formType,
+      offer, traffic, cvr, roadblock, competitors, // Quote specific
+      target, mission, audience // Purchase specific
+    } = body
 
-    // Support both 'needs' (purchase form) and 'details' (quote form)
-    const projectDescription = needs || details
-
-    if (!name || !email || !phone || !projectDescription || !formType) {
+    if (!name || !email || !phone || !formType) {
       return NextResponse.json(
-        { error: 'Name, email, phone, project description, and formType are required' },
+        { error: 'Name, email, phone, and formType are required' },
         { status: 400 }
       )
     }
 
     // Build email HTML
-    const emailHtml = `
-      <h2>New ${formType === 'quote' ? 'Quote Request' : 'Purchase Request'}</h2>
+    let emailHtml = `
+      <h2 style="font-family: sans-serif; color: #111;">New ${formType === 'quote' ? 'Arsenal Quote Request' : 'Blueprint Purchase Request'}</h2>
+      <hr />
+      <h3>Client Details:</h3>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
       ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
       ${website ? `<p><strong>Website:</strong> ${website}</p>` : ''}
-      ${location ? `<p><strong>Location:</strong> ${location}</p>` : ''}
-      ${budget ? `<p><strong>Budget Range:</strong> ${budget}</p>` : ''}
-      ${timeline ? `<p><strong>Timeline:</strong> ${timeline}</p>` : ''}
-      <p><strong>${formType === 'quote' ? 'Project Details' : 'Needs'}:</strong></p>
-      <p>${projectDescription}</p>
-      ${references && references.length > 0 ? `<p><strong>Uploaded Files:</strong> ${references.length} file(s)</p>` : ''}
-      ${formType === 'quote' ? '<p><em>This is a quote request for a multi-page site.</em></p>' : '<p><em>This is a purchase request for a single-page landing page ($199).</em></p>'}
-    `
+      <br/>`
+
+    if (formType === 'quote') {
+      emailHtml += `
+      <h3>Project Intel ($799 - $2,500 Tier Framework):</h3>
+      <p><strong>Primary Offer:</strong> ${offer || 'N/A'}</p>
+      <p><strong>Current Traffic & Source:</strong> ${traffic || 'N/A'}</p>
+      <p><strong>Current CVR:</strong> ${cvr || 'N/A'}</p>
+      <p><strong>Biggest Roadblock:</strong> ${roadblock || 'N/A'}</p>
+      <p><strong>Competitor Kill List:</strong> ${competitors || 'N/A'}</p>
+      <p><strong>Budget Range:</strong> ${budget || 'N/A'}</p>
+      <p><strong>Timeline:</strong> ${timeline || 'N/A'}</p>
+      `
+    } else {
+      emailHtml += `
+      <h3>Purchase Intel ($199 Tier Framework):</h3>
+      <p><strong>The Target (Offer/Service):</strong> ${target || 'N/A'}</p>
+      <p><strong>The Mission (Primary CTA):</strong> ${mission || 'N/A'}</p>
+      <p><strong>The Audience (Who is buying):</strong> ${audience || 'N/A'}</p>
+      `
+    }
 
     // Send notification email to all admin emails
     const adminEmails = process.env.ADMIN_EMAILS
       ? process.env.ADMIN_EMAILS.split(',').map((e) => e.trim())
       : [process.env.DEFAULT_FROM_EMAIL || 'admin@example.com']
+      
     const emailResult = await sendEmail({
       to: adminEmails,
-      subject: `New ${formType === 'quote' ? 'Quote Request' : 'Purchase Request'} from ${name}`,
+      subject: `[NASLOGIC] New ${formType === 'quote' ? 'Quote Lead' : 'Purchase Intel'} from ${name}`,
       html: emailHtml,
     })
 
@@ -78,4 +96,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-

@@ -1,163 +1,19 @@
-<!-- 
-Design Rationale:
-This design draws directly from the DNA of standard-setting agency sites like Cloud9 and Juice. It relies on a dark, cinematic color palette paired with oversized, fragmented typography to instantly establish authority and a premium, $100k agency feel. Micro-interactions like 3D tilting portfolio cards, an animated gradient mesh background, a custom cursor, and smooth GSAP scroll animations create the highly tactile, immersive experience necessary to convert high-ticket clients. The layout structurally forces the eye toward fixed CTAs and undeniable value propositions.
--->
-<!DOCTYPE html>
-<html lang="en">
+import os
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fort Myers Web Design & Custom Landing Pages — $199 in 48 Hours | Naslogic</title>
-    <meta name="description" content="Fort Myers web design agency. Custom websites & landing pages for roofers, dentists, lawyers, HVAC, plumbers & more. Hand-coded, mobile-first — delivered in 48 hours for $199.">
-    <link rel="canonical" href="https://naslogic.com">
-    <meta name="robots" content="index, follow">
+FILE_PATH = 'c:/Users/nasir/OneDrive/Desktop/Projects/landing page portfolio/public/naslogic.html'
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Fort Myers Web Design & Custom Landing Pages — $199 | Naslogic">
-    <meta property="og:description" content="Fort Myers web design agency. Custom websites & landing pages for local businesses. Hand-coded, mobile-first — delivered in 48 hours for $199.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naslogic.com">
-    <meta property="og:site_name" content="Naslogic">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fort Myers Web Design & Landing Pages — $199 | Naslogic">
-    <meta name="twitter:description" content="Custom websites & landing pages for local businesses. Hand-coded, mobile-first — 48-hour delivery.">
+with open(FILE_PATH, 'r', encoding='utf-8') as f:
+    content = f.read()
 
-    
-    <!-- JSON-LD: LocalBusiness Schema (Primary) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://naslogic.com/#business",
-      "name": "Naslogic — Fort Myers Web Design & Landing Page Agency",
-      "url": "https://naslogic.com",
-      "logo": "https://naslogic.com/logo.png",
-      "image": "https://naslogic.com/og.jpg",
-      "description": "Custom web design agency in Fort Myers, FL. Hand-coded landing pages & websites delivered in 48 hours for $199. Specializing in roofing, dental, legal, HVAC, plumbing, real estate, restaurant, fitness, SaaS, e-commerce, MedSpa, and event websites.",
-      "founder": { "@type": "Person", "name": "NAS" },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Fort Myers",
-        "addressRegion": "FL",
-        "postalCode": "33901",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 26.6406,
-        "longitude": -81.8723
-      },
-      "telephone": "+1-941-257-3059",
-      "priceRange": "$199-$999",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Fort Myers" },
-        { "@type": "State", "name": "Florida" },
-        { "@type": "Country", "name": "United States" }
-      ],
-      "sameAs": [],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-941-257-3059",
-        "contactType": "sales",
-        "availableLanguage": "English"
-      }
-    }
-    </script>
+# Extract the <head> SEO data up to Google Fonts
+split_marker = "    <!-- Google Fonts -->"
+if split_marker not in content:
+    print("Could not find split marker.")
+    exit(1)
 
-    <!-- JSON-LD: Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Custom Landing Page Design",
-        "description": "Naslogic designs and builds custom, mobile-first, high-converting landing pages in 48 hours for $199. We specialize in pages for roofing, HVAC, dental, legal, SaaS, and e-commerce businesses.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Naslogic",
-            "url": "https://naslogic.com",
-            "founder": {
-                "@type": "Person",
-                "name": "NAS"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Fort Myers",
-                "addressRegion": "FL",
-                "addressCountry": "US"
-            }
-        },
-        "serviceType": "Landing Page Design & Development",
-        "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "199",
-            "priceCurrency": "USD",
-            "description": "Single high-converting landing page with 48-hour delivery"
-        }
-    }
-    </script>
+head_part = content.split(split_marker)[0]
 
-    <!-- JSON-LD: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What if I don't like the landing page design?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You get a full refund within 7 days. No questions asked. We work with you to nail the vision, and the satisfaction guarantee ensures you never feel locked in."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does Naslogic write the landing page copy?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We handle everything — copywriting, design, development, and deployment. You provide your business details and goals; we do the rest."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does hosting work for Naslogic landing pages?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We deliver production-ready code files. You can host them anywhere — Vercel, Netlify, your own server — or we can deploy it for you at no extra charge."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can Naslogic integrate my landing page with my CRM?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. We integrate with HubSpot, Calendly, Google Sheets, Zapier, Mailchimp, and most major CRM platforms. Lead data flows directly into your existing workflow."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What if I need changes after the landing page is delivered?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Your $199 package includes one revision round. Additional revision rounds are available at a flat rate."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Google Fonts -->
+NEW_BODY = """    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -656,7 +512,6 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                 <a href="#autopsy">The Truth</a>
                 <a href="#case-files">Case Files</a>
                 <a href="#pricing">Pricing</a>
-                <a href="/blog/landing-page-guide">Blog</a>
                 <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline" style="padding: 12px 24px;">Start Project</a>
             </div>
         </div>
@@ -866,48 +721,6 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
         </div>
     </section>
 
-    <!-- Industries We Serve (SEO Structural Links) -->
-    <section class="section-padding container" style="border-top: 1px solid var(--surface-border);">
-        <h2 class="autopsy-header gs-reveal" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px;">Industries We Serve</h2>
-        <p class="hero-sub gs-reveal">Custom landing pages built for specific markets.</p>
-        <div class="gs-reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 60px;">
-            <a href="/roofing" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Roofing Websites</a>
-            <a href="/hvac" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">HVAC Websites</a>
-            <a href="/plumbing" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Plumber Websites</a>
-            <a href="/dental" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Dental Websites</a>
-            <a href="/realestate" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Realtor Websites</a>
-            <a href="/saas" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">SaaS Landing Pages</a>
-            <a href="/ecommerce" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">E-Commerce Websites</a>
-            <a href="/legal" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Law Firm Websites</a>
-            <a href="/fitness" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Gym & Fitness Websites</a>
-            <a href="/restaurants" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Restaurant Websites</a>
-            <a href="/medspa" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">MedSpa Websites</a>
-            <a href="/experience" style="background: transparent; border: 1px solid var(--surface-border); padding: 20px; text-align: center; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: border-color 0.3s; display: block;">Event Websites</a>
-        </div>
-    </section>
-
-    <!-- AEO Content Block — Answer Engine Optimization for AI Overviews & Zero-Click -->
-    <section class="section-padding container" style="max-width: 800px; border-top: 1px solid var(--surface-border);">
-        <h2 class="autopsy-header gs-reveal" style="font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 20px;">What Makes a Landing Page Convert?</h2>
-        <div class="gs-reveal" style="margin-top: 40px; color: var(--text-muted);">
-            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px;">A high-converting landing page has five core elements: a specific headline addressing one audience, a single call-to-action repeated above the fold and at page bottom, social proof with real names and measurable results, mobile-first responsive design that loads in under 2.5 seconds, and a risk reversal like a money-back guarantee.</p>
-            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px;">At Naslogic, every page we build follows this framework. Our average client sees a 3X increase in conversion rates within the first 30 days. We specialize in pages for service businesses — roofers, dentists, HVAC technicians, law firms, and restaurants — because these industries depend on local lead generation where every visitor counts.</p>
-            <p style="font-size: 1.1rem; line-height: 1.8;">Unlike template-based builders, we hand-code every page with GSAP micro-interactions, custom typography, and conversion-first layouts tested across thousands of A/B experiments. The result: landing pages that look like they cost $10,000 but start at $199.</p>
-        </div>
-    </section>
-
-    <!-- E-E-A-T: Author Bio / Meet the Builder -->
-    <section class="section-padding container" style="max-width: 800px; padding-top: 0;">
-        <div class="gs-reveal" style="background: transparent; border: 1px solid var(--surface-border); padding: 50px 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
-            <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--text-main); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 3rem; color: var(--bg); font-weight: 700;">N</div>
-            <div style="flex: 1; min-width: 250px;">
-                <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 8px; text-transform: uppercase;">NAS</h3>
-                <p style="color: var(--text-main); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 600;">Founder & Lead Developer, Naslogic</p>
-                <p style="font-size: 1rem; line-height: 1.7; color: var(--text-muted);">I've built landing pages for roofing contractors, dental practices, SaaS startups, and law firms across the U.S. Every page I ship is hand-coded, mobile-first, and engineered to convert. Based in Fort Myers, FL — available worldwide.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Ultimatum -->
     <section class="ultimatum">
         <div class="container">
@@ -924,7 +737,6 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             <a href="#" class="footer-logo">NASLOGIC.</a>
             <div class="footer-links">
                 <a href="tel:9412573059">(941) 257-3059</a>
-                <a href="/blog/landing-page-guide">Blog</a>
                 <a href="/privacy">Privacy Policy</a>
                 <a href="/showcase">Showcase</a>
             </div>
@@ -992,6 +804,12 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             });
         });
     </script>
-    <script src="/forms.js"></script>
 </body>
 </html>
+"""
+
+# Write the final file safely!
+with open(FILE_PATH, 'w', encoding='utf-8') as f:
+    f.write(head_part + NEW_BODY)
+
+print("Conversion to brutalist layout successful. Preserved all SEO head tags.")

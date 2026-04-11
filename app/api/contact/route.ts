@@ -26,10 +26,12 @@ export async function POST(request: NextRequest) {
       <p>${message}</p>
     `
 
-    // Send notification email to admin
-    const adminEmail = process.env.ADMIN_EMAIL || process.env.DEFAULT_FROM_EMAIL || 'admin@example.com'
+    // Send notification email to all admin emails
+    const adminEmails = process.env.ADMIN_EMAILS
+      ? process.env.ADMIN_EMAILS.split(',').map((e) => e.trim())
+      : [process.env.DEFAULT_FROM_EMAIL || 'admin@example.com']
     const emailResult = await sendEmail({
-      to: adminEmail,
+      to: adminEmails,
       subject: `New Contact Form Submission from ${name}`,
       html: emailHtml,
     })

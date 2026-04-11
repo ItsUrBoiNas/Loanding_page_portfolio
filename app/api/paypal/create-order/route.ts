@@ -116,22 +116,22 @@ export async function POST(request: NextRequest) {
     const adminEmail = process.env.ADMIN_EMAIL || process.env.DEFAULT_FROM_EMAIL || 'admin@example.com'
     await sendEmail({
       to: adminEmail,
-      subject: `New Purchase Request - ${orderNumber}`,
+      subject: `[NASLOGIC] New Purchase Checkout Started - ${orderNumber}`,
       html: `
-        <h2>New Purchase Request (Pending Payment)</h2>
+        <h2 style="font-family: sans-serif;">New Purchase Checkout Started (Pending Payment)</h2>
         <p><strong>Order Number:</strong> ${orderNumber}</p>
         <p><strong>Amount:</strong> $${amount}</p>
         <p><strong>PayPal Order ID:</strong> ${orderData.id}</p>
         <hr>
-        <h3>Customer Details:</h3>
+        <h3>Client Intel:</h3>
         <p><strong>Name:</strong> ${formData.name}</p>
         <p><strong>Email:</strong> ${formData.email}</p>
         <p><strong>Phone:</strong> ${formData.phone}</p>
         ${formData.company ? `<p><strong>Company:</strong> ${formData.company}</p>` : ''}
         ${formData.website ? `<p><strong>Website:</strong> ${formData.website}</p>` : ''}
-        ${formData.location ? `<p><strong>Location:</strong> ${formData.location}</p>` : ''}
-        <p><strong>Needs:</strong></p>
-        <p>${formData.needs}</p>
+        <p><strong>The Target (Offer):</strong> ${formData.target || 'N/A'}</p>
+        <p><strong>The Mission (CTA):</strong> ${formData.mission || 'N/A'}</p>
+        <p><strong>The Audience:</strong> ${formData.audience || 'N/A'}</p>
       `,
     })
 
@@ -149,4 +149,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-

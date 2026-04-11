@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Mistakes That Kill Conversions (And How to Fix Them) | Naslogic</title>
+    <meta name="description" content="The 8 landing page mistakes that are burning your ad budget right now. Slow load times, weak CTAs, no social proof — and the exact fixes. By Naslogic.">
+    <link rel="canonical" href="https://naslogic.com/blog/landing-page-mistakes">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Landing Page Mistakes That Kill Conversions | Naslogic">
+    <meta property="og:description" content="The 8 landing page mistakes burning your ad budget right now — and the exact fixes for each one.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://naslogic.com/blog/landing-page-mistakes">
+    <meta property="og:site_name" content="Naslogic">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Landing Page Mistakes That Kill Conversions (And How to Fix Them)",
+        "description": "The 8 landing page mistakes that are burning your ad budget right now. Slow load times, weak CTAs, no social proof — and the exact fixes.",
+        "author": { "@type": "Person", "name": "NAS", "jobTitle": "Founder & Lead Developer", "worksFor": { "@type": "Organization", "name": "Naslogic", "url": "https://naslogic.com" } },
+        "publisher": { "@type": "Organization", "name": "Naslogic", "url": "https://naslogic.com", "logo": { "@type": "ImageObject", "url": "https://naslogic.com/logo.png" } },
+        "datePublished": "2026-04-10",
+        "dateModified": "2026-04-10",
+        "mainEntityOfPage": "https://naslogic.com/blog/landing-page-mistakes"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why is my landing page not converting?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The most common reasons a landing page fails to convert are: a vague headline that does not match the visitor's search intent, a CTA buried below the fold, no social proof or trust signals, too many form fields, slow mobile load speed over 3 seconds, and multiple navigation options that distract from the conversion goal. Most pages have 3 or more of these problems simultaneously." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a good bounce rate for a landing page?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A good landing page bounce rate is between 30-50%. The average landing page has a 60-70% bounce rate. If your bounce rate is above 70%, your page has a targeting problem (wrong audience), a relevance problem (headline does not match the ad), or a performance problem (page loads too slowly). Naslogic-built pages average a 35% bounce rate." }
+            },
+            {
+                "@type": "Question",
+                "name": "How does page speed affect landing page conversion rates?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Every additional second of page load time reduces conversions by approximately 7%. A page loading in 5 seconds instead of 2 seconds loses 21% of potential conversions. Google also penalizes slow pages with worse ad positions and higher cost-per-click, meaning slow pages cost more to drive traffic to and convert less of that traffic." }
+            },
+            {
+                "@type": "Question",
+                "name": "How many form fields should a landing page have?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Three to five fields is optimal for most landing pages. Every field beyond three reduces completions by 5-10%. Ask for name, email, and one qualifying question. Only include a phone number field if your sales process requires phone follow-up. Multi-step forms can outperform long single-step forms for complex offers." }
+            },
+            {
+                "@type": "Question",
+                "name": "Should my landing page have navigation links?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Removing navigation from landing pages increases conversion rates by 3-6% on average. Every link that is not your CTA is an exit opportunity. A landing page should have one purpose and one clickable action. If your page has a full navigation bar, it is functioning as a homepage — not a landing page." }
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "Organization", "name": "Naslogic", "url": "https://naslogic.com", "logo": "https://naslogic.com/logo.png", "founder": { "@type": "Person", "name": "NAS" }, "address": { "@type": "PostalAddress", "addressLocality": "Fort Myers", "addressRegion": "FL", "addressCountry": "US" } }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root{--bg:#0D0D0D;--text-main:#F4F4F5;--text-muted:#A1A1AA;--redline:#FF3333;--surface:#18181B;--surface-border:#27272A;--green:#4ADE80;--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;--container:800px}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:var(--bg);color:var(--text-main);font-family:var(--font-body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+        ::selection{background:var(--text-main);color:var(--bg)}
+        .container{max-width:var(--container);margin:0 auto;padding:0 5%}
+        .container-wide{max-width:1200px;margin:0 auto;padding:0 5%}
+        .nav{position:fixed;top:0;left:0;width:100%;padding:24px 0;background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:100;border-bottom:1px solid var(--surface-border)}
+        .nav .container-wide{display:flex;justify-content:space-between;align-items:center}
+        .nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--text-main);text-decoration:none;letter-spacing:-0.05em}
+        .nav-links{display:flex;gap:32px;align-items:center}
+        .nav-links a:not(.btn){color:var(--text-main);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;transition:color .3s}
+        .nav-links a:not(.btn):hover{color:var(--text-muted)}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;font-family:var(--font-display);font-weight:700;font-size:.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;border:none;border-radius:0;transition:all .3s ease}
+        .btn-primary{background:var(--text-main);color:var(--bg)}.btn-primary:hover{background:#FFF;transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,255,255,0.1)}
+        .btn-outline{background:transparent;color:var(--text-main);border:1px solid var(--surface-border)}.btn-outline:hover{border-color:var(--text-main);background:var(--text-main);color:var(--bg)}
+        .article-hero{padding:160px 0 100px;border-bottom:1px solid var(--surface-border)}
+        .article-hero .breadcrumb{font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:40px}
+        .article-hero .breadcrumb a{color:var(--text-muted);text-decoration:none}.article-hero .breadcrumb a:hover{color:var(--text-main)}
+        .article-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.05;letter-spacing:-0.03em;max-width:700px;margin-bottom:30px}
+        .article-hero .subtitle{font-size:1.15rem;color:var(--text-muted);line-height:1.7;max-width:600px}
+        .article-meta{display:flex;gap:30px;align-items:center;margin-top:40px;padding-top:30px;border-top:1px solid var(--surface-border);font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+        .article-content h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.1;letter-spacing:-0.02em;margin:80px 0 20px;padding-top:40px}
+        .article-content h3{font-family:var(--font-display);font-size:1.4rem;line-height:1.2;margin:50px 0 16px;color:var(--text-main)}
+        .article-content p{font-size:1.05rem;line-height:1.8;color:var(--text-muted);margin-bottom:20px}
+        .article-content a{color:var(--text-main);text-decoration:underline;text-underline-offset:3px;transition:color .3s}.article-content a:hover{color:var(--redline)}
+        .article-content ul,.article-content ol{margin:20px 0 30px;padding-left:0;list-style:none}
+        .article-content ul li,.article-content ol li{padding:10px 0 10px 24px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:1rem;color:var(--text-muted);position:relative;line-height:1.7}
+        .article-content ul li::before{content:'→';position:absolute;left:0;color:var(--redline);font-weight:700}
+        .article-content ol{counter-reset:list}.article-content ol li{counter-increment:list}.article-content ol li::before{content:counter(list) ".";position:absolute;left:0;color:var(--redline);font-weight:700;font-family:var(--font-display)}
+        .answer-block{background:var(--surface);border-left:3px solid var(--redline);padding:24px 30px;margin:30px 0;font-size:1.05rem;line-height:1.7;color:var(--text-main)}
+        .content-table{width:100%;border-collapse:collapse;margin:30px 0;font-size:.95rem}
+        .content-table th,.content-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--surface-border)}
+        .content-table th{font-family:var(--font-display);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-main);background:var(--surface)}
+        .content-table td{color:var(--text-muted)}.content-table td strong{color:var(--text-main)}.content-table td.highlight{color:var(--green);font-weight:600}.content-table td.danger{color:var(--redline);font-weight:600}
+        .mistake-block{background:#000;border:1px solid var(--surface-border);padding:40px;margin:40px 0}
+        .mistake-number{font-family:var(--font-display);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--redline);margin-bottom:12px}
+        .mistake-block h3{font-family:var(--font-display);font-size:1.6rem;margin:0 0 16px;letter-spacing:-0.02em}
+        .mistake-block p{font-size:1rem;line-height:1.7;color:var(--text-muted);margin-bottom:16px}
+        .mistake-fix{background:var(--surface);border-left:3px solid var(--green);padding:20px 24px;margin-top:20px}
+        .mistake-fix strong{color:var(--green)}
+        .mistake-fix p{margin:0;color:var(--text-muted);font-size:.95rem;line-height:1.7}
+        .cta-bar{background:var(--surface);border:1px solid var(--surface-border);padding:40px;margin:60px 0;text-align:center}
+        .cta-bar h3{font-family:var(--font-display);font-size:1.6rem;margin:0 0 12px;letter-spacing:-0.02em}
+        .cta-bar p{font-size:.95rem;color:var(--text-muted);margin-bottom:24px}
+        .cta-bar .price{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:var(--text-main);margin-bottom:24px}
+        .faq-section{margin:80px 0 60px}
+        .faq-item{border-bottom:1px solid var(--surface-border);padding:30px 0}
+        .faq-item h3{font-family:var(--font-display);font-size:1.15rem;margin:0 0 16px}
+        .faq-item p{font-size:1rem;color:var(--text-muted);line-height:1.7;margin:0}
+        .author-bio{border:1px solid var(--surface-border);padding:50px 40px;display:flex;gap:30px;align-items:center;flex-wrap:wrap;margin:80px 0 60px}
+        .author-avatar{width:100px;height:100px;border-radius:50%;background:var(--text-main);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:3rem;color:var(--bg);font-weight:700}
+        .author-info{flex:1;min-width:250px}
+        .author-info h3{font-family:var(--font-display);font-size:2rem;margin:0 0 8px;text-transform:uppercase}
+        .author-info .role{color:var(--text-main);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:16px}
+        .author-info p{font-size:1rem;color:var(--text-muted);line-height:1.7;margin:0}
+        .footer{border-top:1px solid var(--surface-border);padding:60px 0}
+        .footer .container-wide{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+        .footer-logo{font-family:var(--font-display);font-size:2rem;font-weight:700;text-decoration:none;color:var(--text-main);letter-spacing:-0.05em}
+        .footer-links{display:flex;gap:30px;flex-wrap:wrap}
+        .footer-links a{color:var(--text-muted);text-decoration:none;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;transition:color .3s}.footer-links a:hover{color:var(--text-main)}
+        .sticky-cta{position:fixed;bottom:0;left:0;width:100%;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--surface-border);padding:16px 0;z-index:99;transform:translateY(100%);transition:transform .4s ease}
+        .sticky-cta.visible{transform:translateY(0)}
+        .sticky-cta .container-wide{display:flex;justify-content:space-between;align-items:center;gap:20px}
+        .sticky-cta-text{font-family:var(--font-display);font-size:1rem;font-weight:600}
+        .sticky-cta-text span{color:var(--text-muted);font-weight:400;font-size:.85rem;margin-left:12px}
+        @media(max-width:768px){.nav-links{display:none}.article-meta{flex-wrap:wrap;gap:16px}.mistake-block{padding:24px 20px}.cta-bar{padding:30px 20px}.author-bio{padding:30px 20px}.sticky-cta-text span{display:none}.content-table{font-size:.85rem}.content-table th,.content-table td{padding:12px 10px}.footer .container-wide{flex-direction:column;text-align:center}.footer-links{justify-content:center}}
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="container-wide">
+            <a href="/" class="nav-logo">NASLOGIC</a>
+            <div class="nav-links">
+                <a href="/#case-files">Case Files</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/blog/landing-page-guide">Blog</a>
+                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline" style="padding:12px 24px;">Start Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Naslogic</a> / <a href="/blog/landing-page-guide">Landing Page Guide</a> / Mistakes
+            </div>
+            <h1>Landing Page Mistakes That Kill Conversions</h1>
+            <p class="subtitle">Your landing page is probably making at least 3 of these mistakes right now. Each one is costing you leads, sales, and ad spend. Here's how to identify them — and the exact fix for each one.</p>
+            <div class="article-meta">
+                <span>By NAS — Naslogic</span>
+                <span>April 10, 2026</span>
+                <span>11 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-content">
+        <div class="container">
+
+            <h2>Your Landing Page Has a Problem. Here Are 8 of Them.</h2>
+
+            <div class="answer-block">
+                The most common landing page mistakes are slow page load speeds above 3 seconds, vague headlines that don't match search intent, CTA buttons buried below the fold, too many form fields, no social proof, full navigation menus, generic stock photos, and ignoring mobile Core Web Vitals. Each mistake reduces conversions by 10-30% — and they compound. A page with 3+ mistakes often converts below 1%.
+            </div>
+
+            <p>I've audited hundreds of landing pages at Naslogic. The same 8 mistakes show up on nearly every underperforming page. They're not complicated to fix — but most businesses don't know they're making them.</p>
+
+            <p>Below is each mistake, why it kills your conversion rate, and the exact fix. If you want the bigger picture on what a high-performing page looks like, start with our <a href="/blog/landing-page-guide">complete landing page guide for 2026</a>.</p>
+
+            <!-- Mistake 1 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #1</div>
+                <h3>Slow Page Load Speed</h3>
+                <p><strong>The problem:</strong> Your page takes 4-6 seconds to load on mobile. Every additional second beyond 2.5 seconds costs you approximately 7% of conversions. A 5-second page has already lost 21% of potential conversions before the visitor reads a single word.</p>
+                <p><strong>Why it happens:</strong> WordPress themes with 15+ plugins. Wix/Squarespace injecting platform code. Unoptimized images. JavaScript libraries you don't need. Video backgrounds that look pretty but load like cement.</p>
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> We hand-code every page in raw HTML/CSS/JS. No WordPress. No bloated platforms. No unnecessary libraries. Every Naslogic page loads in under 2 seconds on mobile, passing all Core Web Vitals: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1. The average template-built page scores 40-60 on PageSpeed Insights. Ours score 90+.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 2 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #2</div>
+                <h3>Vague, Generic Headlines</h3>
+                <p><strong>The problem:</strong> "Welcome to Our Website." "We Provide Solutions." "Your Trusted Partner." These headlines communicate nothing. They don't tell the visitor what you do, who you serve, or why they should care. Result: 85%+ bounce rate.</p>
+                <p><strong>Why it happens:</strong> Business owners write for themselves instead of for the visitor. They want to sound professional and broad. But visitors aren't looking for broad — they're looking for "this person solves MY specific problem."</p>
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> Every headline we write follows a specific formula: [Specific outcome] for [specific audience]. "Free Storm Damage Inspection — Same Day" beats "Welcome to Smith Roofing" by 400%+ in conversion rate. Copywriting is included in every Naslogic package — you don't write a single word.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 3 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #3</div>
+                <h3>CTA Buried Below the Fold</h3>
+                <p><strong>The problem:</strong> 20% of your visitors are ready to act immediately — they've already decided from the ad. If your CTA is below the fold, these high-intent visitors have to scroll to find it. Many won't bother. That's your best 20% of traffic — gone.</p>
+                <p><strong>Why it happens:</strong> Designers prioritize aesthetics over conversion. They put a beautiful hero image, then a company story, then an about section, then — maybe — a CTA button buried 3 scrolls down.</p>
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> Primary CTA above the fold. Always. Then a second CTA after social proof, and a third at page bottom. Three touchpoints, one action. This is the conversion architecture we use on every build. Learn more about CTA tactics in our <a href="/blog/high-converting-landing-page-strategies">high-converting landing page strategies guide</a>.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 4 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #4</div>
+                <h3>Too Many Form Fields</h3>
+                <p><strong>The problem:</strong> Your form asks for name, email, phone, company, industry, budget, timeline, project description, how they heard about you, and their mother's maiden name. Each field is a micro-decision. Each micro-decision is an exit point.</p>
+                <p><strong>The data:</strong> Reducing form fields from 7 to 3 typically increases completions by 30-50%. That's not a marginal improvement — that's the difference between 10 leads/month and 15 leads/month from the same traffic.</p>
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> Name, email, one qualifying question. Three fields. That's it for the initial capture. If you need more data, use a multi-step form — ask for basics first, then reveal additional fields after the initial commitment. We build this into our Growth and Arsenal packages.</p>
+                </div>
+            </div>
+
+            <!-- CTA #1 -->
+            <div class="cta-bar gs-reveal">
+                <h3>How Many of These Mistakes Is Your Page Making?</h3>
+                <p>If you counted 2 or more, your page needs to be rebuilt — not tweaked. We build pages that avoid every single one.</p>
+                <div class="price">$199 · 48-Hour Delivery</div>
+                <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary">Fix My Landing Page →</a>
+            </div>
+
+            <!-- Mistake 5 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #5</div>
+                <h3>No Social Proof</h3>
+                <p><strong>The problem:</strong> Your page makes claims — "Best service in town," "Trusted by hundreds of clients" — but shows zero evidence. No testimonials. No case studies. No client logos. No review ratings. The visitor has no reason to believe you.</p>
+                <p><strong>The psychology:</strong> Social proof is one of the six principles of persuasion (Cialdini). People follow the actions of others. If your page doesn't show that other people chose you — and were happy about it — the visitor assumes you have nothing to show.</p>
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> Every page we build includes social proof integrated into the design — not slapped on as an afterthought. Specific client results with numbers, named testimonials, Google Reviews embedded directly on the page. See how we implement this on our <a href="/dental">dental practice pages</a> and <a href="/legal">law firm pages</a>.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 6 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #6</div>
+                <h3>Full Navigation on the Landing Page</h3>
+                <p><strong>The problem:</strong> Your landing page has the same navigation bar as your homepage — Home, About, Services, Blog, Contact, Team. Each link is an exit door. Studies show that removing navigation from landing pages increases conversions by 3-6%.</p>
+                <p><strong>The rule:</strong> A landing page has one purpose and one clickable action. If your page has a nav bar, it's not a landing page. It's a homepage. And homepages convert at 1-2% while landing pages convert at 5-11%.</p>
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> Our landing pages have exactly one clickable action: the CTA. No nav bar. No footer menu with 20 links. No sidebar. One page, one purpose, one button. This is non-negotiable on every build.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 7 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #7</div>
+                <h3>Generic Stock Photos</h3>
+                <p><strong>The problem:</strong> The "handshake in a boardroom" photo. The "diverse team smiling at a laptop" photo. The "woman pointing at a whiteboard" photo. Your visitors have seen these images on 10,000 other websites. They signal "generic" and "untrustworthy."</p>
+                <p><strong>The data:</strong> Pages with real photos of real people and real work outperform pages with stock photos by 35% in conversion rate. Authenticity converts. Stock imagery actively hurts trust.</p>
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> We design around your actual business assets — your completed projects, your team, your workspace, your results. When custom photography isn't available, we use design-driven layouts with typography, data visualization, and custom graphics instead of generic stock. See examples on our <a href="/roofing">roofing</a> and <a href="/restaurants">restaurant</a> portfolio pages.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 8 -->
+            <div class="mistake-block gs-reveal">
+                <div class="mistake-number">Mistake #8</div>
+                <h3>Ignoring Core Web Vitals</h3>
+                <p><strong>The problem:</strong> Google measures three Core Web Vitals (LCP, INP, CLS) and uses them to determine your search ranking and ad position quality. If your page fails these metrics, you pay more for worse ad positions AND your page converts less. You're losing twice.</p>
+
+                <table class="content-table" style="margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>What It Means</th>
+                            <th>Target</th>
+                            <th>Avg. Template Page</th>
+                            <th>Naslogic Page</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LCP</strong></td>
+                            <td>Largest Contentful Paint</td>
+                            <td>≤ 2.5s</td>
+                            <td class="danger">3.5-6s</td>
+                            <td class="highlight">1.2-1.8s</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INP</strong></td>
+                            <td>Interaction to Next Paint</td>
+                            <td>≤ 200ms</td>
+                            <td class="danger">300-800ms</td>
+                            <td class="highlight">50-100ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLS</strong></td>
+                            <td>Cumulative Layout Shift</td>
+                            <td>≤ 0.1</td>
+                            <td class="danger">0.15-0.4</td>
+                            <td class="highlight">0.01-0.05</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mistake-fix">
+                    <p><strong>The Naslogic Fix:</strong> Hand-coded HTML/CSS with zero bloat. No WordPress plugins loading 47 JavaScript files. No platform overhead. WebP images with proper dimensions. Preloaded fonts with font-display: swap. Every page scores 90+ on Google PageSpeed Insights before delivery.</p>
+                </div>
+            </div>
+
+            <!-- The Compound Effect -->
+            <h2>The Compound Effect: Why Small Fixes Don't Work</h2>
+
+            <p>Here's what most people don't realize: <strong>these mistakes compound</strong>. A page that is slow AND has a vague headline AND has no social proof doesn't just convert 30% worse — it converts 70-90% worse.</p>
+
+            <p>That's why "tweaking" a bad page rarely works. You fix the headline but the page still loads in 5 seconds. You add a testimonial but the CTA is still buried. You speed up the page but the form still has 9 fields.</p>
+
+            <p><strong>The solution isn't to fix one mistake at a time. It's to start with a page that avoids all of them from the beginning.</strong></p>
+
+            <p>That's what Naslogic builds. Every page. Every time. For $199.</p>
+
+            <!-- Final CTA -->
+            <div class="cta-bar gs-reveal" style="border-color: var(--redline);">
+                <h3>Stop Trying to Fix a Broken Page. Get One That's Built Right.</h3>
+                <p>Hand-coded. Mobile-first. Conversion-engineered. No templates. No WordPress. No mistakes.</p>
+                <div class="price">$199 · 48-Hour Delivery</div>
+                <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                    <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary">Deploy $199 Page →</a>
+                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">Get Custom Quote →</a>
+                </div>
+            </div>
+
+            <p style="margin-top:40px;">For the complete framework on building landing pages from scratch, read our <a href="/blog/landing-page-guide">complete landing page guide for 2026</a>. For the specific tactics that drive conversion rates to 8%+, see our guide on <a href="/blog/high-converting-landing-page-strategies">high-converting landing page strategies</a>. And if you're a small business deciding where to invest, read <a href="/blog/landing-page-design-small-business">landing page design for small businesses</a>.</p>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2 style="margin-top:0;padding-top:0;">Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>Why is my landing page not converting?</h3>
+                    <p>The most common reasons: a vague headline that doesn't match search intent, a CTA buried below the fold, no social proof, too many form fields, slow mobile load speed over 3 seconds, and multiple navigation options. Most underperforming pages have 3+ of these problems simultaneously. <a href="javascript:void(0)" onclick="openQuoteModal()">Get a free page audit from Naslogic</a>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is a good bounce rate for a landing page?</h3>
+                    <p>A good landing page bounce rate is 30-50%. The average is 60-70%. If yours is above 70%, you have a targeting problem (wrong audience), a relevance problem (headline doesn't match the ad), or a performance problem (page loads too slowly). Naslogic-built pages average a 35% bounce rate across all client verticals.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How does page speed affect landing page conversions?</h3>
+                    <p>Every additional second of load time reduces conversions by ~7%. A page loading in 5 seconds instead of 2 loses 21% of potential conversions. Google also penalizes slow pages with worse ad positions and higher CPC. Slow pages cost more to drive traffic to AND convert less of that traffic.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How many form fields should a landing page have?</h3>
+                    <p>Three to five fields for most lead generation. Every extra field beyond three cuts completions by 5-10%. Ask for name, email, and one qualifying question. Only add phone if your sales process requires it. Multi-step forms outperform long single-step forms for complex offers.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Should my landing page have navigation links?</h3>
+                    <p>No. Removing navigation increases conversions by 3-6%. Every link that isn't your CTA is an exit door. A landing page should have one purpose and one clickable action. If your page has a full nav bar, it's functioning as a homepage — not a landing page.</p>
+                </div>
+            </div>
+
+            <!-- Author Bio -->
+            <div class="author-bio gs-reveal">
+                <div class="author-avatar">N</div>
+                <div class="author-info">
+                    <h3>NAS</h3>
+                    <div class="role">Founder & Lead Developer, Naslogic</div>
+                    <p>I've designed and hand-coded landing pages for roofing contractors, dental practices, law firms, SaaS startups, restaurants, and e-commerce brands across the United States. Every page is mobile-first, conversion-engineered, and delivered in 48 hours. Based in Fort Myers, FL — available worldwide. <a href="/">See my work at naslogic.com</a>.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container-wide">
+            <a href="/" class="footer-logo">NASLOGIC.</a>
+            <div class="footer-links">
+                <a href="tel:9412573059">(941) 257-3059</a>
+                <a href="/blog/landing-page-guide">Blog</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sticky-cta" id="stickyCta">
+        <div class="container-wide">
+            <div class="sticky-cta-text">Your page has problems. We are the fix.<span>$199 · 48hrs</span></div>
+            <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary" style="padding:12px 28px;font-size:.85rem;">Fix It Now →</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray('.gs-reveal').forEach(e=>{gsap.fromTo(e,{y:50,opacity:0},{y:0,opacity:1,duration:1,ease:"power3.out",scrollTrigger:{trigger:e,start:"top 85%",toggleActions:"play none none none"}})});const s=document.getElementById('stickyCta');ScrollTrigger.create({trigger:'.cta-bar',start:'bottom top',onEnter:()=>s.classList.add('visible'),onLeaveBack:()=>s.classList.remove('visible')});ScrollTrigger.create({trigger:'.footer',start:'top bottom',onEnter:()=>s.classList.remove('visible'),onLeaveBack:()=>s.classList.add('visible')})});
+    </script>
+    <script src="/forms.js"></script>
+</body>
+</html>
