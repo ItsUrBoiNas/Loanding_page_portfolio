@@ -23,7 +23,7 @@ const pages = [
     niche: 'Roofing',
     serviceType: 'Roofing Website Design',
     faq: [
-      { q: 'How much does a roofing website cost?', a: 'At Naslogic, a custom, Custom-built roofing landing page starts at just $199 with 48-hour delivery. This includes mobile-first design, conversion-optimized copywriting, and deployment.' },
+      { q: 'How much does a roofing website cost?', a: 'At Naslogic, a custom-built roofing landing page starts at just $199 with 48-hour delivery. This includes mobile-first design, conversion-optimized copywriting, and deployment.' },
       { q: 'Do roofers need a website or a landing page?', a: 'Both serve different purposes. A website provides full company information, while a landing page is laser-focused on converting paid traffic (Google Ads, Meta Ads) into phone calls and form submissions. Most roofers running ads need a landing page.' },
       { q: 'What should a roofing company website include?', a: 'A high-converting roofing website needs a clear headline, trust signals (license numbers, insurance), before/after photos, customer testimonials, a prominent phone number, and a simple contact form above the fold.' },
     ],
@@ -83,7 +83,7 @@ const pages = [
     niche: 'HVAC',
     serviceType: 'HVAC Website Design',
     faq: [
-      { q: 'How much does an HVAC website cost?', a: 'Naslogic builds custom HVAC landing pages starting at $199 with 48-hour delivery. These are Custom-built, mobile-first pages optimized specifically for emergency AC repair and installation leads.' },
+      { q: 'How much does an HVAC website cost?', a: 'Naslogic builds custom HVAC landing pages starting at $199 with 48-hour delivery. These are custom-built, mobile-first pages optimized specifically for emergency AC repair and installation leads.' },
       { q: 'What should an HVAC website include?', a: 'Emergency HVAC websites need: a click-to-call phone number front and center, service area coverage, 24/7 availability signals, licensing info, fast page load speed (homeowners in 105° heat won\'t wait), and a simple service request form.' },
       { q: 'How can HVAC companies get more leads from their website?', a: 'Stop sending traffic to a generic 10-page website. Use a dedicated landing page with one clear CTA (call or schedule), add urgency signals, show real response times, and make the phone number the largest element on mobile.' },
     ],
@@ -103,7 +103,7 @@ const pages = [
     niche: 'Plumbing',
     serviceType: 'Plumber Website Design',
     faq: [
-      { q: 'How much does a plumber website cost?', a: 'Naslogic builds custom plumbing landing pages starting at $199 with 48-hour delivery. Unlike template websites, our pages are Custom-built and optimized specifically for converting emergency plumbing calls and commercial bids.' },
+      { q: 'How much does a plumber website cost?', a: 'Naslogic builds custom plumbing landing pages starting at $199 with 48-hour delivery. Unlike template websites, our pages are custom-built and optimized specifically for converting emergency plumbing calls and commercial bids.' },
       { q: 'Do plumbers need a website?', a: 'Absolutely. 97% of consumers search online before calling a local service provider. Without a website, you\'re invisible to every homeowner and property manager searching "plumber near me" — handing all those jobs to competitors who do.' },
       { q: 'What makes a good plumbing website?', a: 'A good plumbing website loads fast, has a prominent phone number, clearly lists services and service areas, shows real customer reviews, displays licensing/insurance info, and makes it dead simple to request a quote or schedule service.' },
     ],
@@ -313,7 +313,7 @@ function generateSchema(page) {
         "@type": "Offer",
         "price": "199",
         "priceCurrency": "USD",
-        "description": "Custom Custom-built landing page delivered in 48 hours"
+        "description": "Custom-built landing page delivered in 48 hours"
       }
     },
     // FAQPage
