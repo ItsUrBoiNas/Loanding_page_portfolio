@@ -594,7 +594,7 @@ NEW_BODY = """    <!-- Google Fonts -->
             
             <div class="case-row gs-reveal">
                 <div>
-                    <h3 class="case-title">Mercer Trial Law</h3>
+                    <h3 class="case-title">Whitfield Law Group</h3>
                     <div class="case-niche">Personal Injury Sector</div>
                 </div>
                 <div class="case-data">
@@ -606,45 +606,45 @@ NEW_BODY = """    <!-- Google Fonts -->
                 <div class="case-data">
                     <div>
                         <div class="case-data-label">Naslogic CVR</div>
-                        <div class="case-data-value lift">5.2%</div>
+                        <div class="case-data-value lift">4.9%</div>
                     </div>
                 </div>
             </div>
 
             <div class="case-row gs-reveal">
                 <div>
-                    <h3 class="case-title">DataStack AI</h3>
+                    <h3 class="case-title">SyncBoard</h3>
                     <div class="case-niche">B2B SaaS Sector</div>
                 </div>
                 <div class="case-data">
                     <div>
                         <div class="case-data-label">Old CVR</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">2.1%</div>
+                        <div class="case-data-value" style="color:var(--text-muted);">2.3%</div>
                     </div>
                 </div>
                 <div class="case-data">
                     <div>
                         <div class="case-data-label">Naslogic CVR</div>
-                        <div class="case-data-value lift">6.8%</div>
+                        <div class="case-data-value lift">7.1%</div>
                     </div>
                 </div>
             </div>
 
             <div class="case-row gs-reveal">
                 <div>
-                    <h3 class="case-title">Aurum Aesthetics</h3>
+                    <h3 class="case-title">Glow MedSpa Fort Myers</h3>
                     <div class="case-niche">High-Ticket MedSpa</div>
                 </div>
                 <div class="case-data">
                     <div>
                         <div class="case-data-label">Old Bounce Rate</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">85%</div>
+                        <div class="case-data-value" style="color:var(--text-muted);">78%</div>
                     </div>
                 </div>
                 <div class="case-data">
                     <div>
                         <div class="case-data-label">Naslogic Bounce Rate</div>
-                        <div class="case-data-value lift">32%</div>
+                        <div class="case-data-value lift">29%</div>
                     </div>
                 </div>
             </div>

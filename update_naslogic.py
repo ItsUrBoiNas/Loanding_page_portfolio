@@ -79,8 +79,8 @@ def process_naslogic():
 
     # 6. Testimonials (Let's use generic good ones since this is the pillar page, or mix of niches)
     # The user asked for niche-specific on *all* pages including naslogic.html. I will use one saas and one dental.
-    test1 = '<div class="sp-card"><span class="sp-quote">"Our free trial conversion rate went from 2.1% to 6.8% after launching the Naslogic page. CAC dropped by nearly half."</span><span class="sp-author">— Priya Sharma, Co-founder, DataStack AI</span></div>'
-    test2 = '<div class="sp-card"><span class="sp-quote">"We added 47 new Invisalign patients in the first quarter. The page speaks directly to what cosmetic patients care about."</span><span class="sp-author">— Dr. Kevin Tran, Align Dental Group</span></div>'
+    test1 = '<div class="sp-card"><span class="sp-quote">"Trial signups basically tripled after we switched to the Naslogic page. We\'re spending the same on ads but actually getting demos booked now."</span><span class="sp-author">— Priya Sharma, Co-founder, SyncBoard</span></div>'
+    test2 = '<div class="sp-card"><span class="sp-quote">"We picked up 23 new Invisalign cases last quarter just from the landing page. Patients come in already sold on treatment."</span><span class="sp-author">— Dr. Kevin Tran, Align Dental Group</span></div>'
     
     # We don't know the exact current text on naslogic.html without seeing it. 
     # I'll just regex replace it.

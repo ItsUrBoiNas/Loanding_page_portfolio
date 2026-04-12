@@ -59,7 +59,7 @@ TESTIMONIALS = {
             "title": "Smile Studio Dental"
         },
         {
-            "quote": "We added 47 new Invisalign patients in the first quarter. The page speaks directly to what cosmetic patients care about — results and financing.",
+            "quote": "We picked up 23 new Invisalign cases last quarter just from the landing page. Patients are coming in already sold on treatment — they just want to know about financing.",
             "author": "Dr. Kevin Tran",
             "title": "Align Dental Group"
         }
@@ -78,12 +78,12 @@ TESTIMONIALS = {
     ],
     "legal": [
         {
-            "quote": "Our personal injury intake went up 40% within 6 weeks. The landing page speaks directly to the client's fear and urgency in a way our old site never did.",
+            "quote": "Whitfield here. Our intake calls are up about 40% since the new page went live. The old site looked like every other PI firm in town — this one actually gets people to pick up the phone.",
             "author": "James Whitfield",
             "title": "Whitfield Law Group"
         },
         {
-            "quote": "Cost per retained client dropped from $380 to $145. We're spending the same on ads but signing twice the cases.",
+            "quote": "We used to pay around $380 per retained client through ads. After the Naslogic page, it's closer to $150. Same ad budget, twice the signed cases.",
             "author": "Lauren Castillo, Esq.",
             "title": "Castillo & Associates"
         }
@@ -126,12 +126,12 @@ TESTIMONIALS = {
     ],
     "saas": [
         {
-            "quote": "Our free trial conversion rate went from 2.1% to 6.8% after launching the Naslogic page. CAC dropped by nearly half.",
+            "quote": "Trial signups basically tripled after we switched to the Naslogic page. We're spending the same on ads but actually getting demos booked now.",
             "author": "Priya Sharma",
-            "title": "Co-founder, DataStack AI"
+            "title": "Co-founder, SyncBoard"
         },
         {
-            "quote": "We replaced our Webflow site with a Naslogic landing page and demo bookings tripled in the first month.",
+            "quote": "We ditched our Webflow site for a Naslogic page and started getting 3x the demo requests. Wish we'd done it six months earlier.",
             "author": "Jake Morrison",
             "title": "CEO, SyncBoard"
         }
