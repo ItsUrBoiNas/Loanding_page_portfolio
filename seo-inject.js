@@ -18,12 +18,12 @@ const pages = [
     file: 'roofing.html',
     slug: 'roofing',
     title: 'Roofing Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom roofing websites & landing pages built to generate leads. Hand-coded, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom roofing websites & landing pages built to generate leads. Custom-built, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'Roofing Website Design & Lead Generation Landing Pages',
     niche: 'Roofing',
     serviceType: 'Roofing Website Design',
     faq: [
-      { q: 'How much does a roofing website cost?', a: 'At Naslogic, a custom, hand-coded roofing landing page starts at just $199 with 48-hour delivery. This includes mobile-first design, conversion-optimized copywriting, and deployment.' },
+      { q: 'How much does a roofing website cost?', a: 'At Naslogic, a custom, Custom-built roofing landing page starts at just $199 with 48-hour delivery. This includes mobile-first design, conversion-optimized copywriting, and deployment.' },
       { q: 'Do roofers need a website or a landing page?', a: 'Both serve different purposes. A website provides full company information, while a landing page is laser-focused on converting paid traffic (Google Ads, Meta Ads) into phone calls and form submissions. Most roofers running ads need a landing page.' },
       { q: 'What should a roofing company website include?', a: 'A high-converting roofing website needs a clear headline, trust signals (license numbers, insurance), before/after photos, customer testimonials, a prominent phone number, and a simple contact form above the fold.' },
     ],
@@ -38,12 +38,12 @@ const pages = [
     file: 'dental.html',
     slug: 'dental',
     title: 'Dental Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom dental practice websites & landing pages that convert. Hand-coded, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom dental practice websites & landing pages that convert. Custom-built, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'Dental Website Design & Patient Acquisition Landing Pages',
     niche: 'Dental',
     serviceType: 'Dental Website Design',
     faq: [
-      { q: 'How much does a dental website cost?', a: 'Naslogic builds custom dental landing pages starting at $199 with 48-hour delivery. Unlike template dental websites that cost $3,000-$10,000, our hand-coded pages are optimized specifically for converting new patient inquiries.' },
+      { q: 'How much does a dental website cost?', a: 'Naslogic builds custom dental landing pages starting at $199 with 48-hour delivery. Unlike template dental websites that cost $3,000-$10,000, our Custom-built pages are optimized specifically for converting new patient inquiries.' },
       { q: 'What makes a good dental website?', a: 'A high-converting dental website needs trust-building elements: before/after smile galleries, patient testimonials, clear service descriptions (implants, cosmetic, Invisalign), insurance information, and an easy online booking or phone CTA.' },
       { q: 'Do dentists need a landing page for Google Ads?', a: 'Absolutely. Sending Google Ads traffic to your main website dilutes conversions. A dedicated dental landing page focuses the visitor on ONE action — booking a consultation — and typically converts 3-5x better than a generic website.' },
     ],
@@ -58,7 +58,7 @@ const pages = [
     file: 'legal.html',
     slug: 'legal',
     title: 'Law Firm Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom attorney & law firm websites that command authority. Hand-coded, conversion-first designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom attorney & law firm websites that command authority. Custom-built, conversion-first designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'Law Firm Website Design & Legal Landing Pages',
     niche: 'Legal',
     serviceType: 'Law Firm Website Design',
@@ -78,12 +78,12 @@ const pages = [
     file: 'hvac.html',
     slug: 'hvac',
     title: 'HVAC Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom HVAC contractor websites built to capture emergency leads. Hand-coded, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom HVAC contractor websites built to capture emergency leads. Custom-built, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'HVAC Website Design & Emergency Lead Generation Pages',
     niche: 'HVAC',
     serviceType: 'HVAC Website Design',
     faq: [
-      { q: 'How much does an HVAC website cost?', a: 'Naslogic builds custom HVAC landing pages starting at $199 with 48-hour delivery. These are hand-coded, mobile-first pages optimized specifically for emergency AC repair and installation leads.' },
+      { q: 'How much does an HVAC website cost?', a: 'Naslogic builds custom HVAC landing pages starting at $199 with 48-hour delivery. These are Custom-built, mobile-first pages optimized specifically for emergency AC repair and installation leads.' },
       { q: 'What should an HVAC website include?', a: 'Emergency HVAC websites need: a click-to-call phone number front and center, service area coverage, 24/7 availability signals, licensing info, fast page load speed (homeowners in 105° heat won\'t wait), and a simple service request form.' },
       { q: 'How can HVAC companies get more leads from their website?', a: 'Stop sending traffic to a generic 10-page website. Use a dedicated landing page with one clear CTA (call or schedule), add urgency signals, show real response times, and make the phone number the largest element on mobile.' },
     ],
@@ -98,12 +98,12 @@ const pages = [
     file: 'plumbing.html',
     slug: 'plumbing',
     title: 'Plumber Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom plumbing company websites built to generate service calls. Hand-coded, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom plumbing company websites built to generate service calls. Custom-built, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'Plumber Website Design & Service Call Landing Pages',
     niche: 'Plumbing',
     serviceType: 'Plumber Website Design',
     faq: [
-      { q: 'How much does a plumber website cost?', a: 'Naslogic builds custom plumbing landing pages starting at $199 with 48-hour delivery. Unlike template websites, our pages are hand-coded and optimized specifically for converting emergency plumbing calls and commercial bids.' },
+      { q: 'How much does a plumber website cost?', a: 'Naslogic builds custom plumbing landing pages starting at $199 with 48-hour delivery. Unlike template websites, our pages are Custom-built and optimized specifically for converting emergency plumbing calls and commercial bids.' },
       { q: 'Do plumbers need a website?', a: 'Absolutely. 97% of consumers search online before calling a local service provider. Without a website, you\'re invisible to every homeowner and property manager searching "plumber near me" — handing all those jobs to competitors who do.' },
       { q: 'What makes a good plumbing website?', a: 'A good plumbing website loads fast, has a prominent phone number, clearly lists services and service areas, shows real customer reviews, displays licensing/insurance info, and makes it dead simple to request a quote or schedule service.' },
     ],
@@ -118,7 +118,7 @@ const pages = [
     file: 'realestate.html',
     slug: 'realestate',
     title: 'Realtor Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom real estate agent websites & listing landing pages. Hand-coded, cinematic designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom real estate agent websites & listing landing pages. Custom-built, cinematic designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'Realtor Website Design & Luxury Real Estate Landing Pages',
     niche: 'Real Estate',
     serviceType: 'Realtor Website Design',
@@ -138,12 +138,12 @@ const pages = [
     file: 'restaurants.html',
     slug: 'restaurants',
     title: 'Restaurant Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom restaurant & fine dining websites built to fill tables. Hand-coded, immersive designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom restaurant & fine dining websites built to fill tables. Custom-built, immersive designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'Restaurant Website Design & Fine Dining Landing Pages',
     niche: 'Restaurant',
     serviceType: 'Restaurant Website Design',
     faq: [
-      { q: 'How much does a restaurant website cost?', a: 'Naslogic builds custom restaurant landing pages starting at $199 with 48-hour delivery. From fine dining to fast casual, our hand-coded pages are designed to fill your tables, not just look pretty.' },
+      { q: 'How much does a restaurant website cost?', a: 'Naslogic builds custom restaurant landing pages starting at $199 with 48-hour delivery. From fine dining to fast casual, our Custom-built pages are designed to fill your tables, not just look pretty.' },
       { q: 'What should a restaurant website include?', a: 'A high-converting restaurant website needs: an appetizing menu (not a PDF link), hours and location with maps, online reservation integration (Resy, OpenTable), high-quality food photography, and mobile-first design for on-the-go diners.' },
       { q: 'Why is website design important for restaurants?', a: 'Your website is often the first impression before someone walks through your door. A slow, cluttered site with a PDF menu signals "casual chain." A cinematic, immersive web experience signals "destination dining worth a reservation."' },
     ],
@@ -178,7 +178,7 @@ const pages = [
     file: 'saas.html',
     slug: 'saas',
     title: 'SaaS Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom SaaS product & startup landing pages engineered to convert. Hand-coded, minimal designs delivered in 48 hours for $199.',
+    description: 'Custom SaaS product & startup landing pages engineered to convert. Custom-built, minimal designs delivered in 48 hours for $199.',
     h1_hidden: 'SaaS Website Design & Product Landing Pages',
     niche: 'SaaS',
     serviceType: 'SaaS Website Design',
@@ -198,7 +198,7 @@ const pages = [
     file: 'ecommerce.html',
     slug: 'ecommerce',
     title: 'E-Commerce Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom online store & e-commerce landing pages that seduce buyers. Hand-coded editorial designs delivered in 48 hours for $199.',
+    description: 'Custom online store & e-commerce landing pages that seduce buyers. Custom-built editorial designs delivered in 48 hours for $199.',
     h1_hidden: 'E-Commerce Website Design & Product Landing Pages',
     niche: 'E-Commerce',
     serviceType: 'E-Commerce Website Design',
@@ -238,7 +238,7 @@ const pages = [
     file: 'medspa.html',
     slug: 'medspa',
     title: 'MedSpa Website Design & Landing Pages | Fort Myers | Naslogic',
-    description: 'Custom MedSpa & aesthetics clinic websites that attract premium clients. Hand-coded luxury designs delivered in 48 hours for $199. Fort Myers, FL.',
+    description: 'Custom MedSpa & aesthetics clinic websites that attract premium clients. Custom-built luxury designs delivered in 48 hours for $199. Fort Myers, FL.',
     h1_hidden: 'MedSpa Website Design & Aesthetics Clinic Landing Pages',
     niche: 'MedSpa',
     serviceType: 'MedSpa Website Design',
@@ -313,7 +313,7 @@ function generateSchema(page) {
         "@type": "Offer",
         "price": "199",
         "priceCurrency": "USD",
-        "description": "Custom hand-coded landing page delivered in 48 hours"
+        "description": "Custom Custom-built landing page delivered in 48 hours"
       }
     },
     // FAQPage
@@ -376,7 +376,7 @@ function generateFooterBlock(page) {
   </div>
   <div style="max-width: 800px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #111; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
     <span>© 2026 Naslogic. Fort Myers, FL. <a href="tel:+19412573059" style="color: #aaa; text-decoration: none;">(941) 257-3059</a></span>
-    <span style="color: #333;">Hand-coded with precision.</span>
+    <span style="color: #333;">Custom-built with precision.</span>
   </div>
 </footer>
 <!-- /NASLOGIC SEO FOOTER -->`;
