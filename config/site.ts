@@ -1,7 +1,7 @@
-
+﻿
 export const siteConfig = {
     name: "Naslogic — Fort Myers Web Design & Landing Page Agency",
-    description: "Custom, hand-coded landing pages & websites designed and delivered in 48 hours for $199. Fort Myers, FL.",
+    description: "Custom, Custom-built landing pages & websites designed and delivered in 48 hours for $199. Fort Myers, FL.",
     url: "https://naslogic.com",
     ogImage: "https://naslogic.com/og.jpg",
     contact: {
