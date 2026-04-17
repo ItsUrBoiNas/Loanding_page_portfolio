@@ -152,12 +152,12 @@
         <div class="ui-layer">
             <nav>
                 <a href="/" class="logo">Naslogic</a>
-                <a href="mailto:hello@naslogic.com" class="btn-rose">Consultation</a>
+                <a href="mailto:hello@naslogic.com" class="btn-rose" onclick="openNasModal(); return false;">Consultation</a>
             </nav>
 
             <div class="hero-content">
                 <h1>Fluid <br>Perfection.</h1>
-                <p class="hero-desc">When a client is ready to spend $3,000 on Botox and fillers, they do not want a clinical, sterile experience. They want hyper-luxury. We engineer digital experiences that feel like stepping into a 5-star clinic lounge.</p>
+                <p class="hero-desc">A woman is researching Botox options in Fort Myers. She checks four MedSpa websites before booking. Yours either signals luxury, expertise, and safety in the first 5 seconds — or she calls the next practice. Your site is either an asset or a waiting room nobody sits in.</p>
             </div>
         </div>
     </div>
@@ -175,7 +175,7 @@
 
     <div class="cta-big">
         <h2>Refine Your Practice.</h2>
-        <a href="mailto:hello@naslogic.com" class="btn-rose" style="border-color: var(--silk-white); color: var(--silk-white);">Commission Naslogic</a>
+        <a href="mailto:hello@naslogic.com" class="btn-rose" style="border-color: var(--silk-white); color: var(--silk-white);" onclick="openNasModal(); return false;">Commission Naslogic</a>
     </div>
 
     <script>
@@ -297,6 +297,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

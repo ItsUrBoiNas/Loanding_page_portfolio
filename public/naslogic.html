@@ -414,7 +414,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             color: var(--redline);
             font-size: 1.5rem;
             font-weight: 700;
-            opacity: 0; /* GSAP reveals this */
+            opacity: 0;
             z-index: 10;
         }
 
@@ -423,6 +423,65 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             color: var(--redline);
             opacity: 0;
         }
+
+        /* Interactive Hotspots for Autopsy */
+        .interactive-hotspot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 51, 51, 0.2);
+            border: 2px solid var(--redline);
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 20;
+            animation: pulse-ring 2s infinite;
+        }
+        .interactive-hotspot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: var(--redline);
+            border-radius: 50%;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 51, 51, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0); }
+        }
+        .hotspot-tooltip {
+            display: none;
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            background: #1A1A1A;
+            border: 1px solid var(--redline);
+            padding: 16px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            pointer-events: none;
+            color: white;
+            font-family: var(--font-body);
+        }
+        .interactive-hotspot:hover .hotspot-tooltip,
+        .interactive-hotspot:active .hotspot-tooltip {
+            display: block;
+        }
+        .hotspot-tooltip strong {
+            display: block;
+            color: var(--redline);
+            font-family: var(--font-display);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+        }
+
 
         /* Case Files */
         .case-grid {
@@ -476,6 +535,50 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
 
         .case-data-value.lift {
             color: #4ADE80; /* Green indicator for positive delta */
+        }
+        
+        .toggle-switch-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #111;
+            padding: 4px;
+            border-radius: 30px;
+            border: 1px solid var(--surface-border);
+            width: fit-content;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            pointer-events: none;
+        }
+        .toggle-btn.active.before-btn {
+            background: rgba(255, 51, 51, 0.2);
+            color: var(--redline);
+            border: 1px solid rgba(255, 51, 51, 0.4);
+        }
+        .toggle-btn.active.after-btn {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ADE80;
+            border: 1px solid rgba(74, 222, 128, 0.4);
+        }
+        .view-content {
+            display: none;
+        }
+        .view-content.active {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: center;
+            width: 100%;
         }
 
         /* Pricing Tactics */
@@ -657,6 +760,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                 <a href="#case-files">Case Files</a>
                 <a href="#pricing">Pricing</a>
                 <a href="/blog/landing-page-guide">Blog</a>
+                <a href="/showcase">Showcase</a>
                 <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline" style="padding: 12px 24px;">Start Project</a>
             </div>
         </div>
@@ -664,18 +768,17 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
 
     <!-- Hero -->
     <section class="hero fade-in">
-        <div class="hero-bg-text">0.02 CVR</div>
         <div class="container">
-            <h1 class="hero-title">
-                Traffic is expensive.<br>
-                Ignorance is <span class="strike">bliss</span> fatal.
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 6rem);">
+                We've diagnosed over 200 landing pages.<br>
+                <span style="color: var(--text-muted); font-size: 0.9em;">Most of them were why the phone stopped ringing.</span>
             </h1>
             <p class="hero-sub">
-                We engineer 8-figure conversion assets disguised as web pages. Starting at $199. Delivered in 48 hours.
+                Naslogic builds custom landing pages from Fort Myers, FL — $199 flat, delivered in 48 hours, built to convert from day one.
             </p>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                <a href="#pricing" class="btn btn-primary">View Arsenal</a>
-                <a href="#autopsy" class="btn btn-outline">See The Autopsy</a>
+                <a href="#pricing" class="btn btn-primary">View Pricing</a>
+                <a href="#autopsy" class="btn btn-outline">Diagnose The Problem</a>
             </div>
         </div>
     </section>
@@ -694,19 +797,26 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                     </div>
                 </div>
 
-                <!-- Redlines -->
-                <div class="redline-annotation" style="top: 50px; left: 10%; max-width: 200px;">
-                    Vague headline. Nobody cares. Bounce rate: 85%
+                <!-- Interactive Hotspots -->
+                <div class="interactive-hotspot" style="top: 50px; left: 10%;">
+                    <div class="hotspot-tooltip">
+                        <strong>Vague Headline</strong>
+                        <p>This headline is about you, not them. Nobody cares.</p>
+                    </div>
                 </div>
-                <div class="red-arrow" style="top: 80px; left: 30%; font-size:40px; transform: rotate(135deg);">↗</div>
 
-                <div class="redline-annotation" style="top: 250px; left: 60%; max-width: 250px;">
-                    Zero social proof above the fold. Trust = 0.
+                <div class="interactive-hotspot" style="top: 250px; left: 60%;">
+                    <div class="hotspot-tooltip">
+                        <strong>No Social Proof</strong>
+                        <p>Would you hand a stranger $500 with zero receipts? Neither will they.</p>
+                    </div>
                 </div>
-                <div class="red-arrow" style="top: 200px; left: 55%; font-size:40px; transform: rotate(-45deg);">↖</div>
 
-                <div class="redline-annotation" style="top: 150px; right: 10%; max-width: 200px;">
-                    Generic button. Nobody clicks "Submit".
+                <div class="interactive-hotspot" style="top: 150px; right: 10%;">
+                    <div class="hotspot-tooltip">
+                        <strong>Generic Button</strong>
+                        <p>'Submit' is a form. Not a feeling. Not a reason to click.</p>
+                    </div>
                 </div>
                 
                 <div style="margin-top:50px; text-align:center;">
@@ -718,8 +828,11 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                     </div>
                 </div>
 
-                <div class="redline-annotation" style="bottom: 80px; left: 15%; max-width: 300px;">
-                    Wall of text features. Buyers don't read, they scan.
+                <div class="interactive-hotspot" style="bottom: 80px; left: 15%;">
+                    <div class="hotspot-tooltip">
+                        <strong>Wall of Text</strong>
+                        <p>They came to decide, not to read your About page.</p>
+                    </div>
                 </div>
             </div>
             
@@ -735,65 +848,80 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
         <h2 class="autopsy-header gs-reveal" style="margin-bottom: 20px;">The Case Files.</h2>
         <p class="hero-sub gs-reveal">Data doesn't lie. Our re-engineering speaks for itself.</p>
 
+        <!-- TODO: Replace placeholder case data with verified client results before publishing -->
         <div class="case-grid">
             
-            <div class="case-row gs-reveal">
-                <div>
-                    <h3 class="case-title">Whitfield Law Group</h3>
-                    <div class="case-niche">Personal Injury Sector</div>
-                </div>
-                <div class="case-data">
+            <div class="case-row gs-reveal" style="grid-template-columns: 1fr; align-items: start;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
                     <div>
-                        <div class="case-data-label">Old CVR</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">1.8%</div>
+                        <h3 class="case-title">Whitfield Law Group</h3>
+                        <div class="case-niche">Personal Injury Sector</div>
+                    </div>
+                    <div class="toggle-switch-container" onclick="toggleCaseView('whitfield')">
+                        <button class="toggle-btn active before-btn" id="whitfield-before-btn">BEFORE</button>
+                        <button class="toggle-btn after-btn" id="whitfield-after-btn">AFTER</button>
                     </div>
                 </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Naslogic CVR</div>
-                        <div class="case-data-value lift">4.9%</div>
+                
+                <div id="whitfield-before" class="view-content active" style="margin-top: 20px;">
+                    <div style="flex: 1;">
+                        <p style="font-size: 0.9rem; margin-bottom: 20px;"><strong>The Problem:</strong> Four-page website with a stock photo of scales, a paragraph bio, and a phone number buried in the footer. The headline said 'Dedicated Legal Representation' — which is what every law site says.</p>
+                    </div>
+                    <div class="case-data text-center p-4 border border-red-500 border-opacity-30 rounded bg-red-900 bg-opacity-20" style="padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 51, 51, 0.3);">
+                        <div class="case-data-label">Bounce Rate</div>
+                        <div class="case-data-value" style="color:var(--redline);">78%</div>
+                    </div>
+                </div>
+
+                <div id="whitfield-after" class="view-content" style="margin-top: 20px;">
+                    <div style="flex: 1;">
+                        <p style="font-size: 0.9rem; margin-bottom: 20px;"><strong>The Solution:</strong> One focused landing page targeting the exact case type (slip & fall). Headline rewritten around the visitor's situation. Trust signals: case outcome, bar associations, direct call button at the top. No fluff.</p>
+                    </div>
+                    <div class="case-data text-center p-4 rounded" style="padding: 20px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.3);">
+                        <div class="case-data-label">Bounce Rate</div>
+                        <div class="case-data-value lift">31%</div>
                     </div>
                 </div>
             </div>
 
-            <div class="case-row gs-reveal">
-                <div>
-                    <h3 class="case-title">SyncBoard</h3>
-                    <div class="case-niche">B2B SaaS Sector</div>
-                </div>
-                <div class="case-data">
+            <div class="case-row gs-reveal" style="grid-template-columns: 1fr; align-items: start;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
                     <div>
-                        <div class="case-data-label">Old CVR</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">2.3%</div>
+                        <h3 class="case-title">Glow MedSpa</h3>
+                        <div class="case-niche">Fort Myers, FL</div>
+                    </div>
+                    <div class="toggle-switch-container" onclick="toggleCaseView('glow')">
+                        <button class="toggle-btn active before-btn" id="glow-before-btn">BEFORE</button>
+                        <button class="toggle-btn after-btn" id="glow-after-btn">AFTER</button>
                     </div>
                 </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Naslogic CVR</div>
-                        <div class="case-data-value lift">7.1%</div>
+                
+                <div id="glow-before" class="view-content active" style="margin-top: 20px;">
+                    <div style="flex: 1;">
+                        <p style="font-size: 0.9rem; margin-bottom: 20px;"><strong>The Problem:</strong> Homepage copy talked about "luxury treatments" with no prices, no before/after, and a contact form that looked like a tax document. Every click to 'Book Now' went to a dead Booking link.</p>
+                    </div>
+                    <div class="case-data text-center p-4 border border-red-500 border-opacity-30 rounded bg-red-900 bg-opacity-20" style="padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 51, 51, 0.3);">
+                        <div class="case-data-label">Bookings / Mo</div>
+                        <div class="case-data-value" style="color:var(--redline);">Avg. 3</div>
+                    </div>
+                </div>
+
+                <div id="glow-after" class="view-content" style="margin-top: 20px;">
+                    <div style="flex: 1;">
+                        <p style="font-size: 0.9rem; margin-bottom: 20px;"><strong>The Solution:</strong> Single-page overhaul: lead with the specific treatment, show a real result statement, one-click booking above the fold. Copy rewired around the reader's fear ('am I a candidate?') instead of the business's menu.</p>
+                    </div>
+                    <div class="case-data text-center p-4 rounded" style="padding: 20px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.3);">
+                        <div class="case-data-label">Bookings / Mo</div>
+                        <div class="case-data-value lift">Avg. 19</div>
                     </div>
                 </div>
             </div>
 
-            <div class="case-row gs-reveal">
-                <div>
-                    <h3 class="case-title">Glow MedSpa Fort Myers</h3>
-                    <div class="case-niche">High-Ticket MedSpa</div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Old Bounce Rate</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">78%</div>
-                    </div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Naslogic Bounce Rate</div>
-                        <div class="case-data-value lift">29%</div>
-                    </div>
-                </div>
-            </div>
+        </div>
 
+        <!-- TODO: Add real client testimonials here once collected. Embed Google Reviews widget or use .testimonial-card pattern. -->
+        <div style="margin-top: 60px; padding: 30px; border: 1px dashed var(--surface-border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+            Client testimonials coming soon — currently collecting verified Google Reviews.
         </div>
     </section>
 
@@ -807,7 +935,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                 
                 <!-- Tier 1 -->
                 <div class="tier-card">
-                    <h3 class="tier-name">The Landing Page</h3>
+                    <h3 class="tier-name">The Diagnosis</h3>
                     <div class="tier-price">$199</div>
                     <p class="tier-desc">Surgical precision for a single offer. Delivered rapidly.</p>
                     <ul class="tier-features">
@@ -823,7 +951,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                 <!-- Tier 2 -->
                 <div class="tier-card featured">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--text-main);"></div>
-                    <h3 class="tier-name">The Core Business</h3>
+                    <h3 class="tier-name">The Operation</h3>
                     <div class="tier-price">$799</div>
                     <p class="tier-desc">The foundation for serious companies scaling their organic traffic.</p>
                     <ul class="tier-features">
@@ -839,7 +967,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
 
                 <!-- Tier 3 -->
                 <div class="tier-card">
-                    <h3 class="tier-name">The Complete Arsenal</h3>
+                    <h3 class="tier-name">The Transplant</h3>
                     <div class="tier-price">$2,500</div>
                     <p class="tier-desc">Absolute market domination. The ultimate 15-point conversion engine.</p>
                     <ul class="tier-features">
@@ -903,7 +1031,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 8px; text-transform: uppercase;">NAS</h3>
                 <p style="color: var(--text-main); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 600;">Founder & Lead Developer, Naslogic</p>
-                <p style="font-size: 1rem; line-height: 1.7; color: var(--text-muted);">I've built landing pages for roofing contractors, dental practices, SaaS startups, and law firms across the U.S. Every page I ship is Custom-built, mobile-first, and engineered to convert. Based in Fort Myers, FL — available worldwide.</p>
+                <p style="font-size: 1rem; line-height: 1.7; color: var(--text-muted);">I'm 15, I'm from Fort Myers, and I taught myself everything I know about web design from scratch. I started Naslogic because I kept seeing local businesses with real services and genuinely terrible pages that were silently costing them calls. I build custom landing pages — not templates, not drag-and-drop — pages built around exactly what your customer needs to see before they trust you. I care more about your conversion rate than a big agency ever would, because this is my only focus right now. Every page I ship is something I'd want someone to judge me by.</p>
             </div>
         </div>
     </section>
@@ -912,6 +1040,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <section class="ultimatum">
         <div class="container">
             <h2 class="ultimatum-text gs-reveal">If your landing page isn't an asset, it's a liability.</h2>
+            <p class="hero-sub gs-reveal" style="max-width: 800px; margin: 0 auto 40px; font-size: 1.5rem; color: #f87171;">Every day a bad page is live is another day a competitor's phone rings instead of yours.</p>
             <div class="gs-reveal">
                 <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Fix It Now</a>
             </div>
@@ -991,6 +1120,26 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                 ease: "power2.out"
             });
         });
+        function toggleCaseView(caseId) {
+            const beforeContent = document.getElementById(caseId + '-before');
+            const afterContent = document.getElementById(caseId + '-after');
+            const beforeBtn = document.getElementById(caseId + '-before-btn');
+            const afterBtn = document.getElementById(caseId + '-after-btn');
+            
+            if (beforeContent.classList.contains('active')) {
+                // Switch to After
+                beforeContent.classList.remove('active');
+                afterContent.classList.add('active');
+                beforeBtn.classList.remove('active');
+                afterBtn.classList.add('active');
+            } else {
+                // Switch to Before
+                afterContent.classList.remove('active');
+                beforeContent.classList.add('active');
+                afterBtn.classList.remove('active');
+                beforeBtn.classList.add('active');
+            }
+        }
     </script>
     <script src="/forms.js"></script>
 </body>

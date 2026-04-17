@@ -76,10 +76,10 @@
 
         /* Nav */
         nav {
-            position: absolute; top: 0; width: 100%;
+            position: fixed; top: 0; width: 100%;
             padding: 3rem 5vw;
             display: flex; justify-content: space-between; align-items: center;
-            z-index: 100;
+            z-index: 100; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(10px);
         }
 
         .logo {
@@ -235,7 +235,7 @@
     <div class="spotlight-wrapper">
         <nav>
             <a href="/" class="logo">Naslogic</a>
-            <a href="#book" class="reservations">Book A Table</a>
+            <a href="mailto:hello@naslogic.com" class="reservations" onclick="openNasModal(); return false;">Book A Table</a>
         </nav>
 
         <header class="hero">
@@ -243,7 +243,7 @@
             <div class="container">
                 <span class="hero-tag">Culinary Web Architecture</span>
                 <h1>Taste happens <br><i>before</i> the first bite.</h1>
-                <p>Your tasting menu is a $300 per head experience. But your website looks like a chaotic pizza delivery menu. We engineer Michelin-grade digital aesthetics that fully book your dining room weeks in advance.</p>
+                <p>A couple opens Google Maps, taps your restaurant, and lands on your site. They spend 6 seconds deciding whether to book. Your menu is a PDF. Your photo is stock art. They hit back and call your competitor. A restaurant down the street with half your talent but a better-looking website gets the reservation. We fix that.</p>
             </div>
         </header>
 
@@ -427,6 +427,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

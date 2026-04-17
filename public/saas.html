@@ -166,16 +166,16 @@
 
     <nav>
         <a href="/" class="logo">Naslogic <span>// architecture</span></a>
-        <a href="mailto:hello@naslogic.com" class="btn-system">Deploy Framework</a>
+        <a href="mailto:hello@naslogic.com" class="btn-system" onclick="openNasModal(); return false;">Deploy Framework</a>
     </nav>
 
     <div class="content">
         <header class="hero container">
             <div class="hero-label">Engineering Grade</div>
             <h1>Aesthetic <strong>Throughput.</strong></h1>
-            <p>CTOs and elite founders don't buy "magic." They buy precision, specs, and flawless frontend execution. We build dark, minimal, hyper-optimized SaaS landing pages that look like the dashboard of a $50M enterprise system.</p>
+            <p>You built something technical and real. Your landing page is still floating illustrations and 'Supercharge your workflow' copy that converts at sub-2%. Trials are free — so when someone bounces without signing up, you didn't just lose a lead. You lost the whole funnel. We build SaaS pages that get people to click Start Trial.</p>
             <div>
-                <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1rem 3rem; font-size: 0.9rem;">Initialize Setup</a>
+                <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1rem 3rem; font-size: 0.9rem;" onclick="openNasModal(); return false;">Initialize Setup</a>
             </div>
         </header>
 
@@ -196,7 +196,7 @@
 
         <section class="cta-system container">
             <h2>Outperform.</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1.5rem 4rem;">Compile Final Build</a>
+            <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1.5rem 4rem;" onclick="openNasModal(); return false;">Compile Final Build</a>
         </section>
     </div>
 
@@ -380,6 +380,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

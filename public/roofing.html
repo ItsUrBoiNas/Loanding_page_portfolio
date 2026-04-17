@@ -118,17 +118,17 @@
 
     <nav id="navbar">
         <a href="/" class="logo">NASLOGIC</a>
-        <a href="mailto:hello@naslogic.com" class="btn-copper">Deploy Team</a>
+        <a href="mailto:hello@naslogic.com" class="btn-copper" onclick="openNasModal(); return false;">Deploy Team</a>
     </nav>
 
     <div class="container hero">
         <h1>THE <span>STORM</span><br>HAS HIT.</h1>
-        <p>Your prospective client's roof is leaking. They are panicked. They are frantic. Your landing page must reflect absolute protection and calm control, not a chaotic list of "about us" bullet points.</p>
+        <p>Storm hit Lee County last night. A homeowner is on Google right now — roof leaking, insurance claim pending, hiring decision made in under 24 hours. Your page is either the one they call or the one they never see.</p>
     </div>
 
     <div class="container solution-zone">
         <h2 class="sun-text">We clear the storm.</h2>
-        <p class="sun-desc">We build psychological funnels. From the moment the user clicks, the visual hierarchy asserts your authority. Through scroll-linked physics, we literally simulate the resolution of their problem. You don't just fix roofs. You restore peace of mind. Commission a build today.</p>
+        <p class="sun-desc">We build roofing pages for storm season. Free inspection CTAs above the fold. Insurance claim language homeowners already understand. A phone number impossible to miss at 2 AM. The roofer with the better page wins the job — every time. Commission a build today.</p>
     </div>
 
     <script>
@@ -265,6 +265,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

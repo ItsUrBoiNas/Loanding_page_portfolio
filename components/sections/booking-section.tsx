@@ -21,11 +21,11 @@ export default function BookingSection() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-              Ready to Scale?
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
+              If your landing page isn&apos;t an asset, it&apos;s a liability.
             </h2>
-            <p className="text-xl text-slate-400 mb-12">
-              Stop guessing. Let&apos;s build a path to profit.
+            <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+              Every day a bad page is live is another day a competitor&apos;s phone rings instead of yours.
             </p>
 
             <div className="space-y-6 max-w-md mx-auto w-full text-left">

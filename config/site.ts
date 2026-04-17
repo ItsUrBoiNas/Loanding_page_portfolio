@@ -10,25 +10,25 @@ export const siteConfig = {
     },
     pricing: [
         {
-            name: "Starter",
+            name: "The Diagnosis",
             description: "Perfect for small businesses getting started",
             price: "$199",
             features: ["Single Page Landing Page", "Mobile Responsive", "2 Day Turn-around", "No Payment Processing"],
             cta: "Book Strategy Call",
         },
         {
-            name: "Growth",
+            name: "The Operation",
             description: "For businesses ready to scale",
             price: "Custom",
-            features: ["Everything in Starter", "Advanced Analytics", "A/B Testing", "Email Integration"],
+            features: ["Everything in The Diagnosis", "Advanced Analytics", "A/B Testing", "Email Integration"],
             cta: "Book Strategy Call",
         },
         {
-            name: "Enterprise",
+            name: "The Transplant",
             description: "Full-service solution for maximum impact",
             price: "Custom",
             features: [
-                "Everything in Growth",
+                "Everything in The Operation",
                 "Custom Development",
                 "Dedicated Support",
                 "Performance Optimization",

@@ -153,7 +153,7 @@
         <div class="layer-clean" id="layer-clean">
             <nav id="nav">
                 <a href="/" class="logo">Naslogic.</a>
-                <a href="mailto:hello@naslogic.com" class="btn-gold">Book Consultation</a>
+                <a href="mailto:hello@naslogic.com" class="btn-gold" onclick="openNasModal(); return false;">Book Consultation</a>
             </nav>
 
             <header class="hero container">
@@ -173,7 +173,7 @@
             <section class="container" style="padding-bottom: 5rem;">
                 <div class="cta-bottom">
                     <h2>Demand Excellence.</h2>
-                    <a href="mailto:hello@naslogic.com" class="btn-gold" style="border-color: var(--medical-white); color: var(--medical-white);">Initiate Overhaul</a>
+                    <a href="mailto:hello@naslogic.com" class="btn-gold" style="border-color: var(--medical-white); color: var(--medical-white);" onclick="openNasModal(); return false;">Initiate Overhaul</a>
                 </div>
             </section>
         </div>
@@ -315,6 +315,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

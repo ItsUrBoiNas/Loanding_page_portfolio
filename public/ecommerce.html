@@ -169,7 +169,7 @@
 
     <nav>
         <a href="/" class="logo">NASLOGIC</a>
-        <a href="#build" class="contact">COLLECTION '26</a>
+        <a href="mailto:hello@naslogic.com" class="contact" onclick="openNasModal(); return false;">COLLECTION '26</a>
     </nav>
 
     <header class="hero container">
@@ -179,7 +179,7 @@
     </header>
 
     <section class="lookbook container">
-        <p class="lb-intro">Your high-end apparel line deserves more than a standard Shopify template. <span>We architect editorial ecommerce experiences</span> that elevate a $300 garment into an absolute necessity.</p>
+        <p class="lb-intro">You're spending money on ads. Your product landing page converts at 1.2%. <span>That's your ad budget flushing because the page doesn't close the deal.</span> We build ecommerce pages that match the ad promise, name the specific desire, and convert.</p>
 
         <div class="editorial-grid">
             <div class="scrolling-image-container img-large">
@@ -225,7 +225,7 @@
     <section class="cta" id="build">
         <div class="container">
             <h2>OWN THE RUNWAY</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-editorial">COMMISSION A DESIGN</a>
+            <a href="mailto:hello@naslogic.com" class="btn-editorial" onclick="openNasModal(); return false;">COMMISSION A DESIGN</a>
         </div>
     </section>
 
@@ -351,6 +351,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

@@ -71,16 +71,16 @@ export default function Pricing() {
                       variant="primary"
                       className="w-full"
                       onClick={() => {
-                        if (tier.name === "Starter") {
+                        if (tier.name === "The Diagnosis") {
                           setIsPurchaseModalOpen(true)
                         } else {
                           setIsQuoteModalOpen(true)
                         }
                       }}
                     >
-                      {tier.name === "Starter" ? "Purchase Now - $199" : tier.cta}
+                      {tier.name === "The Diagnosis" ? "Purchase Now - $199" : tier.cta}
                     </Button>
-                    {tier.name === "Starter" && (
+                    {tier.name === "The Diagnosis" && (
                       <Button
                         variant="secondary"
                         className="w-full"

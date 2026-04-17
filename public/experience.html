@@ -134,7 +134,7 @@
     <div class="fixed-ui">
         <div class="nav">
             <a href="/" class="logo">NASLOGIC</a>
-            <a href="mailto:hello@naslogic.com" class="btn-neon">Commission System</a>
+            <a href="mailto:hello@naslogic.com" class="btn-neon" onclick="openNasModal(); return false;">Commission System</a>
         </div>
         <div>
             <div class="progress-container"><div class="progress-bar" id="pb"></div></div>
@@ -151,7 +151,7 @@
     <!-- Related Industries -->
     <div style="position: absolute; top: calc(800vh - 100vh); width: 100%; height: 100vh; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index: 50;">
         <h1 style="font-size: 5rem; text-shadow: 0 0 30px var(--neon-pink); margin-bottom: 2rem; color: #FFF;">THE END.</h1>
-        <a href="mailto:hello@naslogic.com" class="btn-neon" style="pointer-events: auto; padding: 1.5rem 4rem; font-size: 1.2rem;">LET'S TALK</a>
+        <a href="mailto:hello@naslogic.com" class="btn-neon" style="pointer-events: auto; padding: 1.5rem 4rem; font-size: 1.2rem;" onclick="openNasModal(); return false;">LET'S TALK</a>
     </div>
 
     <script>
@@ -323,6 +323,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

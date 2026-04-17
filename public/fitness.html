@@ -156,7 +156,7 @@
     <div class="flow-state" id="flow-state">
         <nav>
             <a href="/" class="logo">NASLOGIC<span>.</span></a>
-            <a href="mailto:hello@naslogic.com" class="btn-strike"><span>INITIATE</span></a>
+            <a href="mailto:hello@naslogic.com" class="btn-strike" onclick="openNasModal(); return false;"><span>INITIATE</span></a>
         </nav>
 
         <section class="hero">
@@ -164,7 +164,7 @@
                 <h1>FLOW <span>STATE.</span></h1>
             </div>
             <div style="max-width: 400px; margin-left: 5rem;">
-                <p style="font-size: 1.3rem; line-height: 1.6; color: #888;">If your facility charges $3,000 for elite coaching, your website cannot have "friction." We remove all standard templates, building vicious, frictionless conversion engines that filter out the weak and capture high-intent athletes instantly.</p>
+                <p style="font-size: 1.3rem; line-height: 1.6; color: #888;">January 2nd is the biggest gym-signup day of the year. Someone in your market just resolved to get serious. They Googled 'gym near me.' Your page either had a trial offer above the fold and a button that worked on mobile — or they signed up with your competitor in 90 seconds.</p>
             </div>
         </section>
 
@@ -181,7 +181,7 @@
 
         <section class="cta-big">
             <h2>DOMINATE YOUR MARKET.</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-strike" style="font-size: 3rem; padding: 2rem 6rem;"><span>COMMISSION SITE</span></a>
+            <a href="mailto:hello@naslogic.com" class="btn-strike" style="font-size: 3rem; padding: 2rem 6rem;" onclick="openNasModal(); return false;"><span>COMMISSION SITE</span></a>
         </section>
     </div>
 
@@ -368,6 +368,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

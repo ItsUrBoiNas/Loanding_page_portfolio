@@ -181,7 +181,7 @@
 
     <nav>
         <a href="/" class="nav-logo">Naslogic</a>
-        <a href="mailto:hello@naslogic.com" class="btn-primary" style="padding: 1rem 2rem;">RETAIN US</a>
+        <a href="mailto:hello@naslogic.com" class="btn-primary" style="padding: 1rem 2rem;" onclick="openNasModal(); return false;">RETAIN US</a>
     </nav>
 
     <section class="hero container">
@@ -192,9 +192,9 @@
         judge you, they 
         <span class="redacted-wrapper"><span class="redacted" style="color: var(--crimson-seal);">don't read.</span></span></h1>
         
-        <p class="hero-desc">Your firm handles high-stakes, 7-figure cases. Yet your landing page looks identical to the bargain lawyer down the street. It's time to build a digital presence that <span class="redacted-wrapper"><span class="redacted">makes clients stop shopping around.</span></span></p>
+        <p class="hero-desc">Your firm handles high-stakes cases. Yet your landing page looks identical to the bargain lawyer down the street. Personal injury clients don't search at noon — they search at night, from a hospital, on a phone, with one good hand. One signed case: $30,000–$300,000 in firm revenue. Your first impression is everything.</p>
         
-        <a href="mailto:hello@naslogic.com" class="btn-primary">DECRYPT THE SOLUTION</a>
+        <a href="mailto:hello@naslogic.com" class="btn-primary" onclick="openNasModal(); return false;">DECRYPT THE SOLUTION</a>
     </section>
 
     <section class="dossier container">
@@ -214,7 +214,7 @@
     <section class="cta-bottom container">
         <h2 class="redacted-wrapper"><span class="redacted">The Defense Rests.</span></h2>
         <p style="margin: 0 auto 4rem; color: var(--manila-dim);">We only construct 4 law firm landing pages per month to maintain precision. Submit your site.</p>
-        <a href="mailto:hello@naslogic.com" class="btn-primary">SUBMIT FOR REVIEW</a>
+        <a href="mailto:hello@naslogic.com" class="btn-primary" onclick="openNasModal(); return false;">SUBMIT FOR REVIEW</a>
     </section>
 
     <script>
@@ -327,6 +327,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

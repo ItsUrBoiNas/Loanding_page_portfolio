@@ -112,8 +112,9 @@
         }
 
         nav {
-            position: absolute; top: 0; width: 100%; padding: 2rem 5%;
+            position: fixed; top: 0; width: 100%; padding: 2rem 5%;
             display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(5, 25, 35, 0.9); backdrop-filter: blur(10px);
         }
 
         .logo { font-family: var(--font-display); font-size: 2rem; color: var(--water-deep); text-decoration: none; }
@@ -166,7 +167,7 @@
     <div id="post-flush">
         <nav>
             <a href="/" class="logo">NASLOGIC</a>
-            <a href="mailto:hello@naslogic.com" class="btn-water">Dispatch Team</a>
+            <a href="mailto:hello@naslogic.com" class="btn-water" onclick="openNasModal(); return false;">Dispatch Team</a>
         </nav>
 
         <section class="container hero">
@@ -182,7 +183,7 @@
         <section class="container">
             <div class="cta-box">
                 <h2>CLEAR THE BLOCKAGE.</h2>
-                <a href="mailto:hello@naslogic.com" class="btn-water" style="background:#FFF; color:var(--water-deep);">Commission A Build</a>
+                <a href="mailto:hello@naslogic.com" class="btn-water" style="background:#FFF; color:var(--water-deep);" onclick="openNasModal(); return false;">Commission A Build</a>
             </div>
         </section>
     </div>
@@ -345,6 +346,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

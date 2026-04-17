@@ -93,8 +93,9 @@
         }
 
         nav {
-            position: absolute; top: 0; left: 0; width: 100%; padding: 3rem 5%;
-            display: flex; justify-content: space-between; align-items: center; z-index: 100;
+            position: fixed; top: 0; left: 0; width: 100%; padding: 3rem 5%;
+            display: flex; justify-content: space-between; align-items: center; z-index: 200;
+            background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(10px);
         }
 
         .logo { font-family: var(--font-display); font-size: 2.5rem; color: var(--marble); text-decoration: none; text-transform: uppercase; letter-spacing: 5px; }
@@ -156,12 +157,12 @@
     <div class="layer-onyx">
         <nav>
             <a href="/" class="logo">Naslogic</a>
-            <a href="mailto:hello@naslogic.com" class="btn-onyx hover-target">Commission Us</a>
+            <a href="mailto:hello@naslogic.com" class="btn-onyx hover-target" onclick="openNasModal(); return false;">Commission Us</a>
         </nav>
 
         <div class="hero">
             <h1>Architecture<br>Requires Depth.</h1>
-            <p>You sell $20M estates, but your website looks like a Zillow clone. Top-tier luxury real estate requires an 'Onyx' digital presence—dark, cinematic, secretive, and flawlessly smooth.</p>
+            <p>A luxury buyer finds your Zillow profile and heads to your website. They spend 8 seconds deciding if you're the agent they trust with a $2M buy. Generic IDX pages with stock sunset photos don't make that cut. We build real estate websites that get callbacks, not bounces.</p>
         </div>
 
         <div class="instruction">Move cursor to reveal the estate.</div>
@@ -295,6 +296,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');

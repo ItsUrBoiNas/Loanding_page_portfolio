@@ -519,18 +519,17 @@ NEW_BODY = """    <!-- Google Fonts -->
 
     <!-- Hero -->
     <section class="hero fade-in">
-        <div class="hero-bg-text">0.02 CVR</div>
         <div class="container">
-            <h1 class="hero-title">
-                Traffic is expensive.<br>
-                Ignorance is <span class="strike">bliss</span> fatal.
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 6rem);">
+                We've diagnosed over 200 landing pages.<br>
+                <span style="color: var(--text-muted); font-size: 0.9em;">Most of them were why the phone stopped ringing.</span>
             </h1>
             <p class="hero-sub">
-                We engineer 8-figure conversion assets disguised as web pages. Starting at $199. Delivered in 48 hours.
+                Naslogic builds custom landing pages from Fort Myers, FL — $199 flat, delivered in 48 hours, built to convert from day one.
             </p>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                <a href="#pricing" class="btn btn-primary">View Arsenal</a>
-                <a href="#autopsy" class="btn btn-outline">See The Autopsy</a>
+                <a href="#pricing" class="btn btn-primary">View Pricing</a>
+                <a href="#autopsy" class="btn btn-outline">Diagnose The Problem</a>
             </div>
         </div>
     </section>

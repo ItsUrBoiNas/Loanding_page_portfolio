@@ -171,21 +171,21 @@
     <!-- Content -->
     <nav>
         <a href="/" class="logo">NASLOGIC<span>_</span></a>
-        <a href="mailto:hello@naslogic.com" class="btn-thermal">Route Dispatch</a>
+        <a href="mailto:hello@naslogic.com" class="btn-thermal" onclick="openNasModal(); return false;">Route Dispatch</a>
     </nav>
 
     <div class="content">
         <section class="section container">
             <div class="heat-haze" id="haze-target">
                 <h1>MASTER <br>THE CLIMATE.</h1>
-                <p>Homeowners in a crisis don't care about your company history. When their AC dies in 105° heat, they want immediate, friction-free relief. We engineer technical, high-performance HVAC landing pages that filter out bargain hunters and convert emergency calls ruthlessly.</p>
+                <p>It's 95°F in Southwest Florida at 11 PM. A family's AC just died. They'll call the first HVAC company with a page that loads fast, shows a phone number front and center, and says "24/7 Emergency Service." HVAC leads are won or lost in the first 3 minutes. Your page determines whether you get the call.</p>
             </div>
         </section>
 
         <section class="section container">
             <div style="margin-left:auto; width: 60%">
                 <h2>SYSTEM ROUTING</h2>
-                <p>We replace your generic contact form with an intelligent dispatch UI that seamlessly categorizes service requests, ensuring you only talk to high-ticket installation leads or active emergencies.</p>
+                <p>We replace your generic contact form with a dead-simple dispatch system: emergency or scheduled? Service area? Phone number front and center. Homeowners in 105°F heat don't scroll — they call the number they see first.</p>
                 <div class="metric-cards">
                     <div class="metric-card">
                         <div class="metric-num">+400%</div>
@@ -209,7 +209,7 @@
         <section class="section container cta-bottom">
             <h2 id="final-cta-text">ACHIEVE OPTIMAL FLOW.</h2>
             <p style="margin: 0 auto 3rem;">Initiate complete system overhaul procedures today.</p>
-            <a href="mailto:hello@naslogic.com" class="btn-thermal" style="padding: 1.5rem 4rem; font-size: 1.2rem;">Boot Sequence</a>
+            <a href="mailto:hello@naslogic.com" class="btn-thermal" style="padding: 1.5rem 4rem; font-size: 1.2rem;" onclick="openNasModal(); return false;">Boot Sequence</a>
         </section>
     </div>
 
@@ -347,6 +347,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Expose global for onclick handlers
+    window.openNasModal = () => { if(overlay) overlay.classList.add('active'); };
+
     const overlay = document.getElementById('nas-modal-overlay');
     const closeBtn = document.getElementById('nas-close-modal');
     const form = document.getElementById('nas-lead-form');
