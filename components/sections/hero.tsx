@@ -64,10 +64,10 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight tracking-tight"
         >
-          We&apos;ve diagnosed over 200 landing pages.
+          You were told you need a website. You don&apos;t.
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-            Most of them were why the phone stopped ringing.
+            You need a page that answers the phone.
           </span>
         </motion.h1>
 
@@ -77,7 +77,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl sm:text-2xl md:text-3xl text-slate-400 mb-10 max-w-3xl mx-auto"
         >
-          Naslogic builds custom landing pages from Fort Myers, FL — $199 flat, delivered in 48 hours, built to convert from day one.
+          Naslogic is a Fort Myers agency building custom landing pages for $199 flat. No 5-page digital brochures. Just one page that makes it easy for locals to hire you.
         </motion.p>
 
         <motion.div

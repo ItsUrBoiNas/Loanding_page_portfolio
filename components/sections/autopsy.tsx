@@ -6,42 +6,42 @@ import { motion, AnimatePresence } from "framer-motion";
 const problems = [
   {
     id: "headline",
-    label: "Vague Headline",
+    label: "Template Headline",
     position: { top: "12%", left: "50%" },
     color: "from-red-500/20 to-red-600/20",
     borderColor: "border-red-500/50",
     dotColor: "bg-red-500",
-    indictment: "This headline is about you, not them. Nobody cares.",
+    indictment: "\"We provide services.\" This tells the customer absolutely nothing about how fast you can fix their problem.",
     icon: "⚡",
   },
   {
     id: "proof",
-    label: "No Social Proof",
+    label: "Fake Stock Photos",
     position: { top: "38%", left: "15%" },
     color: "from-orange-500/20 to-orange-600/20",
     borderColor: "border-orange-500/50",
     dotColor: "bg-orange-400",
-    indictment: "Would you hand a stranger $500 with zero receipts? Neither will they.",
+    indictment: "Zero photos of your actual work. Just a stock image of a smiling contractor. Locals see right through this.",
     icon: "🔍",
   },
   {
     id: "button",
-    label: "Generic Button",
+    label: "14-Field Form",
     position: { top: "62%", left: "50%" },
     color: "from-yellow-500/20 to-yellow-600/20",
     borderColor: "border-yellow-500/50",
     dotColor: "bg-yellow-400",
-    indictment: "'Submit' is a form. Not a feeling. Not a reason to click.",
+    indictment: "Nobody wants to fill out their life story when their AC is broken. They just want a button that says 'Call Now'.",
     icon: "🎯",
   },
   {
     id: "text",
-    label: "Wall of Text",
+    label: "The 'About Us' Essay",
     position: { top: "38%", left: "85%" },
     color: "from-purple-500/20 to-purple-600/20",
     borderColor: "border-purple-500/50",
     dotColor: "bg-purple-400",
-    indictment: "They came to decide, not to read your About page.",
+    indictment: "Paragraphs about your 'commitment to excellence.' When water is leaking through the ceiling, nobody is reading this.",
     icon: "📄",
   },
 ];
@@ -60,13 +60,13 @@ export default function Autopsy() {
           className="text-center mb-6"
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-red-400 bg-red-500/10 border border-red-500/20 rounded-full">
-            Cause of Death: Your Landing Page
+            The $2,000 Template Trap
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             The Page Autopsy
           </h2>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-            Hover each marker. Every one of these is a conversion you already lost.
+            This is the generic 5-page site other agencies will try to sell you. Hover the markers to see why it won&apos;t get the phone to ring.
           </p>
         </motion.div>
 
@@ -187,7 +187,7 @@ export default function Autopsy() {
 
           {/* Caption */}
           <p className="text-center text-xs text-slate-500 mt-4 tracking-wide">
-            Every bad page above is real. This one just happens to be yours.
+            Don&apos;t pay thousands of dollars for a digital brochure that no one reads.
           </p>
         </motion.div>
 

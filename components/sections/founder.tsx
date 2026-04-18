@@ -17,7 +17,7 @@ export default function Founder() {
             Who Builds This
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
-            The Person Behind the Pages
+            The Team Behind the Pages
           </h2>
         </motion.div>
 
@@ -34,13 +34,13 @@ export default function Founder() {
               N
             </div>
             <div>
-              <p className="text-white font-bold text-lg">Nasir</p>
-              <p className="text-slate-400 text-sm">Fort Myers, FL — Self-taught, 15 years old</p>
+              <p className="text-white font-bold text-lg">Naslogic</p>
+              <p className="text-slate-400 text-sm">Fort Myers, FL — Local Web Design Agency</p>
             </div>
           </div>
 
           <p className="text-slate-300 text-lg leading-relaxed">
-            I&apos;m 15, I&apos;m from Fort Myers, and I taught myself everything I know about web design from scratch. I started Naslogic because I kept seeing the same thing: local businesses with real services, real customers, and genuinely terrible pages that were costing them calls they didn&apos;t even know they were losing. I build custom landing pages — not templates, not drag-and-drop — pages that are built around exactly what your customer needs to see before they trust you. I care more about your conversion rate than a big agency ever would, because this is my one client, not my client&nbsp;#47. Every page I ship is something I&apos;d want someone to judge me by.
+            We are based right here in Fort Myers. We started this agency because we kept seeing the exact same problem: local businesses getting overcharged for bulky, 5-page websites that do absolutely nothing to get the phone ringing. We build custom, hand-coded landing pages designed to do one thing—make it incredibly easy for locals to hire you. No confusing menus. No bloated templates. You won&apos;t be passed off to a junior account manager. We handle the code, the design, and the launch ourselves.
           </p>
         </motion.div>
       </div>
