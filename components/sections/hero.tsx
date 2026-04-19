@@ -66,17 +66,10 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight tracking-tight"
         >
-<<<<<<< HEAD
-          Your business deserves a website
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-            that actually gets you customers.
-=======
           You were told you need a website. You don&apos;t.
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
             You need a page that answers the phone.
->>>>>>> 4d3320fa53648fa77910a1298c363034c456194f
           </span>
         </motion.h1>
 
@@ -86,11 +79,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl sm:text-2xl md:text-3xl text-slate-400 mb-10 max-w-3xl mx-auto"
         >
-<<<<<<< HEAD
-          Custom landing page. $199 flat. Delivered in 48 hours. Built to convert from day one.
-=======
           Naslogic is a Fort Myers agency building custom landing pages for $199 flat. No 5-page digital brochures. Just one page that makes it easy for locals to hire you.
->>>>>>> 4d3320fa53648fa77910a1298c363034c456194f
         </motion.p>
 
         <motion.div
@@ -143,4 +132,3 @@ export default function Hero() {
     </section>
   );
 }
-

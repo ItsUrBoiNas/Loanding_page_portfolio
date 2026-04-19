@@ -33,55 +33,6 @@ export default function Pricing() {
           No tier lists. No recurring subscriptions. Just one price for a page that works.
         </motion.p>
 
-<<<<<<< HEAD
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingTiers.map((tier, index) => (
-            <motion.div
-              key={tier.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card variant="glass" className="h-full flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-3xl mb-2">{tier.name}</CardTitle>
-                  <CardDescription className="text-slate-300 text-base mb-4">
-                    {tier.description}
-                  </CardDescription>
-                  <div className="text-4xl font-bold text-white mb-2">{tier.price}</div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <ul className="space-y-3">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start">
-                        <span className="text-blue-500 mr-2">✓</span>
-                        <span className="text-slate-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <div className="w-full">
-                    <Button
-                      variant="primary"
-                      className="w-full"
-                      onClick={() => {
-                        if (tier.name === "The Diagnosis") {
-                          setIsPurchaseModalOpen(true)
-                        } else {
-                          setIsQuoteModalOpen(true)
-                        }
-                      }}
-                    >
-                      {tier.cta}
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-=======
         <div className="max-w-md mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -110,7 +61,7 @@ export default function Pricing() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-500 mr-2 font-bold">✓</span>
-                    <span className="text-slate-300">One-click "Call Now" buttons</span>
+                    <span className="text-slate-300">One-click &quot;Call Now&quot; buttons</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-500 mr-2 font-bold">✓</span>
@@ -131,7 +82,6 @@ export default function Pricing() {
               </CardFooter>
             </Card>
           </motion.div>
->>>>>>> 4d3320fa53648fa77910a1298c363034c456194f
         </div>
       </div>
 
@@ -145,20 +95,6 @@ export default function Pricing() {
           onClose={() => setIsPurchaseModalOpen(false)}
         />
       </FormModal>
-<<<<<<< HEAD
-
-      <FormModal
-        isOpen={isQuoteModalOpen}
-        onClose={() => setIsQuoteModalOpen(false)}
-        title="Get a Free Quote"
-      >
-        <QuoteForm
-          onSuccess={() => setIsQuoteModalOpen(false)}
-          onClose={() => setIsQuoteModalOpen(false)}
-        />
-      </FormModal>
-=======
->>>>>>> 4d3320fa53648fa77910a1298c363034c456194f
     </section>
   );
 }

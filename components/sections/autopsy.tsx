@@ -60,21 +60,13 @@ export default function Autopsy() {
           className="text-center mb-6"
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-red-400 bg-red-500/10 border border-red-500/20 rounded-full">
-<<<<<<< HEAD
-            Why Most Pages Fail
-=======
             The $2,000 Template Trap
->>>>>>> 4d3320fa53648fa77910a1298c363034c456194f
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             The Page Autopsy
           </h2>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-<<<<<<< HEAD
-            Hover each marker. These are the mistakes that cost businesses customers every single day.
-=======
             This is the generic 5-page site other agencies will try to sell you. Hover the markers to see why it won&apos;t get the phone to ring.
->>>>>>> 4d3320fa53648fa77910a1298c363034c456194f
           </p>
         </motion.div>
 
@@ -195,11 +187,7 @@ export default function Autopsy() {
 
           {/* Caption */}
           <p className="text-center text-xs text-slate-500 mt-4 tracking-wide">
-<<<<<<< HEAD
-            This is what most businesses settle for. Yours doesn&apos;t have to look like this.
-=======
             Don&apos;t pay thousands of dollars for a digital brochure that no one reads.
->>>>>>> 4d3320fa53648fa77910a1298c363034c456194f
           </p>
         </motion.div>
 
