@@ -510,9 +510,8 @@ NEW_BODY = """    <!-- Google Fonts -->
             <a href="#" class="nav-logo">NASLOGIC</a>
             <div class="nav-links">
                 <a href="#autopsy">The Truth</a>
-                <a href="#case-files">Case Files</a>
                 <a href="#pricing">Pricing</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline" style="padding: 12px 24px;">Start Project</a>
+                <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-outline" style="padding: 12px 24px;">Start Project</a>
             </div>
         </div>
     </nav>
@@ -521,11 +520,11 @@ NEW_BODY = """    <!-- Google Fonts -->
     <section class="hero fade-in">
         <div class="container">
             <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 6rem);">
-                We've diagnosed over 200 landing pages.<br>
-                <span style="color: var(--text-muted); font-size: 0.9em;">Most of them were why the phone stopped ringing.</span>
+                You were told you need a website. You don't.<br>
+                <span style="color: var(--text-muted); font-size: 0.9em;">You need a page that answers the phone.</span>
             </h1>
             <p class="hero-sub">
-                Naslogic builds custom landing pages from Fort Myers, FL — $199 flat, delivered in 48 hours, built to convert from day one.
+                Naslogic is a Fort Myers agency building custom landing pages for $199 flat. No 5-page digital brochures. Just one page that makes it easy for locals to hire you.
             </p>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                 <a href="#pricing" class="btn btn-primary">View Pricing</a>
@@ -537,8 +536,8 @@ NEW_BODY = """    <!-- Google Fonts -->
     <!-- The Autopsy -->
     <section id="autopsy" class="autopsy-section section-padding">
         <div class="container">
-            <h2 class="autopsy-header gs-reveal">Most standard agency websites are bleeding your ad budget.</h2>
-            <p class="hero-sub gs-reveal">Let's do an autopsy on the "industry standard" landing page.</p>
+            <h2 class="autopsy-header gs-reveal">The $2,000 Template Trap.</h2>
+            <p class="hero-sub gs-reveal">This is the generic 5-page site other agencies will try to sell you. Here is why it won't get the phone to ring.</p>
 
             <div class="wireframe-container gs-wireframe">
                 <div class="wf-hero">
@@ -549,18 +548,18 @@ NEW_BODY = """    <!-- Google Fonts -->
                 </div>
 
                 <!-- Redlines -->
-                <div class="redline-annotation" style="top: 50px; left: 10%; max-width: 200px;">
-                    Vague headline. Nobody cares. Bounce rate: 85%
+                <div class="redline-annotation" style="top: 50px; left: 10%; max-width: 250px;">
+                    "We provide services." Tells the customer nothing about how fast you fix problems.
                 </div>
                 <div class="red-arrow" style="top: 80px; left: 30%; font-size:40px; transform: rotate(135deg);">↗</div>
 
-                <div class="redline-annotation" style="top: 250px; left: 60%; max-width: 250px;">
-                    Zero social proof above the fold. Trust = 0.
+                <div class="redline-annotation" style="top: 300px; left: 5%; max-width: 250px;">
+                    Zero photos of your actual work. Fake stock smiles. Locals see right through this.
                 </div>
-                <div class="red-arrow" style="top: 200px; left: 55%; font-size:40px; transform: rotate(-45deg);">↖</div>
+                <div class="red-arrow" style="top: 250px; left: 20%; font-size:40px; transform: rotate(-45deg);">↖</div>
 
-                <div class="redline-annotation" style="top: 150px; right: 10%; max-width: 200px;">
-                    Generic button. Nobody clicks "Submit".
+                <div class="redline-annotation" style="top: 150px; right: 5%; max-width: 280px;">
+                    A 14-field form. Callers just want a button that says 'Call Now'.
                 </div>
                 
                 <div style="margin-top:50px; text-align:center;">
@@ -572,148 +571,38 @@ NEW_BODY = """    <!-- Google Fonts -->
                     </div>
                 </div>
 
-                <div class="redline-annotation" style="bottom: 80px; left: 15%; max-width: 300px;">
-                    Wall of text features. Buyers don't read, they scan.
+                <div class="redline-annotation" style="bottom: 80px; right: 15%; max-width: 300px;">
+                    The 'About Us' essay. Nobody reads paragraphs when their exact problem needs solving.
                 </div>
             </div>
             
             <div style="margin-top: 100px; max-width: 800px;" class="gs-reveal">
-                <p style="font-size: 1.5rem; color: var(--text-main);">Our Approach is Brutal but Effective.</p>
-                <p style="margin-top: 20px; font-size: 1.1rem;">We discard the templates. We deploy aggressive copywriting, undeniable proof mechanics, and psychological framing to force a decision. A visitor either buys, or leaves knowing they missed the best option on the market.</p>
+                <p style="font-size: 1.5rem; color: var(--text-main);">Don't pay thousands of dollars for a digital brochure.</p>
+                <p style="margin-top: 20px; font-size: 1.1rem;">Most local businesses get completely ripped off. We build hand-coded landing pages engineered to do one specific thing: turn a local visitor into a direct phone call. No bloated templates, no confusing menus. Just straightforward design that helps you get hired.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Case Files -->
-    <section id="case-files" class="section-padding container">
-        <h2 class="autopsy-header gs-reveal" style="margin-bottom: 20px;">The Case Files.</h2>
-        <p class="hero-sub gs-reveal">Data doesn't lie. Our re-engineering speaks for itself.</p>
-
-        <div class="case-grid">
-            
-            <div class="case-row gs-reveal">
-                <div>
-                    <h3 class="case-title">Whitfield Law Group</h3>
-                    <div class="case-niche">Personal Injury Sector</div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Old CVR</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">1.8%</div>
-                    </div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Naslogic CVR</div>
-                        <div class="case-data-value lift">4.9%</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-row gs-reveal">
-                <div>
-                    <h3 class="case-title">SyncBoard</h3>
-                    <div class="case-niche">B2B SaaS Sector</div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Old CVR</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">2.3%</div>
-                    </div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Naslogic CVR</div>
-                        <div class="case-data-value lift">7.1%</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-row gs-reveal">
-                <div>
-                    <h3 class="case-title">Glow MedSpa Fort Myers</h3>
-                    <div class="case-niche">High-Ticket MedSpa</div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Old Bounce Rate</div>
-                        <div class="case-data-value" style="color:var(--text-muted);">78%</div>
-                    </div>
-                </div>
-                <div class="case-data">
-                    <div>
-                        <div class="case-data-label">Naslogic Bounce Rate</div>
-                        <div class="case-data-value lift">29%</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- Pricing Strategy -->
     <section id="pricing" class="pricing-section section-padding">
         <div class="container">
-            <h2 class="autopsy-header gs-reveal" style="margin-bottom: 20px;">The Arsenal.</h2>
-            <p class="hero-sub gs-reveal" style="max-width: 600px;">Stop renting generic sites. Own an asset that prints money.</p>
+            <h2 class="autopsy-header gs-reveal" style="margin-bottom: 20px;">The $199 Page.</h2>
+            <p class="hero-sub gs-reveal" style="max-width: 600px;">No tier lists. No recurring subscriptions. Just one price for a page that works.</p>
 
-            <div class="pricing-grid gs-reveal">
+            <div class="pricing-grid gs-reveal" style="grid-template-columns: 1fr; max-width: 600px; margin: 80px auto 0;">
                 
-                <!-- Tier 1 -->
-                <div class="tier-card">
-                    <h3 class="tier-name">The Landing Page</h3>
+                <div class="tier-card featured" style="border: none;">
+                    <h3 class="tier-name">Complete Landing Page</h3>
                     <div class="tier-price">$199</div>
-                    <p class="tier-desc">Surgical precision for a single offer. Delivered rapidly.</p>
-                    <ul class="tier-features">
-                        <li>1 High-Converting Landing Page</li>
-                        <li>48-Hour Rapid Delivery</li>
-                        <li>Mobile-First Responsive Design</li>
-                        <li>Copywriting Included</li>
-                        <li>1 Revision Round</li>
+                    <p class="tier-desc">A custom HTML/CSS landing page built directly in Fort Myers. Perfect for first-time buyers.</p>
+                    <ul class="tier-features" style="text-align: left;">
+                        <li>1 Custom Designed Page</li>
+                        <li>Mobile Responsive Layout</li>
+                        <li>One-click "Call Now" buttons</li>
+                        <li>Delivered in 48 Hours</li>
+                        <li>Zero recurring software fees</li>
                     </ul>
-                    <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-outline" style="width: 100%; border-color: #444;">Deploy Page</a>
-                </div>
-
-                <!-- Tier 2 -->
-                <div class="tier-card featured">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--text-main);"></div>
-                    <h3 class="tier-name">The Core Business</h3>
-                    <div class="tier-price">$799</div>
-                    <p class="tier-desc">The foundation for serious companies scaling their organic traffic.</p>
-                    <ul class="tier-features">
-                        <li>Up to 5 Pages Built to Convert</li>
-                        <li>High-End Custom Typography & Design</li>
-                        <li>Advanced GSAP Scroll Animations</li>
-                        <li>Lead Generation Contact Forms</li>
-                        <li>Technical SEO Optimization</li>
-                        <li>3 Revision Rounds</li>
-                    </ul>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary" style="width: 100%;">Scale The Business</a>
-                </div>
-
-                <!-- Tier 3 -->
-                <div class="tier-card">
-                    <h3 class="tier-name">The Complete Arsenal</h3>
-                    <div class="tier-price">$2,500</div>
-                    <p class="tier-desc">Absolute market domination. The ultimate 15-point conversion engine.</p>
-                    <ul class="tier-features">
-                        <li><b>Unlimited Pages</b> (built to spec)</li>
-                        <li>1-on-1 Strategy & Conversion Call</li>
-                        <li>Premium Typography & Logo Refresh</li>
-                        <li>Full Website Copywriting</li>
-                        <li>Bespoke GSAP Micro-Interactions</li>
-                        <li>Priority Jump-The-Line Delivery</li>
-                        <li><b>Unlimited Revisions</b> for 30 Days</li>
-                        <li>Advanced On-Page SEO Architecture</li>
-                        <li>Google My Business Setup Guidance</li>
-                        <li>Custom Lead/Quote Forms with Logic</li>
-                        <li>Integration: Zapier, Mailchimp, CRM</li>
-                        <li>3rd-Party Live Review Widget Setup</li>
-                        <li>Blazing Fast Performance (95+ Score)</li>
-                        <li>Custom Domain & Hosting Assistance</li>
-                        <li>Social Media Feed Integration</li>
-                    </ul>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline" style="width: 100%; border-color: #444;">Dominate Market</a>
+                    <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-outline" style="width: 100%; border-color: #444;">Purchase Now - $199</a>
                 </div>
 
             </div>
@@ -723,9 +612,9 @@ NEW_BODY = """    <!-- Google Fonts -->
     <!-- Ultimatum -->
     <section class="ultimatum">
         <div class="container">
-            <h2 class="ultimatum-text gs-reveal">If your landing page isn't an asset, it's a liability.</h2>
+            <h2 class="ultimatum-text gs-reveal">Stop losing calls to competitors with better websites.</h2>
             <div class="gs-reveal">
-                <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-primary">Fix It Now</a>
+                <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary">Fix It Now</a>
             </div>
         </div>
     </section>
