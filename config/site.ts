@@ -14,14 +14,14 @@ export const siteConfig = {
             description: "Perfect for small businesses getting started",
             price: "$199",
             features: ["Single Page Landing Page", "Mobile Responsive", "2 Day Turn-around", "No Payment Processing"],
-            cta: "Book Strategy Call",
+            cta: "Get Started — $199",
         },
         {
             name: "The Operation",
             description: "For businesses ready to scale",
             price: "Custom",
             features: ["Everything in The Diagnosis", "Advanced Analytics", "A/B Testing", "Email Integration"],
-            cta: "Book Strategy Call",
+            cta: "Get Free Quote",
         },
         {
             name: "The Transplant",
@@ -34,7 +34,7 @@ export const siteConfig = {
                 "Performance Optimization",
                 "Conversion Tracking",
             ],
-            cta: "Book Strategy Call",
+            cta: "Get Free Quote",
         },
     ],
 };

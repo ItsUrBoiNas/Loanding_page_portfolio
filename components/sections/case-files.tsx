@@ -21,19 +21,19 @@ const caseFiles = [
     },
   },
   {
-    id: "whitfield",
-    client: "Whitfield Law",
-    location: "Fort Myers, FL",
+    id: "vending",
+    client: "Vending Spot Finder",
+    location: "B2B SaaS | Global",
     tag: "Case File #002",
     before: {
       label: "The Problem",
-      text: "Four-page website with a stock photo of scales, a paragraph bio, and a phone number buried in the footer. The headline said 'Dedicated Legal Representation' — which is what every law site says.",
-      metric: "Bounce rate: 78%",
+      text: "A generic landing page offering a 'location tool'. The copy was a passive list of features with a weak 'Learn More' button. Operators were skeptical of the data source and abandoned the page.",
+      metric: "Conversion: 0.8%",
     },
     after: {
       label: "What Changed",
-      text: "One focused landing page targeting the exact case type (slip & fall). Headline rewritten around the visitor's situation. Trust signals: case outcome, bar associations, direct call button at the top. No fluff.",
-      metric: "Bounce rate: 31%",
+      text: "Positioned the software as an unfair algorithmic advantage. Lead with the visceral pain ('Stop wasting weeks driving around'). Emphasized 14M daily mobile pings, live mapping, and a hard '5 Free Searches' CTA.",
+      metric: "Conversion: 14.2%",
     },
   },
 ];
@@ -41,7 +41,7 @@ const caseFiles = [
 export default function CaseFiles() {
   const [activeCases, setActiveCases] = useState<Record<string, "before" | "after">>({
     glow: "before",
-    whitfield: "before",
+    vending: "before",
   });
 
   const toggle = (id: string) => {

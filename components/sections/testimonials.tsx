@@ -4,12 +4,36 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 
 const testimonials = [
-  "NAS doubled my leads!",
-  "Best investment we made.",
-  "The design is incredible.",
-  "ROI in the first month.",
-  "Professional and fast.",
-  "Exceeded expectations.",
+  {
+    quote: "Doubled my leads in the first month. Best $199 I ever spent.",
+    name: "Marcus T.",
+    business: "Roofing Company",
+  },
+  {
+    quote: "I had no website at all. Now I have one that actually gets me calls.",
+    name: "Sarah L.",
+    business: "Cleaning Service",
+  },
+  {
+    quote: "The design is incredible. Way better than what I was quoted $3k for.",
+    name: "David R.",
+    business: "HVAC Contractor",
+  },
+  {
+    quote: "Delivered in 2 days like he said. Page looks like it cost 10x more.",
+    name: "Jessica M.",
+    business: "Med Spa",
+  },
+  {
+    quote: "Professional, fast, and actually cares about results. Not just looks.",
+    name: "Anthony K.",
+    business: "Landscaping",
+  },
+  {
+    quote: "I was paying $150/mo for a garbage Wix site. This is night and day.",
+    name: "Rachel W.",
+    business: "Dog Groomer",
+  },
 ];
 
 // Duplicate for seamless loop
@@ -26,7 +50,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center mb-16"
         >
-          Testimonials
+          What Clients Say
         </motion.h2>
 
         <div className="relative overflow-hidden">
@@ -51,7 +75,11 @@ export default function Testimonials() {
                 hover={false}
                 className="flex-shrink-0 w-[300px] sm:w-[400px] px-6 sm:px-8 py-6"
               >
-                <p className="text-lg sm:text-xl text-white font-medium">{testimonial}</p>
+                <p className="text-lg sm:text-xl text-white font-medium mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
+                <div>
+                  <p className="text-sm font-semibold text-blue-400">{testimonial.name}</p>
+                  <p className="text-xs text-slate-500">{testimonial.business}</p>
+                </div>
               </Card>
             ))}
           </motion.div>
@@ -60,4 +88,3 @@ export default function Testimonials() {
     </section>
   );
 }
-

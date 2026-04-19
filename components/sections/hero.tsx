@@ -1,13 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import FormModal from "@/components/modals/form-modal";
+import PurchaseForm from "@/components/forms/purchase-form";
+import QuoteForm from "@/components/forms/quote-form";
 
 export default function Hero() {
-  const scrollToPricing = () => {
-    const pricingSection = document.getElementById("pricing");
-    pricingSection?.scrollIntoView({ behavior: "smooth" });
-  };
+  const [isPurchaseOpen, setIsPurchaseOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-black to-slate-950">
@@ -64,10 +66,10 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight tracking-tight"
         >
-          We&apos;ve diagnosed over 200 landing pages.
+          Your business deserves a website
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-            Most of them were why the phone stopped ringing.
+            that actually gets you customers.
           </span>
         </motion.h1>
 
@@ -77,24 +79,56 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl sm:text-2xl md:text-3xl text-slate-400 mb-10 max-w-3xl mx-auto"
         >
-          Naslogic builds custom landing pages from Fort Myers, FL — $199 flat, delivered in 48 hours, built to convert from day one.
+          Custom landing page. $199 flat. Delivered in 48 hours. Built to convert from day one.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button
-            onClick={scrollToPricing}
+            onClick={() => setIsPurchaseOpen(true)}
             size="lg"
             pulse
             className="text-lg"
           >
-            See Pricing
+            Get My Page — $199
+          </Button>
+          <Button
+            onClick={() => setIsQuoteOpen(true)}
+            size="lg"
+            variant="secondary"
+            className="text-lg"
+          >
+            Get a Free Quote
           </Button>
         </motion.div>
       </div>
+
+      {/* Modals */}
+      <FormModal
+        isOpen={isPurchaseOpen}
+        onClose={() => setIsPurchaseOpen(false)}
+        title="Get My Page — $199"
+      >
+        <PurchaseForm
+          onSuccess={() => setIsPurchaseOpen(false)}
+          onClose={() => setIsPurchaseOpen(false)}
+        />
+      </FormModal>
+
+      <FormModal
+        isOpen={isQuoteOpen}
+        onClose={() => setIsQuoteOpen(false)}
+        title="Get a Free Quote"
+      >
+        <QuoteForm
+          onSuccess={() => setIsQuoteOpen(false)}
+          onClose={() => setIsQuoteOpen(false)}
+        />
+      </FormModal>
     </section>
   );
 }

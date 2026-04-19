@@ -35,12 +35,12 @@ export default function Founder() {
             </div>
             <div>
               <p className="text-white font-bold text-lg">Nasir</p>
-              <p className="text-slate-400 text-sm">Fort Myers, FL — Self-taught, 15 years old</p>
+              <p className="text-slate-400 text-sm">Fort Myers, FL — Self-taught Developer</p>
             </div>
           </div>
 
           <p className="text-slate-300 text-lg leading-relaxed">
-            I&apos;m 15, I&apos;m from Fort Myers, and I taught myself everything I know about web design from scratch. I started Naslogic because I kept seeing the same thing: local businesses with real services, real customers, and genuinely terrible pages that were costing them calls they didn&apos;t even know they were losing. I build custom landing pages — not templates, not drag-and-drop — pages that are built around exactly what your customer needs to see before they trust you. I care more about your conversion rate than a big agency ever would, because this is my one client, not my client&nbsp;#47. Every page I ship is something I&apos;d want someone to judge me by.
+            I&apos;m from Fort Myers, and I taught myself everything I know about web design from scratch. I started Naslogic because I kept seeing the same thing: local businesses with real services, real customers, and genuinely terrible pages that were costing them calls they didn&apos;t even know they were losing. I build custom landing pages — not templates, not drag-and-drop — pages that are built around exactly what your customer needs to see before they trust you. I care more about your conversion rate than a big agency ever would, because this is my one client, not my client&nbsp;#47. Every page I ship is something I&apos;d want someone to judge me by.
           </p>
         </motion.div>
       </div>

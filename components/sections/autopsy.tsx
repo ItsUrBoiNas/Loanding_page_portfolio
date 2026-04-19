@@ -60,13 +60,13 @@ export default function Autopsy() {
           className="text-center mb-6"
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-red-400 bg-red-500/10 border border-red-500/20 rounded-full">
-            Cause of Death: Your Landing Page
+            Why Most Pages Fail
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             The Page Autopsy
           </h2>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-            Hover each marker. Every one of these is a conversion you already lost.
+            Hover each marker. These are the mistakes that cost businesses customers every single day.
           </p>
         </motion.div>
 
@@ -187,7 +187,7 @@ export default function Autopsy() {
 
           {/* Caption */}
           <p className="text-center text-xs text-slate-500 mt-4 tracking-wide">
-            Every bad page above is real. This one just happens to be yours.
+            This is what most businesses settle for. Yours doesn&apos;t have to look like this.
           </p>
         </motion.div>
 

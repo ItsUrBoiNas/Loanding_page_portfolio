@@ -66,7 +66,7 @@ export default function Pricing() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <div className="w-full space-y-2">
+                  <div className="w-full">
                     <Button
                       variant="primary"
                       className="w-full"
@@ -78,17 +78,8 @@ export default function Pricing() {
                         }
                       }}
                     >
-                      {tier.name === "The Diagnosis" ? "Purchase Now - $199" : tier.cta}
+                      {tier.cta}
                     </Button>
-                    {tier.name === "The Diagnosis" && (
-                      <Button
-                        variant="secondary"
-                        className="w-full"
-                        onClick={() => setIsQuoteModalOpen(true)}
-                      >
-                        Get A Quote
-                      </Button>
-                    )}
                   </div>
                 </CardFooter>
               </Card>
@@ -101,7 +92,7 @@ export default function Pricing() {
       <FormModal
         isOpen={isPurchaseModalOpen}
         onClose={() => setIsPurchaseModalOpen(false)}
-        title="Purchase Now - Single Page Landing Page"
+        title="Get My Page — $199"
       >
         <PurchaseForm
           onSuccess={() => setIsPurchaseModalOpen(false)}
@@ -112,7 +103,7 @@ export default function Pricing() {
       <FormModal
         isOpen={isQuoteModalOpen}
         onClose={() => setIsQuoteModalOpen(false)}
-        title="Get A Quote - Multi-Page Site"
+        title="Get a Free Quote"
       >
         <QuoteForm
           onSuccess={() => setIsQuoteModalOpen(false)}
