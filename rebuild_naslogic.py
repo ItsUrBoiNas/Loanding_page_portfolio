@@ -626,7 +626,7 @@ NEW_BODY = """    <!-- Google Fonts -->
             <div class="footer-links">
                 <a href="tel:9412573059">(941) 257-3059</a>
                 <a href="/privacy">Privacy Policy</a>
-                <a href="/showcase">Showcase</a>
+
             </div>
         </div>
     </footer>
@@ -634,6 +634,7 @@ NEW_BODY = """    <!-- Google Fonts -->
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/forms.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
