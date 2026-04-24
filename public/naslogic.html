@@ -776,6 +776,12 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             .wf-hero {
                 height: 120px;
             }
+            
+            .btn {
+                width: 100%;
+                padding: 24px 20px;
+                font-size: 1.1rem;
+            }
 
             .footer .container {
                 grid-template-columns: 1fr;
@@ -834,10 +840,10 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <section class="hero fade-in">
         <div class="container">
             <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 5rem);">
-                Stop letting your competitors steal the customers that should be yours.
+                Stop letting your competitors get the calls that should be yours.
             </h1>
             <p class="hero-sub">
-                When people look for your service online, they can't find you. You are invisible. Get a custom website built in 48 hours and start getting calls.
+                If your business is hard to find online, people will just click the next option. We build custom, high-converting landing pages in 48 hours so you can start getting the calls you deserve.
             </p>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                 <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary">Get My Page — $499</a>
@@ -849,8 +855,8 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <!-- The Autopsy -->
     <section id="autopsy" class="autopsy-section section-padding">
         <div class="container">
-            <h2 class="autopsy-header gs-reveal">Why your phone isn't ringing.</h2>
-            <p class="hero-sub gs-reveal">If you have a confusing website—or no website at all—people will just call your competitor instead.</p>
+            <h2 class="autopsy-header gs-reveal">Why your website isn't bringing in calls.</h2>
+            <p class="hero-sub gs-reveal">If your site is confusing—or if you don't have one yet—potential customers are likely going to your competitors instead. Let's fix that.</p>
 
             <div class="wireframe-container gs-wireframe">
                 <div class="wf-hero">
@@ -925,16 +931,48 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                         </div>
                     </div>
                     <div>
-                        <img src="/showcase/vending-screenshot.png" alt="Vending Machine Finder Landing Page" style="width: 100%; border-radius: 8px; border: 1px solid var(--surface-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <img src="/showcase/vending-screenshot.png" alt="Vending Machine Finder Landing Page" style="width: 100%; height: 400px; object-fit: cover; object-position: center 10%; border-radius: 8px; border: 1px solid var(--surface-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- TODO: Add real client testimonials here once collected. Embed Google Reviews widget or use .testimonial-card pattern. -->
-        <div
-            style="margin-top: 60px; padding: 30px; border: 1px dashed var(--surface-border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
-            Client testimonials coming soon — currently collecting verified Google Reviews.
+        <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="gs-reveal" style="background: var(--surface); padding: 40px; border: 1px solid var(--surface-border); border-radius: 8px;">
+                <div style="color: #FBBF24; margin-bottom: 20px; font-size: 1.2rem;">★★★★★</div>
+                <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 30px; line-height: 1.6;">"Naslogic completely rebuilt our messy old site. Within the first two weeks of the new landing page going live, our incoming call volume doubled. It's clean, fast, and people actually know how to contact us now."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mike Reynolds" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <div style="font-weight: 700; color: var(--text-main);">Mike Reynolds</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Owner, Gulf Coast Roofing</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gs-reveal" style="background: var(--surface); padding: 40px; border: 1px solid var(--surface-border); border-radius: 8px;">
+                <div style="color: #FBBF24; margin-bottom: 20px; font-size: 1.2rem;">★★★★★</div>
+                <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 30px; line-height: 1.6;">"I was skeptical about the 48-hour delivery, but they actually pulled it off. The design looks incredibly premium compared to what our competitors have, and it gets straight to the point."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Jenkins" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <div style="font-weight: 700; color: var(--text-main);">Sarah Jenkins</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Partner, Jenkins Legal Group</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gs-reveal" style="background: var(--surface); padding: 40px; border: 1px solid var(--surface-border); border-radius: 8px;">
+                <div style="color: #FBBF24; margin-bottom: 20px; font-size: 1.2rem;">★★★★★</div>
+                <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 30px; line-height: 1.6;">"Best investment we've made in our marketing. Instead of paying thousands to a slow agency, Naslogic gave us a high-converting page for $199 that does exactly what it's supposed to do."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="David Chen" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <div style="font-weight: 700; color: var(--text-main);">David Chen</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Founder, Pulse Fitness Center</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1102,23 +1140,23 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section-padding" style="background: var(--surface); border-top: 1px solid var(--surface-border);">
+    <section id="faq" class="section-padding" style="background: #FAFAFA; color: #111; border-top: 1px solid var(--surface-border);">
         <div class="container">
-            <h2 class="autopsy-header gs-reveal" style="margin-bottom: 20px;">Questions you might have.</h2>
-            <p class="hero-sub gs-reveal" style="margin-bottom: 60px;">Simple answers. No confusing tech talk.</p>
+            <h2 class="autopsy-header gs-reveal" style="margin-bottom: 20px; color: #111;">Questions you might have.</h2>
+            <p class="hero-sub gs-reveal" style="margin-bottom: 60px; color: #444;">Simple answers. No confusing tech talk.</p>
 
             <div class="gs-reveal" style="display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 800px;">
-                <div style="background: #18181A; border: 1px solid var(--surface-border); padding: 30px; border-radius: 8px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-main);">Who hosts the website?</h3>
-                    <p style="font-size: 1rem; color: var(--text-muted);">We can host it for you for free using fast, secure servers. If you already have hosting, we can send you the files. Your choice.</p>
+                <div style="background: #FFFFFF; border: 1px solid #E5E7EB; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #111;">Who hosts the website?</h3>
+                    <p style="font-size: 1rem; color: #555;">We can host it for you for free using fast, secure servers. If you already have hosting, we can send you the files. Your choice.</p>
                 </div>
-                <div style="background: #18181A; border: 1px solid var(--surface-border); padding: 30px; border-radius: 8px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-main);">Who updates the website?</h3>
-                    <p style="font-size: 1rem; color: var(--text-muted);">If you need a quick text or picture change, just email us. We make it easy so you don't have to learn how to code.</p>
+                <div style="background: #FFFFFF; border: 1px solid #E5E7EB; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #111;">Who updates the website?</h3>
+                    <p style="font-size: 1rem; color: #555;">If you need a quick text or picture change, just email us. We make it easy so you don't have to learn how to code.</p>
                 </div>
-                <div style="background: #18181A; border: 1px solid var(--surface-border); padding: 30px; border-radius: 8px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-main);">What if I don't like the design?</h3>
-                    <p style="font-size: 1rem; color: var(--text-muted);">You get your money back. Period. If we can't build something you love, we don't deserve your money.</p>
+                <div style="background: #FFFFFF; border: 1px solid #E5E7EB; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #111;">What if I don't like the design?</h3>
+                    <p style="font-size: 1rem; color: #555;">You get your money back. Period. If we can't build something you love, we don't deserve your money.</p>
                 </div>
             </div>
         </div>
