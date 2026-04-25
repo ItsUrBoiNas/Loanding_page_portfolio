@@ -157,7 +157,7 @@
 
             <div class="hero-content">
                 <h1>Fluid <br>Perfection.</h1>
-                <p class="hero-desc">A woman is researching Botox options in Fort Myers. She checks four MedSpa websites before booking. Yours either signals luxury, expertise, and safety in the first 5 seconds — or she calls the next practice. Your site is either an asset or a waiting room nobody sits in.</p>
+                <p class="hero-desc">A woman is looking into Botox in Fort Myers. She checks four MedSpa websites before she books. If yours doesn't look high-end and trustworthy in the first 5 seconds, she moves on to the next one. Your site is either bringing in clients or sitting there doing nothing.</p>
             </div>
         </div>
     </div>
@@ -165,17 +165,17 @@
     <div class="info-grid">
         <div class="info-block">
             <h3>The Aesthetics Hook</h3>
-            <p>Every element on our MedSpa pages—from the liquid typography to the silken scroll mechanics—is designed to artificially elevate the perceived value of your services.</p>
+            <p>Every part of our MedSpa pages is built to make your services look and feel premium. From the smooth text to the soft scrolling, it all works together to make people want to book with you.</p>
         </div>
         <div class="info-block">
             <h3>Discreet Intake</h3>
-            <p>We build beautiful, multi-step glassmorphic intake forms that encourage users to comfortably provide their exact desires and budget before the consultation even begins.</p>
+            <p>We build clean, easy-to-use booking forms that let people share what they're looking for and their budget before they even walk in the door. No pressure. Just a smooth first step.</p>
         </div>
     </div>
 
     <div class="cta-big">
         <h2>Refine Your Practice.</h2>
-        <a href="mailto:hello@naslogic.com" class="btn-rose" style="border-color: var(--silk-white); color: var(--silk-white);" onclick="openNasModal(); return false;">Commission Naslogic</a>
+        <a href="mailto:hello@naslogic.com" class="btn-rose" style="border-color: var(--silk-white); color: var(--silk-white);" onclick="openNasModal(); return false;">Get Started</a>
     </div>
 
     <script>
@@ -268,8 +268,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us a bit about your project. We will get back to you within 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -289,7 +289,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send My Info</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -354,11 +354,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send My Info';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -368,8 +368,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send My Info';
                 submitBtn.disabled = false;
             }
         });
@@ -385,21 +385,21 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › MedSpa Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why MedSpas Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When a client is ready to spend $3,000 on Botox and fillers, they don't want a website that looks like a hospital brochure. They want hyper-luxury — the same feeling they get walking into your clinic with marble floors, ambient lighting, and carefully curated music. A template MedSpa site with clinical stock photos and a blue-and-white color scheme screams "dental office," not "exclusive aesthetics experience." A custom-coded MedSpa landing page with liquid silk textures, rose-gold accents, and a fluid consultation flow signals the kind of premium practice that charges — and delivers — top tier results.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When a client is ready to spend $3,000 on Botox and fillers, they don't want a website that looks like a hospital brochure. They want something that feels high-end. The same feeling they get walking into your clinic with marble floors and soft music. A basic template with stock photos and a blue-and-white color scheme screams "dentist's office," not "top-tier MedSpa." A page built just for your practice, with soft textures, warm colors, and an easy booking flow, tells people you're the real deal.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" open>
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">How much does a MedSpa website cost?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Naslogic builds custom MedSpa landing pages starting at $199 with 48-hour delivery. These are luxury-grade, conversion-optimized pages designed specifically for aesthetics clinics offering Botox, fillers, and cosmetic treatments.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Naslogic builds MedSpa landing pages starting at $199 with 48-hour delivery. These are high-end pages made for clinics that offer Botox, fillers, and cosmetic treatments. They look great and they get bookings.</p>
     </details>
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" >
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">What should a MedSpa website include?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">A high-converting MedSpa website needs: luxury aesthetics that match your clinic's ambiance, service menus with pricing ranges, before/after galleries, practitioner credentials, patient testimonials, and an easy consultation booking form.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">A MedSpa website that books clients needs: a design that matches the feel of your clinic, a clear list of services with pricing, before and after photos, info about your team, real patient reviews, and a simple way to book a consultation.</p>
     </details>
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" >
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">How can a MedSpa get more clients from their website?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Stop using clinical, sterile designs. MedSpa clients are buying a luxury experience, not a medical procedure. Use silk textures, rose-gold accents, editorial photography, and a discreet intake form that makes booking feel like scheduling a spa day, not a doctor's appointment.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Stop using designs that look cold and clinical. MedSpa clients want a luxury experience, not a medical appointment. Use warm textures, soft colors, real photos, and a booking form that feels like scheduling a spa day. Not a trip to the doctor.</p>
     </details>
   </div>
 </section>
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="max-width: 800px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
     <div>
       <a href="/" style="color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem;">Naslogic</a>
-      <span style="margin-left: 0.5rem; color: #555;">— Fort Myers Web Design Agency</span>
+      <span style="margin-left: 0.5rem; color: #555;">Fort Myers Web Design Agency</span>
     </div>
     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
       <a href="/" style="color: #aaa; text-decoration: none;">Home</a>
@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
   <div style="max-width: 800px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #111; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
     <span>© 2026 Naslogic. Fort Myers, FL. <a href="tel:+19412573059" style="color: #aaa; text-decoration: none;">(941) 257-3059</a></span>
-    <span style="color: #333;">Custom-built with precision.</span>
+    <span style="color: #333;">Built by hand.</span>
   </div>
 </footer>
 <!-- /NASLOGIC SEO FOOTER -->

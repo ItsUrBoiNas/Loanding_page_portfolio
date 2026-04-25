@@ -389,65 +389,151 @@
         <div id="nl-purchase-form-wrap">
           <div class="nl-modal-badge" style="border-color: #0070BA; color: #0070BA;">48-Hour Delivery</div>
           <h2 class="nl-modal-title">The Landing Page.</h2>
-          <div class="nl-price-amount">$199</div>
+          <div class="nl-price-amount" style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 30px;">
+            <span style="text-decoration: line-through; color: #555; font-size: 2rem; font-weight: 400;">$499</span>
+            <span style="color: #FBBF24; font-size: 3rem;">$199</span>
+          </div>
           <div class="nl-form-error" id="nl-purchase-error"></div>
           
           <form id="nl-purchase-form">
-            <div class="nl-form-row">
-              <div class="nl-form-group">
-                <label class="nl-form-label">Name <span class="required">*</span></label>
-                <input class="nl-form-input" type="text" name="name" required>
-              </div>
-              <div class="nl-form-group">
-                <label class="nl-form-label">Email <span class="required">*</span></label>
-                <input class="nl-form-input" type="email" name="email" required>
-              </div>
-            </div>
-            <div class="nl-form-row">
-              <div class="nl-form-group">
-                <label class="nl-form-label">Phone <span class="required">*</span></label>
-                <input class="nl-form-input" type="tel" name="phone" required>
+            
+            <!-- STEP 1 -->
+            <div id="nl-step-1">
+              <div class="nl-form-row">
+                <div class="nl-form-group">
+                  <label class="nl-form-label">Name <span class="required">*</span></label>
+                  <input class="nl-form-input" type="text" name="name" required>
+                </div>
+                <div class="nl-form-group">
+                  <label class="nl-form-label">Email <span class="required">*</span></label>
+                  <input class="nl-form-input" type="email" name="email" id="nl-purchase-email" required>
+                </div>
               </div>
               <div class="nl-form-group">
                 <label class="nl-form-label">Brand URL</label>
-                <input class="nl-form-input" type="url" name="website">
+                <input class="nl-form-input" type="url" name="website" placeholder="https://">
+              </div>
+              <button type="button" class="nl-form-submit nl-btn-purchase" id="nl-next-step" style="background: #FBBF24; color: #000;">
+                Build My Custom Plan &rarr;
+              </button>
+            </div>
+
+            <!-- STEP 2 -->
+            <div id="nl-step-2" style="display: none;">
+              <button type="button" onclick="document.getElementById('nl-step-2').style.display='none'; document.getElementById('nl-step-1').style.display='block';" style="background:transparent; border:none; color:#A1A1AA; font-size:0.8rem; cursor:pointer; margin-bottom:15px; text-transform:uppercase; font-family:'Inter', sans-serif;">&larr; Back</button>
+              
+              <div class="nl-form-group">
+                <label class="nl-form-label">Phone <span class="required">*</span></label>
+                <input class="nl-form-input" type="tel" name="phone">
+              </div>
+
+              <div class="nl-form-group">
+                <label class="nl-form-label">The Target (Service/Offer) <span class="required">*</span></label>
+                <input class="nl-form-input" type="text" name="target" placeholder="e.g. Free Roof Inspections">
+              </div>
+
+              <div class="nl-form-group">
+                <label class="nl-form-label">The Mission (Primary Action) <span class="required">*</span></label>
+                <select class="nl-form-select" name="missionSelect" id="nl-mission-select">
+                  <option value="" disabled selected>Select an option...</option>
+                  <option value="Get people to fill out a contact form (Lead Gen)">Get people to fill out a contact form (Lead Gen)</option>
+                  <option value="Get people to call my phone number">Get people to call my phone number</option>
+                  <option value="Get people to book on my calendar">Get people to book on my calendar</option>
+                  <option value="Sell a product directly (E-commerce)">Sell a product directly (E-commerce)</option>
+                  <option value="Other">Other...</option>
+                </select>
+                <input class="nl-form-input" type="text" name="mission" id="nl-mission-other" placeholder="Please specify..." style="display:none; margin-top:10px;">
+              </div>
+
+              <div class="nl-form-group">
+                <label class="nl-form-label">The Audience (Who is buying) <span class="required">*</span></label>
+                <select class="nl-form-select" name="audienceSelect" id="nl-audience-select">
+                  <option value="" disabled selected>Select an option...</option>
+                  <option value="Local Homeowners / Residents">Local Homeowners / Residents</option>
+                  <option value="Other Businesses (B2B)">Other Businesses (B2B)</option>
+                  <option value="Everyday Consumers (B2C)">Everyday Consumers (B2C)</option>
+                  <option value="Other">Other...</option>
+                </select>
+                <input class="nl-form-input" type="text" name="audience" id="nl-audience-other" placeholder="Please specify..." style="display:none; margin-top:10px;">
+              </div>
+
+              <button type="submit" class="nl-form-submit nl-btn-purchase" id="nl-purchase-submit">
+                Pay $199 with PayPal
+              </button>
+
+              <div class="nl-secure-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                Encrypted Checkout Protocol
               </div>
             </div>
-
-            <div class="nl-form-group">
-              <label class="nl-form-label">The Target (Service/Offer) <span class="required">*</span></label>
-              <input class="nl-form-input" type="text" name="target" placeholder="e.g. Free Roof Inspections" required>
-            </div>
-
-            <div class="nl-form-group">
-              <label class="nl-form-label">The Mission (Primary Action) <span class="required">*</span></label>
-              <input class="nl-form-input" type="text" name="mission" placeholder="e.g. Fill out lead form, Buy $50 product" required>
-            </div>
-
-            <div class="nl-form-group">
-              <label class="nl-form-label">The Audience (Who is buying) <span class="required">*</span></label>
-              <input class="nl-form-input" type="text" name="audience" placeholder="e.g. Local homeowners, B2B founders" required>
-            </div>
-
-            <button type="submit" class="nl-form-submit nl-btn-purchase" id="nl-purchase-submit">
-              Pay $199 with PayPal
-            </button>
-
-            <div class="nl-secure-badge">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-              Encrypted Checkout Protocol
-            </div>
+            
           </form>
         </div>
 
         <div class="nl-form-feedback" id="nl-purchase-success">
-          <h2 class="nl-modal-title">Initiating Secue Transfer.</h2>
+          <h2 class="nl-modal-title">Initiating Secure Transfer.</h2>
           <p class="nl-modal-subtitle">You are being redirected to PayPal...</p>
         </div>
       </div>
     `;
     document.body.appendChild(overlay);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closePurchaseModal(); });
+    
+    // Ghost Capture state
+    let hasCapturedPartial = false;
+
+    // Dropdown Logic
+    const missionSelect = document.getElementById('nl-mission-select');
+    const missionOther = document.getElementById('nl-mission-other');
+    missionSelect.addEventListener('change', (e) => {
+      missionOther.style.display = e.target.value === 'Other' ? 'block' : 'none';
+      if (e.target.value === 'Other') missionOther.focus();
+    });
+
+    const audienceSelect = document.getElementById('nl-audience-select');
+    const audienceOther = document.getElementById('nl-audience-other');
+    audienceSelect.addEventListener('change', (e) => {
+      audienceOther.style.display = e.target.value === 'Other' ? 'block' : 'none';
+      if (e.target.value === 'Other') audienceOther.focus();
+    });
+
+    // Ghost Capture Function
+    async function captureGhostLead() {
+      if (hasCapturedPartial) return;
+      const email = document.getElementById('nl-purchase-email').value.trim();
+      const name = document.querySelector('#nl-purchase-form input[name="name"]').value.trim();
+      const website = document.querySelector('#nl-purchase-form input[name="website"]').value.trim();
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) return;
+
+      hasCapturedPartial = true;
+      try {
+        await fetch('/api/lead-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ isPartial: true, email, name, website, formType: 'purchase' })
+        });
+      } catch (err) {
+        hasCapturedPartial = false; // allow retry if failed
+      }
+    }
+
+    // Capture on blur
+    document.getElementById('nl-purchase-email').addEventListener('blur', captureGhostLead);
+
+    // Step Transition
+    document.getElementById('nl-next-step').addEventListener('click', () => {
+      const form = document.getElementById('nl-purchase-form');
+      if (!form.name.checkValidity() || !form.email.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      captureGhostLead();
+      document.getElementById('nl-step-1').style.display = 'none';
+      document.getElementById('nl-step-2').style.display = 'block';
+    });
+
     document.getElementById('nl-purchase-form').addEventListener('submit', handlePurchaseSubmit);
   }
 
@@ -544,6 +630,25 @@
     const errorEl = document.getElementById('nl-purchase-error');
     errorEl.classList.remove('active');
 
+    // Ensure step 2 fields are validated properly before submitting
+    if (!form.phone.value.trim() || !form.target.value.trim() || !form.missionSelect.value || !form.audienceSelect.value) {
+      errorEl.textContent = "Please fill out all required fields.";
+      errorEl.classList.add('active');
+      return;
+    }
+
+    let finalMission = form.missionSelect.value;
+    if (finalMission === 'Other') finalMission = form.mission.value.trim();
+
+    let finalAudience = form.audienceSelect.value;
+    if (finalAudience === 'Other') finalAudience = form.audience.value.trim();
+
+    if ((form.missionSelect.value === 'Other' && !finalMission) || (form.audienceSelect.value === 'Other' && !finalAudience)) {
+      errorEl.textContent = "Please specify 'Other' selections.";
+      errorEl.classList.add('active');
+      return;
+    }
+
     const formData = {
       formType: 'purchase',
       name: form.name.value.trim(),
@@ -551,8 +656,8 @@
       phone: form.phone.value.trim(),
       website: form.website.value.trim(),
       target: form.target.value.trim(),
-      mission: form.mission.value.trim(),
-      audience: form.audience.value.trim()
+      mission: finalMission,
+      audience: finalAudience
     };
 
     setButtonLoading(btn, true);

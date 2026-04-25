@@ -12,7 +12,7 @@ niches = [
         "schema_name": "HVAC Landing Page Design",
         "schema_desc": "Naslogic builds high-converting, mobile-first landing pages specifically for HVAC contractors. Our pages are designed to convert visitors into booked estimates for services like AC installation, furnace repair, and routine maintenance.",
         "schema_service": "Landing Page Design for HVAC Contractors",
-        "faq1": "Our HVAC landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts.",
+        "faq1": "Our HVAC landing pages start at $199 for a single high-converting page with a design that works great on phones, SEO optimization, and conversion-focused layouts.",
         "faq2_q": "Why do HVAC contractors need a dedicated landing page?",
         "faq2_a": "HVAC companies spend significant budgets driving traffic, but most send visitors to generic homepages. A dedicated landing page with a single call-to-action can increase conversion rates by 2x to 5x compared to a standard website.",
         "faq3_q": "How fast can Naslogic deliver an HVAC landing page?",
@@ -21,7 +21,7 @@ niches = [
         "faq5_a": "Yes. We integrate with popular HVAC CRMs like ServiceTitan and Housecall Pro, as well as general tools like HubSpot and Calendly.",
         "h1_2": "For HVAC",
         "h1_3": "Contractors",
-        "hook": "Naslogic builds high-converting landing pages exclusively for HVAC contractors. We design pages that turn website visitors into booked service calls for AC replacements, furnace repairs, and tune-ups. No generic templates. Every page is custom-engineered to match your HVAC market and generate qualified leads on autopilot.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for HVAC contractors. We design pages that turn website visitors into booked service calls for AC replacements, furnace repairs, and tune-ups. No cookie-cutter templates. Every page is built by hand to match your HVAC market and generate qualified leads without you lifting a finger.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See HVAC Examples",
         "prob_h2": "Why Most HVAC Websites Fail",
@@ -46,7 +46,7 @@ niches = [
         "port_2_t2": "Rooftop Units",
         "port_2_t3": "B2B Leads",
         "step_1": "We learn your HVAC niche — residential installs, emergency repair, commercial maintenance — and map out your ideal customer journey.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to HVAC marketing best practices.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to HVAC marketing best practices.",
         "step_3": "Your page goes live and starts converting visitors into booked service calls, free estimates, and signed contracts.",
         "faq_sub": "Common questions from HVAC contractors about our landing page design and lead generation services.",
         "cta_h2": "Ready to Book More HVAC Jobs?",
@@ -62,7 +62,7 @@ niches = [
         "schema_name": "Plumbing Landing Page Design",
         "schema_desc": "Naslogic builds high-converting, mobile-first landing pages specifically for plumbing contractors. Our pages are designed to convert visitors into booked estimates for services like leak repair, water heater installation, and repiping.",
         "schema_service": "Landing Page Design for Plumbing Contractors",
-        "faq1": "Our plumbing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts.",
+        "faq1": "Our plumbing landing pages start at $199 for a single high-converting page with a design that works great on phones, SEO optimization, and conversion-focused layouts.",
         "faq2_q": "Why do plumbers need a dedicated landing page?",
         "faq2_a": "Plumbers spend significant budgets driving traffic, but most send visitors to generic homepages. A dedicated landing page with a single call-to-action can increase conversion rates by 2x to 5x compared to a standard website.",
         "faq3_q": "How fast can Naslogic deliver a plumbing landing page?",
@@ -71,7 +71,7 @@ niches = [
         "faq5_a": "Yes. We integrate with popular CRMs like ServiceTitan and Housecall Pro, as well as general tools like HubSpot and Calendly.",
         "h1_2": "For Plumbing",
         "h1_3": "Contractors",
-        "hook": "Naslogic builds high-converting landing pages exclusively for plumbing contractors. We design pages that turn website visitors into booked service calls for leak repairs, water heater installs, and repiping. No generic templates. Every page is custom-engineered to match your plumbing market and generate qualified leads on autopilot.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for plumbing contractors. We design pages that turn website visitors into booked service calls for leak repairs, water heater installs, and repiping. No cookie-cutter templates. Every page is built by hand to match your plumbing market and generate qualified leads without you lifting a finger.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See Plumbing Examples",
         "prob_h2": "Why Most Plumbing Websites Fail",
@@ -96,7 +96,7 @@ niches = [
         "port_2_t2": "Hydro Jetting",
         "port_2_t3": "B2B Leads",
         "step_1": "We learn your plumbing niche — residential repair, water heaters, commercial repiping — and map out your ideal customer journey.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to plumbing marketing best practices.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to plumbing marketing best practices.",
         "step_3": "Your page goes live and starts converting visitors into booked service calls, free estimates, and signed contracts.",
         "faq_sub": "Common questions from plumbing contractors about our landing page design and lead generation services.",
         "cta_h2": "Ready to Book More Plumbing Jobs?",
@@ -121,7 +121,7 @@ niches = [
         "faq5_a": "Yes. We integrate with popular dental CRMs like NexHealth and RevenueWell.",
         "h1_2": "For Dental",
         "h1_3": "Practices",
-        "hook": "Naslogic builds high-converting landing pages exclusively for dental practices. We design pages that turn website visitors into booked appointments for implants, clear aligners, and cosmetic dentistry. No generic templates. Every page is custom-engineered to match your dental market and generate qualified leads on autopilot.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for dental practices. We design pages that turn website visitors into booked appointments for implants, clear aligners, and cosmetic dentistry. No cookie-cutter templates. Every page is built by hand to match your dental market and generate qualified leads without you lifting a finger.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See Dental Examples",
         "prob_h2": "Why Most Dental Websites Fail",
@@ -146,7 +146,7 @@ niches = [
         "port_2_t2": "Invisalign",
         "port_2_t3": "Lead Gen",
         "step_1": "We learn your dental niche — cosmetic, implants, general — and map out your ideal patient journey.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to dental marketing best practices.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to dental marketing best practices.",
         "step_3": "Your page goes live and starts converting visitors into booked appointments and new patient consultations.",
         "faq_sub": "Common questions from dentists about our landing page design.",
         "cta_h2": "Ready to Book More High-Ticket Patients?",
@@ -171,7 +171,7 @@ niches = [
         "faq5_a": "Yes. We integrate with popular real estate CRMs like Follow Up Boss and Sierra Interactive.",
         "h1_2": "For Real Estate",
         "h1_3": "Professionals",
-        "hook": "Naslogic builds high-converting landing pages exclusively for real estate agents and wholesalers. We design pages that turn website visitors into motivated seller leads, buyer appointments, and closed deals. No generic templates.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for real estate agents and wholesalers. We design pages that turn website visitors into motivated seller leads, buyer appointments, and closed deals. No cookie-cutter templates.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See Real Estate Examples",
         "prob_h2": "Why Most Real Estate Websites Fail",
@@ -196,7 +196,7 @@ niches = [
         "port_2_t2": "Buyer Leads",
         "port_2_t3": "Premium Design",
         "step_1": "We learn your real estate niche — luxury buyers, motivated sellers, commercial — and map out the lead journey.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to real estate marketing.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to real estate marketing.",
         "step_3": "Your page goes live and starts converting visitors into booked listings and buyer appointments.",
         "faq_sub": "Common questions from real estate agents about our landing page design.",
         "cta_h2": "Ready to Close More Deals?",
@@ -221,7 +221,7 @@ niches = [
         "faq5_a": "Yes. We integrate perfectly with SaaS tools like HubSpot, Segment, Stripe, and Mixpanel.",
         "h1_2": "For SaaS",
         "h1_3": "Startups",
-        "hook": "Naslogic builds high-converting landing pages exclusively for SaaS startups. We design pages that turn website visitors into free trials, booked demos, and paying users. No generic templates.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for SaaS startups. We design pages that turn website visitors into free trials, booked demos, and paying users. No cookie-cutter templates.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See SaaS Examples",
         "prob_h2": "Why Most Startup Websites Fail",
@@ -246,7 +246,7 @@ niches = [
         "port_2_t2": "Free Trials",
         "port_2_t3": "B2C",
         "step_1": "We learn your product, ICP, and value proposition.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to software marketing.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to software marketing.",
         "step_3": "Your page goes live and starts driving signups, decreasing CAC, and growing MRR.",
         "faq_sub": "Common questions from founders about our landing page design.",
         "cta_h2": "Ready to Grow MRR?",
@@ -321,7 +321,7 @@ niches = [
         "faq5_a": "Yes. We integrate with popular legal CRMs like Clio and MyCase.",
         "h1_2": "For Law Firms",
         "h1_3": "& Attorneys",
-        "hook": "Naslogic builds high-converting landing pages exclusively for law firms. We design pages that turn website visitors into booked consultations for personal injury, criminal defense, and family law. No generic templates.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for law firms. We design pages that turn website visitors into booked consultations for personal injury, criminal defense, and family law. No cookie-cutter templates.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See Legal Examples",
         "prob_h2": "Why Most Law Firm Websites Fail",
@@ -346,7 +346,7 @@ niches = [
         "port_2_t2": "Lead Gen",
         "port_2_t3": "Trust Building",
         "step_1": "We learn your practice areas and map out the client intake journey.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to legal marketing.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to legal marketing.",
         "step_3": "Your page goes live and starts converting visitors into booked consults and retained clients.",
         "faq_sub": "Common questions from attorneys about our landing page design.",
         "cta_h2": "Ready to Book More Cases?",
@@ -371,7 +371,7 @@ niches = [
         "faq5_a": "Yes. We integrate with popular gym CRMs like Mindbody and PushPress.",
         "h1_2": "For Fitness",
         "h1_3": "Brands & Gyms",
-        "hook": "Naslogic builds high-converting landing pages exclusively for fitness businesses. We design pages that turn website visitors into booked introductory sessions, free trials, and high-ticket coaching clients. No generic templates.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for fitness businesses. We design pages that turn website visitors into booked introductory sessions, free trials, and high-ticket coaching clients. No cookie-cutter templates.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See Fitness Examples",
         "prob_h2": "Why Most Fitness Websites Fail",
@@ -396,7 +396,7 @@ niches = [
         "port_2_t2": "High-Ticket",
         "port_2_t3": "Application Funnel",
         "step_1": "We learn your fitness niche and map out your ideal client journey.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to fitness marketing.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to fitness marketing.",
         "step_3": "Your page goes live and starts converting visitors into trials, consults, and paying members.",
         "faq_sub": "Common questions from fitness owners about our landing page design.",
         "cta_h2": "Ready to Grow Your Client Base?",
@@ -412,7 +412,7 @@ niches = [
         "schema_name": "Restaurant Landing Page Design",
         "schema_desc": "Naslogic builds high-converting, mobile-first landing pages specifically for restaurants, ghost kitchens, and catering services.",
         "schema_service": "Landing Page Design for Restaurants",
-        "faq1": "Our restaurant landing pages start at $199 with mobile-first design, perfect for hungry locals on the go.",
+        "faq1": "Our restaurant landing pages start at $199 with a design that works great on phones, perfect for hungry locals on the go.",
         "faq2_q": "Why do restaurants need a dedicated landing page?",
         "faq2_a": "To drive specific actions. Whether pushing a new catering menu, private events, or direct orders to avoid 3rd-party app fees, a landing page focuses the customer.",
         "faq3_q": "How fast can Naslogic deliver a restaurant landing page?",
@@ -421,7 +421,7 @@ niches = [
         "faq5_a": "Yes. We integrate with popular restaurant tech like Toast, SevenRooms, and OpenTable.",
         "h1_2": "For Restaurants",
         "h1_3": "& Ghost Kitchens",
-        "hook": "Naslogic builds high-converting landing pages exclusively for the hospitality industry. We design pages that turn website visitors into booked reservations, catering leads, and direct online orders. No generic templates.",
+        "hook": "Naslogic builds high-converting landing pages exclusively for the hospitality industry. We design pages that turn website visitors into booked reservations, catering leads, and direct online orders. No cookie-cutter templates.",
         "cta_1": "Get Your Free Quote",
         "cta_2": "See Restaurant Examples",
         "prob_h2": "Why Most Restaurant Websites Fail",
@@ -446,7 +446,7 @@ niches = [
         "port_2_t2": "B2B Leads",
         "port_2_t3": "Event Booking",
         "step_1": "We learn your restaurant concept, menu goals, and map out the customer journey.",
-        "step_2": "Our team designs and develops a mobile-first, conversion-optimized landing page tailored to hospitality marketing.",
+        "step_2": "Our team designs and develops a mobile-first, built to get you calls landing page tailored to hospitality marketing.",
         "step_3": "Your page goes live and starts converting visitors into reservations, catering leads, and direct orders.",
         "faq_sub": "Common questions from restaurant owners about our landing page design.",
         "cta_h2": "Ready to Drive More Direct Revenue?",
@@ -470,7 +470,7 @@ for niche in niches:
     content = content.replace('"Naslogic builds high-converting, mobile-first landing pages specifically for roofing contractors. Our pages are designed to convert visitors into booked estimates for services like shingle replacement, storm damage repair, and roof inspections."', f'"{niche["schema_desc"]}"')
     content = content.replace('"Landing Page Design for Roofing Contractors"', f'"{niche["schema_service"]}"')
     
-    content = content.replace("Naslogic's roofing landing pages start at $199 for a single high-converting page with mobile-first design, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.", niche["faq1"])
+    content = content.replace("Naslogic's roofing landing pages start at $199 for a single high-converting page with a design that works great on phones, SEO optimization, and conversion-focused layouts. Multi-page funnels and custom integrations are priced on a project basis.", niche["faq1"])
     content = content.replace("Why do roofing contractors need a dedicated landing page?", niche["faq2_q"])
     content = content.replace("Roofing contractors spend significant budgets driving traffic, but most send visitors to generic homepages. A dedicated landing page with a single call-to-action, trust signals, and a streamlined estimate booking flow can increase conversion rates by 2x to 5x compared to a standard website.", niche["faq2_a"])
     
@@ -483,7 +483,7 @@ for niche in niches:
     content = content.replace("<span>For Roofing</span>", f"<span>{niche['h1_2']}</span>")
     content = content.replace("<span>Contractors</span>", f"<span>{niche['h1_3']}</span>")
     
-    content = content.replace("Naslogic builds high-converting landing pages exclusively for roofing contractors. We design pages that turn website visitors into booked estimates for shingle replacement, storm damage repair, and full re-roofs. No generic templates. Every page is custom-engineered to match your roofing market and generate qualified leads on autopilot.", niche["hook"])
+    content = content.replace("Naslogic builds high-converting landing pages exclusively for roofing contractors. We design pages that turn website visitors into booked estimates for shingle replacement, storm damage repair, and full re-roofs. No cookie-cutter templates. Every page is built by hand to match your roofing market and generate qualified leads without you lifting a finger.", niche["hook"])
     
     content = content.replace("Get Your Free Quote", niche["cta_1"])
     content = content.replace("See Roofing Examples", niche["cta_2"])
@@ -516,8 +516,8 @@ for niche in niches:
     content = content.replace("B2B Leads", niche["port_2_t3"])
     
     content = content.replace("We learn your roofing niche — residential re-roofs, storm damage, commercial flat roofing — and map out your ideal customer journey.", niche["step_1"])
-    content = content.replace("Our team designs and develops a mobile-first, conversion-optimized landing page tailored to roofing contractor marketing best practices.", niche["step_2"])
-    content = content.replace("Your page goes live and starts converting visitors into booked roof inspections, free estimates, and signed contracts on autopilot.", niche["step_3"])
+    content = content.replace("Our team designs and develops a mobile-first, built to get you calls landing page tailored to roofing contractor marketing best practices.", niche["step_2"])
+    content = content.replace("Your page goes live and starts converting visitors into booked roof inspections, free estimates, and signed contracts without you lifting a finger.", niche["step_3"])
     
     content = content.replace("Common questions from roofing contractors about our landing page design and lead generation services.", niche["faq_sub"])
     

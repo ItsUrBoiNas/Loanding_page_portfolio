@@ -26,46 +26,57 @@ export async function POST(request: NextRequest) {
       name, email, phone, company, website, 
       budget, timeline, formType,
       offer, traffic, cvr, roadblock, competitors, // Quote specific
-      target, mission, audience // Purchase specific
+      target, mission, audience, // Purchase specific
+      isPartial // Ghost capture flag
     } = body
 
-    if (!name || !email || !phone || !formType) {
-      return NextResponse.json(
-        { error: 'Name, email, phone, and formType are required' },
-        { status: 400 }
-      )
+    if (isPartial) {
+      if (!email) {
+        return NextResponse.json({ error: 'Email is required for partial capture' }, { status: 400 })
+      }
+    } else {
+      if (!name || !email || !phone || !formType) {
+        return NextResponse.json(
+          { error: 'Name, email, phone, and formType are required' },
+          { status: 400 }
+        )
+      }
     }
 
     // Build email HTML
     let emailHtml = `
-      <h2 style="font-family: sans-serif; color: #111;">New ${formType === 'quote' ? 'Arsenal Quote Request' : 'Blueprint Purchase Request'}</h2>
+      <h2 style="font-family: sans-serif; color: #111;">
+        ${isPartial ? '🚨 PARTIAL LEAD CAPTURED' : `New ${formType === 'quote' ? 'Arsenal Quote Request' : 'Blueprint Purchase Request'}`}
+      </h2>
       <hr />
       <h3>Client Details:</h3>
-      <p><strong>Name:</strong> ${name}</p>
+      ${name ? `<p><strong>Name:</strong> ${name}</p>` : ''}
       <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
+      ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
       ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
       ${website ? `<p><strong>Website:</strong> ${website}</p>` : ''}
       <br/>`
 
-    if (formType === 'quote') {
-      emailHtml += `
-      <h3>Project Intel ($799 - $2,500 Tier Framework):</h3>
-      <p><strong>Primary Offer:</strong> ${offer || 'N/A'}</p>
-      <p><strong>Current Traffic & Source:</strong> ${traffic || 'N/A'}</p>
-      <p><strong>Current CVR:</strong> ${cvr || 'N/A'}</p>
-      <p><strong>Biggest Roadblock:</strong> ${roadblock || 'N/A'}</p>
-      <p><strong>Competitor Kill List:</strong> ${competitors || 'N/A'}</p>
-      <p><strong>Budget Range:</strong> ${budget || 'N/A'}</p>
-      <p><strong>Timeline:</strong> ${timeline || 'N/A'}</p>
-      `
-    } else {
-      emailHtml += `
-      <h3>Purchase Intel ($199 Tier Framework):</h3>
-      <p><strong>The Target (Offer/Service):</strong> ${target || 'N/A'}</p>
-      <p><strong>The Mission (Primary CTA):</strong> ${mission || 'N/A'}</p>
-      <p><strong>The Audience (Who is buying):</strong> ${audience || 'N/A'}</p>
-      `
+    if (!isPartial) {
+      if (formType === 'quote') {
+        emailHtml += `
+        <h3>Project Intel ($799 - $2,500 Tier Framework):</h3>
+        <p><strong>Primary Offer:</strong> ${offer || 'N/A'}</p>
+        <p><strong>Current Traffic & Source:</strong> ${traffic || 'N/A'}</p>
+        <p><strong>Current CVR:</strong> ${cvr || 'N/A'}</p>
+        <p><strong>Biggest Roadblock:</strong> ${roadblock || 'N/A'}</p>
+        <p><strong>Competitor Kill List:</strong> ${competitors || 'N/A'}</p>
+        <p><strong>Budget Range:</strong> ${budget || 'N/A'}</p>
+        <p><strong>Timeline:</strong> ${timeline || 'N/A'}</p>
+        `
+      } else {
+        emailHtml += `
+        <h3>Purchase Intel ($199 Tier Framework):</h3>
+        <p><strong>The Target (Offer/Service):</strong> ${target || 'N/A'}</p>
+        <p><strong>The Mission (Primary CTA):</strong> ${mission || 'N/A'}</p>
+        <p><strong>The Audience (Who is buying):</strong> ${audience || 'N/A'}</p>
+        `
+      }
     }
 
     // Send notification email to all admin emails
@@ -73,9 +84,13 @@ export async function POST(request: NextRequest) {
     const envEmails = process.env.ADMIN_EMAILS || process.env.ADMIN_EMAIL || defaultEmails;
     const adminEmails = envEmails.split(',').map((e) => e.trim())
       
+    const emailSubject = isPartial 
+      ? `[NASLOGIC] 🚨 PARTIAL LEAD: ${email}` 
+      : `[NASLOGIC] New ${formType === 'quote' ? 'Quote Lead' : 'Purchase Intel'} from ${name}`
+
     const emailResult = await sendEmail({
       to: adminEmails,
-      subject: `[NASLOGIC] New ${formType === 'quote' ? 'Quote Lead' : 'Purchase Intel'} from ${name}`,
+      subject: emailSubject,
       html: emailHtml,
     })
 

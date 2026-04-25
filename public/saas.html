@@ -27,7 +27,7 @@
     <!-- JSON-LD SCHEMA -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Roofing Website Design & Landing Pages","description":"Custom roofing websites & landing pages built to generate leads. Custom-built, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.","url":"https://naslogic.com/saas","isPartOf":{"@type":"WebSite","name":"Naslogic","url":"https://naslogic.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://naslogic.com"},{"@type":"ListItem","position":2,"name":"Roofing Website Design","item":"https://naslogic.com/saas"}]}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Roofing Website Design","description":"Custom roofing websites & landing pages built to generate leads. Custom-built, mobile-first designs delivered in 48 hours for $199. Fort Myers, FL.","provider":{"@type":"LocalBusiness","name":"Naslogic","url":"https://naslogic.com","telephone":"(941) 257-3059","address":{"@type":"PostalAddress","addressLocality":"Fort Myers","addressRegion":"FL","addressCountry":"US"}},"areaServed":{"@type":"Country","name":"US"},"offers":{"@type":"Offer","price":"199","priceCurrency":"USD","description":"Custom-built landing page delivered in 48 hours"}}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a roofing website cost?","acceptedAnswer":{"@type":"Answer","text":"At Naslogic, a custom-built roofing landing page starts at just $199 with 48-hour delivery. This includes mobile-first design, conversion-optimized copywriting, and deployment."}},{"@type":"Question","name":"Do roofers need a website or a landing page?","acceptedAnswer":{"@type":"Answer","text":"Both serve different purposes. A website provides full company information, while a landing page is laser-focused on converting paid traffic (Google Ads, Meta Ads) into phone calls and form submissions. Most roofers running ads need a landing page."}},{"@type":"Question","name":"What should a roofing company website include?","acceptedAnswer":{"@type":"Answer","text":"A high-converting roofing website needs a clear headline, trust signals (license numbers, insurance), before/after photos, customer testimonials, a prominent phone number, and a simple contact form above the fold."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a roofing website cost?","acceptedAnswer":{"@type":"Answer","text":"At Naslogic, a custom-built roofing landing page starts at just $199 with 48-hour delivery. This includes a design that works great on phones, words that sell, and we put it online for you."}},{"@type":"Question","name":"Do roofers need a website or a landing page?","acceptedAnswer":{"@type":"Answer","text":"Both serve different purposes. A website provides full company information, while a landing page is built for one job: turning ad clicks (Google Ads, Meta Ads) into phone calls and form submissions. Most roofers running ads need a landing page."}},{"@type":"Question","name":"What should a roofing company website include?","acceptedAnswer":{"@type":"Answer","text":"A high-converting roofing website needs a clear headline, trust signals (license numbers, insurance), before/after photos, customer testimonials, a prominent phone number, and a simple contact form right at the top."}}]}</script>
     <!-- /JSON-LD SCHEMA -->
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,17 +125,17 @@
 
     <nav id="navbar">
         <a href="/" class="logo">NASLOGIC</a>
-        <a href="mailto:hello@naslogic.com" class="btn-copper" onclick="openNasModal(); return false;">Deploy Team</a>
+        <a href="mailto:hello@naslogic.com" class="btn-copper" onclick="openNasModal(); return false;">Get Started</a>
     </nav>
 
     <div class="container hero">
         <h1>THE <span>STORM</span><br>HAS HIT.</h1>
-        <p>Storm hit Lee County last night. A homeowner is on Google right now — roof leaking, insurance claim pending, hiring decision made in under 24 hours. Your page is either the one they call or the one they never see.</p>
+        <p>Storm hit Lee County last night. A homeowner is on Google right now , roof leaking, insurance claim pending, hiring decision made in under 24 hours. Your page is either the one they call or the one they never see.</p>
     </div>
 
     <div class="container solution-zone">
         <h2 class="sun-text">We clear the storm.</h2>
-        <p class="sun-desc">We build roofing pages for storm season. Free inspection CTAs above the fold. Insurance claim language homeowners already understand. A phone number impossible to miss at 2 AM. The roofer with the better page wins the job — every time. Commission a build today.</p>
+        <p class="sun-desc">We build roofing pages for storm season. Free inspection CTAs right at the top. Insurance claim language homeowners already understand. A phone number impossible to miss at 2 AM. The roofer with the better page wins the job , every time. Let's build yours today.</p>
     </div>
 
     <script>
@@ -243,8 +243,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us a bit about your project. We will get back to you within 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -264,7 +264,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send My Info</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -329,11 +329,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send My Info';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -343,8 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send My Info';
                 submitBtn.disabled = false;
             }
         });
@@ -360,21 +360,21 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Roofing Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Roofing Companies Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When a homeowner's roof starts leaking at 2 AM, they're searching "emergency roofer near me" on their phone. If your website takes 5 seconds to load, uses stock photos of generic houses, and buries your phone number at the bottom of the page, you've already lost that $15,000 job to the competitor whose site loaded instantly and had a click-to-call button front and center. A custom-coded roofing landing page eliminates every friction point between a panicked homeowner and your dispatch line. We build mobile-first, fast-loading pages that put your phone number, service area, and trust signals (license, insurance, reviews) exactly where anxious homeowners need them.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When a homeowner's roof starts leaking at 2 AM, they're searching "emergency roofer near me" on their phone. If your website takes 5 seconds to load, uses stock photos of generic houses, and buries your phone number at the bottom of the page, you've already lost that $15,000 job to the competitor whose site loaded instantly and had a click-to-call button front and center. A built by hand roofing landing page removes every roadblock between a panicked homeowner and your dispatch line. We build mobile-first, fast-loading pages that put your phone number, service area, and trust signals (license, insurance, reviews) exactly where anxious homeowners need them.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" open>
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">How much does a roofing website cost?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">At Naslogic, a custom-built roofing landing page starts at just $199 with 48-hour delivery. This includes mobile-first design, conversion-optimized copywriting, and deployment.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">At Naslogic, a custom-built roofing landing page starts at just $199 with 48-hour delivery. This includes a design that works great on phones, words that sell, and we put it online for you.</p>
     </details>
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" >
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">Do roofers need a website or a landing page?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Both serve different purposes. A website provides full company information, while a landing page is laser-focused on converting paid traffic (Google Ads, Meta Ads) into phone calls and form submissions. Most roofers running ads need a landing page.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Both serve different purposes. A website provides full company information, while a landing page is built for one job: turning ad clicks (Google Ads, Meta Ads) into phone calls and form submissions. Most roofers running ads need a landing page.</p>
     </details>
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" >
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">What should a roofing company website include?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">A high-converting roofing website needs a clear headline, trust signals (license numbers, insurance), before/after photos, customer testimonials, a prominent phone number, and a simple contact form above the fold.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">A high-converting roofing website needs a clear headline, trust signals (license numbers, insurance), before/after photos, customer testimonials, a prominent phone number, and a simple contact form right at the top.</p>
     </details>
   </div>
 </section>
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="max-width: 800px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
     <div>
       <a href="/" style="color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem;">Naslogic</a>
-      <span style="margin-left: 0.5rem; color: #555;">— Fort Myers Web Design Agency</span>
+      <span style="margin-left: 0.5rem; color: #555;">Fort Myers Web Design Agency</span>
     </div>
     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
       <a href="/" style="color: #aaa; text-decoration: none;">Home</a>
@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
   <div style="max-width: 800px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #111; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
     <span>© 2026 Naslogic. Fort Myers, FL. <a href="tel:+19412573059" style="color: #aaa; text-decoration: none;">(941) 257-3059</a></span>
-    <span style="color: #333;">Custom-built with precision.</span>
+    <span style="color: #333;">Built by hand.</span>
   </div>
 </footer>
 <!-- /NASLOGIC SEO FOOTER -->

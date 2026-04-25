@@ -20,7 +20,7 @@
     <!-- JSON-LD SCHEMA -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Event & Experience Website Design","description":"Custom event, experience & entertainment landing pages. Immersive, 3D-tunnel designs delivered in 48 hours for $199. Fort Myers, FL.","url":"https://naslogic.com/experience","isPartOf":{"@type":"WebSite","name":"Naslogic","url":"https://naslogic.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://naslogic.com"},{"@type":"ListItem","position":2,"name":"Experience Website Design","item":"https://naslogic.com/experience"}]}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Experience Website Design","description":"Custom event, experience & entertainment landing pages. Immersive, 3D-tunnel designs delivered in 48 hours for $199. Fort Myers, FL.","provider":{"@type":"LocalBusiness","name":"Naslogic","url":"https://naslogic.com","telephone":"(941) 257-3059","address":{"@type":"PostalAddress","addressLocality":"Fort Myers","addressRegion":"FL","addressCountry":"US"}},"areaServed":{"@type":"Country","name":"US"},"offers":{"@type":"Offer","price":"199","priceCurrency":"USD","description":"Custom-built landing page delivered in 48 hours"}}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does an event website cost?","acceptedAnswer":{"@type":"Answer","text":"Naslogic builds custom experience and event landing pages starting at $199 with 48-hour delivery. These are fully immersive, 3D-rendered scroll experiences designed to sell tickets and build hype."}},{"@type":"Question","name":"What should an event website include?","acceptedAnswer":{"@type":"Answer","text":"A high-converting event page needs: immersive visuals that capture the atmosphere, clear date/time/venue info, artist or performer lineups, tiered ticket pricing, social proof (past event photos/videos), and a frictionless checkout."}},{"@type":"Question","name":"Why do events need a dedicated landing page?","acceptedAnswer":{"@type":"Answer","text":"Social media posts disappear in feeds. A dedicated landing page gives your event a permanent home with SEO visibility, all the details in one place, and a direct ticket purchase flow — no algorithm deciding who sees it."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does an event website cost?","acceptedAnswer":{"@type":"Answer","text":"Naslogic builds custom experience and event landing pages starting at $199 with 48-hour delivery. These are scroll-based pages built to sell tickets and get people talking."}},{"@type":"Question","name":"What should an event website include?","acceptedAnswer":{"@type":"Answer","text":"An event page that sells tickets needs: visuals that capture the vibe, clear date, time, and venue info, artist or performer lineups, ticket pricing that is easy to understand, photos or videos from past events, and a simple way to buy tickets."}},{"@type":"Question","name":"Why do events need a dedicated landing page?","acceptedAnswer":{"@type":"Answer","text":"Social media posts get buried in feeds. A landing page gives your event its own home on the internet. People can actually find it on Google, see all the details in one place, and buy tickets right there. No algorithm deciding who sees it."}}]}</script>
     <!-- /JSON-LD SCHEMA -->
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,11 +134,11 @@
     <div class="fixed-ui">
         <div class="nav">
             <a href="/" class="logo">NASLOGIC</a>
-            <a href="mailto:hello@naslogic.com" class="btn-neon" onclick="openNasModal(); return false;">Commission System</a>
+            <a href="mailto:hello@naslogic.com" class="btn-neon" onclick="openNasModal(); return false;">Get Started</a>
         </div>
         <div>
             <div class="progress-container"><div class="progress-bar" id="pb"></div></div>
-            <div class="scroll-hint">SCROLL TO TRAVERSE</div>
+            <div class="scroll-hint">SCROLL TO EXPLORE</div>
         </div>
     </div>
 
@@ -173,17 +173,17 @@
         const numRings = 40;
         const spacingZ = 800; // pixels between each ring
         const messages = [
-            "WE CRAFT FEELINGS",
+            "WE BUILD FEELINGS",
             "NOT TEMPLATES",
-            "THE STANDARD IS EXCELLENCE",
-            "EVERY PIXEL WEIGHED",
-            "EVERY INTERACTION TUNED",
+            "THE GOAL IS EXCELLENCE",
+            "EVERY PIXEL MATTERS",
+            "EVERY CLICK IS PLANNED",
             "WHEN THEY SEE IT",
             "THEY PAUSE",
             "THEY SCROLL BACK UP",
-            "THAT IS THE BAR",
-            "NO COMPROMISES",
-            "PURE MAGIC"
+            "THAT IS THE STANDARD",
+            "NO SHORTCUTS",
+            "JUST GREAT WORK"
         ];
 
         // Generate the rings in 3D Space
@@ -294,8 +294,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us a bit about your project. We will get back to you within 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -315,7 +315,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send My Info</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -380,11 +380,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send My Info';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -394,8 +394,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send My Info';
                 submitBtn.disabled = false;
             }
         });
@@ -411,21 +411,21 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Experience Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Events Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">You're selling an experience — not a product, not a service, but a feeling. A Eventbrite listing with bullet points and a stock image doesn't create excitement. It doesn't make someone picture themselves there. A custom-coded experience landing page with 3D tunnel navigation, neon-lit scroll interactions, and cinematic pacing sells the atmosphere before the ticket is even purchased. We build event pages that function as digital trailers — immersive previews that make the experience feel so tangible, buying a ticket feels inevitable.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">You're selling an experience. Not a product, not a service, but a feeling. A Eventbrite listing with bullet points and a stock image doesn't create excitement. It doesn't make someone picture themselves there. A page built just for your event, with scroll effects, neon-lit visuals, and the right pacing, sells the vibe before anyone even buys a ticket. We build event pages that function as digital trailers. They are previews that make the experience feel so tangible, buying a ticket feels inevitable.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" open>
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">How much does an event website cost?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Naslogic builds custom experience and event landing pages starting at $199 with 48-hour delivery. These are fully immersive, 3D-rendered scroll experiences designed to sell tickets and build hype.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Naslogic builds custom experience and event landing pages starting at $199 with 48-hour delivery. These are scroll-based pages built to sell tickets and get people talking.</p>
     </details>
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" >
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">What should an event website include?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">A high-converting event page needs: immersive visuals that capture the atmosphere, clear date/time/venue info, artist or performer lineups, tiered ticket pricing, social proof (past event photos/videos), and a frictionless checkout.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">An event page that sells tickets needs: visuals that capture the vibe, clear date, time, and venue info, artist or performer lineups, ticket pricing that is easy to understand, photos or videos from past events, and a simple way to buy tickets.</p>
     </details>
     <details style="border-bottom: 1px solid #222; padding: 1.5rem 0; cursor: pointer;" >
       <summary style="font-size: 1.05rem; color: #eee; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">Why do events need a dedicated landing page?<span style="color:#555; font-size: 1.5rem;">+</span></summary>
-      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Social media posts disappear in feeds. A dedicated landing page gives your event a permanent home with SEO visibility, all the details in one place, and a direct ticket purchase flow — no algorithm deciding who sees it.</p>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #888; max-width: 650px;">Social media posts get buried in feeds. A landing page gives your event its own home on the internet. People can actually find it on Google, see all the details in one place, and buy tickets right there. No algorithm deciding who sees it.</p>
     </details>
   </div>
 </section>
@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="max-width: 800px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
     <div>
       <a href="/" style="color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem;">Naslogic</a>
-      <span style="margin-left: 0.5rem; color: #555;">— Fort Myers Web Design Agency</span>
+      <span style="margin-left: 0.5rem; color: #555;">Fort Myers Web Design Agency</span>
     </div>
     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
       <a href="/" style="color: #aaa; text-decoration: none;">Home</a>
@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
   <div style="max-width: 800px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #111; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
     <span>© 2026 Naslogic. Fort Myers, FL. <a href="tel:+19412573059" style="color: #aaa; text-decoration: none;">(941) 257-3059</a></span>
-    <span style="color: #333;">Custom-built with precision.</span>
+    <span style="color: #333;">Built by hand.</span>
   </div>
 </footer>
 <!-- /NASLOGIC SEO FOOTER -->
