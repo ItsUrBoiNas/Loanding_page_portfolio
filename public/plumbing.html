@@ -174,13 +174,13 @@
     <div id="post-flush">
         <nav>
             <a href="/" class="logo">NASLOGIC</a>
-            <a href="mailto:hello@naslogic.com" class="btn-water" onclick="openNasModal(); return false;">Dispatch Team</a>
+            <a href="mailto:hello@naslogic.com" class="btn-water" onclick="openNasModal(); return false;">Contact Us</a>
         </nav>
 
         <section class="container hero">
-            <h1 class="hero-title">HYDRO<br>DYNAMIC.</h1>
-            <p class="hero-desc">The average commercial plumbing contract is $50,000+. You cannot win commercial bids with a website built for residential toilet repairs. We build structural, aggressive digital footprints for master plumbers.</p>
-            <a href="mailto:hello@naslogic.com" class="btn-water">Initiate Pipeline</a>
+            <h1 class="hero-title">FAST<br>SERVICE.</h1>
+            <p class="hero-desc">When pipes burst, people don't read long websites. They call the first plumber they find online. We build fast, simple websites that put your phone number front and center, so you get the call before the other guys do.</p>
+            <a href="mailto:hello@naslogic.com" class="btn-water">Start Getting Calls</a>
         </section>
 
         <section class="container">
@@ -189,8 +189,8 @@
 
         <section class="container">
             <div class="cta-box">
-                <h2>CLEAR THE BLOCKAGE.</h2>
-                <a href="mailto:hello@naslogic.com" class="btn-water" style="background:#FFF; color:var(--water-deep);" onclick="openNasModal(); return false;">Commission A Build</a>
+                <h2>START GETTING MORE CALLS.</h2>
+                <a href="mailto:hello@naslogic.com" class="btn-water" style="background:#FFF; color:var(--water-deep);" onclick="openNasModal(); return false;">Get Pricing Now</a>
             </div>
         </section>
     </div>
@@ -300,15 +300,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -324,8 +324,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -345,7 +345,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -410,11 +410,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -424,8 +424,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Plumbing Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Plumbing Companies Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">A burst pipe doesn't wait for business hours. When water is flooding someone's kitchen at midnight, they're not comparing five different plumber websites — they're calling the first one that answers. Your website needs to be that first result AND convert instantly. Generic template sites with cartoon pipe graphics and "Welcome to our plumbing company" copy don't cut it when a commercial property manager needs a $50,000 repiping job done right. We build plumbing landing pages that position you as the premium, reliable choice — whether it's an emergency dispatch or a major commercial contract.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">A burst pipe doesn't wait for business hours. When water is everywhere, people don't read long paragraphs. They grab their phone and call the first plumber they find. We build fast, simple websites that put your phone number right at the top. You get the call because your site makes it the easiest thing to do.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     

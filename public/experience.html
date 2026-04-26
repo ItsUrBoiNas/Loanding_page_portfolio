@@ -134,7 +134,7 @@
     <div class="fixed-ui">
         <div class="nav">
             <a href="/" class="logo">NASLOGIC</a>
-            <a href="mailto:hello@naslogic.com" class="btn-neon" onclick="openNasModal(); return false;">Get Started</a>
+            <a href="mailto:hello@naslogic.com" class="btn-neon" onclick="openNasModal(); return false;">Get Pricing Now</a>
         </div>
         <div>
             <div class="progress-container"><div class="progress-bar" id="pb"></div></div>
@@ -151,7 +151,7 @@
     <!-- Related Industries -->
     <div style="position: absolute; top: calc(800vh - 100vh); width: 100%; height: 100vh; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index: 50;">
         <h1 style="font-size: 5rem; text-shadow: 0 0 30px var(--neon-pink); margin-bottom: 2rem; color: #FFF;">THE END.</h1>
-        <a href="mailto:hello@naslogic.com" class="btn-neon" style="pointer-events: auto; padding: 1.5rem 4rem; font-size: 1.2rem;" onclick="openNasModal(); return false;">LET'S TALK</a>
+        <a href="mailto:hello@naslogic.com" class="btn-neon" style="pointer-events: auto; padding: 1.5rem 4rem; font-size: 1.2rem;" onclick="openNasModal(); return false;">Contact Us</a>
     </div>
 
     <script>
@@ -270,15 +270,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -295,7 +295,7 @@
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
         <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Tell us a bit about your project. We will get back to you within 24 hours.</p>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -315,7 +315,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send My Info</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Send My Info';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
                 statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
-                submitBtn.innerText = 'Send My Info';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -405,13 +405,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- /NASLOGIC UNIVERSAL INTAKE MODAL -->
 
 
+<div style="margin-top: 800vh; position: relative; z-index: 50;">
 <!-- NASLOGIC SEO CONTENT BLOCK -->
 <section class="naslogic-seo-block" style="background: #0a0a0a; color: #ccc; padding: 5rem 5%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.8; position: relative; z-index: 50;">
   <div style="max-width: 800px; margin: 0 auto;">
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Experience Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Events Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">You're selling an experience. Not a product, not a service, but a feeling. A Eventbrite listing with bullet points and a stock image doesn't create excitement. It doesn't make someone picture themselves there. A page built just for your event, with scroll effects, neon-lit visuals, and the right pacing, sells the vibe before anyone even buys a ticket. We build event pages that function as digital trailers. They are previews that make the experience feel so tangible, buying a ticket feels inevitable.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">People want to have fun. If your event website looks boring or is hard to buy tickets on, they will just stay home. We build exciting websites that show off how great your event is. We make it so easy to buy a ticket that your events will sell out faster than ever.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     
@@ -449,5 +450,6 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </footer>
 <!-- /NASLOGIC SEO FOOTER -->
+</div>
 </body>
 </html>

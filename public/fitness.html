@@ -163,7 +163,7 @@
     <div class="flow-state" id="flow-state">
         <nav>
             <a href="/" class="logo">NASLOGIC<span>.</span></a>
-            <a href="mailto:hello@naslogic.com" class="btn-strike" onclick="openNasModal(); return false;"><span>INITIATE</span></a>
+            <a href="mailto:hello@naslogic.com" class="btn-strike" onclick="openNasModal(); return false;"><span>Start Growing Today</span></a>
         </nav>
 
         <section class="hero">
@@ -188,7 +188,7 @@
 
         <section class="cta-big">
             <h2>DOMINATE YOUR MARKET.</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-strike" style="font-size: 3rem; padding: 2rem 6rem;" onclick="openNasModal(); return false;"><span>COMMISSION SITE</span></a>
+            <a href="mailto:hello@naslogic.com" class="btn-strike" style="font-size: 3rem; padding: 2rem 6rem;" onclick="openNasModal(); return false;"><span>Get A Free Quote</span></a>
         </section>
     </div>
 
@@ -322,15 +322,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -346,8 +346,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -367,7 +367,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -432,11 +432,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -446,8 +446,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Fitness Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Fitness Businesses Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">If your facility charges $3,000 for elite coaching programs, your website can't look like a $10/month Planet Fitness clone. High-intent clients — the ones willing to invest in personal training, contest prep, or specialized programs — judge your entire operation by your digital presence before they ever walk in. A template site with cheesy gym stock photos and a "JOIN NOW" pop-up screams commodity. A custom-coded fitness landing page with kinetic energy, aggressive typography, and a frictionless intake process projects the same intensity and professionalism as your actual training floor.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">People want to get in shape, but they are scared to take the first step. If your gym website looks intimidating or confusing, they won't sign up. We build friendly, motivating websites that make it easy for people to join. They will see your site and want to start working out with you today.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     

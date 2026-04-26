@@ -178,21 +178,21 @@
     <!-- Content -->
     <nav>
         <a href="/" class="logo">NASLOGIC<span>_</span></a>
-        <a href="mailto:hello@naslogic.com" class="btn-thermal" onclick="openNasModal(); return false;">Route Dispatch</a>
+        <a href="mailto:hello@naslogic.com" class="btn-thermal" onclick="openNasModal(); return false;">Contact Us</a>
     </nav>
 
     <div class="content">
         <section class="section container">
             <div class="heat-haze" id="haze-target">
-                <h1>MASTER <br>THE CLIMATE.</h1>
-                <p>It's 95°F in Southwest Florida at 11 PM. A family's AC just died. They'll call the first HVAC company with a page that loads fast, shows a phone number front and center, and says "24/7 Emergency Service." HVAC leads are won or lost in the first 3 minutes. Your page determines whether you get the call.</p>
+                <h1>BEAT <br>THE HEAT.</h1>
+                <p>When the AC breaks in the middle of summer, people don't want to read a long website. They just want someone to fix it fast. They will call the first company they find that looks ready to help. We build fast websites with a big 'Call Now' button so you get the job.</p>
             </div>
         </section>
 
         <section class="section container">
             <div style="margin-left:auto; width: 60%">
-                <h2>SYSTEM ROUTING</h2>
-                <p>We replace your generic contact form with a dead-simple dispatch system: emergency or scheduled? Service area? Phone number front and center. Homeowners in 105°F heat don't scroll — they call the number they see first.</p>
+                <h2>EASY BOOKING</h2>
+                <p>When the AC breaks in the middle of summer, people don't want to read a long website. They just want someone to fix it fast. They will call the first company they find that looks ready to help. We build fast websites with a big 'Call Now' button so you get the job before the other guys do.</p>
                 <div class="metric-cards">
                     <div class="metric-card">
                         <div class="metric-num">+400%</div>
@@ -208,15 +208,15 @@
 
         <section class="section container">
             <div>
-                <h2>THE ARCHITECTURE</h2>
-                <p>A $15,000 smart climate system deserves a $15,000 digital presentation. As your prospective client scrolls, we utilize scroll-linked dynamic background rendering to literally visualize their problem being solved. We cool the room down. Psychological conversion.</p>
+                <h2>THE DESIGN</h2>
+                <p>A great AC system needs a great website to match. We build sites that look fast, cool, and reliable. We show your customers exactly how you can solve their problem so they choose you instead of the other guys.</p>
             </div>
         </section>
 
         <section class="section container cta-bottom">
-            <h2 id="final-cta-text">ACHIEVE OPTIMAL FLOW.</h2>
-            <p style="margin: 0 auto 3rem;">Initiate complete system overhaul procedures today.</p>
-            <a href="mailto:hello@naslogic.com" class="btn-thermal" style="padding: 1.5rem 4rem; font-size: 1.2rem;" onclick="openNasModal(); return false;">Boot Sequence</a>
+            <h2 id="final-cta-text">GET MORE SERVICE CALLS.</h2>
+            <p style="margin: 0 auto 3rem;">Let us build a site that gets your phones ringing.</p>
+            <a href="mailto:hello@naslogic.com" class="btn-thermal" style="padding: 1.5rem 4rem; font-size: 1.2rem;" onclick="openNasModal(); return false;">Get More Jobs Now</a>
         </section>
     </div>
 
@@ -301,15 +301,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -325,8 +325,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -346,7 +346,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -411,11 +411,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -425,8 +425,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › HVAC Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why HVAC Companies Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When a family's AC dies in the middle of a Florida summer, they need help NOW — not in 5 minutes, not after navigating a 7-page website. They're searching "AC repair near me" on a phone with sweat on their fingers. If your website doesn't load in 2 seconds with a giant phone number and a "Call Now for Emergency Service" button, that $8,000 system replacement just went to your competitor. We build HVAC landing pages that are brutally efficient: instant load times, zero distractions, and every single element engineered to convert a panicked homeowner into a dispatched service call.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When the AC breaks in the middle of summer, people don't want to read a long website. They just want someone to fix it fast. They will call the first company they find that looks ready to help. We build fast websites with a big 'Call Now' button so you get the job before the other guys do.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     

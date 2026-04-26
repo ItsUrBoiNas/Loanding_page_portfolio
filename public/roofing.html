@@ -125,7 +125,7 @@
 
     <nav id="navbar">
         <a href="/" class="logo">NASLOGIC</a>
-        <a href="mailto:hello@naslogic.com" class="btn-copper" onclick="openNasModal(); return false;">Get Started</a>
+        <a href="mailto:hello@naslogic.com" class="btn-copper" onclick="openNasModal(); return false;">Get Pricing Now</a>
     </nav>
 
     <div class="container hero">
@@ -135,7 +135,7 @@
 
     <div class="container solution-zone">
         <h2 class="sun-text">We clear the storm.</h2>
-        <p class="sun-desc">We build roofing pages that win during storm season. Free inspection buttons right at the top. Insurance claim words that homeowners already understand. A phone number they can't miss at 2 AM. The roofer with the better page gets the job. Every single time. Let's build yours today.</p>
+        <p class="sun-desc">Getting a new roof is expensive and stressful. Homeowners want to hire someone reliable. If your website looks untrustworthy, they will pick a different roofer. We build professional websites that show you are a serious, local business. We put a big 'Get a Quote' button so they know exactly what to do next.</p>
     </div>
 
     <script>
@@ -219,15 +219,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -244,7 +244,7 @@
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
         <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Tell us a bit about your project. We will get back to you within 24 hours.</p>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -264,7 +264,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send My Info</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Send My Info';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
                 statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
-                submitBtn.innerText = 'Send My Info';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Roofing Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Roofing Companies Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When a homeowner's roof starts leaking at 2 AM, they're searching "emergency roofer near me" on their phone. If your website takes 5 seconds to load, uses stock photos, and hides your phone number at the bottom, you've already lost that $15,000 job. The roofer whose site loaded fast and had a big "Call Now" button gets the call. We build fast, phone-friendly roofing pages that put your number, service area, and trust signals (license, insurance, reviews) right where people need them.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">Getting a new roof is expensive and stressful. Homeowners want to hire someone reliable. If your website looks untrustworthy, they will pick a different roofer. We build professional websites that show you are a serious, local business. We put a big 'Get a Quote' button so they know exactly what to do next.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     

@@ -287,7 +287,7 @@
                 <div>
                     <span class="hero-tag">The Philosophy</span>
                     <h2>Food should be framed, not shouted.</h2>
-                    <p>Red and yellow invoke hunger and urgency—tactics for fast food. Fine dining requires the exact opposite. We utilize negative space, 'truffle' charcoals, and cinematic spotlighting to frame your culinary art with reverence.</p>
+                    <p>When people are hungry, they want to see what's on the menu fast. If your restaurant website is hard to read on a phone, they will just order from somewhere else. We build mouth-watering websites that show off your food and make it super simple to place an order or book a table.</p>
                     <p>By elevating the digital aesthetic, we actively repel bargain diners complaining about portion sizes, and attract the clientele who understand the price of artistry.</p>
                 </div>
                 <div>
@@ -305,7 +305,7 @@
         <section class="finale" id="book">
             <div class="container">
                 <span class="hero-tag" style="margin-bottom: 3rem;">Service is Open</span>
-                <a href="mailto:hello@naslogic.com" class="btn-gold">Commission A Design Tasting</a>
+                <a href="mailto:hello@naslogic.com" class="btn-gold">See Menu Examples</a>
             </div>
         </section>
     </div>
@@ -381,15 +381,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -405,8 +405,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -426,7 +426,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -491,11 +491,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -505,8 +505,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Restaurant Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Restaurants Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">Your tasting menu is a $300-per-head experience, but your website looks like a takeout menu. In the restaurant industry, presentation IS everything — and your digital presence is no exception. Template restaurant websites with stock food photos, auto-playing background music, and a PDF menu download are the web equivalent of a sticky laminated menu under fluorescent lights. We build restaurant landing pages with Michelin-grade aesthetics: spotlight-lit dish photography, tasting-menu-style content pacing, and seamless reservation integration that makes booking feel as exclusive as the meal itself.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When people are hungry, they want to see what's on the menu fast. If your restaurant website is hard to read on a phone, they will just order from somewhere else. We build mouth-watering websites that show off your food and make it super simple to place an order or book a table.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     

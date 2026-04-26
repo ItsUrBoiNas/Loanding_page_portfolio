@@ -173,16 +173,16 @@
 
     <nav>
         <a href="/" class="logo">Naslogic <span>// architecture</span></a>
-        <a href="mailto:hello@naslogic.com" class="btn-system" onclick="openNasModal(); return false;">Deploy Framework</a>
+        <a href="mailto:hello@naslogic.com" class="btn-system" onclick="openNasModal(); return false;">Get Pricing Now</a>
     </nav>
 
     <div class="content">
         <header class="hero container">
             <div class="hero-label">Engineering Grade</div>
             <h1>Aesthetic <strong>Throughput.</strong></h1>
-            <p>You built something technical and real. Your landing page is still floating illustrations and 'Supercharge your workflow' copy that converts at sub-2%. Trials are free � so when someone bounces without signing up, you didn't just lose a lead. You lost the whole funnel. We build SaaS pages that get people to click Start Trial.</p>
+            <p>You built something technical and real. Your landing page is still floating illustrations and 'Supercharge your workflow' copy that converts at sub-2%. Trials are free � so when someone bounces without signing up, you didn't just lose a lead. You lost the whole funnel. We build SaaS pages that get people to click Start Trial.</p>
             <div>
-                <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1rem 3rem; font-size: 0.9rem;" onclick="openNasModal(); return false;">Initialize Setup</a>
+                <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1rem 3rem; font-size: 0.9rem;" onclick="openNasModal(); return false;">See Pricing</a>
             </div>
         </header>
 
@@ -203,7 +203,7 @@
 
         <section class="cta-system container">
             <h2>Outperform.</h2>
-            <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1.5rem 4rem;" onclick="openNasModal(); return false;">Compile Final Build</a>
+            <a href="mailto:hello@naslogic.com" class="btn-system" style="padding: 1.5rem 4rem;" onclick="openNasModal(); return false;">Get More Signups</a>
         </section>
     </div>
 
@@ -334,15 +334,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -358,8 +358,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -379,7 +379,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -444,11 +444,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -458,8 +458,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › SaaS Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why SaaS Companies Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">CTOs and engineering leaders don't buy "magic" — they buy precision, specs, and flawless execution. When your product charges $5,000/year per seat, the landing page needs to look like the dashboard of a $50M enterprise system, not a Wix template with gradient buttons. Template SaaS sites with floating illustrations and "Supercharge your workflow!" copy are invisible in a market flooded with AI tools. A custom-coded SaaS landing page with dark minimal aesthetics, interactive quantum-grid backgrounds, and glassmorphic feature cards communicates the same engineering excellence as your actual product.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">Your software might be the best in the world, but if people don't understand it, they won't buy it. A confusing website kills sales. We build clean, easy-to-read websites that explain exactly why your software is great. We make the 'Sign Up' button so clear that people can't help but click it.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     

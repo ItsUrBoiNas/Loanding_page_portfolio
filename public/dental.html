@@ -58,7 +58,7 @@
 
         /* The X-Ray Slider Mechanics */
         .before-after-container {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
             overflow: hidden; z-index: 0; pointer-events: none;
         }
 
@@ -90,7 +90,7 @@
 
         /* The Handle */
         .slider-handle {
-            position: fixed; top: 0; left: 50vw; width: 4px; height: 100vh;
+            position: absolute; top: 0; left: 50vw; width: 4px; height: 100vh;
             background: var(--veneer-gold); box-shadow: 0 0 20px var(--veneer-gold);
             z-index: 1000; cursor: ew-resize; pointer-events: auto; transform: translateX(-50%);
         }
@@ -146,6 +146,7 @@
 <h1 class="naslogic-seo-h1" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Dental Website Design & Patient Acquisition Landing Pages</h1>
 
 
+    <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden;">
     <div class="before-after-container" id="ba-container">
         
         <!-- Ugly Layer -->
@@ -160,27 +161,27 @@
         <div class="layer-clean" id="layer-clean">
             <nav id="nav">
                 <a href="/" class="logo">Naslogic.</a>
-                <a href="mailto:hello@naslogic.com" class="btn-gold" onclick="openNasModal(); return false;">Book Consultation</a>
+                <a href="mailto:hello@naslogic.com" class="btn-gold" onclick="openNasModal(); return false;">Get A Free Quote</a>
             </nav>
 
             <header class="hero container">
                 <h1>The <span>perfect</span> smile requires a perfect digital first impression.</h1>
-                <p>If you charge $30,000 for a full mouth restoration, your website cannot afford to look like a $500 template. We build digital <i>veneers</i>—flawless, high-converting architectures for cosmetic dentists.</p>
-                <a href="mailto:hello@naslogic.com" class="btn-gold">Commission A Build</a>
+                <p>If you offer high-quality dental care, your website shouldn't look cheap. We build premium, easy-to-use websites that help you get more patients.</p>
+                <a href="mailto:hello@naslogic.com" class="btn-gold">Get Pricing Now</a>
             </header>
 
             <section class="content-grid container">
                 <div class="image-block"></div>
                 <div>
-                    <h2 style="font-family: var(--font-display); font-size: 3rem; margin-bottom: 2rem;">CLINICAL LUXURY.</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">Patients buying cosmetic dentistry are not buying medical procedures; they are buying status, confidence, and absolute perfection. <br><br>We use 'Veneer Glassmorphism'—an ultra-clean, pristine design language that utilizes slow reveals, massive whitespace, and editorial typography to make your practice look undeniably premium.</p>
+                    <h2 style="font-family: var(--font-display); font-size: 3rem; margin-bottom: 2rem;">BEAUTIFUL DESIGN.</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">People don't just want clean teeth. They want a smile they can be proud of. But if your website looks old or confusing, they will go to another dentist. We build beautiful websites that make your clinic look like the best choice in town. When they see your site, they will want to book a visit right away.</p>
                 </div>
             </section>
 
             <section class="container" style="padding-bottom: 5rem;">
                 <div class="cta-bottom">
                     <h2>Demand Excellence.</h2>
-                    <a href="mailto:hello@naslogic.com" class="btn-gold" style="border-color: var(--medical-white); color: var(--medical-white);" onclick="openNasModal(); return false;">Initiate Overhaul</a>
+                    <a href="mailto:hello@naslogic.com" class="btn-gold" style="border-color: var(--medical-white); color: var(--medical-white);" onclick="openNasModal(); return false;">Get Pricing Now</a>
                 </div>
             </section>
         </div>
@@ -190,6 +191,7 @@
     <!-- Handle outside the containers -->
     <div class="slider-handle" id="slider-handle">
         <div class="slider-knob"></div>
+    </div>
     </div>
 
     <script>
@@ -269,15 +271,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -293,8 +295,8 @@
 <div id="nas-modal-overlay">
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
-        <h3 class="nas-modal-title" style="font-family: inherit;">Initiate Protocol</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Provide the specifics of your initiative. Our partners will evaluate your inquiry within 24 hours.</p>
+        <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -314,7 +316,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Commission Build</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -361,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // UI updates
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Transmitting...';
+            submitBtn.innerText = 'Sending...';
             statusDiv.style.display = 'none';
             
             const formData = new FormData(form);
@@ -379,11 +381,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 if(res.ok) {
                     statusDiv.className = 'nas-success';
-                    statusDiv.innerText = 'Transmission successful. We will contact you shortly.';
+                    statusDiv.innerText = 'Got it! We will reach out to you soon.';
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Commission Build';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -393,8 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
-                statusDiv.innerText = err.message || 'An error occurred during transmission.';
-                submitBtn.innerText = 'Commission Build';
+                statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -410,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › Dental Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why Dental Practices Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">Patients choosing a new dentist don't just compare prices — they judge trust, cleanliness, and professionalism in the first 3 seconds of seeing your website. A cookie-cutter template with stock photos of smiling models and a cluttered navigation instantly signals "budget dentist." A custom-coded dental landing page with refined typography, real patient results, and a seamless booking flow signals the kind of practice that charges premium for cosmetic procedures and gets booked weeks in advance. We engineer dental websites that filter out price-shoppers and attract patients who value quality care.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">People don't just want clean teeth. They want a smile they can be proud of. But if your website looks old or confusing, they will go to another dentist. We build beautiful websites that make your clinic look like the best choice in town. When they see your site, they will want to book a visit right away.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     

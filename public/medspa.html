@@ -96,12 +96,12 @@
 
         h1 {
             font-size: clamp(4rem, 8vw, 8rem); line-height: 0.9; margin-bottom: 2rem;
-            color: var(--silk-dark); text-shadow: 0 20px 40px rgba(252, 250, 248, 0.8);
+            color: var(--silk-white); text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .hero-desc {
-            font-size: 1.1rem; line-height: 2; color: #444; max-width: 500px;
-            font-weight: 300; letter-spacing: 0.5px;
+            font-size: 1.1rem; line-height: 2; color: var(--silk-white); max-width: 500px;
+            font-weight: 300; letter-spacing: 0.5px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
         }
         
         /* Information Grid */
@@ -152,7 +152,7 @@
         <div class="ui-layer">
             <nav>
                 <a href="/" class="logo">Naslogic</a>
-                <a href="mailto:hello@naslogic.com" class="btn-rose" onclick="openNasModal(); return false;">Consultation</a>
+                <a href="mailto:hello@naslogic.com" class="btn-rose" onclick="openNasModal(); return false;">Contact Us</a>
             </nav>
 
             <div class="hero-content">
@@ -175,7 +175,7 @@
 
     <div class="cta-big">
         <h2>Refine Your Practice.</h2>
-        <a href="mailto:hello@naslogic.com" class="btn-rose" style="border-color: var(--silk-white); color: var(--silk-white);" onclick="openNasModal(); return false;">Get Started</a>
+        <a href="mailto:hello@naslogic.com" class="btn-rose" style="border-color: var(--silk-white); color: var(--silk-white);" onclick="openNasModal(); return false;">Get Pricing Now</a>
     </div>
 
     <script>
@@ -244,15 +244,15 @@
     background: transparent; border: none; font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
 }
 .nas-close-btn:hover { color: #FFF; }
-.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300; }
+.nas-modal-title { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 500; }
 .nas-modal-desc { color: #888; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.5; }
 .nas-form-group { margin-bottom: 1.5rem; }
-.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 0.5rem; }
+.nas-form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #AAA; margin-bottom: 0.5rem; }
 .nas-input {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
-    padding: 0.8rem 0; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
+    width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid #444; border-radius: 6px;
+    padding: 0.8rem 1rem; color: #FFF; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.3s;
 }
-.nas-input:focus { border-color: #FFF; }
+.nas-input:focus { border-color: #FFF; background: rgba(255,255,255,0.1); outline: none; }
 .nas-submit-btn {
     width: 100%; background: #FFF; color: #000; border: none; padding: 1.2rem;
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
@@ -269,7 +269,7 @@
     <div id="nas-modal-content">
         <button class="nas-close-btn" id="nas-close-modal">&times;</button>
         <h3 class="nas-modal-title" style="font-family: inherit;">Let's Talk</h3>
-        <p class="nas-modal-desc" style="font-family: inherit;">Tell us a bit about your project. We will get back to you within 24 hours.</p>
+        <p class="nas-modal-desc" style="font-family: inherit;">Tell us what you need. We will get back to you in 24 hours.</p>
         
         <form id="nas-lead-form">
             <input type="hidden" name="formType" value="quote">
@@ -289,7 +289,7 @@
                 <label>Project Details</label>
                 <input type="text" name="details" class="nas-input" required>
             </div>
-            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send My Info</button>
+            <button type="submit" class="nas-submit-btn" id="nas-submit-btn">Send Message</button>
             <div id="nas-form-status"></div>
         </form>
     </div>
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                     setTimeout(() => {
                         overlay.classList.remove('active');
-                        submitBtn.innerText = 'Send My Info';
+                        submitBtn.innerText = 'Send Message';
                         submitBtn.disabled = false;
                         statusDiv.style.display = 'none';
                     }, 3000);
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.style.display = 'block';
                 statusDiv.className = 'nas-error';
                 statusDiv.innerText = err.message || 'Something went wrong. Please try again.';
-                submitBtn.innerText = 'Send My Info';
+                submitBtn.innerText = 'Send Message';
                 submitBtn.disabled = false;
             }
         });
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1 style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 3rem; font-weight: normal;">Naslogic › MedSpa Web Design</h1>
     
     <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; font-weight: 400;">Why MedSpas Need a Custom Website (Not a Template)</h2>
-    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">When a client is ready to spend $3,000 on Botox and fillers, they don't want a website that looks like a hospital brochure. They want something that feels high-end. The same feeling they get walking into your clinic with marble floors and soft music. A basic template with stock photos and a blue-and-white color scheme screams "dentist's office," not "top-tier MedSpa." A page built just for your practice, with soft textures, warm colors, and an easy booking flow, tells people you're the real deal.</p>
+    <p style="font-size: 1rem; color: #999; margin-bottom: 3rem; max-width: 700px;">People go to a medspa to feel beautiful and relaxed. Your website needs to feel the exact same way. If it looks cheap, they won't trust you with their skin. We build stunning, clean websites that make your medspa look like a luxury getaway. When they see your site, they will want to book a treatment.</p>
     
     <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 400;">Frequently Asked Questions</h2>
     
