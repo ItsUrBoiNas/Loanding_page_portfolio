@@ -1,0 +1,64 @@
+# Naslogic Website Review - Implementation Plan
+
+This plan details the steps to address all the actionable feedback provided by the BugSmash site review for the Naslogic landing page (`public/naslogic.html`).
+
+## User Review Required
+
+> [!IMPORTANT]
+> Please review the proposed fixes below. Some fixes involve design choices (e.g., how to display the 'April sale ends soon' text or how to style pricing buttons). Let me know if you agree with the approach for each item or if you'd like to adjust any of the strategies.
+
+> [!NOTE]
+> Feedback points #5 and #12 required no changes, as they praised the existing implementation. They are omitted from the action items below.
+
+## Proposed Changes
+
+---
+
+### Hero Section & Navigation
+
+#### [MODIFY] naslogic.html & css
+- **Subheadline Readability (Feedback #1):** Increase the font weight or slightly lighten the color of the hero subheadline text ("If your business is hard to find online...") to improve contrast against the dark background.
+- **Secondary CTA Visibility (Feedback #2):** Add a subtle border or a lighter, transparent background to the "Get a Free Quote" secondary button in the hero section to make it look more clickable.
+- **Urgency Text Prominence (Feedback #3):** Increase the font size of the "April sale ends soon" text or move it to a more prominent position (e.g., an announcement banner above the navigation) so it's not missed.
+
+---
+
+### Content & "Why it isn't working" Section
+
+#### [MODIFY] naslogic.html & css
+- **Red Annotation Contrast (Feedback #4):** Use a slightly lighter red or add a subtle text shadow to the red annotations over the blurry background image in the "Why your website isn't bringing in calls" section to ensure they stand out.
+- **Text Block Formatting (Feedback #11):** Break down the large block of text in the "What Makes a Landing Page Convert?" section into shorter paragraphs or use bullet points to make it easier to skim.
+
+---
+
+### Case Studies & Testimonials
+
+#### [MODIFY] naslogic.html & css
+- **Image Overlap (Feedback #6):** Adjust the case study image ("Vending Machine Spot Finder") so it doesn't overlap the background container in a cluttered way. We will ensure it is fully contained or use deliberate drop shadows for depth.
+- **Testimonial Readability (Feedback #7):** Increase the font size and line height slightly in the testimonial quotes to improve readability and give the text more breathing room.
+
+---
+
+### Pricing & Urgency Section
+
+#### [MODIFY] naslogic.html & css
+- **Pricing Button Consistency (Feedback #8):** The review noted that 'THE START' plan has a highlighted yellow button while others don't. *Assumption: Since the agency's strategy focuses on the $499 ($199 promo) single-page build, we might want to keep this highlighted. However, we can adjust the other buttons to be slightly more prominent without overshadowing the main offer.* Let me know if you prefer equal styling across all three plans.
+- **Countdown Timer Consequence Text (Feedback #9):** Increase the font size and contrast of the text explaining what happens after the timer ends ("Then it goes back to $499...") to clearly communicate the consequence of not acting.
+
+---
+
+### UI/UX & Transitions
+
+#### [MODIFY] naslogic.html & css
+- **Mobile Touch Targets (Feedback #10):** Increase the padding within the tags in the 'Industries We Serve' section to create larger, more accessible touch targets for mobile users.
+- **Theme Transition (Feedback #13):** Soften the abrupt transition from the dark theme to the light theme (entering the FAQ section) by adding a transitional background element, like a subtle gradient or visual separator.
+- **Bottom CTA Subtext (Feedback #14):** Increase the size of the secondary text below the main heading in the final bottom CTA section to match the emphasis of the section.
+
+## Verification Plan
+
+### Manual Verification
+- Once the changes are implemented, we will review `public/naslogic.html` via the local dev server (`npm run dev`) to ensure:
+  1. Contrast and readability are visibly improved.
+  2. Mobile responsiveness and touch targets are adequate.
+  3. The transition between dark and light sections is smooth.
+  4. The layout remains unbroken across different viewport sizes.

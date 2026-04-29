@@ -26,6 +26,7 @@ const nextConfig = {
       { source: '/blog/landing-page-mistakes', destination: '/blog/landing-page-mistakes.html' },
     ];
   },
+  outputFileTracingRoot: __dirname,
 }
 
 module.exports = nextConfig
