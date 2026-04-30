@@ -174,7 +174,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" fetchpriority="high">
 
     <style>
         /* Modern CSS Reset & Vars */
@@ -893,11 +893,12 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                     If your business is hard to find online, people will just click the next option. We build custom,
                     high-converting landing pages in 48 hours so you can start getting the calls you deserve.
                 </p>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
-                    <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary">Get My Page, <s
+                <div class="hero-cta-group" style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+                    <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary hero-btn-primary" style="flex: 1; min-width: 250px;">Get My Page, <s
                             style="opacity:0.5">$499</s> $199</a>
-                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline">Get a Free Quote</a>
+                    <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline hero-btn-secondary" style="flex: 1; min-width: 250px;">Get a Free Quote</a>
                 </div>
+                <p style="font-size: 0.85rem; margin-top: 15px; color: #9CA3AF;">100% money-back if you don't love it.</p>
             </div>
         </section>
 
@@ -964,7 +965,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             <h2 class="autopsy-header gs-reveal" style="margin-bottom: 20px;">Client Case Studies.</h2>
             <p class="hero-sub gs-reveal">We don't just make things look pretty. We make things that get you paid.</p>
 
-            <!-- TODO: Replace placeholder case data with verified client results before publishing -->
+
             <div class="case-grid">
                 <div class="case-row gs-reveal"
                     style="grid-template-columns: 1fr; align-items: start; border: 1px solid var(--surface-border); border-radius: 12px; background: var(--surface); padding: 40px; overflow: hidden;">
@@ -986,7 +987,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                                     style="color: var(--text-muted); padding-left: 20px; font-size: 1rem; line-height: 1.6;">
                                     <li style="margin-bottom: 8px;">Boring, feature-heavy template</li>
                                     <li style="margin-bottom: 8px;">Confusing navigation & no clear CTA</li>
-                                    <li><strong>Result: 0.8% conversion rate</strong></li>
+                                    <li><strong>Result: Poor lead generation</strong></li>
                                 </ul>
                             </div>
                             <div>
@@ -996,7 +997,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                                     style="color: var(--text-main); padding-left: 20px; font-size: 1rem; line-height: 1.6;">
                                     <li style="margin-bottom: 8px;">Pain-point focused headline</li>
                                     <li style="margin-bottom: 8px;">Clear map & "5 Free Searches" button</li>
-                                    <li><strong>Result: 14.2% conversion rate</strong></li>
+                                    <li><strong>Result: High-converting custom layout</strong></li>
                                 </ul>
                             </div>
                         </div>
@@ -1081,9 +1082,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                     <!-- Tier 1 -->
                     <div class="tier-card"
                         style="position: relative; border: 1px solid #FBBF24; box-shadow: 0 0 30px rgba(251, 191, 36, 0.08);">
-                        <div
-                            style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #FBBF24; color: #000; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; padding: 5px 16px; border-radius: 20px; text-transform: uppercase; white-space: nowrap;">
-                            🔥 April Only</div>
+
                         <h3 class="tier-name">The Start</h3>
                         <div class="tier-price"
                             style="display: flex; align-items: baseline; justify-content: center; gap: 12px;">
@@ -1102,8 +1101,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                         <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary"
                             style="width: 100%; background: #FBBF24; color: #000; border: none; font-weight: 700;">Start
                             Now, $199</a>
-                        <p style="text-align: center; margin-top: 10px; font-size: 0.75rem; color: #888;">Goes back to
-                            $499 on May 1st</p>
+
                     </div>
 
                     <!-- Tier 2 -->
@@ -1148,66 +1146,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
 
                 </div>
 
-                <div style="margin-top: 40px; text-align: center;">
-                    <div
-                        style="display: inline-block; padding: 16px 32px; background: rgba(251, 191, 36, 0.06); border: 1px solid rgba(251, 191, 36, 0.25); border-radius: 12px; text-align: center;">
-                        <p
-                            style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: #FBBF24; font-weight: 600; margin-bottom: 8px;">
-                            🔥 April sale ends in</p>
-                        <div id="april-countdown"
-                            style="display: flex; gap: 16px; justify-content: center; font-family: 'Inter', monospace;">
-                            <div style="text-align: center;"><span id="cd-days"
-                                    style="font-size: 1.8rem; font-weight: 700; color: #FBBF24; display: block;">--</span><span
-                                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px;">Days</span>
-                            </div>
-                            <span style="font-size: 1.8rem; color: #333; font-weight: 300;">:</span>
-                            <div style="text-align: center;"><span id="cd-hours"
-                                    style="font-size: 1.8rem; font-weight: 700; color: #FBBF24; display: block;">--</span><span
-                                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px;">Hours</span>
-                            </div>
-                            <span style="font-size: 1.8rem; color: #333; font-weight: 300;">:</span>
-                            <div style="text-align: center;"><span id="cd-mins"
-                                    style="font-size: 1.8rem; font-weight: 700; color: #FBBF24; display: block;">--</span><span
-                                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px;">Min</span>
-                            </div>
-                            <span style="font-size: 1.8rem; color: #333; font-weight: 300;">:</span>
-                            <div style="text-align: center;"><span id="cd-secs"
-                                    style="font-size: 1.8rem; font-weight: 700; color: #FBBF24; display: block;">--</span><span
-                                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px;">Sec</span>
-                            </div>
-                        </div>
-                        <p style="margin-top: 15px; font-size: 1.2rem; color: var(--text-main); font-weight: 500;">Then it goes back to
-                            <strong style="color: #FBBF24;">$499</strong>. Lock in <strong style="color: #FBBF24;">$199</strong> before it's gone.</p>
-                    </div>
-                </div>
 
-                <script>
-                    (function () {
-                        // April 30, 2026 at 11:59:59 PM EDT
-                        const deadline = new Date('2026-05-01T03:59:59Z').getTime();
-                        function updateCountdown() {
-                            const now = Date.now();
-                            const diff = deadline - now;
-                            if (diff <= 0) {
-                                document.getElementById('cd-days').textContent = '0';
-                                document.getElementById('cd-hours').textContent = '0';
-                                document.getElementById('cd-mins').textContent = '0';
-                                document.getElementById('cd-secs').textContent = '0';
-                                return;
-                            }
-                            const d = Math.floor(diff / 86400000);
-                            const h = Math.floor((diff % 86400000) / 3600000);
-                            const m = Math.floor((diff % 3600000) / 60000);
-                            const s = Math.floor((diff % 60000) / 1000);
-                            document.getElementById('cd-days').textContent = d;
-                            document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
-                            document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
-                            document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
-                        }
-                        updateCountdown();
-                        setInterval(updateCountdown, 1000);
-                    })();
-                </script>
             </div>
         </section>
 
@@ -1316,7 +1255,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                         style="background: #FFFFFF; border: 1px solid #E5E7EB; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                         <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #111;">What if I don't like the
                             design?</h3>
-                        <p style="font-size: 1rem; color: #555;">You get your money back. Period. If we can't build
+                        <p style="font-size: 1rem; color: #555;">You get your money back. If we can't build
                             something you love, we don't deserve your money.</p>
                     </div>
                 </div>

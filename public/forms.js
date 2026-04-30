@@ -319,37 +319,21 @@
             </div>
 
             <div class="nl-form-group">
-              <label class="nl-form-label">Primary Offer <span class="required">*</span></label>
-              <input class="nl-form-input" type="text" name="offer" placeholder="e.g. B2B SaaS, Roof Replacements, Legal Counsel" required>
-            </div>
-
-            <div class="nl-form-row">
-              <div class="nl-form-group">
-                <label class="nl-form-label">Traffic Source</label>
-                <input class="nl-form-input" type="text" name="traffic" placeholder="Meta Ads, Google, SEO">
-              </div>
-              <div class="nl-form-group">
-                <label class="nl-form-label">Current CVR</label>
-                <input class="nl-form-input" type="text" name="cvr" placeholder="e.g. 1.5%">
-              </div>
+              <label class="nl-form-label">Business Type <span class="required">*</span></label>
+              <input class="nl-form-input" type="text" name="businessType" placeholder="e.g. Home Service, Local Trades, Plumber" required>
             </div>
 
             <div class="nl-form-group">
-              <label class="nl-form-label">Biggest Roadblock <span class="required">*</span></label>
-              <textarea class="nl-form-textarea" name="roadblock" placeholder="What is stopping you from scaling right now?" required></textarea>
-            </div>
-
-            <div class="nl-form-group">
-              <label class="nl-form-label">Competitor Kill List</label>
-              <input class="nl-form-input" type="text" name="competitors" placeholder="URLs of competitors you want to beat">
+              <label class="nl-form-label">What do you need? <span class="required">*</span></label>
+              <textarea class="nl-form-textarea" name="needs" placeholder="Tell us exactly what you are looking for..." required></textarea>
             </div>
 
             <div class="nl-form-row">
               <div class="nl-form-group">
                 <label class="nl-form-label">Budget Range</label>
                 <select class="nl-form-select" name="budget">
-                  <option value="$799 - $1,500">Core ($799 - $1,500)</option>
-                  <option value="$1,500 - $2,500">Arsenal ($1,500 - $2,500)</option>
+                  <option value="$499 - $999">Starter ($499 - $999)</option>
+                  <option value="$999 - $2,500">Growth ($999 - $2,500)</option>
                   <option value="$2,500+">Enterprise ($2,500+)</option>
                 </select>
               </div>
@@ -414,7 +398,7 @@
                 <input class="nl-form-input" type="url" name="website" placeholder="https://">
               </div>
               <button type="button" class="nl-form-submit nl-btn-purchase" id="nl-next-step" style="background: #FBBF24; color: #000;">
-                Build My Custom Plan &rarr;
+                Secure Your Page &rarr;
               </button>
             </div>
 
@@ -593,11 +577,8 @@
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
       company: form.company.value.trim(),
-      offer: form.offer.value.trim(),
-      traffic: form.traffic.value.trim(),
-      cvr: form.cvr.value.trim(),
-      roadblock: form.roadblock.value.trim(),
-      competitors: form.competitors.value.trim(),
+      businessType: form.businessType.value.trim(),
+      needs: form.needs.value.trim(),
       budget: form.budget.value,
       timeline: form.timeline.value
     };
