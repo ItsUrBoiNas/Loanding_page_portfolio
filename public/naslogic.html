@@ -260,7 +260,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             color: var(--bg);
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-primary:active {
             background-color: #FFF;
             transform: translateY(2px);
         }
@@ -271,11 +271,11 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             border: 1px solid var(--surface-border);
         }
 
-        .btn-outline:hover {
+        .btn-outline:hover, .btn-outline:active {
             border-color: var(--text-main);
             background-color: var(--text-main);
             color: var(--bg);
-            transition: none;
+            transform: translateY(2px);
         }
 
         .industry-tag {
@@ -636,6 +636,27 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             width: 100%;
         }
 
+        .live-site-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .live-site-link span.arrow {
+            margin-left: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .live-site-link:hover span.arrow {
+            transform: translateX(4px);
+        }
+
         /* Pricing Tactics */
         .pricing-section {
             background: var(--surface);
@@ -980,8 +1001,11 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
                             </div>
                         </div>
                         <div>
-                            <img src="/showcase/vending-screenshot.png" alt="Vending Machine Finder Landing Page"
-                                style="width: 100%; height: 400px; object-fit: cover; object-position: center 10%; border-radius: 8px; border: 1px solid var(--surface-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                            <img src="/showcase/vending-screenshot-hero.png" alt="Vending Machine Finder Landing Page"
+                                style="width: 100%; height: auto; border: 1px solid var(--surface-border); display: block;">
+                            <a href="https://vending-machine-finder.vercel.app/index.html" class="live-site-link" target="_blank" rel="noopener">
+                                View Live Site <span class="arrow">→</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1215,7 +1239,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             style="max-width: 800px; border-top: 1px solid var(--surface-border);">
             <h2 class="autopsy-header gs-reveal" style="font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 20px;">What
                 Makes a Landing Page Convert?</h2>
-            <div class="gs-reveal" style="margin-top: 40px; color: var(--text-muted);">
+            <div class="gs-reveal" style="margin-top: 40px; color: var(--text-muted); border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px;">
                 <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px;">Most landing pages fail because
                     they
                     try to do too much. The ones that work have five things: a headline that talks to one specific
@@ -1304,7 +1328,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
             <div class="container">
                 <h2 class="ultimatum-text gs-reveal">Ready to stop losing customers?</h2>
                 <p class="hero-sub gs-reveal"
-                    style="max-width: 800px; margin: 0 auto 40px; font-size: 1.5rem; color: var(--text-muted);">Every
+                    style="max-width: 800px; margin: 0 auto 40px; font-size: 1.8rem; color: #FFFFFF;">Every
                     day without a real website is another day your competitors get the call instead of you.</p>
                 <div class="gs-reveal" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
                     <a href="javascript:void(0)" onclick="openPurchaseModal()" class="btn btn-primary"
