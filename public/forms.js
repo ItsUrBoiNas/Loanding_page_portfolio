@@ -7,6 +7,12 @@
 (function () {
   'use strict';
 
+  // ─── Inject PayPal SDK ─────────────────────────────────────────
+  const paypalScript = document.createElement('script');
+  paypalScript.src = "https://www.paypal.com/sdk/js?client-id=Aejwo1SCLifR_oPg6a-FBMIzpxBE6yUaELiMu7-k8hpw3VTNi7dDOJGhBNgB_DtLE8FbJMVL6nK2PrLh&vault=true&intent=subscription";
+  paypalScript.setAttribute("data-sdk-integration-source", "button-factory");
+  document.head.appendChild(paypalScript);
+
   // ─── Inject Modern CSS ─────────────────────────────────────────
   const style = document.createElement('style');
   style.textContent = `
@@ -294,7 +300,7 @@
         <button class="nl-modal-close" onclick="closeQuoteModal()">&times;</button>
         <div id="nl-quote-form-wrap">
           <div class="nl-modal-badge">Free Quote</div>
-          <h2 class="nl-modal-title">Let's Build Your Site.</h2>
+          <h2 class="nl-modal-title">Request a Custom Proposal.</h2>
           <p class="nl-modal-subtitle">Tell us about your project below. We will review your details and provide a custom proposal within 24 hours.</p>
           <div class="nl-form-error" id="nl-quote-error"></div>
           
@@ -309,44 +315,14 @@
                 <input class="nl-form-input" type="email" name="email" required>
               </div>
             </div>
-            <div class="nl-form-row">
-              <div class="nl-form-group">
-                <label class="nl-form-label">Phone <span class="required">*</span></label>
-                <input class="nl-form-input" type="tel" name="phone" required>
-              </div>
-              <div class="nl-form-group">
-                <label class="nl-form-label">Company / URL</label>
-                <input class="nl-form-input" type="text" name="company">
-              </div>
-            </div>
-
             <div class="nl-form-group">
-              <label class="nl-form-label">Business Type <span class="required">*</span></label>
-              <input class="nl-form-input" type="text" name="businessType" placeholder="e.g. Home Service, Local Trades, Plumber" required>
+              <label class="nl-form-label">Phone <span class="required">*</span></label>
+              <input class="nl-form-input" type="tel" name="phone" required>
             </div>
 
             <div class="nl-form-group">
               <label class="nl-form-label">What do you need? <span class="required">*</span></label>
               <textarea class="nl-form-textarea" name="needs" placeholder="Tell us exactly what you are looking for..." required></textarea>
-            </div>
-
-            <div class="nl-form-row">
-              <div class="nl-form-group">
-                <label class="nl-form-label">Budget Range</label>
-                <select class="nl-form-select" name="budget">
-                  <option value="$499 - $999">Starter ($499 - $999)</option>
-                  <option value="$999 - $2,500">Growth ($999 - $2,500)</option>
-                  <option value="$2,500+">Enterprise ($2,500+)</option>
-                </select>
-              </div>
-              <div class="nl-form-group">
-                <label class="nl-form-label">Timeline</label>
-                <select class="nl-form-select" name="timeline">
-                  <option value="ASAP">ASAP (Priority)</option>
-                  <option value="2-4 weeks">2-4 Weeks</option>
-                  <option value="Just Exploring">Just Exploring</option>
-                </select>
-              </div>
             </div>
 
             <button type="submit" class="nl-form-submit nl-btn-quote" id="nl-quote-submit">Get Free Quote</button>
@@ -403,8 +379,8 @@
           <div class="nl-modal-badge" style="background: #EFF6FF; color: #2563EB;">48-Hour Delivery</div>
           <h2 class="nl-modal-title">The Landing Page.</h2>
           <div class="nl-price-amount" style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
-            <span style="text-decoration: line-through; color: #94A3B8; font-size: 1.75rem; font-weight: 500;">$499</span>
-            <span style="color: #0F172A; font-size: 2.5rem; font-weight: 700;">$199</span>
+            <span style="text-decoration: line-through; color: #94A3B8; font-size: 1.75rem; font-weight: 500;">$699</span>
+            <span style="color: #0F172A; font-size: 2.5rem; font-weight: 700;">$399</span>
           </div>
           <div class="nl-form-error" id="nl-purchase-error"></div>
           
@@ -422,10 +398,6 @@
                   <input class="nl-form-input" type="email" name="email" id="nl-purchase-email" required>
                 </div>
               </div>
-              <div class="nl-form-group">
-                <label class="nl-form-label">Brand URL</label>
-                <input class="nl-form-input" type="url" name="website" placeholder="https://">
-              </div>
               <button type="button" class="nl-form-submit nl-btn-purchase" id="nl-next-step">
                 Secure Your Page &rarr;
               </button>
@@ -441,42 +413,22 @@
               </div>
 
               <div class="nl-form-group">
-                <label class="nl-form-label">Your Main Service (e.g. Free Roof Inspections) <span class="required">*</span></label>
-                <input class="nl-form-input" type="text" name="target" placeholder="e.g. Free Roof Inspections">
+                <label class="nl-form-label">Brand URL</label>
+                <input class="nl-form-input" type="url" name="website" placeholder="https://">
               </div>
 
-              <div class="nl-form-group">
-                <label class="nl-form-label">What do you want visitors to do? <span class="required">*</span></label>
-                <select class="nl-form-select" name="missionSelect" id="nl-mission-select">
-                  <option value="" disabled selected>Select an option...</option>
-                  <option value="Get people to fill out a contact form (Lead Gen)">Get people to fill out a contact form (Lead Gen)</option>
-                  <option value="Get people to call my phone number">Get people to call my phone number</option>
-                  <option value="Get people to book on my calendar">Get people to book on my calendar</option>
-                  <option value="Sell a product directly (E-commerce)">Sell a product directly (E-commerce)</option>
-                  <option value="Other">Other...</option>
-                </select>
-                <input class="nl-form-input" type="text" name="mission" id="nl-mission-other" placeholder="Please specify..." style="display:none; margin-top:10px;">
-              </div>
+              <div id="paypal-button-container-P-9XC76806RC000293YNH3T6VY" style="margin-top: 24px; min-height: 55px;"></div>
 
-              <div class="nl-form-group">
-                <label class="nl-form-label">The Audience (Who is buying) <span class="required">*</span></label>
-                <select class="nl-form-select" name="audienceSelect" id="nl-audience-select">
-                  <option value="" disabled selected>Select an option...</option>
-                  <option value="Local Homeowners / Residents">Local Homeowners / Residents</option>
-                  <option value="Other Businesses (B2B)">Other Businesses (B2B)</option>
-                  <option value="Everyday Consumers (B2C)">Everyday Consumers (B2C)</option>
-                  <option value="Other">Other...</option>
-                </select>
-                <input class="nl-form-input" type="text" name="audience" id="nl-audience-other" placeholder="Please specify..." style="display:none; margin-top:10px;">
+              <div style="margin-top: 20px; padding: 15px; background: #F8FAFC; border-radius: 8px; display: flex; gap: 15px; align-items: center;">
+                <img src="/founder.png" alt="Nas" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <p style="font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.4; font-style: italic;">
+                  "I personally guarantee you'll love this site, or I'll refund every penny. No questions asked." <br><strong style="font-style: normal;">- Nas, Founder</strong>
+                </p>
               </div>
-
-              <button type="submit" class="nl-form-submit nl-btn-purchase" id="nl-purchase-submit">
-                Secure My Page — $199
-              </button>
 
               <div class="nl-secure-badge">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-                Encrypted Checkout Protocol
+                Encrypted Checkout Protocol by PayPal
               </div>
             </div>
             
@@ -494,21 +446,6 @@
     
     // Ghost Capture state
     let hasCapturedPartial = false;
-
-    // Dropdown Logic
-    const missionSelect = document.getElementById('nl-mission-select');
-    const missionOther = document.getElementById('nl-mission-other');
-    missionSelect.addEventListener('change', (e) => {
-      missionOther.style.display = e.target.value === 'Other' ? 'block' : 'none';
-      if (e.target.value === 'Other') missionOther.focus();
-    });
-
-    const audienceSelect = document.getElementById('nl-audience-select');
-    const audienceOther = document.getElementById('nl-audience-other');
-    audienceSelect.addEventListener('change', (e) => {
-      audienceOther.style.display = e.target.value === 'Other' ? 'block' : 'none';
-      if (e.target.value === 'Other') audienceOther.focus();
-    });
 
     // Ghost Capture Function
     async function captureGhostLead() {
@@ -545,9 +482,66 @@
       captureGhostLead();
       document.getElementById('nl-step-1').style.display = 'none';
       document.getElementById('nl-step-2').style.display = 'block';
+
+      function renderPayPal() {
+        if (window.paypalRendered) return;
+        if (!window.paypal) {
+          setTimeout(renderPayPal, 100);
+          return;
+        }
+        window.paypalRendered = true;
+        paypal.Buttons({
+          style: {
+              shape: 'pill',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'paypal'
+          },
+          onClick: async function(data, actions) {
+            const form = document.getElementById('nl-purchase-form');
+            if (!form.phone.value.trim()) {
+              const errorEl = document.getElementById('nl-purchase-error');
+              errorEl.textContent = "Please fill out all required fields.";
+              errorEl.classList.add('active');
+              return actions.reject();
+            }
+            document.getElementById('nl-purchase-error').classList.remove('active');
+            
+            // Post lead silently
+            const formData = {
+              formType: 'purchase',
+              name: form.name.value.trim(),
+              email: form.email.value.trim(),
+              phone: form.phone.value.trim(),
+              website: form.website.value.trim()
+            };
+            try {
+              await fetch('/api/lead-form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+              });
+            } catch(e) {}
+            
+            return actions.resolve();
+          },
+          createSubscription: function(data, actions) {
+            return actions.subscription.create({
+              plan_id: 'P-9XC76806RC000293YNH3T6VY'
+            });
+          },
+          onApprove: function(data, actions) {
+            document.getElementById('nl-purchase-form-wrap').style.display = 'none';
+            document.getElementById('nl-purchase-success').classList.add('active');
+          }
+        }).render('#paypal-button-container-P-9XC76806RC000293YNH3T6VY');
+      }
+      
+      renderPayPal();
     });
 
-    document.getElementById('nl-purchase-form').addEventListener('submit', handlePurchaseSubmit);
+    // Remove old submit listener to prevent standard form submission
+    document.getElementById('nl-purchase-form').addEventListener('submit', (e) => e.preventDefault());
   }
 
   // ─── Modal State ──────────────────────────────────────────────
@@ -605,11 +599,7 @@
       name: form.name.value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
-      company: form.company.value.trim(),
-      businessType: form.businessType.value.trim(),
-      needs: form.needs.value.trim(),
-      budget: form.budget.value,
-      timeline: form.timeline.value
+      needs: form.needs.value.trim()
     };
 
     setButtonLoading(btn, true);
@@ -633,74 +623,7 @@
     }
   }
 
-  async function handlePurchaseSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = document.getElementById('nl-purchase-submit');
-    const errorEl = document.getElementById('nl-purchase-error');
-    errorEl.classList.remove('active');
-
-    // Ensure step 2 fields are validated properly before submitting
-    if (!form.phone.value.trim() || !form.target.value.trim() || !form.missionSelect.value || !form.audienceSelect.value) {
-      errorEl.textContent = "Please fill out all required fields.";
-      errorEl.classList.add('active');
-      return;
-    }
-
-    let finalMission = form.missionSelect.value;
-    if (finalMission === 'Other') finalMission = form.mission.value.trim();
-
-    let finalAudience = form.audienceSelect.value;
-    if (finalAudience === 'Other') finalAudience = form.audience.value.trim();
-
-    if ((form.missionSelect.value === 'Other' && !finalMission) || (form.audienceSelect.value === 'Other' && !finalAudience)) {
-      errorEl.textContent = "Please specify 'Other' selections.";
-      errorEl.classList.add('active');
-      return;
-    }
-
-    const formData = {
-      formType: 'purchase',
-      name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      phone: form.phone.value.trim(),
-      website: form.website.value.trim(),
-      target: form.target.value.trim(),
-      mission: finalMission,
-      audience: finalAudience
-    };
-
-    setButtonLoading(btn, true);
-
-    try {
-      // Step 1: Dispatch lead to server
-      const leadRes = await fetch('/api/lead-form', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      if (!leadRes.ok) throw new Error('Failed to save your information. Please check your connection.');
-
-      // Step 2: Initialize PayPal Checkout
-      const paypalRes = await fetch('/api/paypal/create-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: 199, formData }),
-      });
-      const paypalData = await paypalRes.json();
-      if (!paypalRes.ok) throw new Error(paypalData.error || 'Payment gateway routing failed.');
-
-      document.getElementById('nl-purchase-form-wrap').style.display = 'none';
-      document.getElementById('nl-purchase-success').classList.add('active');
-      
-      setTimeout(() => { window.location.href = paypalData.approvalUrl; }, 1200);
-    } catch (err) {
-      errorEl.textContent = err.message;
-      errorEl.classList.add('active');
-    } finally {
-      setButtonLoading(btn, false);
-    }
-  }
+  // removed handlePurchaseSubmit as it is now handled by paypal.Buttons
 
   // Auto-initialize
   createQuoteModal();

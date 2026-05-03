@@ -21,3 +21,15 @@ Transition from a one-time project agency to generating Monthly Recurring Revenu
 - When a client buys a landing page, provide them with a login.
 - Inside the dashboard, they can view landing page traffic, read captured leads, and monitor conversion rates.
 - This creates stickiness and justifies an ongoing hosting/maintenance retainer (e.g., $99/mo) since clients prefer a clean dashboard over complex Google Analytics.
+
+## Future Landing Page Headlines
+These headline variations were generated based on the Direct Response formula and can be A/B tested later:
+1. Dominate Your Local Market And Fill Your Schedule With High-Paying Jobs With A Custom Lead-Gen Site In 48 Hours Using The Naslogic System (Zero Risk Guarantee).
+2. Stop Losing Customers To Competitors And Wake Up To Qualified Leads With A Custom-Coded Landing Page In 48 Hours Using Our Proven Framework (100% Refund If You Hate It).
+3. Become The Most Trusted Name In Town And Double Your Call Volume With A Premium Website In Just 2 Days Using Our Agency Playbook (5-Star Verified).
+
+## Landing Page Color
+
+We need to deep research using my dads deep research tool to figure out the colors for landing page that are critical for conversions
+
+change price to $399 
