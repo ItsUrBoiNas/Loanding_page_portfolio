@@ -72,7 +72,7 @@ export default function Pricing() {
                 <CardFooter>
                   <div className="w-full mt-4">
                     <Button
-                      variant={tier.popular ? "primary" : "outline"}
+                      variant={tier.popular ? "primary" : "secondary"}
                       className="w-full"
                       onClick={() => index === 0 ? setIsPurchaseModalOpen(true) : setIsQuoteModalOpen(true)}
                     >
