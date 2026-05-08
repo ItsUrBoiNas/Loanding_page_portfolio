@@ -33,3 +33,27 @@ These headline variations were generated based on the Direct Response formula an
 We need to deep research using my dads deep research tool to figure out the colors for landing page that are critical for conversions
 
 change price to $399 
+
+## Quiz Funnel — Follow-Up Email Drip
+
+After someone completes the free business plan quiz, send a 3-email sequence instead of just one:
+- **Day 0:** The AI-generated business plan (already built)
+- **Day 2:** "Did you get a chance to look at the plan?" — short, personal check-in
+- **Day 5:** A case study relevant to their business type (e.g., if they said "local service," send the roofing case study)
+
+This keeps Naslogic top of mind during the decision window. Requires an email automation service (Resend sequences, or a simple cron-based system).
+
+## Quiz Funnel — SMS Follow-Up
+
+The quiz collects phone numbers. Send an automated text 24 hours after quiz completion:
+- "Hey [Name], it's Nasir from Naslogic. Did you get a chance to check the plan I sent over? Let me know if you have any questions."
+- Texts have a 98% open rate vs. ~20% for email
+- Requires a Twilio or similar SMS API integration
+
+## Quiz Funnel — Quiz as Ad Landing Page
+
+Run Facebook/Instagram/Google ads that send traffic directly to `/free-plan` instead of the homepage. The quiz IS the ad funnel:
+- Ad copy: "Find out exactly what's holding your business back — free 60-second quiz"
+- Way better conversion than sending cold ad traffic to a homepage with pricing
+- The quiz warms them up before they ever see a price tag
+- Every lead comes pre-qualified with their problems, goals, and revenue range

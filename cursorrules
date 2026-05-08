@@ -1,0 +1,49 @@
+# Cursor Rules & Standards
+
+## 1. Core Rules (MANDATORY)
+
+You must always load and follow these rules:
+
+- `.cursor/rules/mandatory-lint-check.md` - Lint enforcement before phase as completion
+- `.cursor/rules/NEVER_REMOVE_FEATURES.md` - Feature preservation
+- All rules in `.cursor/rules/` directory
+
+## 2. TypeScript/Next.js Development (MANDATORY)
+
+When writing, modifying, or testing TypeScript/React/Next.js code, you **MUST** (agent that runs it can run in background):
+
+### Before Completion
+
+## QA E2E Screeshots
+
+If the compelted task or phase is frontend facing, you **MUST** create e2e test for it. You can login withthe test account test@example.com with password: TestPassword123!
+1. Before you run your tests, create a e2e test. 
+2. Take a screenshot of successful result. If its in sidebar or something, make suere you follow all steps to get to it so its visible for screenshot.
+
+- If it requires going to site-editor, you can go use `site-1776073838324` (e.g. http://localhost:3000/editor/site-1776073838324)
+
+## Run the validation suite:
+
+1. **Lint**: `npm run lint`
+2. **Type check**: `npx tsc --noEmit`
+3. **Tests**: `npm run test` (unit tests) and `npm run test:hooks` (if touching `.cursor/hooks`). Run these after full plans are completed. 
+
+### Standards
+
+- **Typing**: Strict TypeScript, avoid `any`
+- **Testing**: Vitest for unit/integration tests; Playwright for e2e
+- **Linting**: ESLint with Next.js config
+
+## 3. Skills & Architecture
+
+Follow these skills when relevant:
+
+- `.cursor/skills/testing/SKILL.md` - Testing standards
+- `.cursor/skills/always-production-quality/SKILL.md` - Production-ready code
+- Skills in `.cursor/skills/` for Next.js, Storybook, and other domains
+
+## 4. Quick Commands
+
+- **Lint**: `npm run lint`
+- **Test**: `npm run test`
+- **Type check**: `npx tsc --noEmit`

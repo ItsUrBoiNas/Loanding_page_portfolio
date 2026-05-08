@@ -417,6 +417,11 @@
                 <input class="nl-form-input" type="url" name="website" placeholder="https://">
               </div>
 
+              <div class="nl-form-group">
+                <label class="nl-form-label">About Your Business & Needs <span class="required">*</span></label>
+                <textarea class="nl-form-textarea" name="needs" placeholder="Who are your customers? What is the main goal?" required></textarea>
+              </div>
+
               <div id="paypal-button-container-P-9XC76806RC000293YNH3T6VY" style="margin-top: 24px; min-height: 55px;"></div>
 
               <div style="margin-top: 20px; padding: 15px; background: #F8FAFC; border-radius: 8px; display: flex; gap: 15px; align-items: center;">
@@ -499,7 +504,7 @@
           },
           onClick: async function(data, actions) {
             const form = document.getElementById('nl-purchase-form');
-            if (!form.phone.value.trim()) {
+            if (!form.phone.value.trim() || !form.needs.value.trim()) {
               const errorEl = document.getElementById('nl-purchase-error');
               errorEl.textContent = "Please fill out all required fields.";
               errorEl.classList.add('active');
@@ -513,7 +518,8 @@
               name: form.name.value.trim(),
               email: form.email.value.trim(),
               phone: form.phone.value.trim(),
-              website: form.website.value.trim()
+              website: form.website.value.trim(),
+              needs: form.needs.value.trim()
             };
             try {
               await fetch('/api/lead-form', {
