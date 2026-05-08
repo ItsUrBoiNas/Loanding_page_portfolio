@@ -21,6 +21,9 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <meta name="description"
         content="Fort Myers web design agency. Custom websites and landing pages for roofers, dentists, lawyers, HVAC, plumbers and more. Built by hand, works great on phones. Done in 48 hours for $399.">
     <link rel="canonical" href="https://naslogic.com">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
@@ -326,12 +329,21 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
         }
 
         .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-family: var(--font-display);
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-main);
             text-decoration: none;
             letter-spacing: -0.05em;
+        }
+
+        .nav-logo svg {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
         }
 
         .nav-links {
@@ -764,12 +776,21 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
         }
 
         .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-family: var(--font-display);
             font-size: 2rem;
             font-weight: 700;
             text-decoration: none;
             color: var(--text-main);
             letter-spacing: -0.05em;
+        }
+
+        .footer-logo svg {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
         }
 
         .footer-links {
@@ -892,7 +913,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
-            <a href="#" class="nav-logo">NASLOGIC</a>
+            <a href="#" class="nav-logo"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="50,18 43.5,21.5 43.5,59 50,55.5" fill="#1B4AAE"/><polygon points="50,18 56,21 56,58.5 50,55.5" fill="#2563EB"/><polygon points="50,18 56,21 49.8,24.5 43.5,21.5" fill="#4B8BF5"/><polygon points="68.2,28.8 61.7,32.3 61.7,69.8 68.2,66.3" fill="#1B4AAE"/><polygon points="68.2,28.8 74.2,31.8 74.2,69.3 68.2,66.3" fill="#2563EB"/><polygon points="68.2,28.8 74.2,31.8 68,35.3 61.7,32.3" fill="#4B8BF5"/><polygon points="50,18 43.5,21.5 61.7,32.3 68.2,28.8" fill="#1B4AAE"/><polygon points="50,18 56,21 74.2,31.8 68.2,28.8" fill="#2563EB"/><polygon points="56,21 56,27 74.2,37.8 74.2,31.8" fill="#2050CC"/><polygon points="43.5,21.5 43.5,27.5 61.7,38.3 61.7,32.3" fill="#163D99"/></svg>NASLOGIC</a>
             <div class="nav-links">
                 <a href="javascript:void(0)" onclick="openQuoteModal()" class="btn btn-outline"
                     style="padding: 12px 24px;">Get a Free Quote</a>
@@ -1443,7 +1464,7 @@ This design draws directly from the DNA of standard-setting agency sites like Cl
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <a href="#" class="footer-logo">NASLOGIC.</a>
+            <a href="#" class="footer-logo"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="50,18 43.5,21.5 43.5,59 50,55.5" fill="#1B4AAE"/><polygon points="50,18 56,21 56,58.5 50,55.5" fill="#2563EB"/><polygon points="50,18 56,21 49.8,24.5 43.5,21.5" fill="#4B8BF5"/><polygon points="68.2,28.8 61.7,32.3 61.7,69.8 68.2,66.3" fill="#1B4AAE"/><polygon points="68.2,28.8 74.2,31.8 74.2,69.3 68.2,66.3" fill="#2563EB"/><polygon points="68.2,28.8 74.2,31.8 68,35.3 61.7,32.3" fill="#4B8BF5"/><polygon points="50,18 43.5,21.5 61.7,32.3 68.2,28.8" fill="#1B4AAE"/><polygon points="50,18 56,21 74.2,31.8 68.2,28.8" fill="#2563EB"/><polygon points="56,21 56,27 74.2,37.8 74.2,31.8" fill="#2050CC"/><polygon points="43.5,21.5 43.5,27.5 61.7,38.3 61.7,32.3" fill="#163D99"/></svg>NASLOGIC.</a>
             <div class="footer-links">
                 <a href="tel:9412573059">(941) 257-3059</a>
                 <a href="/privacy">Privacy Policy</a>
