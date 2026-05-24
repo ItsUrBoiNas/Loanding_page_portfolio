@@ -60,47 +60,17 @@ export default function AskMeetySubscription() {
             AskMeety Premium
           </h1>
           <p className="text-slate-400 text-sm leading-relaxed max-w-[90%] mx-auto">
-            Upgrade your experience and get exclusive access to our most powerful features.
+            Complete your subscription payment below.
           </p>
         </div>
 
         <div className="bg-slate-950/50 rounded-2xl p-6 sm:p-7 border border-slate-800/60 relative z-10 backdrop-blur-sm">
-          <div className="flex justify-between items-end mb-6 pb-6 border-b border-slate-800/60">
+          <div className="flex justify-center items-end mb-8">
             <div>
-              <span className="text-4xl font-black text-white">$15</span>
+              <span className="text-4xl font-black text-white">$400</span>
               <span className="text-slate-400 font-medium ml-1">/mo</span>
             </div>
-            <div className="bg-emerald-500/10 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full ring-1 ring-emerald-500/20">
-              Most Popular
-            </div>
           </div>
-          
-          <ul className="space-y-4 mb-8 text-sm text-slate-300 font-medium">
-            <li className="flex items-start gap-3">
-              <div className="mt-0.5 rounded-full bg-blue-500/20 p-1">
-                <svg className="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              Full access to AskMeety tools
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="mt-0.5 rounded-full bg-blue-500/20 p-1">
-                <svg className="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              Priority 24/7 customer support
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="mt-0.5 rounded-full bg-blue-500/20 p-1">
-                <svg className="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              Early access to future updates
-            </li>
-          </ul>
 
           <div className="relative">
             {!isScriptLoaded && (
