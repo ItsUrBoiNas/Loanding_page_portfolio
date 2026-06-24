@@ -30,9 +30,9 @@ const testimonials = [
     business: "Landscaping",
   },
   {
-    quote: "I was paying $150/mo for a garbage Wix site. This is night and day.",
-    name: "Rachel W.",
-    business: "Dog Groomer",
+    quote: "Nas joined the call twice,shared his vision and did some help for us for the main page (landing page). Overral everything was great. Thanks for your work!",
+    name: "Питбуль Ева",
+    business: "Landing Page Client",
   },
 ];
 
